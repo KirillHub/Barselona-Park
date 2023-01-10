@@ -1,0 +1,28 @@
+.header {
+  margin: 0 auto;
+
+  width: 64%;
+  height: 60px;
+
+  .header-container {
+    height: 100%;
+    .header-container__ul {
+      display: flex;
+
+      margin: 0;
+
+      height: 100%;
+
+      align-items: center;
+      justify-content: space-between;
+
+      & li {
+        margin: 0 1vw;
+
+        font-size: calc(8px + 24 * (100vw / 1920));
+
+        z-index: 1;
+      }
+    }
+  }
+}
