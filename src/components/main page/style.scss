@@ -18,6 +18,8 @@
   .main-page-container__barselona-park {
     position: absolute;
 
+    margin: 0;
+
     top: 30vh;
 
     right: 0;
@@ -25,7 +27,7 @@
 
     text-align: center;
 
-    font-size: calc(24px + 40 * (100vw / 1920));
+    font-size: calc(10px + 20 * (100vw / 1920));
     font-weight: bold;
 
     z-index: 999;
@@ -39,9 +41,14 @@
 
   .main-page-container__categories {
     position: relative;
-    margin: 2vh 8vw;
+    margin: 2vh 8vw 4vh 8vw;
 
     text-align: center;
+
+    .main-page-container__categories__title {
+      font-size: 25px;
+      font-weight: bold;
+    }
 
     & a {
       position: relative;
@@ -85,6 +92,93 @@
         &:hover {
           filter: brightness(30%);
         }
+      }
+    }
+  }
+
+  .main-page-container__location {
+    position: relative;
+    margin: 2vh 8vw;
+
+    .main-page-container__location__title {
+      margin: 0 0 3vh 0;
+
+      text-align: center;
+
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .main-page-container__location__info {
+      display: flex;
+
+      justify-content: space-between;
+
+      .main-page-container__location__info-iframe {
+        width: 40vw;
+        height: 50vh;
+        border: 0;
+      }
+
+      .main-page-container__location__info-about {
+        margin: 0 2vw;
+        text-align: center;
+
+        & h3 {
+          font-size: 30px;
+        }
+
+        & p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .main-page-container__contacts {
+    position: relative;
+    margin: 2vh 8vw;
+
+    .main-page-container__contacts__title {
+      margin: 0 0 3vh 0;
+
+      text-align: center;
+
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .main-page-container__contacts__info {
+      display: flex;
+
+      justify-content: space-between;
+
+      & h3 {
+        font-size: 30px;
+      }
+
+      & span {
+        display: flex;
+        align-items: center;
+      }
+
+      & p,
+      a {
+        margin: 0 1vw 1vh 0;
+        font-size: 20px;
+      }
+
+      .main-page-container__contacts__info-icon {
+        margin-right: 1vw;
+
+        width: 4vh;
+        height: 4vh;
+      }
+
+      .main-page-container__contacts__info-img {
+        width: 40%;
+
+        object-fit: cover;
       }
     }
   }
