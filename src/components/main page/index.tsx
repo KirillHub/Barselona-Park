@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams, Link } from 'react-router-dom';
-import { Telegram, Whatsapp } from '../../svg';
+import { SelectCategory } from './category';
+import { Telegram, Whatsapp, Conditioner, CoffeeMachine, Dishwasher } from '../../svg';
 import './style.scss';
 
 interface MyParams {
@@ -10,7 +11,6 @@ interface MyParams {
 
 export const MainPicture = () => {
   const { id } = useParams<keyof MyParams>() as MyParams;
-
 
   return (
     <div className="main-page">
@@ -33,7 +33,7 @@ export const MainPicture = () => {
           </a>
         </div>
 
-       
+        <SelectCategory />
 
         <div className="main-page-container__location">
           <div className="main-page-container__location__title">

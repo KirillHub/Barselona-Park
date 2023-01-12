@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './style.scss'
 
-export const Category = () => {
+export const SelectCategory = () => {
   return (
     <div className="main-page-container__categories">
       <div className="main-page-container__categories__title">
@@ -12,7 +14,7 @@ export const Category = () => {
         <span>Все апартаменты</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/Все апартаменты.jpg"
+          src="/assets/categories images/Все апартаменты.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -21,7 +23,7 @@ export const Category = () => {
         <span>С балконом</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/C балконом.png"
+          src="/assets/categories images/C балконом.png"
           alt="Апартамент-1104"
         />
       </Link>
@@ -30,7 +32,7 @@ export const Category = () => {
         <span>Без балкона</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/Без балкона.JPG"
+          src="/assets/categories images/Без балкона.JPG"
           alt="Апартамент-1104"
         />
       </Link>
@@ -39,7 +41,7 @@ export const Category = () => {
         <span>Студии</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/Студия.jpg"
+          src="/assets/categories images/Студия.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -48,7 +50,7 @@ export const Category = () => {
         <span>Однокомнатные</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/однокомнатная.jpg"
+          src="/assets/categories images/однокомнатная.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -57,7 +59,7 @@ export const Category = () => {
         <span>Двухкомнатные</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/двухкомнатный.JPG"
+          src="/assets/categories images/двухкомнатный.JPG"
           alt="Апартамент-1104"
         />
       </Link>
@@ -66,7 +68,7 @@ export const Category = () => {
         <span>Трехкомнатные</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/трехкомнатный.jpg"
+          src="/assets/categories images/трехкомнатный.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -75,7 +77,7 @@ export const Category = () => {
         <span>Вид на море</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/Море.jpg"
+          src="/assets/categories images/Море.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -84,7 +86,7 @@ export const Category = () => {
         <span>Вид на город</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/город.jpg"
+          src="/assets/categories images/город.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -93,7 +95,7 @@ export const Category = () => {
         <span>3 cпальных места</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/3 спальных.jpg"
+          src="/assets/categories images/3 спальных.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -102,7 +104,7 @@ export const Category = () => {
         <span>4 cпальных места</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/4 спальных.jpg"
+          src="/assets/categories images/4 спальных.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -111,7 +113,7 @@ export const Category = () => {
         <span>5 cпальных мест</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/5 спальных.jpg"
+          src="/assets/categories images/5 спальных.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -120,7 +122,7 @@ export const Category = () => {
         <span>6 cпальных мест</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/6 спальных.jpg"
+          src="/assets/categories images/6 спальных.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -129,7 +131,7 @@ export const Category = () => {
         <span>С кофемашиной</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/кофемашина.jpg"
+          src="/assets/categories images/кофемашина.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -138,7 +140,7 @@ export const Category = () => {
         <span>С духовкой</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/духовка.jpg"
+          src="/assets/categories images/духовка.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -146,7 +148,7 @@ export const Category = () => {
         <span>С посудомоечной машиной</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/посудомоечная.jpg"
+          src="/assets/categories images/посудомоечная.jpg"
           alt="Апартамент-1104"
         />
       </Link>
@@ -155,10 +157,10 @@ export const Category = () => {
         <span>С духовкой и посудомоечной машиной</span>
         <img
           className="main-page-container__categories-img"
-          src="./categories images/духовка посудомойка.jpg"
+          src="/assets/categories images/духовка посудомойка.jpg"
           alt="Апартамент-1104"
         />
       </Link>
     </div>
   );
-}
+};

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Category } from '../components/category page/category'
+import { Category } from '../components/category page'
 
 export const CategoryPage = () => {
   return (

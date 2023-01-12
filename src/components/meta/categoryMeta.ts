@@ -1,6 +1,12 @@
 export const categoryMeta = (findMetaId: string) => {
   const meta = [
     {
+      id: 'Select-category',
+      title: 'Выберите категорию',
+      description: 'Выберите категорию апартаментов по лучшей цене! | Barselona Park',
+      keywords: 'Выберите категорию, апартаменты',
+    },
+    {
       id: 'All-apartments',
       title: 'Все апартаменты',
       description: 'В этой категории представлены "все апартаменты", по лучшей цене! | Barselona Park',
@@ -123,8 +129,7 @@ export const categoryMeta = (findMetaId: string) => {
       title: 'Апартаменты с духовкой и посудомоечной машиной',
       description:
         'В этой категории представлены "апартаменты с духовкой и посудомоечной машиной", по лучшей цене! | Barselona Park',
-      keywords:
-        'духовка и посудомоечная машина,с духовкой и посудомоечной машиной, апартаменты',
+      keywords: 'духовка и посудомоечная машина,с духовкой и посудомоечной машиной, апартаменты',
     },
   ];
 
