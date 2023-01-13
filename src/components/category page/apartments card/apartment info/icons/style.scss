@@ -1,0 +1,18 @@
+  .category-page-container__apartments-card__info__icons {
+          margin: 0.5vh 0.5vw;
+
+          & div {
+            display: inline-block;
+            margin: 0.4vh 0.6vw;
+
+            width: 28px !important;
+            height: 28px !important;
+
+            cursor: pointer;
+            z-index: 1;
+            &:hover {
+              transform: scale(2);
+              z-index: 2;
+            }
+          }
+        }

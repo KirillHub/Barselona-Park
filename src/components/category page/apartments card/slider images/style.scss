@@ -1,0 +1,52 @@
+.category-page-container__apartments-card__images {
+  width: 48%;
+
+  .slick-slider,
+  .slick-track,
+  .slick-list {
+    height: 260px;
+  }
+
+  .slick-slide {
+    width: 48%;
+  }
+
+  .picture {
+    padding: 0 0.2vw;
+
+    height: 260px;
+
+    object-fit: cover;
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 40px;
+    height: 100%;
+
+    z-index: 1;
+
+    &:hover {
+      .slick-prev::before,
+      .slick-next::before {
+        color: white;
+      }
+
+      background-color: rgba(29, 29, 29, 0.685);
+    }
+  }
+
+  .slick-prev {
+    margin-left: 1.3vw;
+  }
+
+  .slick-next {
+    margin-right: 1.3vw;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 26px;
+    color: black;
+  }
+}

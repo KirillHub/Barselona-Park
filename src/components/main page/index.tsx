@@ -2,7 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams, Link } from 'react-router-dom';
 import { SelectCategory } from './category';
-import { Telegram, Whatsapp, Conditioner, CoffeeMachine, Dishwasher } from '../../svg';
+import {
+  Telegram,
+  Whatsapp,
+} from '../../svg';
 import './style.scss';
 
 interface MyParams {

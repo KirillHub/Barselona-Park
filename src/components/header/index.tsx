@@ -15,7 +15,9 @@ export const Header = () => {
             <Link to="">Апартаменты</Link>
           </li>
           <li>
-            <Link to={`/Category/${categoryPage.selectedPageId}`} >Категории</Link>
+            <Link to={`/Category/${categoryPage.selectedPageId}`}>
+              Категории
+            </Link>
           </li>
           <li>
             <Link to="">Контакты</Link>

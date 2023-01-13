@@ -1,0 +1,61 @@
+.category-page-container__apartments-card__info {
+  width: 48%;
+  height: 260px;
+
+  border: 2px solid white;
+
+  .category-page-container__apartments-card__info__apartment {
+    display: flex;
+
+    height: 70px;
+
+    border-bottom: 2px solid white;
+
+    & div {
+      position: relative;
+
+      width: 50%;
+      height: 70px;
+    }
+
+    & p {
+      display: flex;
+
+      margin: auto 0;
+
+      height: 69px;
+      align-items: center;
+      justify-content: space-evenly;
+
+      border-right: 2px solid white;
+
+      font-size: 22px;
+      font-weight: bold;
+
+      & span {
+        font-weight: normal;
+      }
+    }
+
+    & button {
+      position: relative;
+      width: 50%;
+      height: 8;
+
+      border: 0;
+
+      font-size: 18px;
+      font-weight: bold;
+
+      color: white;
+      background-color: rgba(255, 255, 255, 0);
+
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        background-color: rgb(122, 122, 122);
+      }
+    }
+  }
+}
