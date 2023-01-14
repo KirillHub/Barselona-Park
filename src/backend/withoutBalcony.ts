@@ -32,7 +32,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
-    floor: 14,
+    floor: '14',
     description: '',
   },
   {
@@ -68,7 +68,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
-    floor: 14,
+    floor: '14',
     description: '',
   },
   {
@@ -104,7 +104,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 14,
+    floor: '14',
     description: '',
   },
   {
@@ -140,7 +140,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 14,
+    floor: '14',
     description: '',
   },
   {
@@ -176,7 +176,7 @@ export const table = [
     summerPrice: '15 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 14,
+    floor: '14',
     description: '',
   },
   {
@@ -212,7 +212,7 @@ export const table = [
     summerPrice: '12 500',
     winterPrice: '7 000',
     rooms: '3',
-    floor: 13,
+    floor: '13',
     description: '',
   },
   {
@@ -248,7 +248,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
-    floor: 13,
+    floor: '13',
     description: '',
   },
   {
@@ -284,7 +284,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
-    floor: 13,
+    floor: '13',
     description: '',
   },
   {
@@ -320,7 +320,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: 'Студия',
-    floor: 13,
+    floor: '13',
     description: '',
   },
   {
@@ -356,7 +356,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '7 000',
     rooms: '2',
-    floor: 12,
+    floor: '12',
     description: '',
   },
   {
@@ -392,7 +392,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: 'Студия',
-    floor: 12,
+    floor: '12',
     description: '',
   },
   {
@@ -428,7 +428,7 @@ export const table = [
     summerPrice: '11 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 12,
+    floor: '12',
     description: '',
   },
   {
@@ -464,7 +464,7 @@ export const table = [
     summerPrice: '11 000',
     winterPrice: '5 500',
     rooms: '2',
-    floor: 11,
+    floor: '11',
     description: '',
   },
   {
@@ -500,7 +500,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
-    floor: 11,
+    floor: '11',
     description: '',
   },
   {
@@ -536,7 +536,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '2',
-    floor: 11,
+    floor: '11',
     description: '',
   },
   {
@@ -572,7 +572,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 11,
+    floor: '11',
     description: '',
   },
   {
@@ -608,7 +608,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 11,
+    floor: '11',
     description: '',
   },
   {
@@ -644,7 +644,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '2',
-    floor: 11,
+    floor: '11',
     description: '',
   },
   {
@@ -680,7 +680,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '7 000',
     rooms: '1',
-    floor: 10,
+    floor: '10',
     description: '',
   },
   {
@@ -716,7 +716,7 @@ export const table = [
     summerPrice: '12 000',
     winterPrice: '7 000',
     rooms: '1',
-    floor: 10,
+    floor: '10',
     description: '',
   },
   {
@@ -752,7 +752,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '2',
-    floor: 10,
+    floor: '10',
     description: '',
   },
   {
@@ -788,7 +788,7 @@ export const table = [
     summerPrice: '11 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 9,
+    floor: '9',
     description: '',
   },
   {
@@ -824,7 +824,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 8,
+    floor: '8',
     description: '',
   },
   {
@@ -860,7 +860,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 500',
     rooms: '2',
-    floor: 7,
+    floor: '7',
     description: '',
   },
   {
@@ -896,7 +896,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 500',
     rooms: '2',
-    floor: 7,
+    floor: '7',
     description: '',
   },
   {
@@ -932,7 +932,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 500',
     rooms: '2',
-    floor: 7,
+    floor: '7',
     description: '',
   },
   {
@@ -968,7 +968,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 7,
+    floor: '7',
     description: '',
   },
   {
@@ -1004,7 +1004,7 @@ export const table = [
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: 'Студия',
-    floor: 7,
+    floor: '7',
     description: '',
   },
   {
@@ -1040,7 +1040,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 6,
+    floor: '6',
     description: '',
   },
   {
@@ -1076,7 +1076,7 @@ export const table = [
     summerPrice: '11 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 6,
+    floor: '6',
     description: '',
   },
   {
@@ -1112,7 +1112,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 6,
+    floor: '6',
     description: '',
   },
   {
@@ -1148,7 +1148,7 @@ export const table = [
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: '2',
-    floor: 6,
+    floor: '6',
     description: '',
   },
   {
@@ -1184,7 +1184,7 @@ export const table = [
     summerPrice: '8 500',
     winterPrice: '5 000',
     rooms: 'Студия',
-    floor: 6,
+    floor: '6',
     description: '',
   },
   {
@@ -1220,7 +1220,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 5,
+    floor: '5',
     description: '',
   },
   {
@@ -1256,7 +1256,7 @@ export const table = [
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: '2',
-    floor: 5,
+    floor: '5',
     description: '',
   },
   {
@@ -1292,7 +1292,7 @@ export const table = [
     summerPrice: '8 500',
     winterPrice: '5 000',
     rooms: '1',
-    floor: 4,
+    floor: '4',
     description: '',
   },
   {
@@ -1328,7 +1328,7 @@ export const table = [
     summerPrice: '8 000',
     winterPrice: '4 500',
     rooms: '2',
-    floor: 4,
+    floor: '4',
     description: '',
   },
   {
@@ -1364,7 +1364,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '3',
-    floor: 4,
+    floor: '4',
     description: '',
   },
   {
@@ -1400,7 +1400,7 @@ export const table = [
     summerPrice: '9 000',
     winterPrice: '6 000',
     rooms: '1',
-    floor: 3,
+    floor: '3',
     description: '',
   },
   {
@@ -1436,7 +1436,7 @@ export const table = [
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: '1',
-    floor: 3,
+    floor: '3',
     description: '',
   },
   {
@@ -1472,7 +1472,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '3',
-    floor: 1,
+    floor: '1',
     description: '',
   },
   {
@@ -1508,7 +1508,7 @@ export const table = [
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
-    floor: 1,
+    floor: '1',
     description: '',
   },
 ];

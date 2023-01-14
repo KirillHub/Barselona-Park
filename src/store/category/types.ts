@@ -1,6 +1,5 @@
-
-
 export interface CategorySliceState {
-  selectedPageId: string
-
+  selectedPageId: string;
+  checkSign: boolean[];
+  signIndex: number;
 }

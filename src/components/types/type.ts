@@ -22,6 +22,6 @@ export type Apartment = {
   summerPrice: string;
   winterPrice: string;
   rooms: string;
-  floor: number;
+  floor: string;
   description: string;
 };

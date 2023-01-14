@@ -37,7 +37,13 @@
     background-color: #000000;
     z-index: 2;
 
-    & a, & span {
+    .active {
+      border: 2px solid white;
+      background-color: #3d3d3d;
+    }
+
+    & a,
+    & span {
       display: flex;
 
       flex-wrap: wrap;
@@ -60,6 +66,7 @@
         width: 15px;
         height: 15px;
         cursor: pointer;
+        z-index: 999;
       }
     }
   }
