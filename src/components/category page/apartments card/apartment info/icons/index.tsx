@@ -35,7 +35,7 @@ export const Icons = ({ apartment }: MyProps) => {
         </div>
       ) : null}
 
-      {apartment.view === 'Море' ? (
+      {apartment.view ? (
         <div title="Вид на море">
           <Sea />
         </div>

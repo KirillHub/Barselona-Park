@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useAppDispatch } from '../../../store/store';
+import { useAppDispatch, useAppSelector } from '../../../store/store';
 import { setCheckSign } from '../../../store/category/slice';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import './style.scss';
 
 interface MyParams {
-  id: string;
+  category: string;
   sort: string;
   options: string;
 }
 
 export const Sort = () => {
   const dispatch = useAppDispatch();
+  const categoryPage = useAppSelector((state) => state.categoryPage);
 
-  const { id, sort, options } = useParams<keyof MyParams>() as MyParams;
+  const { category, sort, options } = useParams<keyof MyParams>() as MyParams;
 
   const navigate = useNavigate();
 
@@ -116,7 +117,7 @@ export const Sort = () => {
       newRoute = `/Without-sort/${opitionsLink}`;
     }
 
-    navigate(`/Category/${id}${newRoute}`);
+    navigate(`/Category/${category}${newRoute}`);
   };
 
   const resetSorts = (whatsReset: string) => {
@@ -127,17 +128,17 @@ export const Sort = () => {
       setOpitionsSortedLink('');
 
       if (sorted.length !== 0 && sorted !== 'Without-sort') {
-        navigate(`/Category/${id}/${sorted}`);
+        navigate(`/Category/${category}/${sorted}`);
       } else {
-        navigate(`/Category/${id}`);
+        navigate(`/Category/${category}`);
       }
     } else {
       const opitionsLink = checkOpitionsLink();
       if (sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length !== 0) {
-        navigate(`/Category/${id}/Without-sort/${opitionsLink}`);
+        navigate(`/Category/${category}/Without-sort/${opitionsLink}`);
       }
       if (sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length === 0) {
-        navigate(`/Category/${id}`);
+        navigate(`/Category/${category}`);
       }
     }
   };
@@ -169,39 +170,39 @@ export const Sort = () => {
         <div className="category-page-container__sorting__dropdown__content">
           <Link
             className={`${sort === 'Sorted-by-summer-season' ? 'active' : ''}`}
-            to={`/Category/${id}/Sorted-by-summer-season${opitionsSortedLink}`}
+            to={`/Category/${category}/Sorted-by-summer-season${opitionsSortedLink}`}
             onClick={() => dispatch(setCheckSign(0))}>
-            По цене Летний сезон
+            По цене Летний сезон {categoryPage.checkSign[0] ? '>' : '<'}
           </Link>
           <Link
             className={`${sort === 'Sorted-by-winter-season' ? 'active' : ''}`}
-            to={`/Category/${id}/Sorted-by-winter-season${opitionsSortedLink}`}
+            to={`/Category/${category}/Sorted-by-winter-season${opitionsSortedLink}`}
             onClick={() => dispatch(setCheckSign(1))}>
-            По цене Зимний сезон
+            По цене Зимний сезон {categoryPage.checkSign[1] ? '>' : '<'}
           </Link>
           <Link
             className={`${sort === 'Sorted-by-floor' ? 'active' : ''}`}
-            to={`/Category/${id}/Sorted-by-floor${opitionsSortedLink}`}
+            to={`/Category/${category}/Sorted-by-floor${opitionsSortedLink}`}
             onClick={() => dispatch(setCheckSign(2))}>
-            По этажу
+            По этажу {categoryPage.checkSign[2] ? '>' : '<'}
           </Link>
           <Link
             className={`${sort === 'Sorted-by-number-of-rooms' ? 'active' : ''}`}
-            to={`/Category/${id}/Sorted-by-number-of-rooms${opitionsSortedLink}`}
+            to={`/Category/${category}/Sorted-by-number-of-rooms${opitionsSortedLink}`}
             onClick={() => dispatch(setCheckSign(3))}>
-            По количеству комнат
+            По количеству комнат {categoryPage.checkSign[3] ? '>' : '<'}
           </Link>
           <Link
             className={`${sort === 'Sorted-by-number-of-beds' ? 'active' : ''}`}
-            to={`/Category/${id}/Sorted-by-number-of-beds${opitionsSortedLink}`}
+            to={`/Category/${category}/Sorted-by-number-of-beds${opitionsSortedLink}`}
             onClick={() => dispatch(setCheckSign(4))}>
-            По количеству спальных мест
+            По количеству спальных мест {categoryPage.checkSign[4] ? '>' : '<'}
           </Link>
           <Link
             className={`${sort === 'Sorted-by-square-meters' ? 'active' : ''}`}
-            to={`/Category/${id}/Sorted-by-square-meters${opitionsSortedLink}`}
+            to={`/Category/${category}/Sorted-by-square-meters${opitionsSortedLink}`}
             onClick={() => dispatch(setCheckSign(5))}>
-            По кв. м
+            По кв. м {categoryPage.checkSign[5] ? '>' : '<'}
           </Link>
           <span onClick={() => resetSorts('sort')}>Сброс</span>
         </div>
@@ -241,23 +242,23 @@ export const Sort = () => {
       <div className="category-page-container__sorting__dropdown">
         <button className="category-page-container__sorting__dropdown-button">Сменить категорию</button>
         <div className="category-page-container__sorting__dropdown__content">
-          <span>Все апартаменты</span>
-          <span>С балконом</span>
-          <span>Без балкона</span>
-          <span>Студии</span>
-          <span>Однокомнатные</span>
-          <span>Двухкомнатные</span>
-          <span>Трехкомнатные</span>
-          <span>Вид на море</span>
-          <span>Вид на город</span>
-          <span>3 cпальных места</span>
-          <span>4 cпальных места</span>
-          <span>5 cпальных мест</span>
-          <span>6 cпальных мест</span>
-          <span>С кофемашиной</span>
-          <span>С духовкой</span>
-          <span>С посудомоечной машиной</span>
-          <span>С духовкой и посудомоечной машиной</span>
+          <Link to="/Category/All-apartments">Все апартаменты</Link>
+          <Link to="/Category/With-balcony">С балконом</Link>
+          <Link to="/Category/Without-balcony">Без балкона</Link>
+          <Link to="/Category/Studio">Студии</Link>
+          <Link to="/Category/One-room">Однокомнатные</Link>
+          <Link to="/Category/Two-room">Двухкомнатные</Link>
+          <Link to="/Category/Three-room">Трехкомнатные</Link>
+          <Link to="/Category/Sea-view">Вид на море</Link>
+          <Link to="/Category/City-view">Вид на город</Link>
+          <Link to="/Category/3-sleeping-places">3 cпальных места</Link>
+          <Link to="/Category/4-sleeping-places">4 cпальных места</Link>
+          <Link to="/Category/5-sleeping-places">5 cпальных мест</Link>
+          <Link to="/Category/6-sleeping-places">6 cпальных мест</Link>
+          <Link to="/Category/With-coffee-machine">С кофемашиной</Link>
+          <Link to="/Category/With-oven">С духовкой</Link>
+          <Link to="/Category/With-dishwasher">С посудомоечной машиной</Link>
+          <Link to="/Category/With-oven-and-dishwasher">С духовкой и посудомоечной машиной</Link>
           <span>Cброс</span>
         </div>
       </div>

@@ -14,27 +14,27 @@ import { ApartmentCard } from './apartments card';
 import { Sort } from './sort';
 
 interface MyParams {
-  id: string;
+  category: string;
 }
 
 export const Category = () => {
   const dispatch = useAppDispatch();
   const categoryPage = useAppSelector((state) => state.categoryPage);
 
-  const { id } = useParams<keyof MyParams>() as MyParams;
+  const { category } = useParams<keyof MyParams>() as MyParams;
 
   const meta = categoryMeta(categoryPage.selectedPageId);
 
   const checkCategory =
-    categoryPage?.selectedPageId === 'Select-category' && id === 'Select-category'
+    categoryPage?.selectedPageId === 'Select-category' && category === 'Select-category'
       ? 'Select-category'
-      : id === 'Select-category'
+      : category === 'Select-category'
       ? categoryPage.selectedPageId
-      : id;
+      : category;
 
   useEffect(() => {
     dispatch(setSelectedPageId(checkCategory));
-  }, [id]);
+  }, [category]);
 
   return (
     <>

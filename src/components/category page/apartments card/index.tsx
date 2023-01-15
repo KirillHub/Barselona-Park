@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { useAppSelector } from '../../../store/store';
 import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
+import { categoryMeta } from '../../meta/categoryMeta';
 import { useParams } from 'react-router-dom';
+import { Apartment } from '../../types/type';
 
 import './style.scss';
 
 import { table } from '../../../backend/withoutBalcony';
 
-
 interface MyParams {
-  id: string;
+  category: string;
   sort: string;
   options: string;
 }
@@ -18,7 +19,28 @@ interface MyParams {
 export const ApartmentCard = () => {
   const categoryPage = useAppSelector((state) => state.categoryPage);
 
-  const { id, sort, options } = useParams<keyof MyParams>() as MyParams;
+  const { category, sort, options } = useParams<keyof MyParams>() as MyParams;
+
+  const filterBy = categoryMeta(categoryPage.selectedPageId)?.filterBy;
+
+  let apartments: any = [];
+
+  const filterByPage = () => {
+    if (filterBy?.length === 2) {
+      apartments = table.filter((x) => x[filterBy[0] as keyof Apartment] === filterBy[1]);
+    }
+    if (filterBy?.length === 4) {
+      apartments = table
+        .filter(
+          (x) =>
+            x[filterBy[0] as keyof Apartment] === filterBy[1] &&
+            x[filterBy[2] as keyof Apartment] === filterBy[3],
+        )
+       ;
+    }
+  };
+
+  const arr1 = filterByPage();
 
   const sorter = (field: string) => {
     if (categoryPage.checkSign[categoryPage.signIndex]) {
@@ -43,13 +65,11 @@ export const ApartmentCard = () => {
       ? 'sleepingPlaces'
       : 'squareMeters';
 
-  const arr = table.sort(sorter(sortBy));
-
-  console.log(id, sort, options, sortBy);
+  apartments = apartments.sort(sorter(sortBy));
 
   return (
     <div className="category-page-container__apartments">
-      {arr.map((apartment) => (
+      {apartments.map((apartment: Apartment) => (
         <div className="category-page-container__apartments-card" key={apartment.name}>
           <SliderImages apartment={apartment} />
 

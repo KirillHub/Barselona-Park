@@ -9,11 +9,11 @@ import {
 import './style.scss';
 
 interface MyParams {
-  id: string;
+  category: string;
 }
 
 export const MainPicture = () => {
-  const { id } = useParams<keyof MyParams>() as MyParams;
+  const { category } = useParams<keyof MyParams>() as MyParams;
 
   return (
     <div className="main-page">

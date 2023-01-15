@@ -6,7 +6,7 @@ export type Apartment = {
   twoRoom: boolean;
   threeRoom: boolean;
   squareMeters: string;
-  view: string;
+  view: boolean;
   hairDryer: boolean;
   dishwasher: boolean;
   oven: boolean;
