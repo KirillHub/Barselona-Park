@@ -6,12 +6,11 @@ import { SelectCategory } from '../main page/category';
 
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 
-
 import './style.scss';
 import { setSelectedPageId } from '../../store/category/slice';
 
 import { ApartmentCard } from './apartments card';
-import { Sort } from './sort';
+import { CategoryInteraction } from './category interaction';
 
 interface MyParams {
   category: string;
@@ -25,15 +24,8 @@ export const Category = () => {
 
   const meta = categoryMeta(categoryPage.selectedPageId);
 
-  const checkCategory =
-    categoryPage?.selectedPageId === 'Select-category' && category === 'Select-category'
-      ? 'Select-category'
-      : category === 'Select-category'
-      ? categoryPage.selectedPageId
-      : category;
-
   useEffect(() => {
-    dispatch(setSelectedPageId(checkCategory));
+    dispatch(setSelectedPageId(category));
   }, [category]);
 
   return (
@@ -48,9 +40,9 @@ export const Category = () => {
       </Helmet>
 
       <div>
-        {checkCategory !== 'Select-category' ? (
+        {categoryPage.selectedPageId !== 'Select-category' ? (
           <div className="category-page-container">
-            <Sort />
+            <CategoryInteraction />
 
             <ApartmentCard />
           </div>

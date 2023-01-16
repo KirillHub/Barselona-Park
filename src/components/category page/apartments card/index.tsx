@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useAppSelector } from '../../../store/store';
 import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
@@ -30,18 +30,53 @@ export const ApartmentCard = () => {
       apartments = table.filter((x) => x[filterBy[0] as keyof Apartment] === filterBy[1]);
     }
     if (filterBy?.length === 4) {
-      apartments = table
-        .filter(
-          (x) =>
-            x[filterBy[0] as keyof Apartment] === filterBy[1] &&
-            x[filterBy[2] as keyof Apartment] === filterBy[3],
-        )
-       ;
+      apartments = table.filter(
+        (x) =>
+          x[filterBy[0] as keyof Apartment] === filterBy[1] &&
+          x[filterBy[2] as keyof Apartment] === filterBy[3],
+      );
+    }
+    if (options) {
+      console.log(options.split('+'));
+
+      const checkOptions = options.split('+');
+
+      const view = checkOptions.find((x) => x === 'sea-view' || x === 'city-view');
+
+      const balcony = checkOptions.find((x) => x === 'balcony');
+
+      const oven = checkOptions.find((x) => x === 'oven');
+
+      const dishwasher = checkOptions.find((x) => x === 'dishwasher');
+
+      const coffeeMachine = checkOptions.find((x) => x === 'coffee-machine');
+
+      if (view !== undefined) {
+        apartments =
+          view === 'sea-view'
+            ? apartments.filter((x: Apartment) => x.view === true)
+            : apartments.filter((x: Apartment) => x.view === false);
+      }
+
+      if (balcony !== undefined && balcony) {
+        apartments = apartments.filter((x: Apartment) => x.balcony === true);
+      }
+
+      if (oven !== undefined && oven) {
+        apartments = apartments.filter((x: Apartment) => x.oven === true);
+      }
+
+      if (dishwasher !== undefined && dishwasher) {
+        apartments = apartments.filter((x: Apartment) => x.dishwasher === true);
+      }
+
+      if (coffeeMachine !== undefined && coffeeMachine) {
+        apartments = apartments.filter((x: Apartment) => x.coffeeMachine === true);
+      }
     }
   };
 
-  const arr1 = filterByPage();
-
+  filterByPage();
   const sorter = (field: string) => {
     if (categoryPage.checkSign[categoryPage.signIndex]) {
       return (a: any, b: any) =>

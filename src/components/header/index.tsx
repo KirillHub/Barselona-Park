@@ -12,7 +12,7 @@ export const Header = () => {
       <nav className="header-container">
         <ul className="header-container__ul">
           <li>
-            <Link to="">Апартаменты</Link>
+            <Link to="">Главная</Link>
           </li>
           <li>
             <Link to={`/Category/${categoryPage.selectedPageId}`}>

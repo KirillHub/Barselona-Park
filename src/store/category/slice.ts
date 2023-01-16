@@ -5,6 +5,9 @@ const initialState: CategorySliceState = {
   selectedPageId: 'Select-category',
   checkSign: [true, true, true, true, true, true],
   signIndex: 10,
+
+  opitionsSortedLink: '',
+  checkBox: [false, false, false, false, false, false],
 };
 
 const Category = createSlice({
@@ -27,9 +30,17 @@ const Category = createSlice({
         state.checkSign = sign;
       }
     },
+
+
+    setOpitionsSortedLink: (state, action) => {
+      state.opitionsSortedLink = action.payload;
+    },
+    setCheckBox: (state, action) => {
+      state.checkBox = action.payload;
+    },
   },
   extraReducers: (builder) => {},
 });
 
-export const { setSelectedPageId, setCheckSign } = Category.actions;
+export const { setSelectedPageId, setCheckSign, setOpitionsSortedLink, setCheckBox } = Category.actions;
 export const categoryReducer = Category.reducer;
