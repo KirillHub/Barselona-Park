@@ -44,6 +44,8 @@ export const Category = () => {
           <div className="category-page-container">
             <CategoryInteraction />
 
+            <h1 className="category-page-container__name">Категория - {meta?.title}</h1>
+
             <ApartmentCard />
           </div>
         ) : (

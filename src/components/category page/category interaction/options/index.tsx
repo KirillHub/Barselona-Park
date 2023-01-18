@@ -1,11 +1,5 @@
 import { useAppSelector } from '../../../../store/store';
 
-interface MyParams {
-  category: string;
-  sort: string;
-  options: string;
-}
-
 interface MyProps {
   onCheckBoxFirstChange: Function;
   resetSorts: Function;

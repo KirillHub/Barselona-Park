@@ -1,5 +1,3 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ImportantInfo } from './important info';
 import { Price } from './price';
 import { TitleAndButton } from './title and button';

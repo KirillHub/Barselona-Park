@@ -2,10 +2,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import { categoryReducer } from './category/slice';
+import { apartmentReducer } from './apartment/slice';
 
 export const store = configureStore({
   reducer: {
     categoryPage: categoryReducer,
+    apartmentPage: apartmentReducer,
   },
 });
 

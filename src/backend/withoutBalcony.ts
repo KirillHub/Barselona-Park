@@ -34,6 +34,7 @@ export const table = [
     rooms: '3',
     floor: '14',
     description: '',
+    sort: '42',
   },
   {
     name: '1415',
@@ -70,6 +71,7 @@ export const table = [
     rooms: '3',
     floor: '14',
     description: '',
+    sort: '41',
   },
   {
     name: '1410',
@@ -106,6 +108,7 @@ export const table = [
     rooms: '2',
     floor: '14',
     description: '',
+    sort: '40',
   },
   {
     name: '1409',
@@ -142,6 +145,7 @@ export const table = [
     rooms: '2',
     floor: '14',
     description: '',
+    sort: '39',
   },
   {
     name: '1404',
@@ -178,6 +182,7 @@ export const table = [
     rooms: '2',
     floor: '14',
     description: '',
+    sort: '38',
   },
   {
     name: '1313',
@@ -214,6 +219,7 @@ export const table = [
     rooms: '3',
     floor: '13',
     description: '',
+    sort: '37',
   },
   {
     name: '1305',
@@ -250,6 +256,7 @@ export const table = [
     rooms: '3',
     floor: '13',
     description: '',
+    sort: '36',
   },
   {
     name: '1304',
@@ -286,6 +293,7 @@ export const table = [
     rooms: '3',
     floor: '13',
     description: '',
+    sort: '35',
   },
   {
     name: '1303',
@@ -322,6 +330,7 @@ export const table = [
     rooms: 'Студия',
     floor: '13',
     description: '',
+    sort: '34',
   },
   {
     name: '1208',
@@ -358,6 +367,7 @@ export const table = [
     rooms: '2',
     floor: '12',
     description: '',
+    sort: '33',
   },
   {
     name: '1207',
@@ -394,6 +404,7 @@ export const table = [
     rooms: 'Студия',
     floor: '12',
     description: '',
+    sort: '32',
   },
   {
     name: '1206',
@@ -430,6 +441,7 @@ export const table = [
     rooms: '2',
     floor: '12',
     description: '',
+    sort: '31',
   },
   {
     name: '1111',
@@ -466,6 +478,7 @@ export const table = [
     rooms: '2',
     floor: '11',
     description: '',
+    sort: '30',
   },
   {
     name: '1110',
@@ -502,6 +515,7 @@ export const table = [
     rooms: '3',
     floor: '11',
     description: '',
+    sort: '29',
   },
   {
     name: '1109',
@@ -538,6 +552,7 @@ export const table = [
     rooms: '2',
     floor: '11',
     description: '',
+    sort: '28',
   },
   {
     name: '1105',
@@ -574,6 +589,7 @@ export const table = [
     rooms: '2',
     floor: '11',
     description: '',
+    sort: '27',
   },
   {
     name: '1104',
@@ -610,6 +626,7 @@ export const table = [
     rooms: '2',
     floor: '11',
     description: '',
+    sort: '26',
   },
   {
     name: '1103',
@@ -646,6 +663,7 @@ export const table = [
     rooms: '2',
     floor: '11',
     description: '',
+    sort: '25',
   },
   {
     name: '1014',
@@ -682,6 +700,7 @@ export const table = [
     rooms: '1',
     floor: '10',
     description: '',
+    sort: '24',
   },
   {
     name: '1013',
@@ -718,6 +737,7 @@ export const table = [
     rooms: '1',
     floor: '10',
     description: '',
+    sort: '23',
   },
   {
     name: '1003',
@@ -754,6 +774,7 @@ export const table = [
     rooms: '2',
     floor: '10',
     description: '',
+    sort: '22',
   },
   {
     name: '907',
@@ -790,6 +811,7 @@ export const table = [
     rooms: '2',
     floor: '9',
     description: '',
+    sort: '21',
   },
   {
     name: '805',
@@ -826,6 +848,7 @@ export const table = [
     rooms: '2',
     floor: '8',
     description: '',
+    sort: '20',
   },
   {
     name: '716',
@@ -862,6 +885,7 @@ export const table = [
     rooms: '2',
     floor: '7',
     description: '',
+    sort: '19',
   },
   {
     name: '715',
@@ -898,6 +922,7 @@ export const table = [
     rooms: '2',
     floor: '7',
     description: '',
+    sort: '18',
   },
   {
     name: '712',
@@ -934,6 +959,7 @@ export const table = [
     rooms: '2',
     floor: '7',
     description: '',
+    sort: '17',
   },
   {
     name: '709',
@@ -970,6 +996,7 @@ export const table = [
     rooms: '2',
     floor: '7',
     description: '',
+    sort: '16',
   },
   {
     name: '705',
@@ -1006,6 +1033,7 @@ export const table = [
     rooms: 'Студия',
     floor: '7',
     description: '',
+    sort: '15',
   },
   {
     name: '613',
@@ -1042,6 +1070,7 @@ export const table = [
     rooms: '2',
     floor: '6',
     description: '',
+    sort: '14',
   },
   {
     name: '612',
@@ -1078,6 +1107,7 @@ export const table = [
     rooms: '2',
     floor: '6',
     description: '',
+    sort: '13',
   },
   {
     name: '607',
@@ -1114,6 +1144,7 @@ export const table = [
     rooms: '2',
     floor: '6',
     description: '',
+    sort: '12',
   },
   {
     name: '606',
@@ -1150,6 +1181,7 @@ export const table = [
     rooms: '2',
     floor: '6',
     description: '',
+    sort: '11',
   },
   {
     name: '605',
@@ -1186,6 +1218,7 @@ export const table = [
     rooms: 'Студия',
     floor: '6',
     description: '',
+    sort: '10',
   },
   {
     name: '509',
@@ -1222,6 +1255,7 @@ export const table = [
     rooms: '2',
     floor: '5',
     description: '',
+    sort: '9',
   },
   {
     name: '503',
@@ -1258,6 +1292,7 @@ export const table = [
     rooms: '2',
     floor: '5',
     description: '',
+    sort: '8',
   },
   {
     name: '416',
@@ -1294,6 +1329,7 @@ export const table = [
     rooms: '1',
     floor: '4',
     description: '',
+    sort: '7',
   },
   {
     name: '415',
@@ -1330,6 +1366,7 @@ export const table = [
     rooms: '2',
     floor: '4',
     description: '',
+    sort: '6',
   },
   {
     name: '402',
@@ -1366,6 +1403,7 @@ export const table = [
     rooms: '3',
     floor: '4',
     description: '',
+    sort: '5',
   },
   {
     name: '312',
@@ -1402,6 +1440,7 @@ export const table = [
     rooms: '1',
     floor: '3',
     description: '',
+    sort: '4',
   },
   {
     name: '310',
@@ -1438,9 +1477,10 @@ export const table = [
     rooms: '1',
     floor: '3',
     description: '',
+    sort: '3',
   },
   {
-    name: '21-8',
+    name: '21/8',
     balcony: false,
     studio: false,
     oneRoom: false,
@@ -1474,9 +1514,10 @@ export const table = [
     rooms: '3',
     floor: '1',
     description: '',
+    sort: '2',
   },
   {
-    name: '21-6',
+    name: '21/6',
     balcony: false,
     studio: false,
     oneRoom: false,
@@ -1510,5 +1551,6 @@ export const table = [
     rooms: '2',
     floor: '1',
     description: '',
+    sort: '1',
   },
 ];

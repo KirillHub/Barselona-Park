@@ -1,0 +1,12 @@
+.not-found-page-container {
+
+  margin: 100px;
+
+  font-size: 30px;
+
+  text-align: center;
+  .not-found-page-container-redirect {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

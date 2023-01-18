@@ -1,4 +1,3 @@
-import React from 'react';
 import { Apartment } from '../../../types/type';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

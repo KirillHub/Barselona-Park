@@ -80,10 +80,10 @@ export const ApartmentCard = () => {
   const sorter = (field: string) => {
     if (categoryPage.checkSign[categoryPage.signIndex]) {
       return (a: any, b: any) =>
-        +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
+        +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
     } else {
       return (a: any, b: any) =>
-        +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
+        +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
     }
   };
 
@@ -92,13 +92,15 @@ export const ApartmentCard = () => {
       ? 'summerPrice'
       : sort === 'Sorted-by-winter-season'
       ? 'winterPrice'
-      : sort === 'Sorted-by-floor'
-      ? 'floor'
       : sort === 'Sorted-by-number-of-rooms'
       ? 'rooms'
       : sort === 'Sorted-by-number-of-beds'
       ? 'sleepingPlaces'
-      : 'squareMeters';
+      : sort === 'Sorted-by-square-meters'
+      ? 'squareMeters'
+      : sort === 'Sorted-by-floor'
+      ? 'floor'
+      : 'sort';
 
   apartments = apartments.sort(sorter(sortBy));
 
