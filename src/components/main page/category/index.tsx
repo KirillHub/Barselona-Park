@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.scss'
+import './style.scss';
 
 export const SelectCategory = () => {
   return (
     <div className="main-page-container__categories">
-      <div className="main-page-container__categories__title">
-        <h2>Категории</h2>
-      </div>
-      <br />
+      <h2>Категории</h2>
+
 
       <Link to="/Category/All-apartments">
         <span>Все апартаменты</span>

@@ -43,7 +43,7 @@ export const Apartment = () => {
         {Object.keys(apartmentPage.apartment).length !== 0 ? (
           <>
             <SliderImages apartment={apartmentPage?.apartment} />
-            <ApartmentInfo apartment={apartmentPage?.apartment} />
+            <ApartmentInfo apartment={apartmentPage?.apartment}  />
           </>
         ) : (
           ''

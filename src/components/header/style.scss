@@ -3,12 +3,13 @@
 
   width: 100%;
   height: 60px;
+  
   background-color: rgb(20, 20, 20);
 
   .header-container {
-    margin: 0 auto;
 
-    width: 64%;
+    margin: 0 8vw;
+
     height: 100%;
 
     .header-container__ul {
@@ -19,12 +20,11 @@
       height: 100%;
 
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-around;
 
       & li {
-        margin: 0 1vw;
 
-        font-size: calc(8px + 24 * (100vw / 1920));
+        font-size: calc(8px + 26 * (100vw / 1920));
 
         z-index: 1;
       }

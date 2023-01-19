@@ -1,11 +1,11 @@
 .category-page-container__apartments-card__info__important-info {
   display: flex;
 
-  padding: 0.3vh 0;
+  padding: calc(6px + 10 * (100vw / 1920)) 0;
 
   border-bottom: 2px solid white;
 
-  font-size: 16px;
+  font-size: calc(8px + 8 * (100vw / 1920));
 
   justify-content: space-around;
 

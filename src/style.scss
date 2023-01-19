@@ -20,13 +20,20 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 50px auto 0 auto;
+h1 {
+  margin: 40px auto 30px auto;
+  font-size: calc(22px + 22 * (100vw / 1920));
+}
+
+h2 {
+  margin: 30px auto 20px auto;
+  font-size: calc(18px + 22 * (100vw / 1920));
+  text-align: center;
+}
+
+h3 {
+  margin: 20px auto 10px auto;
+  font-size: calc(12px + 20 * (100vw / 1920));
 }
 
 li {

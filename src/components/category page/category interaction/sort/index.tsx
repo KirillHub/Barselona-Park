@@ -17,7 +17,6 @@ export const Sort = ({ resetSorts }: MyProps) => {
   const dispatch = useAppDispatch();
   const categoryPage = useAppSelector((state) => state.categoryPage);
 
-  const [selectedSort, setSelectedSort] = useState('');
 
   const { category, sort, options } = useParams<keyof MyParams>() as MyParams;
 

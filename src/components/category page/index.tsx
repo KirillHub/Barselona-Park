@@ -26,6 +26,9 @@ export const Category = () => {
 
   useEffect(() => {
     dispatch(setSelectedPageId(category));
+    window.scrollTo({
+      top: 0,
+    });
   }, [category]);
 
   return (
@@ -39,19 +42,17 @@ export const Category = () => {
         <meta name="Copyright" content="bi_zi" />
       </Helmet>
 
-      <div>
-        {categoryPage.selectedPageId !== 'Select-category' ? (
-          <div className="category-page-container">
-            <CategoryInteraction />
+      {categoryPage.selectedPageId !== 'Select-category' ? (
+        <div className="category-page-container">
+          <CategoryInteraction />
 
-            <h1 className="category-page-container__name">Категория - {meta?.title}</h1>
+          <h1 className="category-page-container__name">{meta?.title}</h1>
 
-            <ApartmentCard />
-          </div>
-        ) : (
-          <SelectCategory />
-        )}
-      </div>
+          <ApartmentCard />
+        </div>
+      ) : (
+        <SelectCategory />
+      )}
     </>
   );
 };

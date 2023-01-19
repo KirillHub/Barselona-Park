@@ -1,7 +1,7 @@
 .category-page-container__apartments-card__info__price {
   display: flex;
 
-  height: 70px;
+ height: calc(50px + 10 * (100vw / 1920));
 
   border-bottom: 2px solid white;
 
@@ -10,34 +10,37 @@
 
     width: 100%;
     top: 0;
-    font-size: 12px;
+
+    &:first-child {
+      border-right: 2px solid white;
+    }
+
+    font-size: calc(6px + 6 * (100vw / 1920));
   }
 
   & p {
     display: block;
 
     margin: auto 0;
-    padding-top: 0.5vh;
-
-    height: 69px;
+    padding-top: calc(6px + 0 * (100vw / 1920));
 
     text-align: center;
 
-    border-right: 2px solid white;
-
-    font-size: 22px;
+    font-size: calc(12px + 8 * (100vw / 1920));
     font-weight: bold;
   }
 
   & span {
     position: absolute;
 
+    padding: 0 calc(5px + 5 * (100vw / 1920));
+
     right: 0;
-    bottom: 10px;
+    bottom: calc(7px + 0 * (100vw / 1920));;
     left: 0;
 
     text-align: center;
-    font-size: 12px;
+    font-size: calc(6px + 6 * (100vw / 1920));
     font-weight: normal;
   }
 }

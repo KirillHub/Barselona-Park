@@ -1,11 +1,16 @@
 import React from 'react';
 import { useAppSelector } from '../../store/store';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.scss';
-
 
 export const Header = () => {
   const categoryPage = useAppSelector((state) => state.categoryPage);
+  const navigate = useNavigate();
+
+  const onContactClick = () => {
+    navigate(`/`);
+    
+  };
 
   return (
     <header className="header">
@@ -15,12 +20,12 @@ export const Header = () => {
             <Link to="">Главная</Link>
           </li>
           <li>
-            <Link to={`/Category/${categoryPage.selectedPageId}`}>
-              Категории
-            </Link>
+            <Link to={`/Category/${categoryPage.selectedPageId}`}>Категории</Link>
           </li>
           <li>
-            <Link to="">Контакты</Link>
+            <Link to="" onClick={() => onContactClick()}>
+              Контакты
+            </Link>
           </li>
           <li>
             <Link to="">Отзывы</Link>

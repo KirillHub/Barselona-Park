@@ -3,11 +3,10 @@
 
   height: 40px;
 
-  border-bottom-right-radius: 1.5vh;
-  border-bottom-left-radius: 1.5vh;
+  border-bottom-right-radius: calc(15px + 10 * (100vw / 1920));
+  border-bottom-left-radius: calc(15px + 10 * (100vw / 1920));
 
   justify-content: space-evenly;
-
 
   background-color: rgb(0, 0, 0);
 
@@ -22,7 +21,7 @@
 
     border: none;
 
-    font-size: 18px;
+    font-size: calc(6px + 16 * (100vw / 1920));
     font-family: 'Nunito', sans-serif;
 
     color: white;
@@ -35,13 +34,15 @@
     display: none;
     position: absolute;
 
-    min-width: 160px;
+    width: calc(80px + 80 * (100vw / 1920));
+
+    border-top: 2px solid white;
 
     background-color: #000000;
     z-index: 2;
 
     .active {
-      border: 2px solid white;
+      border: 2px solid rgb(99, 99, 99);
       background-color: #3d3d3d;
     }
 
@@ -52,22 +53,26 @@
       flex-wrap: wrap;
       list-style: none;
 
-      padding: 0.5vh 0.5vw;
-
-      align-self: baseline;
+      padding: calc(5px + 5 * (100vw / 1920));
 
       text-decoration: none;
 
+      font-size: calc(8px + 7 * (100vw / 1920));
+
       color: white;
       cursor: pointer;
+
+      @media (width < 800px) {
+        align-items: center;
+      }
 
       &:hover {
         background-color: #3d3d3d !important;
       }
 
       & input {
-        width: 15px;
-        height: 15px;
+        width: calc(10px + 5 * (100vw / 1920));
+        height: calc(10px + 5 * (100vw / 1920));
         cursor: pointer;
         z-index: 999;
       }

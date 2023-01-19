@@ -14,10 +14,10 @@ export const SliderImages = ({ apartment }: MyProps) => {
     centerPadding: '0px',
     centerMode: false,
     infinite: true,
-    draggable: false,
+    draggable: true,
     autoplaySpeed: 0,
     autoplay: false,
-    slidesToShow: 2,
+    slidesToShow: 3,
     speed: 500,
     rows: 1,
   };

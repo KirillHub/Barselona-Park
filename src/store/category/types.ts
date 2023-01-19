@@ -5,4 +5,5 @@ export interface CategorySliceState {
 
   opitionsSortedLink: string;
   checkBox: boolean[];
+
 }

@@ -23,6 +23,7 @@ export const ApartmentCard = () => {
 
   const filterBy = categoryMeta(categoryPage.selectedPageId)?.filterBy;
 
+
   let apartments: any = [];
 
   const filterByPage = () => {
@@ -103,6 +104,7 @@ export const ApartmentCard = () => {
       : 'sort';
 
   apartments = apartments.sort(sorter(sortBy));
+
 
   return (
     <div className="category-page-container__apartments">
