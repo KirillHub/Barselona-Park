@@ -13,7 +13,7 @@ const Apartment = createSlice({
       state.apartment = action.payload;
     },
   },
-  extraReducers: (builder) => {},
+
 });
 
 export const { setApartment } = Apartment.actions;

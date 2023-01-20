@@ -1,7 +1,7 @@
 .category-page-container__apartments-card__info__price {
   display: flex;
 
- height: calc(50px + 10 * (100vw / 1920));
+  height: calc(50px + 10 * (100vw / 1920));
 
   border-bottom: 2px solid white;
 
@@ -36,7 +36,7 @@
     padding: 0 calc(5px + 5 * (100vw / 1920));
 
     right: 0;
-    bottom: calc(7px + 0 * (100vw / 1920));;
+    bottom: calc(7px + 0 * (100vw / 1920));
     left: 0;
 
     text-align: center;

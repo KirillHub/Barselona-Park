@@ -8,7 +8,6 @@ const initialState: CategorySliceState = {
 
   opitionsSortedLink: '',
   checkBox: [false, false, false, false, false, false],
-
 };
 
 const Category = createSlice({
@@ -38,12 +37,8 @@ const Category = createSlice({
     setCheckBox: (state, action) => {
       state.checkBox = action.payload;
     },
-
-
   },
-  extraReducers: (builder) => {},
 });
 
-export const { setSelectedPageId, setCheckSign, setOpitionsSortedLink, setCheckBox } =
-  Category.actions;
+export const { setSelectedPageId, setCheckSign, setOpitionsSortedLink, setCheckBox } = Category.actions;
 export const categoryReducer = Category.reducer;

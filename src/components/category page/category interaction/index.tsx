@@ -163,7 +163,7 @@ export const CategoryInteraction = () => {
 
   useEffect(() => {
     firstRender();
-  }, []);
+  });
 
   return (
     <div className="category-page-container__sorting">

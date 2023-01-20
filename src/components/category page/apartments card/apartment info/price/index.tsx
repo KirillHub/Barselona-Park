@@ -1,4 +1,3 @@
-import React from 'react';
 import { Apartment } from '../../../../types/type';
 import './style.scss';
 

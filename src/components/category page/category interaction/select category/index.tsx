@@ -13,7 +13,8 @@ export const SelectCategory = () => {
         {meta.map((x) => (
           <Link
             to={`/Category/${x.id}`}
-            onClick={() => dispatch(setCheckBox([false, false, false, false, false, false]))} key={x.id}>
+            onClick={() => dispatch(setCheckBox([false, false, false, false, false, false]))}
+            key={x.id}>
             {x.name}
           </Link>
         ))}

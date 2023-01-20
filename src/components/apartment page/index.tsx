@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { setApartment } from '../../store/apartment/slice';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { SliderImages } from '../category page/apartments card/slider images';
 import { ApartmentInfo } from '../category page/apartments card/apartment info';
 import DatePicker from 'react-datepicker';
@@ -35,7 +35,7 @@ export const Apartment = () => {
     const apartment = table.find((x) => x.name === id);
 
     dispatch(setApartment(apartment));
-  }, [id]);
+  }, [dispatch,id]);
 
   return (
     <div className="apartment-container">
@@ -43,7 +43,7 @@ export const Apartment = () => {
         {Object.keys(apartmentPage.apartment).length !== 0 ? (
           <>
             <SliderImages apartment={apartmentPage?.apartment} />
-            <ApartmentInfo apartment={apartmentPage?.apartment}  />
+            <ApartmentInfo apartment={apartmentPage?.apartment} />
           </>
         ) : (
           ''

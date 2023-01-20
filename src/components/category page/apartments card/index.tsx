@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { useAppSelector } from '../../../store/store';
 import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
@@ -11,7 +10,6 @@ import './style.scss';
 import { table } from '../../../backend/withoutBalcony';
 
 interface MyParams {
-  category: string;
   sort: string;
   options: string;
 }
@@ -19,10 +17,9 @@ interface MyParams {
 export const ApartmentCard = () => {
   const categoryPage = useAppSelector((state) => state.categoryPage);
 
-  const { category, sort, options } = useParams<keyof MyParams>() as MyParams;
+  const { sort, options } = useParams<keyof MyParams>() as MyParams;
 
   const filterBy = categoryMeta(categoryPage.selectedPageId)?.filterBy;
-
 
   let apartments: any = [];
 
@@ -104,7 +101,6 @@ export const ApartmentCard = () => {
       : 'sort';
 
   apartments = apartments.sort(sorter(sortBy));
-
 
   return (
     <div className="category-page-container__apartments">

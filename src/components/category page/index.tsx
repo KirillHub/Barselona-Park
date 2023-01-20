@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { Helmet } from 'react-helmet';
 import { categoryMeta } from '../meta/categoryMeta';
 import { SelectCategory } from '../main page/category';
 
-import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import './style.scss';
 import { setSelectedPageId } from '../../store/category/slice';
@@ -29,7 +29,7 @@ export const Category = () => {
     window.scrollTo({
       top: 0,
     });
-  }, [category]);
+  }, [dispatch,category]);
 
   return (
     <>

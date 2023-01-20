@@ -1,16 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { useParams, Link } from 'react-router-dom';
 import { SelectCategory } from './category';
 import { Telegram, Whatsapp } from '../../svg';
 import './style.scss';
 
-interface MyParams {
-  category: string;
-}
 
 export const MainPicture = () => {
-  const { category } = useParams<keyof MyParams>() as MyParams;
 
   useEffect(() => {
     window.scrollTo({
@@ -26,11 +21,7 @@ export const MainPicture = () => {
       </Helmet>
 
       <div className="main-page-container">
-        <img
-          className="main-page-container__picture"
-          src="./Апартамент-1104.png"
-          alt="Апартамент-1104"
-        />
+        <img className="main-page-container__picture" src="./mainImage.jpg" alt="Апартамент-1104" />
 
         <div className="main-page-container__barselona-park">
           <h1>Barselona Park </h1>
@@ -71,7 +62,7 @@ export const MainPicture = () => {
             <div className="main-page-container__blocks__contacts__info">
               <img
                 className="main-page-container__blocks__contacts__info-img"
-                src="./Барселона парк.jpg"
+                src="./barselonaPark.jpg"
                 alt=""
               />
               <div>
