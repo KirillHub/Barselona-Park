@@ -49,7 +49,6 @@ export const CategoryInteraction = () => {
     const savedLink = opitionsLink.join('+');
 
     const newSavedLink = savedLink !== undefined ? savedLink : '';
-
     dispatch(setOpitionsSortedLink(newSavedLink.length !== 0 ? `/${newSavedLink}` : ''));
 
     return savedLink !== undefined ? savedLink : '';
@@ -163,7 +162,7 @@ export const CategoryInteraction = () => {
 
   useEffect(() => {
     firstRender();
-  });
+  },[]);
 
   return (
     <div className="category-page-container__sorting">

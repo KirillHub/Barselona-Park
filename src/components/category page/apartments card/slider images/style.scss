@@ -16,9 +16,8 @@
     width: 48%;
   }
 
-  .picture {
+  .category-page-container__apartments-card__images-picture {
     padding: 0 0.2vw;
-
     height: calc(165px + 105 * (100vw / 1920));
 
     object-fit: cover;

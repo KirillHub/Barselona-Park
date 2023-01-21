@@ -17,7 +17,7 @@ export const SliderImages = ({ apartment }: MyProps) => {
     draggable: true,
     autoplaySpeed: 0,
     autoplay: false,
-    slidesToShow: 3,
+    slidesToShow: 2,
     speed: 500,
     rows: 1,
   };
@@ -26,7 +26,12 @@ export const SliderImages = ({ apartment }: MyProps) => {
     <div className="category-page-container__apartments-card__images">
       <Slider {...settings}>
         {apartment.pictures.map((picture, index) => (
-          <img className="picture" src={picture} alt="1" key={index} />
+          <img
+            className="category-page-container__apartments-card__images-picture"
+            src={picture}
+            alt="1"
+            key={index}
+          />
         ))}
       </Slider>
     </div>

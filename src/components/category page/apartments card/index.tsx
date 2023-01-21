@@ -8,6 +8,7 @@ import { Apartment } from '../../types/type';
 import './style.scss';
 
 import { table } from '../../../backend/withoutBalcony';
+import { useEffect } from 'react';
 
 interface MyParams {
   sort: string;
@@ -35,7 +36,6 @@ export const ApartmentCard = () => {
       );
     }
     if (options) {
-      console.log(options.split('+'));
 
       const checkOptions = options.split('+');
 
@@ -75,6 +75,7 @@ export const ApartmentCard = () => {
   };
 
   filterByPage();
+
   const sorter = (field: string) => {
     if (categoryPage.checkSign[categoryPage.signIndex]) {
       return (a: any, b: any) =>

@@ -2,10 +2,41 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { SelectCategory } from './category';
 import { Telegram, Whatsapp } from '../../svg';
+import {
+  Conditioner,
+  Iron,
+  Refrigerator,
+  Microwave,
+  Tv,
+  Wifi,
+  WashingMachine,
+  Hairdryer,
+  Teddy,
+  Balcony,
+  Parking,
+  Elevator,
+  Kettle,
+  Towels,
+} from '../../svg';
 import './style.scss';
 
-
 export const MainPicture = () => {
+  const services = [
+    { name: 'Стиральная машина', svg: <WashingMachine /> },
+    { name: 'Холодильник', svg: <Refrigerator /> },
+    { name: 'Микроволновка', svg: <Microwave /> },
+    { name: 'Чайник', svg: <Kettle /> },
+    { name: 'Кондиционер', svg: <Conditioner /> },
+    { name: 'Телевизор', svg: <Tv /> },
+    { name: 'Полотенца', svg: <Towels /> },
+    { name: 'Утюг', svg: <Iron /> },
+    { name: 'Фен', svg: <Hairdryer /> },
+    { name: 'Wi-Fi', svg: <Wifi /> },
+    { name: 'Можно с детьми', svg: <Teddy /> },
+    { name: 'Парковка', svg: <Parking /> },
+    { name: 'Лифт', svg: <Elevator /> },
+    { name: 'Стиральная машина', svg: <WashingMachine /> },
+  ];
 
   useEffect(() => {
     window.scrollTo({
@@ -17,7 +48,14 @@ export const MainPicture = () => {
     <div className="main-page">
       <Helmet>
         <title>Barselona Park</title>
-        <meta name="description" content="Barselona Park" />
+        <meta
+          name="description"
+          content="Барселона парк - Апартаменты в центре Сочи, 3 минуты до моря. 8-988-130-62-17"
+        />
+        <meta name="keywords" content="Барселона парк, Barselona park, апартаменты, апартаменты Сочи" />
+        <meta name="Document-state" content="Dynamic" />
+        <meta name="Author" content="https://github.com/bi-zi" />
+        <meta name="Copyright" content="bi_zi" />
       </Helmet>
 
       <div className="main-page-container">
@@ -30,7 +68,30 @@ export const MainPicture = () => {
           </a>
         </div>
 
+        <div className="main-page-container-service">
+          <h3>Услуги</h3>
+          <div className="main-page-container-service__icons">
+            {services.map((icon) => (
+              <div className="main-page-container-service__icons-icon">
+                <div>{icon.svg}</div>
+                {icon.name}
+              </div>
+            ))}
+          </div>
+        </div>
+
         <SelectCategory />
+
+        <div className="main-page-container-cleaning">
+          <h3>Повышенный комфорт и безопасность</h3>
+
+          <br />
+          <span>Всегда заботимся о наших гостях</span>
+          <br />
+          <span>Постоянная чистота и дружелюбное общение</span>
+          <br />
+          <span>Cтремимся поддерживать высочайший уровень гостеприимства и доверия</span>
+        </div>
 
         <div className="main-page-container__blocks">
           <h2>Расположение</h2>
@@ -49,8 +110,10 @@ export const MainPicture = () => {
                 <p>Наша цель сделать ваш отдых максимально лёгким и комфортным</p>
                 <h3>Апартаменты у моря</h3>
                 <p>
-                  Удобное расположение 5 минут до моря, 5 мин до Зимнего театра, рядом находятся
-                  множество ресторанов и кафе, в шаговой доступности остановоки общественного транспорта
+                  Апартаментный комплекс «Барселона Парк» располагается в историческом центре Сочи
+                  неподалеку от Зимнего театра и концертного зала «Фестивальный». Здесь доступны все
+                  привилегии курортного города, от прекрасной экологии до инфраструктуры, делающей
+                  проживание здесь очень комфортным.
                 </p>
               </div>
             </div>

@@ -33,7 +33,14 @@ export const table = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '14',
-    description: '',
+
+    meta: {
+      title: 'Апартамент 1416',
+      description:
+        'Забронировать апартамент площадью 60 кв. м., 6 спальных мест, 14 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1416, Барселона парк, Апартамент Сочи',
+    },
+
     sort: '42',
   },
   {
@@ -70,7 +77,14 @@ export const table = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '14',
-    description: '',
+
+    meta: {
+      title: 'Апартамент 1415',
+      description:
+        'Забронировать апартамент площадью 60 кв. м., 6 спальных мест, 14 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1415, Барселона парк, Апартамент Сочи',
+    },
+
     sort: '41',
   },
   {
@@ -107,7 +121,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '14',
-    description: '',
+    meta: {
+      title: 'Апартамент 1410',
+      description:
+        'Забронировать апартамент площадью 54 кв. м., 4 спальных места, 14 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1410, Барселона парк, Апартамент Сочи',
+    },
     sort: '40',
   },
   {
@@ -144,7 +163,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '14',
-    description: '',
+    meta: {
+      title: 'Апартамент 1409',
+      description:
+        'Забронировать апартамент площадью 50 кв. м., 3 спальных места, 14 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1409, Барселона парк, Апартамент Сочи',
+    },
     sort: '39',
   },
   {
@@ -181,7 +205,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '14',
-    description: '',
+    meta: {
+      title: 'Апартамент 1404',
+      description:
+        'Забронировать апартамент площадью 50 кв. м., 4 спальных места, 14 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1404, Барселона парк, Апартамент Сочи',
+    },
     sort: '38',
   },
   {
@@ -218,7 +247,12 @@ export const table = [
     winterPrice: '7 000',
     rooms: '3',
     floor: '13',
-    description: '',
+    meta: {
+      title: 'Апартамент 1313',
+      description:
+        'Забронировать апартамент площадью 58 кв. м., 6 спальных мест, 13 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1313, Барселона парк, Апартамент Сочи',
+    },
     sort: '37',
   },
   {
@@ -233,7 +267,7 @@ export const table = [
     hairDryer: true,
     dishwasher: true,
     oven: true,
-    sleepingPlaces: '1',
+    sleepingPlaces: '6',
     wifi: true,
     coffeeMachine: true,
     towels: true,
@@ -255,7 +289,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '13',
-    description: '',
+    meta: {
+      title: 'Апартамент 1305',
+      description:
+        'Забронировать апартамент площадью 59 кв. м., 6 спальных мест, 13 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 1305, Барселона парк, Апартамент Сочи',
+    },
     sort: '36',
   },
   {
@@ -292,7 +331,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '13',
-    description: '',
+    meta: {
+      title: 'Апартамент 1304',
+      description:
+        'Забронировать апартамент площадью 58 кв. м., 6 спальных мест, 13 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 1304, Барселона парк, Апартамент Сочи',
+    },
     sort: '35',
   },
   {
@@ -316,20 +360,25 @@ export const table = [
     washer: true,
     microwave: true,
     pictures: [
-      '/assets/apartments/310/1.jpg',
-      '/assets/apartments/310/2.jpg',
-      '/assets/apartments/310/3.jpg',
-      '/assets/apartments/310/4.jpg',
-      '/assets/apartments/310/5.jpg',
-      '/assets/apartments/310/6.jpg',
-      '/assets/apartments/310/7.jpg',
-      '/assets/apartments/310/8.jpg',
+      '/assets/apartments/1303/1.jpg',
+      '/assets/apartments/1303/2.jpg',
+      '/assets/apartments/1303/3.jpg',
+      '/assets/apartments/1303/4.jpg',
+      '/assets/apartments/1303/5.jpg',
+      '/assets/apartments/1303/6.jpg',
+      '/assets/apartments/1303/7.jpg',
+      '/assets/apartments/1303/8.jpg',
     ],
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: 'Студия',
     floor: '13',
-    description: '',
+    meta: {
+      title: 'Апартамент 1303',
+      description:
+        'Забронировать апартамент площадью 52 кв. м., 4 спальных места, 13 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1303, Барселона парк, Апартамент Сочи',
+    },
     sort: '34',
   },
   {
@@ -366,7 +415,12 @@ export const table = [
     winterPrice: '7 000',
     rooms: '2',
     floor: '12',
-    description: '',
+    meta: {
+      title: 'Апартамент 1208',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 12 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1208, Барселона парк, Апартамент Сочи',
+    },
     sort: '33',
   },
   {
@@ -403,7 +457,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: 'Студия',
     floor: '12',
-    description: '',
+    meta: {
+      title: 'Апартамент 1207',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 12 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1207, Барселона парк, Апартамент Сочи',
+    },
     sort: '32',
   },
   {
@@ -440,7 +499,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '12',
-    description: '',
+    meta: {
+      title: 'Апартамент 1206',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 12 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1206, Барселона парк, Апартамент Сочи',
+    },
     sort: '31',
   },
   {
@@ -477,7 +541,12 @@ export const table = [
     winterPrice: '5 500',
     rooms: '2',
     floor: '11',
-    description: '',
+    meta: {
+      title: 'Апартамент 1111',
+      description:
+        'Забронировать апартамент площадью 58 кв. м., 4 спальных места, 11 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1111, Барселона парк, Апартамент Сочи',
+    },
     sort: '30',
   },
   {
@@ -514,7 +583,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '11',
-    description: '',
+    meta: {
+      title: 'Апартамент 1110',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 6 спальных мест, 11 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1110, Барселона парк, Апартамент Сочи',
+    },
     sort: '29',
   },
   {
@@ -551,7 +625,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '2',
     floor: '11',
-    description: '',
+    meta: {
+      title: 'Апартамент 1109',
+      description:
+        'Забронировать апартамент площадью 56 кв. м., 4 спальных места, 11 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1109, Барселона парк, Апартамент Сочи',
+    },
     sort: '28',
   },
   {
@@ -588,7 +667,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '11',
-    description: '',
+    meta: {
+      title: 'Апартамент 1105',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 6 спальных мест, 11 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1105, Барселона парк, Апартамент Сочи',
+    },
     sort: '27',
   },
   {
@@ -625,7 +709,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '11',
-    description: '',
+    meta: {
+      title: 'Апартамент 1104',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 6 спальных мест, 11 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1104, Барселона парк, Апартамент Сочи',
+    },
     sort: '26',
   },
   {
@@ -662,7 +751,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '2',
     floor: '11',
-    description: '',
+    meta: {
+      title: 'Апартамент 1103',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 5 спальных мест, 11 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1103, Барселона парк, Апартамент Сочи',
+    },
     sort: '25',
   },
   {
@@ -699,7 +793,12 @@ export const table = [
     winterPrice: '7 000',
     rooms: '1',
     floor: '10',
-    description: '',
+    meta: {
+      title: 'Апартамент 1014',
+      description:
+        'Забронировать апартамент площадью 58 кв. м., 5 спальных мест, 10 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1014, Барселона парк, Апартамент Сочи',
+    },
     sort: '24',
   },
   {
@@ -736,7 +835,12 @@ export const table = [
     winterPrice: '7 000',
     rooms: '1',
     floor: '10',
-    description: '',
+    meta: {
+      title: 'Апартамент 1013',
+      description:
+        'Забронировать апартамент площадью 58 кв. м., 5 спальных мест, 10 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1013, Барселона парк, Апартамент Сочи',
+    },
     sort: '23',
   },
   {
@@ -773,7 +877,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '2',
     floor: '10',
-    description: '',
+    meta: {
+      title: 'Апартамент 1003',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 10 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 1003, Барселона парк, Апартамент Сочи',
+    },
     sort: '22',
   },
   {
@@ -810,7 +919,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '9',
-    description: '',
+    meta: {
+      title: 'Апартамент 907',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 9 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 907, Барселона парк, Апартамент Сочи',
+    },
     sort: '21',
   },
   {
@@ -847,7 +961,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '8',
-    description: '',
+    meta: {
+      title: 'Апартамент 805',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 8 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 805, Барселона парк, Апартамент Сочи',
+    },
     sort: '20',
   },
   {
@@ -884,7 +1003,12 @@ export const table = [
     winterPrice: '6 500',
     rooms: '2',
     floor: '7',
-    description: '',
+    meta: {
+      title: 'Апартамент 716',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 7 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 716, Барселона парк, Апартамент Сочи',
+    },
     sort: '19',
   },
   {
@@ -921,7 +1045,12 @@ export const table = [
     winterPrice: '6 500',
     rooms: '2',
     floor: '7',
-    description: '',
+    meta: {
+      title: 'Апартамент 715',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 7 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 715, Барселона парк, Апартамент Сочи',
+    },
     sort: '18',
   },
   {
@@ -958,7 +1087,12 @@ export const table = [
     winterPrice: '6 500',
     rooms: '2',
     floor: '7',
-    description: '',
+    meta: {
+      title: 'Апартамент 712',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 7 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 712, Барселона парк, Апартамент Сочи',
+    },
     sort: '17',
   },
   {
@@ -995,7 +1129,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '7',
-    description: '',
+    meta: {
+      title: 'Апартамент 709',
+      description:
+        'Забронировать апартамент площадью 54 кв. м., 4 спальных места, 7 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 709, Барселона парк, Апартамент Сочи',
+    },
     sort: '16',
   },
   {
@@ -1032,7 +1171,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: 'Студия',
     floor: '7',
-    description: '',
+    meta: {
+      title: 'Апартамент 705',
+      description:
+        'Забронировать апартамент площадью 53 кв. м., 4 спальных места, 7 этаж, с видом на море в Сочи',
+      keywords: 'Апартамент 705, Барселона парк, Апартамент Сочи',
+    },
     sort: '15',
   },
   {
@@ -1069,7 +1213,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '6',
-    description: '',
+    meta: {
+      title: 'Апартамент 613',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 4 спальных места, 6 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 613, Барселона парк, Апартамент Сочи',
+    },
     sort: '14',
   },
   {
@@ -1106,7 +1255,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '6',
-    description: '',
+    meta: {
+      title: 'Апартамент 612',
+      description:
+        'Забронировать апартамент площадью 55 кв. м., 5 спальных мест, 6 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 612, Барселона парк, Апартамент Сочи',
+    },
     sort: '13',
   },
   {
@@ -1143,7 +1297,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '6',
-    description: '',
+    meta: {
+      title: 'Апартамент 607',
+      description:
+        'Забронировать апартамент площадью 53 кв. м., 4 спальных места, 6 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 607, Барселона парк, Апартамент Сочи',
+    },
     sort: '12',
   },
   {
@@ -1180,7 +1339,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '2',
     floor: '6',
-    description: '',
+    meta: {
+      title: 'Апартамент 606',
+      description:
+        'Забронировать апартамент площадью 53 кв. м., 4 спальных места, 6 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 606, Барселона парк, Апартамент Сочи',
+    },
     sort: '11',
   },
   {
@@ -1217,7 +1381,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: 'Студия',
     floor: '6',
-    description: '',
+    meta: {
+      title: 'Апартамент 605',
+      description:
+        'Забронировать апартамент площадью 50 кв. м., 4 спальных места, 6 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 605, Барселона парк, Апартамент Сочи',
+    },
     sort: '10',
   },
   {
@@ -1241,20 +1410,25 @@ export const table = [
     washer: true,
     microwave: true,
     pictures: [
-      '/assets/apartments/310/1.jpg',
-      '/assets/apartments/310/2.jpg',
-      '/assets/apartments/310/3.jpg',
-      '/assets/apartments/310/4.jpg',
-      '/assets/apartments/310/5.jpg',
-      '/assets/apartments/310/6.jpg',
-      '/assets/apartments/310/7.jpg',
-      '/assets/apartments/310/8.jpg',
+      '/assets/apartments/509/1.jpg',
+      '/assets/apartments/509/2.jpg',
+      '/assets/apartments/509/3.jpg',
+      '/assets/apartments/509/4.jpg',
+      '/assets/apartments/509/5.jpg',
+      '/assets/apartments/509/6.jpg',
+      '/assets/apartments/509/7.jpg',
+      '/assets/apartments/509/8.jpg',
     ],
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
     floor: '5',
-    description: '',
+    meta: {
+      title: 'Апартамент 509',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 5 спальных мест, 5 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 509, Барселона парк, Апартамент Сочи',
+    },
     sort: '9',
   },
   {
@@ -1291,7 +1465,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '2',
     floor: '5',
-    description: '',
+    meta: {
+      title: 'Апартамент 503',
+      description:
+        'Забронировать апартамент площадью 52 кв. м., 4 спальных мест, 5 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 503, Барселона парк, Апартамент Сочи',
+    },
     sort: '8',
   },
   {
@@ -1328,7 +1507,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '1',
     floor: '4',
-    description: '',
+    meta: {
+      title: 'Апартамент 416',
+      description:
+        'Забронировать апартамент площадью 45 кв. м., 4 спальных места, 4 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 416, Барселона парк, Апартамент Сочи',
+    },
     sort: '7',
   },
   {
@@ -1365,7 +1549,12 @@ export const table = [
     winterPrice: '4 500',
     rooms: '2',
     floor: '4',
-    description: '',
+    meta: {
+      title: 'Апартамент 415',
+      description:
+        'Забронировать апартамент площадью 45 кв. м., 4 спальных места, 4 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 415, Барселона парк, Апартамент Сочи',
+    },
     sort: '6',
   },
   {
@@ -1402,7 +1591,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '3',
     floor: '4',
-    description: '',
+    meta: {
+      title: 'Апартамент 402',
+      description:
+        'Забронировать апартамент площадью 57 кв. м., 6 спальных мест, 4 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 402, Барселона парк, Апартамент Сочи',
+    },
     sort: '5',
   },
   {
@@ -1439,7 +1633,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '1',
     floor: '3',
-    description: '',
+    meta: {
+      title: 'Апартамент 312',
+      description:
+        'Забронировать апартамент площадью 45 кв. м., 4 спальных места, 3 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 312, Барселона парк, Апартамент Сочи',
+    },
     sort: '4',
   },
   {
@@ -1476,7 +1675,12 @@ export const table = [
     winterPrice: '5 000',
     rooms: '1',
     floor: '3',
-    description: '',
+    meta: {
+      title: 'Апартамент 310',
+      description:
+        'Забронировать апартамент площадью 45 кв. м., 4 спальных места, 3 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 310, Барселона парк, Апартамент Сочи',
+    },
     sort: '3',
   },
   {
@@ -1513,7 +1717,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '1',
-    description: '',
+    meta: {
+      title: 'Апартамент 21/8',
+      description:
+        'Забронировать апартамент площадью 48 кв. м., 6 спальных мест, 1 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 21/8, Барселона парк, Апартамент Сочи',
+    },
     sort: '2',
   },
   {
@@ -1550,7 +1759,12 @@ export const table = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '1',
-    description: '',
+    meta: {
+      title: 'Апартамент 21/6',
+      description:
+        'Забронировать апартамент площадью 48 кв. м., 4 спальных места, 1 этаж, с видом на город в Сочи',
+      keywords: 'Апартамент 21/6, Барселона парк, Апартамент Сочи',
+    },
     sort: '1',
   },
 ];

@@ -23,5 +23,11 @@ export type Apartment = {
   winterPrice: string;
   rooms: string;
   floor: string;
-  description: string;
+  meta: Meta;
 };
+
+interface Meta {
+  title: string;
+  description: string;
+  keywords: string;
+}
