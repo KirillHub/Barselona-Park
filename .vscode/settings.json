@@ -1,5 +1,4 @@
 {
-  "vscode-pets.petSize": "nano",
-  "vscode-pets.position": "explorer",
-  "vscode-pets.theme": "forest"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

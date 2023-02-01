@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../../../store/store';
+// import { useAppSelector } from '../../../../store/store';
 
 interface MyProps {
   onCheckBoxFirstChange: Function;
@@ -6,7 +6,7 @@ interface MyProps {
 }
 
 export const Options = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
-  const categoryPage = useAppSelector((state) => state.categoryPage);
+  // const categoryPage = useAppSelector((state) => state.categoryPage);
 
   const sortBy = [
     'Вид на море',
@@ -23,19 +23,24 @@ export const Options = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
     <div className="category-page-container__sorting__dropdown">
       <button className="category-page-container__sorting__dropdown-button">Наличие</button>
       <div className="category-page-container__sorting__dropdown__content">
-        {sortBy.map((option, index) => (
-          <span key={index}>
-            {option}
-            <input
-              type="checkbox"
-              onChange={() => onCheckBoxFirstChange(index)}
-              checked={categoryPage.checkBox[index]}
-            />
-          </span>
-        ))}
+
 
         <span onClick={() => resetSorts('availability')}>Cброс</span>
       </div>
     </div>
   );
 };
+
+
+//  {
+//    sortBy.map((option, index) => (
+//      <span key={index}>
+//        {option}
+//        <input
+//          type="checkbox"
+//          onChange={() => onCheckBoxFirstChange(index)}
+//          checked={categoryPage.checkBox[index]}
+//        />
+//      </span>
+//    ));
+//  }

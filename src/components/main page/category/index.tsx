@@ -1,12 +1,17 @@
-import { Link } from 'react-router-dom';
+'use client'
+// import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import './style.scss';
 
+
 export const SelectCategory = () => {
+
+
   return (
     <div className="main-page-container__categories">
       <h2>Категории</h2>
 
-      <Link to="/Category/All-apartments">
+      <Link href="/Category/All-apartments">
         <span>Все апартаменты</span>
         <img
           className="main-page-container__categories-img"
@@ -15,7 +20,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/With-balcony">
+      <Link href="/Category/With-balcony">
         <span>С балконом</span>
         <img
           className="main-page-container__categories-img"
@@ -24,7 +29,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/Without-balcony">
+      <Link href="/Category/Without-balcony">
         <span>Без балкона</span>
         <img
           className="main-page-container__categories-img"
@@ -33,7 +38,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/Studio">
+      <Link href="/Category/Studio">
         <span>Студии</span>
         <img
           className="main-page-container__categories-img"
@@ -42,7 +47,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/One-room">
+      <Link href="/Category/One-room">
         <span>Однокомнатные</span>
         <img
           className="main-page-container__categories-img"
@@ -51,7 +56,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/Two-room">
+      <Link href="/Category/Two-room">
         <span>Двухкомнатные</span>
         <img
           className="main-page-container__categories-img"
@@ -60,7 +65,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/Three-room">
+      <Link href="/Category/Three-room">
         <span>Трехкомнатные</span>
         <img
           className="main-page-container__categories-img"
@@ -69,7 +74,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/Sea-view">
+      <Link href="/Category/Sea-view">
         <span>Вид на море</span>
         <img
           className="main-page-container__categories-img"
@@ -78,7 +83,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/City-view">
+      <Link href="/Category/City-view">
         <span>Вид на город</span>
         <img
           className="main-page-container__categories-img"
@@ -87,7 +92,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/3-sleeping-places">
+      <Link href="/Category/3-sleeping-places">
         <span>3 cпальных места</span>
         <img
           className="main-page-container__categories-img"
@@ -96,7 +101,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/4-sleeping-places">
+      <Link href="/Category/4-sleeping-places">
         <span>4 cпальных места</span>
         <img
           className="main-page-container__categories-img"
@@ -105,7 +110,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/5-sleeping-places">
+      <Link href="/Category/5-sleeping-places">
         <span>5 cпальных мест</span>
         <img
           className="main-page-container__categories-img"
@@ -114,7 +119,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/6-sleeping-places">
+      <Link href="/Category/6-sleeping-places">
         <span>6 cпальных мест</span>
         <img
           className="main-page-container__categories-img"
@@ -123,7 +128,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/With-coffee-machine">
+      <Link href="/Category/With-coffee-machine">
         <span>С кофемашиной</span>
         <img
           className="main-page-container__categories-img"
@@ -132,7 +137,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/With-oven">
+      <Link href="/Category/With-oven">
         <span>С духовкой</span>
         <img
           className="main-page-container__categories-img"
@@ -140,7 +145,7 @@ export const SelectCategory = () => {
           alt="Апартамент-1104"
         />
       </Link>
-      <Link to="/Category/With-dishwasher">
+      <Link href="/Category/With-dishwasher">
         <span>С посудомоечной машиной</span>
         <img
           className="main-page-container__categories-img"
@@ -149,7 +154,7 @@ export const SelectCategory = () => {
         />
       </Link>
 
-      <Link to="/Category/With-oven-and-dishwasher">
+      <Link href="/Category/With-oven-and-dishwasher">
         <span>С духовкой и посудомоечной машиной</span>
         <img
           className="main-page-container__categories-img"
@@ -160,3 +165,4 @@ export const SelectCategory = () => {
     </div>
   );
 };
+export default SelectCategory;

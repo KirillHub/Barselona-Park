@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../store/store';
-import { setOpitionsSortedLink, setCheckBox } from '../../../store/category/slice';
-import { useParams, useNavigate } from 'react-router-dom';
+// import { useAppDispatch, useAppSelector } from '../../../store/store';
+// import { setOpitionsSortedLink, setCheckBox } from '../../../store/category/slice';
+// import { useParams, useNavigate } from 'react-router-dom';
+
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 import { Sort } from './sort';
 import { Options } from './options';
 
@@ -15,14 +19,22 @@ interface MyParams {
 }
 
 export const CategoryInteraction = () => {
-  const dispatch = useAppDispatch();
-  const categoryPage = useAppSelector((state) => state.categoryPage);
+  // const dispatch = useAppDispatch();
+  // const categoryPage = useAppSelector((state) => state.categoryPage);
 
-  const { category, sort, options } = useParams<keyof MyParams>() as MyParams;
+  const pathname = usePathname();
 
-  const navigate = useNavigate();
+  const category = pathname?.split('/')[2];
+  const sort = pathname?.split('/')[3];
+  const options = pathname?.split('/')[4];
 
-  const checkBox = [...categoryPage.checkBox];
+  // const { category, sort, options } = useParams<keyof MyParams>() as MyParams;
+
+  const router = useRouter();
+
+  // const checkBox = [...categoryPage.checkBox];
+
+  const checkBox = [false, false, false, false, false, false];
 
   const checkOpitionsLink = () => {
     let opitionsLink = [];
@@ -49,7 +61,7 @@ export const CategoryInteraction = () => {
     const savedLink = opitionsLink.join('+');
 
     const newSavedLink = savedLink !== undefined ? savedLink : '';
-    dispatch(setOpitionsSortedLink(newSavedLink.length !== 0 ? `/${newSavedLink}` : ''));
+    // dispatch(setOpitionsSortedLink(newSavedLink.length !== 0 ? `/${newSavedLink}` : ''));
 
     return savedLink !== undefined ? savedLink : '';
   };
@@ -60,31 +72,31 @@ export const CategoryInteraction = () => {
     if (checkBoxIndex === 0 || checkBoxIndex === 1) {
       if (!box[0] && !box[1]) {
         box.splice(checkBoxIndex, 1, true);
-        dispatch(setCheckBox([...box]));
+        // dispatch(setCheckBox([...box]));
       } else if (box[0]) {
         if (checkBoxIndex === 0) {
           box.splice(0, 1, false);
         } else {
           box.splice(0, 2, false, true);
         }
-        dispatch(setCheckBox([...box]));
+        // dispatch(setCheckBox([...box]));
       } else {
         if (checkBoxIndex === 1) {
           box.splice(1, 1, false);
         } else {
           box.splice(0, 2, true, false);
         }
-        dispatch(setCheckBox([...box]));
+        // dispatch(setCheckBox([...box]));
       }
     } else {
       if (checkBox[checkBoxIndex]) {
         box.splice(checkBoxIndex, 1, false);
 
-        dispatch(setCheckBox([...box]));
+        // dispatch(setCheckBox([...box]));
       } else {
         box.splice(checkBoxIndex, 1, true);
 
-        dispatch(setCheckBox([...box]));
+        // dispatch(setCheckBox([...box]));
       }
     }
 
@@ -114,28 +126,28 @@ export const CategoryInteraction = () => {
       newRoute = `/Without-sort/${opitionsLink}`;
     }
 
-    navigate(`/Category/${category}${newRoute}`);
+    router.push(`/Category/${category}${newRoute}`);
   };
 
   const resetSorts = (whatsReset: string) => {
     const sorted = sort === undefined ? '' : sort;
 
     if (whatsReset === 'availability') {
-      dispatch(setCheckBox([false, false, false, false, false, false]));
-      dispatch(setOpitionsSortedLink(''));
+      // dispatch(setCheckBox([false, false, false, false, false, false]));
+      // dispatch(setOpitionsSortedLink(''));
 
       if (sorted.length !== 0 && sorted !== 'Without-sort') {
-        navigate(`/Category/${category}/${sorted}`);
+        router.push(`/Category/${category}/${sorted}`);
       } else {
-        navigate(`/Category/${category}`);
+        router.push(`/Category/${category}`);
       }
     } else {
       const opitionsLink = checkOpitionsLink();
       if (sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length !== 0) {
-        navigate(`/Category/${category}/Without-sort/${opitionsLink}`);
+        router.push(`/Category/${category}/Without-sort/${opitionsLink}`);
       }
       if (sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length === 0) {
-        navigate(`/Category/${category}`);
+        router.push(`/Category/${category}`);
       }
     }
   };
@@ -156,13 +168,13 @@ export const CategoryInteraction = () => {
         .map((d, i) => opitionsLink.findIndex((x) => x === d))
         .map((x) => x !== -1);
 
-      dispatch(setCheckBox(updateOpitionsLink));
+      // dispatch(setCheckBox(updateOpitionsLink));
     }
   };
 
   useEffect(() => {
     firstRender();
-  },[]);
+  }, []);
 
   return (
     <div className="category-page-container__sorting">

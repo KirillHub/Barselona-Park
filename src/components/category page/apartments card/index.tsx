@@ -1,9 +1,12 @@
-import { useAppSelector } from '../../../store/store';
+'use client';
+// import { useAppSelector } from '../../../store/store';
 import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
 import { categoryMeta } from '../../meta/categoryMeta';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { Apartment } from '../../types/type';
+
+import { usePathname } from 'next/navigation';
 
 import './style.scss';
 
@@ -16,11 +19,16 @@ interface MyParams {
 }
 
 export const ApartmentCard = () => {
-  const categoryPage = useAppSelector((state) => state.categoryPage);
+  const pathname = usePathname();
 
-  const { sort, options } = useParams<keyof MyParams>() as MyParams;
+  const sort = pathname?.split('/')[2];
+  const options = pathname?.split('/')[3];
 
-  const filterBy = categoryMeta(categoryPage.selectedPageId)?.filterBy;
+  // const categoryPage = useAppSelector((state) => state.categoryPage);
+
+  // const { sort, options } = useParams<keyof MyParams>() as MyParams;
+
+  const filterBy = categoryMeta(sort)?.filterBy;
 
   let apartments: any = [];
 
@@ -77,13 +85,13 @@ export const ApartmentCard = () => {
   filterByPage();
 
   const sorter = (field: string) => {
-    if (categoryPage.checkSign[categoryPage.signIndex]) {
-      return (a: any, b: any) =>
-        +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
-    } else {
-      return (a: any, b: any) =>
-        +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
-    }
+    // if (categoryPage.checkSign[categoryPage.signIndex]) {
+    //   return (a: any, b: any) =>
+    //     +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
+    // } else {
+    //   return (a: any, b: any) =>
+    //     +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
+    // }
   };
 
   const sortBy =

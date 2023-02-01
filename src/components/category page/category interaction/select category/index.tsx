@@ -1,10 +1,8 @@
-import { useAppDispatch } from '../../../../store/store';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { meta } from '../../../meta/categoryMeta';
-import { setCheckBox } from '../../../../store/category/slice';
 
 export const SelectCategory = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
   return (
     <div className="category-page-container__sorting__dropdown">
@@ -12,8 +10,7 @@ export const SelectCategory = () => {
       <div className="category-page-container__sorting__dropdown__content">
         {meta.map((x) => (
           <Link
-            to={`/Category/${x.id}`}
-            onClick={() => dispatch(setCheckBox([false, false, false, false, false, false]))}
+            href={`/Category/${x.id}`}
             key={x.id}>
             {x.name}
           </Link>

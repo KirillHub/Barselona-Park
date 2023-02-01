@@ -1,5 +1,6 @@
+'use client';
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+
 import { SelectCategory } from './category';
 import { Telegram, Whatsapp } from '../../svg';
 import {
@@ -46,17 +47,15 @@ export const MainPicture = () => {
 
   return (
     <div className="main-page">
-      <Helmet>
-        <title>Barselona Park</title>
-        <meta
-          name="description"
-          content="Барселона парк - Апартаменты в центре Сочи, 3 минуты до моря. 8-988-130-62-17"
-        />
-        <meta name="keywords" content="Барселона парк, Barselona park, апартаменты, апартаменты Сочи" />
-        <meta name="Document-state" content="Dynamic" />
-        <meta name="Author" content="https://github.com/bi-zi" />
-        <meta name="Copyright" content="bi_zi" />
-      </Helmet>
+      <title>Barselona Park</title>
+      <meta
+        name="description"
+        content="Барселона парк - Апартаменты в центре Сочи, 3 минуты до моря. 8-988-130-62-17"
+      />
+      <meta name="keywords" content="Барселона парк, Barselona park, апартаменты, апартаменты Сочи" />
+      <meta name="Document-state" content="Dynamic" />
+      <meta name="Author" content="https://github.com/bi-zi" />
+      <meta name="Copyright" content="bi_zi" />
 
       <div className="main-page-container">
         <img className="main-page-container__picture" src="./mainImage.jpg" alt="Апартамент-1104" />
@@ -71,8 +70,8 @@ export const MainPicture = () => {
         <div className="main-page-container-service">
           <h3>Услуги</h3>
           <div className="main-page-container-service__icons">
-            {services.map((icon) => (
-              <div className="main-page-container-service__icons-icon">
+            {services.map((icon, i) => (
+              <div className="main-page-container-service__icons-icon" key={i}>
                 <div>{icon.svg}</div>
                 {icon.name}
               </div>
@@ -158,3 +157,4 @@ export const MainPicture = () => {
     </div>
   );
 };
+export default MainPicture;

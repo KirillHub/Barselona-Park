@@ -146,6 +146,6 @@ export const meta = [
   },
 ];
 
-export const categoryMeta = (findMetaId: string) => {
+export const categoryMeta = (findMetaId: string | undefined) => {
   return meta.find((obj) => obj.id === findMetaId);
 };

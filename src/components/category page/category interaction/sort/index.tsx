@@ -1,6 +1,9 @@
-import { useAppDispatch, useAppSelector } from '../../../../store/store';
-import { setCheckSign } from '../../../../store/category/slice';
-import { useParams, Link } from 'react-router-dom';
+// import { useAppDispatch, useAppSelector } from '../../../../store/store';
+// import { setCheckSign } from '../../../../store/category/slice';
+// import { useParams, Link } from 'react-router-dom';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface MyParams {
   category: string;
@@ -12,10 +15,16 @@ interface MyProps {
 }
 
 export const Sort = ({ resetSorts }: MyProps) => {
-  const dispatch = useAppDispatch();
-  const categoryPage = useAppSelector((state) => state.categoryPage);
+  // const dispatch = useAppDispatch();
+  // const categoryPage = useAppSelector((state) => state.categoryPage);
 
-  const { category, sort } = useParams<keyof MyParams>() as MyParams;
+
+  const pathname = usePathname()
+
+  const category = pathname?.split('/')[3];
+  const sort = pathname?.split('/')[4];
+
+  // const { category, sort } = useParams<keyof MyParams>() as MyParams;
 
   const sortBy = [
     {
@@ -45,7 +54,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
   ];
 
   const onHandleClick = (index: number) => {
-    dispatch(setCheckSign(index));
+    // dispatch(setCheckSign(index));
   };
 
   return (
@@ -55,10 +64,10 @@ export const Sort = ({ resetSorts }: MyProps) => {
         {sortBy.map((option, index) => (
           <Link
             className={`${sort === option.option ? 'active' : ''}`}
-            to={`/Category/${category}/${option.option}${categoryPage.opitionsSortedLink}`}
+            href={`/Category/${category}/${option.option}${'categoryPage.opitionsSortedLink'}`}
             onClick={() => onHandleClick(index)}
             key={index}>
-            {`${option.name} ${categoryPage.checkSign[index] ? '<' : '>'}`}
+
           </Link>
         ))}
         <a href="https://wa.me/79996304650?text=Меня%20интересует%20ваше%20объявление%20о%20продаже%20машины">
@@ -69,3 +78,5 @@ export const Sort = ({ resetSorts }: MyProps) => {
     </div>
   );
 };
+
+//  {`${option.name} ${categoryPage.checkSign[index] ? '<' : '>'}`}

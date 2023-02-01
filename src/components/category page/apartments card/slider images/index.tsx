@@ -34,6 +34,7 @@ export const SliderImages = ({ apartment }: MyProps) => {
           />
         ))}
       </Slider>
+      ;
     </div>
   );
 };
