@@ -113,9 +113,9 @@ export const ApartmentCard = () => {
 
   return (
     <div className="category-page-container__apartments">
-      {apartments.map((apartment: Apartment) => (
+      {apartments.map((apartment: Apartment, index: number) => (
         <div className="category-page-container__apartments-card" key={apartment.name}>
-          <SliderImages apartment={apartment} />
+          <SliderImages apartment={apartment} apartmentIndex={index} />
 
           <ApartmentInfo apartment={apartment} />
         </div>

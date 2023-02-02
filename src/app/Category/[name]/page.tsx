@@ -1,20 +1,7 @@
-'use client';
-
-
-import { ApartmentCard } from '../../../components/category page/apartments card';
-import { CategoryInteraction } from '../../../components/category page/category interaction';
+import Category from '../../../components/category page';
 
 export const Page = () => {
-
-  return (
-    <div className="category-page-container">
-      <CategoryInteraction />
-
-      <h1 className="category-page-container__name">{}</h1>
-
-      <ApartmentCard />
-    </div>
-  );
+  return <Category />;
 };
 
 export default Page;

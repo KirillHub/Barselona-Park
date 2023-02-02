@@ -1,4 +1,6 @@
 'use client';
+import Image from 'next/image';
+
 import { useEffect } from 'react';
 
 import { SelectCategory } from './category';
@@ -58,7 +60,15 @@ export const MainPicture = () => {
       <meta name="Copyright" content="bi_zi" />
 
       <div className="main-page-container">
-        <img className="main-page-container__picture" src="./mainImage.jpg" alt="Апартамент-1104" />
+        <div className="main-page-container__picture">
+          <Image
+            priority
+            fill
+            quality={100}
+            src="/mainImage.jpg"
+            alt="Апартамент-1104"
+          />
+        </div>
 
         <div className="main-page-container__barselona-park">
           <h1>Barselona Park </h1>
@@ -122,11 +132,10 @@ export const MainPicture = () => {
             <h2>Контакты</h2>
 
             <div className="main-page-container__blocks__contacts__info">
-              <img
-                className="main-page-container__blocks__contacts__info-img"
-                src="./barselonaPark.jpg"
-                alt=""
-              />
+              <div className="main-page-container__blocks__contacts__info-img">
+                <Image loading="lazy" sizes='' fill quality={100} src="/barselonaPark.jpg" alt="barsa" />
+              </div>
+
               <div>
                 <h3>Наш адрес</h3>
                 <p>Курортный пр., 59, Сочи, Краснодарский край, 354000</p>
