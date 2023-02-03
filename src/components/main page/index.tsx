@@ -65,6 +65,7 @@ export const MainPicture = () => {
             priority
             fill
             quality={100}
+            style={{ objectFit: 'cover' }}
             src="/mainImage.jpg"
             alt="Апартамент-1104"
           />
@@ -133,7 +134,14 @@ export const MainPicture = () => {
 
             <div className="main-page-container__blocks__contacts__info">
               <div className="main-page-container__blocks__contacts__info-img">
-                <Image loading="lazy" sizes='' fill quality={100} src="/barselonaPark.jpg" alt="barsa" />
+                <Image
+                  sizes="300px"
+                  fill
+                  quality={100}
+                  style={{ objectFit: 'cover' }}
+                  src="/barselonaPark.jpg"
+                  alt="barsa"
+                />
               </div>
 
               <div>

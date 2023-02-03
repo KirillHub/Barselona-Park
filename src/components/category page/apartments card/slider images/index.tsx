@@ -20,7 +20,7 @@ export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
   return (
     <Swiper
       modules={[Navigation, A11y]}
-      spaceBetween={15}
+      spaceBetween={5}
       slidesPerView={2}
       navigation
       className="category-page-container__apartments-card__images">
@@ -33,7 +33,7 @@ export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
                   <Image
                     priority
                     fill
-                    sizes="375px"
+                    sizes="325px"
                     style={{ objectFit: 'cover' }}
                     alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
                       picture.id.split('-')[1]

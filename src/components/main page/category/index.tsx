@@ -124,7 +124,7 @@ export const SelectCategory = () => {
               sizes="calc(120px + 160 * (100vw / 1920))"
               src={category.src}
               alt={category.alt}
-              style={{ borderRadius: '1.5vh' }}
+              style={{ borderRadius: '1.5vh', objectFit: 'cover' }}
             />
           </div>
         </Link>
