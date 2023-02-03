@@ -18,7 +18,7 @@ export type Apartment = {
   conditioner: boolean;
   washer: boolean;
   microwave: boolean;
-  pictures: string[];
+  pictures: Images[];
   summerPrice: string;
   winterPrice: string;
   rooms: string;
@@ -30,4 +30,10 @@ interface Meta {
   title: string;
   description: string;
   keywords: string;
+}
+
+
+interface Images {
+  id: string,
+  img: string
 }

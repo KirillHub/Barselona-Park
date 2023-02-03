@@ -1,15 +1,15 @@
 'use client';
+
 import Image from 'next/image';
 import { Apartment } from '../../../types/type';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
-import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
+import { Navigation, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 import './style.scss';
-import { useEffect, useState } from 'react';
 
 interface MyProps {
   apartment: Apartment;
@@ -17,57 +17,77 @@ interface MyProps {
 }
 
 export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
-  // const [ref] = useKeenSlider<HTMLDivElement>({
-  //   slides: {
-  //     perView: 2,
-  //     spacing: 15,
-  //   },
-  //   loop: true,
-  // });
-
-  const settings = {
-    className: 'center',
-    centerPadding: '0px',
-    centerMode: false,
-    infinite: true,
-    draggable: true,
-    autoplaySpeed: 0,
-    autoplay: false,
-    slidesToShow: 2,
-    speed: 500,
-    rows: 1,
-  };
-
   return (
-    <div className="category-page-container__apartments-card__images">
-      <Slider {...settings}>
-        {apartment.pictures.map((picture, index) => (
-          <div className="category-page-container__apartments-card__images-picture" key={index}>
-            {apartmentIndex < 4 ? (
-              <>
-                {index < 2 ? (
+    <Swiper
+      modules={[Navigation, A11y]}
+      spaceBetween={15}
+      slidesPerView={2}
+      navigation
+      className="category-page-container__apartments-card__images">
+      {apartment.pictures.map((picture, index) => (
+        <span key={picture.id}>
+          {apartmentIndex < 4 ? (
+            index < 2 ? (
+              <SwiperSlide key={picture.id}>
+                <div className="category-page-container__apartments-card__images-picture">
                   <Image
                     priority
                     fill
-                    sizes="200px"
-                    quality={100}
-                    alt="0"
-                    src={picture}
-                    className="category-page-container__apartments-card__images-picture"
+                    sizes="375px"
+                    style={{ objectFit: 'cover' }}
+                    alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
+                      picture.id.split('-')[1]
+                    }`}
+                    src={picture.img}
                   />
-                ) : (
-                  <Image fill sizes="200px" loading="lazy" quality={100} alt="0" src={picture} />
-                )}
-              </>
+                </div>
+              </SwiperSlide>
             ) : (
-              <Image fill sizes="200px" loading="lazy" quality={100} alt="0" src={picture} />
-            )}
-          </div>
-        ))}
-      </Slider>
-    </div>
+              <SwiperSlide key={picture.id}>
+                <div className="category-page-container__apartments-card__images-picture">
+                  <Image
+                    fill
+                    sizes="300px"
+                    style={{ objectFit: 'cover' }}
+                    alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
+                      picture.id.split('-')[1]
+                    }`}
+                    src={picture.img}
+                  />
+                </div>
+              </SwiperSlide>
+            )
+          ) : (
+            <SwiperSlide key={picture.id}>
+              <div className="category-page-container__apartments-card__images-picture">
+                <Image
+                  fill
+                  sizes="375px"
+                  style={{ objectFit: 'cover' }}
+                  alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
+                    picture.id.split('-')[1]
+                  }`}
+                  src={picture.img}
+                />
+              </div>
+            </SwiperSlide>
+          )}
+        </span>
+      ))}
+    </Swiper>
   );
 };
+
+//  style={{
+//                       width: 'calc(86px + 287 * (100vw / 1920))',
+//                       height: 'calc(165px + 105 * (100vw / 1920))',
+//                     }}
+
+{
+  /* <div ref={ref} className="keen-slider">
+
+    </div> */
+}
 
 // const [currentSlide, setCurrentSlide] = useState(0);
 // const [loaded, setLoaded] = useState(false);

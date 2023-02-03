@@ -1,58 +1,20 @@
 .category-page-container__apartments-card__images {
   width: 48%;
 
+  user-select: none;
   @media (width < 600px) {
     width: 100%;
     margin-bottom: 1vh;
   }
 
-  .slick-slider,
-  .slick-track,
-  .slick-list {
-    height: 100% !important;
-  }
-
-  .slick-slide {
-    width: 48%;
-  }
-
   .category-page-container__apartments-card__images-picture {
-    position: relative;
-    padding: 0 0.2vw;
-    
-    height: calc(165px + 105 * (100vw / 1920));
+    width: calc(86px + 287 * (100vw / 1920)) ;
+    height: calc(165px + 105 * (100vw / 1920)) ;
 
-    object-fit: cover;
   }
 
-  .slick-prev,
-  .slick-next {
-    width: 40px;
-    height: 100%;
-
-    z-index: 1;
-
-    &:hover {
-      .slick-prev::before,
-      .slick-next::before {
-        color: white;
-      }
-
-      background-color: rgba(29, 29, 29, 0.685);
-    }
-  }
-
-  .slick-prev {
-    margin-left: calc(23px + 2 * (100vw / 1920));
-  }
-
-  .slick-next {
-    margin-right: calc(23px + 0 * (100vw / 1920));
-  }
-
-  .slick-prev::before,
-  .slick-next::before {
-    font-size: 26px;
-    color: black;
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    color: rgb(0, 81, 255);
   }
 }

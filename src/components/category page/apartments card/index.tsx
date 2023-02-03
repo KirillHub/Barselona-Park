@@ -30,6 +30,8 @@ export const ApartmentCard = () => {
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
+
+
   let apartments: any = [];
 
   const filterByPage = () => {
