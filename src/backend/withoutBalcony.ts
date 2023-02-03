@@ -1,4 +1,4 @@
-export const table1 = [
+export const table = [
   {
     name: '1416',
     balcony: false,
@@ -2774,7 +2774,7 @@ export const table1 = [
 ];
 
 
-export const table = [{
+export const table1 = [{
     name: '1416',
     balcony: false,
     studio: false,
