@@ -1,7 +1,5 @@
 import { MainPicture } from '../components/main page/index';
 
-export const MainPage = () => {
+export default function MainPage () {
   return <MainPicture />;
 };
-
-export default MainPage;

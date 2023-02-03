@@ -1,7 +1,5 @@
 import SelectCategory from '../../../components/main page/category';
 
-export const Select = () => {
+export default function Select() {
   return <SelectCategory />;
-};
-
-export default Select
+}

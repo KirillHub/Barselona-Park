@@ -1,7 +1,5 @@
 import Category from '../../../components/category page';
 
-export const Page = () => {
+export default function CategoryPage() {
   return <Category />;
-};
-
-export default Page;
+}
