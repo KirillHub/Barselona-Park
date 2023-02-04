@@ -1,13 +1,11 @@
 export * from './telegram'
 export * from './whatsapp';
 export * from './conditioner';
-
 export * from './coffee machine';
 export * from './dishwasher';
 export * from './iron';
 export * from './refrigerator';
 export * from './microwave';
-
 export * from './tv';
 export * from './stove';
 export * from './wifi';

@@ -5,9 +5,13 @@
 
   border-bottom: 2px solid white;
 
-  font-size: calc(8px + 8 * (100vw / 1920));
+  font-size: calc(9px + 8 * (100vw / 1920));
 
   justify-content: space-around;
 
   z-index: 0;
+
+span {
+  text-align: center;
+}
 }

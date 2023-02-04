@@ -64,6 +64,7 @@ export const MainPicture = () => {
           <Image
             priority
             fill
+            sizes='1000px'
             quality={100}
             style={{ objectFit: 'cover' }}
             src="/mainImage.jpg"

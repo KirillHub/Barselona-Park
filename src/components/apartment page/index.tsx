@@ -1,29 +1,24 @@
-// import { useEffect, useState } from 'react';
+'use client';
+import { useEffect, useState } from 'react';
 // import { useAppDispatch, useAppSelector } from '../../store/store';
-// import { Helmet } from 'react-helmet';
 // import { setApartment } from '../../store/apartment/slice';
-// import { useParams } from 'react-router-dom';
-// import { SliderImages } from '../category page/apartments card/slider images';
-// import { ApartmentInfo } from '../category page/apartments card/apartment info';
+import { SliderImages } from '../category page/apartments card/slider images';
+import { ApartmentInfo } from '../category page/apartments card/apartment info';
 // import DatePicker from 'react-datepicker';
 
 // import 'react-datepicker/dist/react-datepicker.css';
 
 // import { subDays, addDays } from 'date-fns';
-
+import { usePathname } from 'next/navigation';
 import { table } from '../../backend/withoutBalcony';
 import './style.scss';
-
-interface MyParams {
-  id: string;
-}
 
 export const Apartment = () => {
   // const dispatch = useAppDispatch();
   // const apartmentPage = useAppSelector((state) => state.apartmentPage);
-  // const { id } = useParams<keyof MyParams>() as MyParams;
 
   // const [startDate, setStartDate] = useState(new Date());
+
   // const [endDate, setEndDate] = useState(null);
   // const onChange = (dates: any) => {
   //   const [start, end] = dates;
@@ -31,36 +26,26 @@ export const Apartment = () => {
   //   setEndDate(end);
   // };
 
-  // useEffect(() => {
-  //   const apartment = table.find((x) => x.name === id);
+  const pathname = usePathname();
+  const apartmentId = pathname?.split('/')[2];
 
-  //   dispatch(setApartment(apartment));
-  // }, [dispatch, id]);
+  const apartment = table.find((x) => x.name === apartmentId);
+
+
+  if(apartment === undefined) return <div>Загрузка</div>;
+
 
   return (
     <>
-      {/* <Helmet>
-        <title>{apartmentPage.apartment.meta?.title}</title>
-        <meta name="description" content={apartmentPage.apartment.meta?.description} />
-        <meta name="keywords" content={apartmentPage.apartment.meta?.keywords} />
-        <meta name="Document-state" content="Dynamic" />
-        <meta name="Author" content="https://github.com/bi-zi" />
-        <meta name="Copyright" content="bi_zi" />
-      </Helmet>
-
       <div className="apartment-container">
         <div className="apartment-container__slider-info">
-          {Object.keys(apartmentPage.apartment).length !== 0 ? (
-            <>
-              <SliderImages apartment={apartmentPage?.apartment} />
-              <ApartmentInfo apartment={apartmentPage?.apartment} />
-            </>
-          ) : (
-            ''
-          )}
+          <>
+            <ApartmentInfo apartment={apartment} />
+            <SliderImages apartment={apartment} apartmentIndex={0} />
+          </>
         </div>
 
-        <div className="apartment-container__calendar">
+        {/* <div className="apartment-container__calendar">
           <DatePicker
             startDate={startDate}
             // selected={startDate}
@@ -79,9 +64,16 @@ export const Apartment = () => {
             calendarStartDay={1}
             inline
           />
-        </div>
-      </div> */}
+        </div> */}
+      </div>
     </>
   );
 };
 export default Apartment;
+
+//  <title>{apartmentPage.apartment.meta?.title}</title>
+//         <meta name="description" content={apartmentPage.apartment.meta?.description} />
+//         <meta name="keywords" content={apartmentPage.apartment.meta?.keywords} />
+//         <meta name="Document-state" content="Dynamic" />
+//         <meta name="Author" content="https://github.com/bi-zi" />
+//         <meta name="Copyright" content="bi_zi" />

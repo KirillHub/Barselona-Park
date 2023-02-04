@@ -4,13 +4,12 @@
   user-select: none;
   @media (width < 600px) {
     width: 100%;
-    margin-bottom: 1vh;
   }
 
   .category-page-container__apartments-card__images-picture {
-    width: calc(86px + 287 * (100vw / 1920)) ;
-    height: calc(165px + 105 * (100vw / 1920)) ;
+    position: relative;
 
+    height: calc(179px + 113 * (100vw / 1920));
   }
 
   .swiper-button-prev::after,

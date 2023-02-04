@@ -1,0 +1,7 @@
+.svg {
+  width: calc(16px + 12 * (100vw / 1920));
+  height: calc(16px + 12 * (100vw / 1920));
+
+  cursor: pointer;
+  z-index: 1;
+}

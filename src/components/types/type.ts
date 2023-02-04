@@ -24,6 +24,7 @@ export type Apartment = {
   rooms: string;
   floor: string;
   meta: Meta;
+  sort: string;
 };
 
 interface Meta {
@@ -32,8 +33,7 @@ interface Meta {
   keywords: string;
 }
 
-
 interface Images {
-  id: string,
-  img: string
+  id: string;
+  img: string;
 }

@@ -1,17 +1,52 @@
 .category-page-container__apartments-card__info__icons {
-  margin: calc(4px + 0 * (100vw / 1920)) calc(5px + 5 * (100vw / 1920));
+  display: flex;
+  position: relative;
+
+  flex-flow: row wrap;
+  align-content: space-around;
+
+  margin: calc(5px + 0 * (100vw / 1920)) calc(5px + 5 * (100vw / 1920));
+
+
+
+  .visible-title {
+    visibility: visible;
+  }
+
+  .hidden-title {
+    visibility: hidden;
+  }
 
   & div {
-    display: inline-block;
-    margin: calc(2px + 3 * (100vw / 1920)) 0.6vw;
+    position: relative;
 
-    width: calc(14px + 12 * (100vw / 1920));
-    height: calc(14px + 12 * (100vw / 1920));
+    margin: calc(2px + 3 * (100vw / 1920)) 1vw;
 
-    cursor: pointer;
-    z-index: 1;
-    &:hover {
-      transform: scale(2);
+
+    user-select: none;
+
+    span {
+      position: absolute;
+
+      padding: 0.2vw 0.6vw;
+
+      bottom: -2.4vh;
+      left: -2vw;
+
+      font-size: calc(8px + 5 * (100vw / 1920));
+
+      white-space: nowrap;
+
+      border: 1px solid white;
+
+      color: rgb(255, 255, 255);
+      background-color: rgb(22, 22, 22);
+
+      z-index: 2;
+    }
+
+    svg:hover {
+      // transform: scale(2);
       z-index: 2;
     }
   }

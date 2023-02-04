@@ -1,4 +1,6 @@
-export const table = [
+import { Apartment } from "../components/types/type";
+
+export const table: Apartment[] = [
   {
     name: '1416',
     balcony: false,

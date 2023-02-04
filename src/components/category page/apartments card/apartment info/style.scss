@@ -1,11 +1,11 @@
 .category-page-container__apartments-card__info {
   width: 48%;
-  height: calc(165px + 105 * (100vw / 1920));
 
   border: 2px solid white;
 
   @media (width < 600px) {
     width: 100% !important;
+    margin-bottom: 2vh;
   }
 
   .category-page-container__apartments-card__info__apartment {
@@ -33,7 +33,7 @@
 
       border-right: 2px solid white;
 
-      font-size: calc(6px + 14 * (100vw / 1920));
+      font-size: calc(10px + 18 * (100vw / 1920));
       font-weight: bold;
 
       & span {

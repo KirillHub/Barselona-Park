@@ -14,7 +14,7 @@ specifiers:
   react-slick: ^0.29.0
   sass: ^1.58.0
   slick-carousel: ^1.8.1
-  swiper: ^9.0.1
+  swiper: 8.4.7
   typescript: 4.9.5
 
 dependencies:
@@ -30,7 +30,7 @@ dependencies:
   react-slick: 0.29.0_biqbaboplfbrettd7655fr4n2y
   sass: 1.58.0
   slick-carousel: 1.8.1
-  swiper: 9.0.1
+  swiper: 8.4.7
   typescript: 4.9.5
 
 devDependencies:
@@ -652,6 +652,12 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       esutils: 2.0.3
+    dev: false
+
+  /dom7/4.0.6:
+    resolution: {integrity: sha512-emjdpPLhpNubapLFdjNL9tP06Sr+GZkrIHEXLWvOGsytACUrkbeIdjO5g77m00BrHTznnlcNqgmn7pCN192TBA==}
+    dependencies:
+      ssr-window: 4.0.2
     dev: false
 
   /emoji-regex/9.2.2:
@@ -2140,10 +2146,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /swiper/9.0.1:
-    resolution: {integrity: sha512-qSxZcfBSUJPAIYuYQu9XNI9b5bHeOXhA5ezlnHGeoKRGr4e8CH0TXvO/zN0bMf0M2DcUX5a/UxYQqgYvjmjmWw==}
+  /swiper/8.4.7:
+    resolution: {integrity: sha512-VwO/KU3i9IV2Sf+W2NqyzwWob4yX9Qdedq6vBtS0rFqJ6Fa5iLUJwxQkuD4I38w0WDJwmFl8ojkdcRFPHWD+2g==}
     engines: {node: '>= 4.7.0'}
+    requiresBuild: true
     dependencies:
+      dom7: 4.0.6
       ssr-window: 4.0.2
     dev: false
 
