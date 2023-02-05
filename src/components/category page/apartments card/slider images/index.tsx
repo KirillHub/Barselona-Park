@@ -25,9 +25,7 @@ export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
       spaceBetween={5}
       slidesPerView={2}
       navigation
-      className="category-page-container__apartments-card__images"
-   >
-
+      className="category-page-container__apartments-card__images">
       {apartment.pictures.map((picture, index) => (
         <span key={picture.id}>
           {apartmentIndex < 4 ? (
@@ -37,10 +35,11 @@ export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
                   <Image
                     priority
                     fill
-                    sizes="325px"
+                    sizes="400px"
                     style={{ objectFit: 'cover' }}
-                    alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${picture.id.split('-')[1]
-                      }`}
+                    alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
+                      picture.id.split('-')[1]
+                    }`}
                     src={picture.img}
                   />
                 </div>
@@ -52,8 +51,9 @@ export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
                     fill
                     sizes="300px"
                     style={{ objectFit: 'cover' }}
-                    alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${picture.id.split('-')[1]
-                      }`}
+                    alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
+                      picture.id.split('-')[1]
+                    }`}
                     src={picture.img}
                   />
                 </div>
@@ -66,8 +66,9 @@ export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
                   fill
                   sizes="375px"
                   style={{ objectFit: 'cover' }}
-                  alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${picture.id.split('-')[1]
-                    }`}
+                  alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
+                    picture.id.split('-')[1]
+                  }`}
                   src={picture.img}
                 />
               </div>
@@ -75,7 +76,6 @@ export const SliderImages = ({ apartment, apartmentIndex }: MyProps) => {
           )}
         </span>
       ))}
-
     </Swiper>
   );
 };
