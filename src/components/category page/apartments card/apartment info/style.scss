@@ -3,10 +3,15 @@
 
   border: 2px solid white;
 
+
+  background-color: rgba(0, 0, 0, 0.753);
+
   @media (width < 600px) {
     width: 100% !important;
     margin-bottom: 2vh;
   }
+
+
 
   .category-page-container__apartments-card__info__apartment {
     display: flex;
