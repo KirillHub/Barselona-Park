@@ -14,6 +14,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './style.scss';
 import { start } from 'repl';
 
+import Image from 'next/image';
+
 export const Apartment = () => {
   // const dispatch = useAppDispatch();
   // const apartmentPage = useAppSelector((state) => state.apartmentPage);
@@ -121,7 +123,7 @@ export const Apartment = () => {
         <div className="top-block">
           <div className="left">
             <div className="apartment-name">
-              <span className="apartment-name-1">Апартамент {apartment.name}</span>
+              <span className="apartment-name-1">АПАРТАМЕНТ {apartment.name}</span>
             </div>
             <div className="apartment-price">
               <div className="price">
@@ -157,7 +159,17 @@ export const Apartment = () => {
               />
             </div> */}
           </div>
-          <img className="img" alt="" src="/assets/apartments/1416/1.jpg" />
+
+          <div className="div-img">
+            <Image
+              fill
+              sizes="300px"
+              className="img"
+              alt=""
+              src="/assets/apartments/1416/1.jpg"
+            />
+            <div className="image-shadow"></div>
+          </div>
         </div>
         <div className="bottom-block">
           <div className="icons"></div>
