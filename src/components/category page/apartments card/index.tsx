@@ -30,8 +30,6 @@ export const ApartmentCard = () => {
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
-
-
   let apartments: any = [];
 
   const filterByPage = () => {
@@ -46,7 +44,6 @@ export const ApartmentCard = () => {
       );
     }
     if (options) {
-
       const checkOptions = options.split('+');
 
       const view = checkOptions.find((x) => x === 'sea-view' || x === 'city-view');
@@ -117,9 +114,22 @@ export const ApartmentCard = () => {
     <div className="category-page-container__apartments">
       {apartments.map((apartment: Apartment, index: number) => (
         <div className="category-page-container__apartments-card" key={apartment.name}>
-          <ApartmentInfo apartment={apartment} />
-
-          <SliderImages apartment={apartment} apartmentIndex={index} />
+          <div className="category-page-container__apartments-card-info">
+            <ApartmentInfo apartment={apartment} />
+          </div>
+          <div className="category-page-container__apartments-card-slider">
+            <SliderImages
+              apartment={apartment}
+              apartmentIndex={index}
+              options={{
+                className: 'category-page-container__apartments-card__images-picture',
+                sizes: '375px',
+                fit: 'cover',
+                lazy: 2,
+                quality: 75,
+              }}
+            />
+          </div>
         </div>
       ))}
     </div>

@@ -1,18 +1,9 @@
 .category-page-container__apartments-card__info {
-  width: 48%;
+
 
   border: 2px solid white;
-
-
-  background-color: rgba(0, 0, 0, 0.753);
-
-  @media (width < 600px) {
-    width: 100% !important;
-    margin-bottom: 2vh;
-  }
-
-
-
+  background-color: rgba(0, 0, 0, 0.753)
+  ;
   .category-page-container__apartments-card__info__apartment {
     display: flex;
 

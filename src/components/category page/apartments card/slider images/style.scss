@@ -1,23 +1,25 @@
 .category-page-container__apartments-card__images {
-  width: 48%;
-
   user-select: none;
-
-  @media (width < 600px) {
-    width: 100%;
-  }
 
   .category-page-container__apartments-card__images-picture {
     position: relative;
 
-    height: 100%;
-    @media (width < 600px) {
-      height: calc(165px + 105 * (100vw / 1920));
-    }
+    height: calc(165px + 105 * (100vw / 1920));
+  }
+
+  .category-page-container__apartments-card__images-picture-2 {
+    position: relative;
+
+    height: calc(120px + 415 * (100vw / 1920));
+    z-index: 1;
   }
 
   .swiper-button-prev::after,
   .swiper-button-next::after {
     color: rgb(0, 81, 255);
   }
+}
+
+.swiper-horizontal {
+  border-top-right-radius: 40px;
 }

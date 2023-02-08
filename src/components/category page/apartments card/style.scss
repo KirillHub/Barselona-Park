@@ -15,5 +15,23 @@
     @media (width < 600px) {
       display: block;
     }
+
+    .category-page-container__apartments-card-slider {
+      position: relative;
+      width: 48%;
+
+      @media (width < 600px) {
+        width: 100%;
+      }
+    }
+
+    .category-page-container__apartments-card-info {
+      width: 48%;
+
+      @media (width < 600px) {
+        width: 100% !important;
+        margin-bottom: 2vh;
+      }
+    }
   }
 }

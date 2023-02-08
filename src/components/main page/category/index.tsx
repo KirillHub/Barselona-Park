@@ -115,12 +115,19 @@ export const SelectCategory = () => {
       <h2>Категории</h2>
 
       {categories.map((category) => (
-        <Link href={category.link} key={category.name}>
+        <Link
+          href={category.link}
+          key={category.name}
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+            })
+          }>
           <span>{category.name}</span>
           <div className="main-page-container__categories-img">
             <Image
               fill
-              quality={10}
+              quality={75}
               sizes="calc(120px + 160 * (100vw / 1920))"
               src={category.src}
               alt={category.alt}

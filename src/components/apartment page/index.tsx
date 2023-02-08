@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { SliderImages } from '../category page/apartments card/slider images';
 import { ApartmentInfo } from '../category page/apartments card/apartment info';
 import DatePicker from 'react-datepicker';
+import { useForm } from 'react-hook-form';
 import ru from 'date-fns/locale/ru';
 import { subDays, addDays } from 'date-fns';
 import { usePathname } from 'next/navigation';
@@ -19,6 +20,14 @@ import Image from 'next/image';
 export const Apartment = () => {
   // const dispatch = useAppDispatch();
   // const apartmentPage = useAppSelector((state) => state.apartmentPage);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data: any) => console.log(data);
+  console.log(errors);
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
@@ -141,39 +150,77 @@ export const Apartment = () => {
                 </span>
               </div>
             </div>
-
-            {/* <div className="apartment-container__calendar">
-              <DatePicker
-                startDate={startDate}
-                endDate={endDate}
-                locale={ru}
-                onChange={onChange}
-                excludeDates={suki}
-                selectsRange
-                minDate={subDays(new Date(), 0)}
-                maxDate={addDays(new Date(), 365)}
-                disabledKeyboardNavigation
-                monthsShown={1}
-                calendarStartDay={1}
-                inline
-              />
-            </div> */}
           </div>
 
           <div className="div-img">
-            <Image
-              fill
-              sizes="300px"
-              className="img"
-              alt=""
-              src="/assets/apartments/1416/1.jpg"
+            <SliderImages
+              apartment={apartment}
+              apartmentIndex={0}
+              options={{
+                className: 'category-page-container__apartments-card__images-picture-2',
+                sizes: '600px',
+                fit: 'fill',
+                lazy: 1,
+                quality: 100,
+              }}
             />
-            <div className="image-shadow"></div>
           </div>
         </div>
         <div className="bottom-block">
-          <div className="icons"></div>
-          <div></div>
+          <div className="bottom-left">1</div>
+          <div className="apartment-container__calendar">
+            <DatePicker
+              startDate={startDate}
+              endDate={endDate}
+              locale={ru}
+              onChange={onChange}
+              excludeDates={suki}
+              selectsRange
+              minDate={subDays(new Date(), 0)}
+              maxDate={addDays(new Date(), 365)}
+              monthsShown={3}
+              calendarStartDay={1}
+              inline
+              fixedHeight
+            />
+
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input
+                type="text"
+                placeholder="Имя Фамилия"
+                {...register('Имя Фамилия', { required: true, maxLength: 120 })}
+              />
+              <input
+                type="tel"
+                placeholder="Номер телефона"
+                {...register('Номер телефона', { required: true, maxLength: 12 })}
+              />
+              <input
+                type="text"
+                placeholder="Email"
+                {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
+              />
+              <input
+                type="text"
+                placeholder="Комментарий"
+                {...register('Комментарий', { required: true, maxLength: 180 })}
+              />
+              <select placeholder="Ytuh" {...register('Количество людей', { required: true })}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+              <input type="checkbox" placeholder="Дети" {...register('Дети', { required: true })} />
+              <input type="checkbox" placeholder="Животные" {...register('Животные', {})} />
+
+              <input type="submit" />
+            </form>
+          </div>
         </div>
       </div>
     </>
@@ -202,105 +249,6 @@ export default Apartment;
 //       inline
 //     />
 
-//     <div className="rendered-form">
-//       <div className="formbuilder-text form-group field-text-1675672762985">
-//         <label htmlFor="text-1675672762985" className="formbuilder-text-label">
-//           Имя Фамилия<span className="formbuilder-required">*</span>
-//         </label>
-//         <input
-//           type="text"
-//           placeholder="Фамилия Имя"
-//           className="form-control"
-//           name="text-1675672762985"
-//           maxLength={120}
-//           id="text-1675672762985"
-//           title="Иван Иванов"
-//           required={true}
-//           aria-required="true"
-//         />
-//       </div>
-//       <div className="formbuilder-text form-group field-text-1675673098405">
-//         <label htmlFor="text-1675673098405" className="formbuilder-text-label">
-//           Номер телефона<span className="formbuilder-required">*</span>
-//         </label>
-//         <input
-//           type="tel"
-//           placeholder="Номер телефона"
-//           className="form-control"
-//           name="text-1675673098405"
-//           maxLength={120}
-//           id="text-1675673098405"
-//           title="+7 (***) 123-456-789"
-//           required={true}
-//           aria-required="true"
-//         />
-//       </div>
-//       <div className="formbuilder-text form-group field-text-1675672792469">
-//         <label htmlFor="text-1675672792469" className="formbuilder-text-label">
-//           Email<span className="formbuilder-required">*</span>
-//         </label>
-//         <input
-//           type="email"
-//           placeholder="Email"
-//           className="form-control"
-//           name="text-1675672792469"
-//           maxLength={12}
-//           id="text-1675672792469"
-//           title="Пример - welcome@gmail.com"
-//           required={true}
-//           aria-required="true"
-//         />
-//       </div>
-//       <div className="formbuilder-text form-group field-text-1675672802396">
-//         <label htmlFor="text-1675672802396" className="formbuilder-text-label">
-//           Комментарий
-//         </label>
-//         <input
-//           type="text"
-//           placeholder="Комментарий"
-//           className="form-control"
-//           name="text-1675672802396"
-//           maxLength={120}
-//           id="text-1675672802396"
-//           title="Оставьте свой вопрос или пожелание"
-//         />
-//       </div>
-//       <div className="formbuilder-number form-group field-number-1675673472228">
-//         <label htmlFor="number-1675673472228" className="formbuilder-number-label">
-//           Количество людей
-//         </label>
-//         <input
-//           type="number"
-//           placeholder="Количество людей"
-//           className="form-control"
-//           name="number-1675673472228"
-//           id="number-1675673472228"
-//           title="Например 2"
-//         />
-//       </div>
-//       <div className="formbuilder-checkbox-group form-group field-checkbox-group-1675672879324">
-//         <label htmlFor="checkbox-group-1675672879324" className="formbuilder-checkbox-group-label">
-//           Опционально
-//         </label>
-//         <div className="checkbox-group">
-//           <div className="formbuilder-checkbox">
-//             <input
-//               name="checkbox-group-1675672879324[]"
-//               id="checkbox-group-1675672879324-0"
-//               type="checkbox"
-//             />
-//             <label htmlFor="checkbox-group-1675672879324-0">Дети</label>
-//           </div>
-//           <div className="formbuilder-checkbox">
-//             <input
-//               name="checkbox-group-1675672879324[]"
-//               id="checkbox-group-1675672879324-1"
-//               type="checkbox"
-//             />
-//             <label htmlFor="checkbox-group-1675672879324-1">Животные</label>
-//           </div>
-//         </div>
-//       </div>
 //     </div>
 //   </div>
 
