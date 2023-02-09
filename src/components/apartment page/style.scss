@@ -105,8 +105,43 @@
     margin-top: 1vh;
     width: 60%;
 
+    border: 1px solid grey;
+
     @media (width < 600px) {
       width: 100%;
+    }
+
+    .calendar-form {
+      padding: 1vh;
+
+      border-top: 1px solid grey;
+
+      .text-input {
+        display: inline-block;
+        margin: 0 1vw 1vh 1vw;
+        padding: 0.5vh;
+
+        width: 45%;
+        height: 2vw;
+
+        color: white;
+        background-color: grey;
+
+        &::-webkit-input-placeholder {
+          color: white !important;
+        }
+      }
+
+      & select {
+        color: black;
+        background-color: white;
+      }
+
+      .select-checkbox {
+        .select {
+          width: 48%;
+        }
+      }
     }
   }
 
@@ -122,8 +157,6 @@
     &::-webkit-scrollbar {
       height: 10px;
     }
-
-
 
     &::-webkit-scrollbar-thumb {
       background-color: rgb(87, 87, 87);

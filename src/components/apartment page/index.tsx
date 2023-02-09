@@ -26,8 +26,8 @@ export const Apartment = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
-  console.log(errors);
+  const onSubmit = (data: any) => console.log();
+  // console.log(errors);
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
@@ -166,6 +166,7 @@ export const Apartment = () => {
             />
           </div>
         </div>
+
         <div className="bottom-block">
           <div className="bottom-left">1</div>
           <div className="apartment-container__calendar">
@@ -184,40 +185,68 @@ export const Apartment = () => {
               fixedHeight
             />
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <input
-                type="text"
-                placeholder="Имя Фамилия"
-                {...register('Имя Фамилия', { required: true, maxLength: 120 })}
-              />
-              <input
-                type="tel"
-                placeholder="Номер телефона"
-                {...register('Номер телефона', { required: true, maxLength: 12 })}
-              />
-              <input
-                type="text"
-                placeholder="Email"
-                {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
-              />
-              <input
-                type="text"
-                placeholder="Комментарий"
-                {...register('Комментарий', { required: true, maxLength: 180 })}
-              />
-              <select placeholder="Ytuh" {...register('Количество людей', { required: true })}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-              </select>
-              <input type="checkbox" placeholder="Дети" {...register('Дети', { required: true })} />
-              <input type="checkbox" placeholder="Животные" {...register('Животные', {})} />
+            <form className="calendar-form" onSubmit={handleSubmit(onSubmit)}>
+              <p>
+                <input
+                  className="text-input"
+                  type="text"
+                  placeholder="Имя Фамилия"
+                  {...register('Имя Фамилия', { required: true, maxLength: 120 })}
+                />
+                <input
+                  className="text-input"
+                  type="tel"
+                  placeholder="Номер телефона"
+                  {...register('Номер телефона', { required: true, maxLength: 12 })}
+                />
+              </p>
+              <p>
+                <input
+                  className="text-input"
+                  type="text"
+                  placeholder="Email"
+                  {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
+                />
+                <input
+                  className="text-input"
+                  type="text"
+                  placeholder="Комментарий"
+                  {...register('Комментарий', { required: true, maxLength: 180 })}
+                />
+              </p>
 
+              <p className="select-checkbox">
+                <div className="select">
+                  <label>Укажите количество людей</label>
+                  <select
+                    placeholder="Количество людей"
+                    {...register('Количество людей', { required: true })}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                  </select>
+                </div>
+
+                <span className="checkbox">
+                  <span>
+                    <label>Дети</label>
+                    <input
+                      type="checkbox"
+                      placeholder="Дети"
+                      {...register('Дети', { required: true })}
+                    />
+                  </span>
+                  <span>
+                    <label>Животные</label>
+                    <input type="checkbox" placeholder="Животные" {...register('Животные', {})} />
+                  </span>
+                </span>
+              </p>
               <input type="submit" />
             </form>
           </div>
