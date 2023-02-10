@@ -28,6 +28,8 @@ export const ApartmentCard = () => {
 
   // const { sort, options } = useParams<keyof MyParams>() as MyParams;
 
+
+
   const filterBy = categoryMeta(sort)?.filterBy;
 
   let apartments: any = [];

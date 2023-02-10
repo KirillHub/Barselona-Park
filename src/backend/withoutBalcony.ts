@@ -1,4 +1,4 @@
-import { Apartment } from "../components/types/type";
+import { Apartment } from './../components/types/type';
 
 export const table: Apartment[] = [
   {
@@ -12,7 +12,7 @@ export const table: Apartment[] = [
     view: true,
     hairDryer: true,
     dishwasher: false,
-    oven: false,
+    oven: true,
     sleepingPlaces: '6',
     wifi: true,
     coffeeMachine: false,
@@ -59,6 +59,9 @@ export const table: Apartment[] = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '14',
+    // description: [
+    //   'Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей – это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания: духовка, wi-fi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также любимых питомцев!',
+    // ],
     meta: {
       title: 'Апартамент 1416',
       description:
@@ -78,7 +81,7 @@ export const table: Apartment[] = [
     view: true,
     hairDryer: true,
     dishwasher: false,
-    oven: false,
+    oven: true,
     sleepingPlaces: '6',
     wifi: true,
     coffeeMachine: false,
@@ -125,6 +128,9 @@ export const table: Apartment[] = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '14',
+    // description: [
+    //   'Трехкомнатный апартамент площадью 60 кв. м с 6 спальными местами – идеальное место для отдыха семьи или друзей. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. Апартамент предлагает прекрасный вид на море и все необходимое для проживания: духовка, wi-fi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Дети и питомцы приветствуются!',
+    // ],
     meta: {
       title: 'Апартамент 1415',
       description:
@@ -191,6 +197,9 @@ export const table: Apartment[] = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '14',
+    // description: [
+    //   '',
+    // ],
     meta: {
       title: 'Апартамент 1410',
       description:
@@ -2775,8 +2784,8 @@ export const table: Apartment[] = [
   },
 ];
 
-
-export const table1 = [{
+export const table1 = [
+  {
     name: '1416',
     balcony: false,
     studio: false,
@@ -3435,4 +3444,5 @@ export const table1 = [{
       keywords: 'Апартамент 1208, Барселона парк, Апартамент Сочи',
     },
     sort: '33',
-  },]
+  },
+];

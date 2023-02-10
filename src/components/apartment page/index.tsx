@@ -41,7 +41,69 @@ export const Apartment = () => {
   const pathname = usePathname();
   const apartmentId = pathname?.split('/')[2];
 
-  const apartment = table.find((x) => x.name === apartmentId);
+  const aa: any = [];
+
+  const apartment = table?.find((x) => x.name === apartmentId);
+
+  if (apartment.balcony) {
+    aa.push('балкон');
+  }
+  if (apartment.view) {
+    aa.push('вид на море');
+  }
+  if (apartment.view === false) {
+    aa.push('вид на город');
+  }
+
+  if (apartment.dishwasher) {
+    aa.push('посудомоечная машина');
+  }
+
+  if (apartment.oven) {
+    aa.push('духовка');
+  }
+
+  if (apartment.coffeeMachine) {
+    aa.push('кофемашина');
+  }
+
+  const rom =
+    apartment?.rooms === '3'
+      ? 'Трехкомнатный апартамент'
+      : apartment?.rooms === '2'
+      ? 'Двухкомнатный апартамент'
+      : apartment?.rooms === '1'
+      ? 'Однокомнатный апартамент'
+      : 'Апартамент студия';
+
+
+  const first = `площадью ${apartment?.squareMeters} кв/м с ${apartment?.sleepingPlaces} спальными местами для семьи или компании друзей`;
+
+  const second =
+    '  диван, обеденный стол и кондиционер, ванная комната совмещена с туалетом, в апартаменте всегда чистое постельное белье, свежесть и комфорт';
+
+  const vse = aa
+    .concat([
+      'wi-fi',
+      '3 кондиционера',
+      'телевизор',
+      'фен',
+      'полотенца',
+      'утюг',
+      'стиральная машина',
+      'микроволновка',
+      'чайник',
+      'холодильник',
+      'можно с детьми и животными',
+    ])
+    .join(', ');
+
+  // console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
+
+
+  console.log(
+    'Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей – это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания: духовка, wifi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также любимых питомцев!'.split('.'),
+  );
 
   const booking = [
     { start: new Date(2023, 1, 8), end: new Date(2023, 1, 10) },
@@ -150,6 +212,17 @@ export const Apartment = () => {
                 </span>
               </div>
             </div>
+
+            <div>
+              Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей –
+              это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с
+              прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным
+              столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт.
+              Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания:
+              духовка, wifi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина,
+              микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также
+              любимых питомцев!
+            </div>
           </div>
 
           <div className="div-img">
@@ -186,68 +259,71 @@ export const Apartment = () => {
             />
 
             <form className="calendar-form" onSubmit={handleSubmit(onSubmit)}>
-              <p>
-                <input
-                  className="text-input"
-                  type="text"
-                  placeholder="Имя Фамилия"
-                  {...register('Имя Фамилия', { required: true, maxLength: 120 })}
-                />
-                <input
-                  className="text-input"
-                  type="tel"
-                  placeholder="Номер телефона"
-                  {...register('Номер телефона', { required: true, maxLength: 12 })}
-                />
-              </p>
-              <p>
-                <input
-                  className="text-input"
-                  type="text"
-                  placeholder="Email"
-                  {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
-                />
-                <input
-                  className="text-input"
-                  type="text"
-                  placeholder="Комментарий"
-                  {...register('Комментарий', { required: true, maxLength: 180 })}
-                />
-              </p>
+              <div className="div-bloc">
+                <p>
+                  <input
+                    className="text-input"
+                    type="text"
+                    placeholder="Имя и фамилия"
+                    {...register('Имя и фамилия', { required: true, maxLength: 120 })}
+                  />
+                  <br />
+                  <input
+                    className="text-input"
+                    type="tel"
+                    placeholder="Номер телефона"
+                    {...register('Номер телефона', { required: true, maxLength: 12 })}
+                  />
+                </p>
+                <p>
+                  <input
+                    className="text-input"
+                    type="text"
+                    placeholder="Email"
+                    {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
+                  />
+                  <br />
+                  <input
+                    className="text-input"
+                    type="text"
+                    placeholder="Комментарий"
+                    {...register('Комментарий', { required: true, maxLength: 180 })}
+                  />
+                </p>
+              </div>
 
-              <p className="select-checkbox">
-                <div className="select">
-                  <label>Укажите количество людей</label>
-                  <select
-                    placeholder="Количество людей"
-                    {...register('Количество людей', { required: true })}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                  </select>
-                </div>
+              <div className="block-select">
+                <p className="select-checkbox">
+                  <span className="select">
+                    <label>Количество людей</label>
+                    <select
+                      placeholder="Количество людей"
+                      {...register('Количество людей', { required: true })}>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                    </select>
+                  </span>
 
-                <span className="checkbox">
-                  <span>
+                  <br />
+                  <span className="checkbox">
                     <label>Дети</label>
                     <input
                       type="checkbox"
                       placeholder="Дети"
                       {...register('Дети', { required: true })}
                     />
-                  </span>
-                  <span>
                     <label>Животные</label>
                     <input type="checkbox" placeholder="Животные" {...register('Животные', {})} />
                   </span>
-                </span>
-              </p>
-              <input type="submit" />
+                </p>
+                <input className="button-30" type="submit" value="Забронировать" />
+              </div>
             </form>
           </div>
         </div>
@@ -256,34 +332,3 @@ export const Apartment = () => {
   );
 };
 export default Apartment;
-
-// <div className="apartment-container__slider-info">
-//     <ApartmentInfo apartment={apartment} />
-//     <SliderImages apartment={apartment} apartmentIndex={0} />
-//   </div>
-
-//   <div className="apartment-container__calendar">
-//     <DatePicker
-//       startDate={startDate}
-//       endDate={endDate}
-//       locale={ru}
-//       onChange={onChange}
-//       excludeDates={suki}
-//       selectsRange
-//       minDate={subDays(new Date(), 0)}
-//       maxDate={addDays(new Date(), 365)}
-//       disabledKeyboardNavigation
-//       monthsShown={3}
-//       calendarStartDay={1}
-//       inline
-//     />
-
-//     </div>
-//   </div>
-
-//  <title>{apartmentPage.apartment.meta?.title}</title>
-//         <meta name="description" content={apartmentPage.apartment.meta?.description} />
-//         <meta name="keywords" content={apartmentPage.apartment.meta?.keywords} />
-//         <meta name="Document-state" content="Dynamic" />
-//         <meta name="Author" content="https://github.com/bi-zi" />
-//         <meta name="Copyright" content="bi_zi" />

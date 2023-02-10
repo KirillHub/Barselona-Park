@@ -38,7 +38,7 @@ export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) =>
                 fill
                 quality={options?.quality}
                 sizes={options?.sizes}
-                style={{ objectFit: options?.fit,borderRadius: '40px' }}
+                style={{ objectFit: options?.fit, }}
                 src={picture.img}
                 alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
                   picture.id.split('-')[1]
