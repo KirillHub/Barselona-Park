@@ -45,25 +45,25 @@ export const Apartment = () => {
 
   const apartment = table?.find((x) => x.name === apartmentId);
 
-  if (apartment.balcony) {
+  if (apartment?.balcony) {
     aa.push('балкон');
   }
-  if (apartment.view) {
+  if (apartment?.view) {
     aa.push('вид на море');
   }
-  if (apartment.view === false) {
+  if (apartment?.view === false) {
     aa.push('вид на город');
   }
 
-  if (apartment.dishwasher) {
+  if (apartment?.dishwasher) {
     aa.push('посудомоечная машина');
   }
 
-  if (apartment.oven) {
+  if (apartment?.oven) {
     aa.push('духовка');
   }
 
-  if (apartment.coffeeMachine) {
+  if (apartment?.coffeeMachine) {
     aa.push('кофемашина');
   }
 
