@@ -59,6 +59,7 @@ export const table: Apartment[] = [
     winterPrice: '6 000',
     rooms: '3',
     floor: '14',
+
     // description: [
     //   'Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей – это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания: духовка, wi-fi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также любимых питомцев!',
     // ],
@@ -197,6 +198,9 @@ export const table: Apartment[] = [
     winterPrice: '6 000',
     rooms: '2',
     floor: '14',
+
+    // потолочная система кондиционирования с пультом управления на стене в спальне
+
     // description: [
     //   '',
     // ],
@@ -262,6 +266,8 @@ export const table: Apartment[] = [
         id: '1409-7',
       },
     ],
+
+    // в спальне и в коридоре при входе
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -328,6 +334,8 @@ export const table: Apartment[] = [
         id: '1404-7',
       },
     ],
+
+    // в спальне над кроватью надо еще 1 посмотреть
     summerPrice: '15 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -394,6 +402,7 @@ export const table: Apartment[] = [
         id: '1313-7',
       },
     ],
+    // в спальне над кроватью в другой комнате тоже над кроватью и зале тоже над диваном
     summerPrice: '12 500',
     winterPrice: '7 000',
     rooms: '3',
@@ -460,6 +469,7 @@ export const table: Apartment[] = [
         id: '1305-7',
       },
     ],
+    // в спальне над кроватью и один при входе над дверью
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
@@ -526,6 +536,7 @@ export const table: Apartment[] = [
         id: '1304-7',
       },
     ],
+    // в спальне над кроватью и один при входе над дверью
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
@@ -592,6 +603,7 @@ export const table: Apartment[] = [
         id: '1303-7',
       },
     ],
+    // потолочное кондиционирование пульт переносной
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: 'Студия',
@@ -658,6 +670,8 @@ export const table: Apartment[] = [
         id: '1208-7',
       },
     ],
+
+    // в спальне над дверью в коридоре над входом в зал
     summerPrice: '12 000',
     winterPrice: '7 000',
     rooms: '2',
@@ -724,6 +738,8 @@ export const table: Apartment[] = [
         id: '1207-7',
       },
     ],
+
+    // кондиционер над кроватью с боку
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: 'Студия',
@@ -790,6 +806,8 @@ export const table: Apartment[] = [
         id: '1206-7',
       },
     ],
+
+    // кондиционер над кроватью с боку
     summerPrice: '11 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -856,6 +874,7 @@ export const table: Apartment[] = [
         id: '1111-7',
       },
     ],
+    // в спальне возле окна второй над столом в коридоре
     summerPrice: '11 000',
     winterPrice: '5 500',
     rooms: '2',
@@ -922,6 +941,7 @@ export const table: Apartment[] = [
         id: '1110-7',
       },
     ],
+    // в спальне возле кровати и в второй спальне над диваном и зале над диваном
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '3',
@@ -988,6 +1008,7 @@ export const table: Apartment[] = [
         id: '1109-7',
       },
     ],
+    // над входом кондей
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '2',
@@ -1054,6 +1075,7 @@ export const table: Apartment[] = [
         id: '1105-7',
       },
     ],
+    // над входом кондей и на стене на против кровати
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -1120,6 +1142,7 @@ export const table: Apartment[] = [
         id: '1104-7',
       },
     ],
+    // над входом кондей и на стене на против кровати
     summerPrice: '12 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -1186,6 +1209,7 @@ export const table: Apartment[] = [
         id: '1103-7',
       },
     ],
+    // в спальне у окна и над столом в гостинной
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '2',
@@ -1252,6 +1276,7 @@ export const table: Apartment[] = [
         id: '1014-7',
       },
     ],
+    // в спальне над кроватью и над диваном в гостинной
     summerPrice: '12 000',
     winterPrice: '7 000',
     rooms: '1',
@@ -1318,6 +1343,7 @@ export const table: Apartment[] = [
         id: '1013-7',
       },
     ],
+    // в спальне над кроватью и над диваном в гостинной
     summerPrice: '12 000',
     winterPrice: '7 000',
     rooms: '1',
@@ -1384,6 +1410,7 @@ export const table: Apartment[] = [
         id: '1003-7',
       },
     ],
+    // в спальне над тумбой
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '2',
@@ -1450,6 +1477,7 @@ export const table: Apartment[] = [
         id: '907-7',
       },
     ],
+    // в спальне возле шкафа над столом
     summerPrice: '11 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -1516,6 +1544,7 @@ export const table: Apartment[] = [
         id: '805-7',
       },
     ],
+    // в спальне возле кровати у окна и в углу над диваном коричневым
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -1582,6 +1611,7 @@ export const table: Apartment[] = [
         id: '716-7',
       },
     ],
+    // в гостинной над столом
     summerPrice: '10 000',
     winterPrice: '6 500',
     rooms: '2',
@@ -1648,6 +1678,7 @@ export const table: Apartment[] = [
         id: '715-7',
       },
     ],
+    // в гостинной над столом
     summerPrice: '10 000',
     winterPrice: '6 500',
     rooms: '2',
@@ -1714,6 +1745,7 @@ export const table: Apartment[] = [
         id: '712-7',
       },
     ],
+    // в спальне над кроватью и в углу над кроватью
     summerPrice: '10 000',
     winterPrice: '6 500',
     rooms: '2',
@@ -1780,6 +1812,7 @@ export const table: Apartment[] = [
         id: '709-7',
       },
     ],
+    // в спальне над дверью и во второй спальне над дверью
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -1846,6 +1879,7 @@ export const table: Apartment[] = [
         id: '705-7',
       },
     ],
+    // студия над телеком
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: 'Студия',
@@ -1912,6 +1946,7 @@ export const table: Apartment[] = [
         id: '613-7',
       },
     ],
+    // потолочный кондиционер с пультом на стене
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -1978,6 +2013,7 @@ export const table: Apartment[] = [
         id: '612-7',
       },
     ],
+    // над телевизором в спальне над кроватью
     summerPrice: '11 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -2044,6 +2080,7 @@ export const table: Apartment[] = [
         id: '607-7',
       },
     ],
+    // в спальне над дверью и над столом
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -2110,6 +2147,7 @@ export const table: Apartment[] = [
         id: '606-7',
       },
     ],
+    // в спальне над дверью и над входной дверью
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: '2',
@@ -2176,6 +2214,7 @@ export const table: Apartment[] = [
         id: '605-7',
       },
     ],
+    // в спальне над телевизором
     summerPrice: '8 500',
     winterPrice: '5 000',
     rooms: 'Студия',
@@ -2242,6 +2281,7 @@ export const table: Apartment[] = [
         id: '509-7',
       },
     ],
+    // в спальне над тумбочкой и над креслом возле кухни
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
@@ -2308,6 +2348,7 @@ export const table: Apartment[] = [
         id: '503-7',
       },
     ],
+    // в спальне над кроватью и возле окна в гостинной
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: '2',
@@ -2374,6 +2415,7 @@ export const table: Apartment[] = [
         id: '416-7',
       },
     ],
+    // в спальне возле окна
     summerPrice: '8 500',
     winterPrice: '5 000',
     rooms: '1',
@@ -2440,6 +2482,7 @@ export const table: Apartment[] = [
         id: '415-7',
       },
     ],
+    // в спальне возле шкафа
     summerPrice: '8 000',
     winterPrice: '4 500',
     rooms: '2',
@@ -2506,6 +2549,7 @@ export const table: Apartment[] = [
         id: '402-7',
       },
     ],
+    // возле шкафа в сплаьне в гостинной у окна и и в комнате над диваном
     summerPrice: '10 000',
     winterPrice: '5 000',
     rooms: '3',
@@ -2572,6 +2616,7 @@ export const table: Apartment[] = [
         id: '312-7',
       },
     ],
+    // в гостинной над красным диваном
     summerPrice: '9 000',
     winterPrice: '6 000',
     rooms: '1',
@@ -2638,6 +2683,7 @@ export const table: Apartment[] = [
         id: '310-7',
       },
     ],
+    // над столом в гостинной
     summerPrice: '9 000',
     winterPrice: '5 000',
     rooms: '1',
@@ -2651,7 +2697,7 @@ export const table: Apartment[] = [
     sort: '3',
   },
   {
-    name: '21/8',
+    name: '21-8',
     balcony: false,
     studio: false,
     oneRoom: false,
@@ -2704,6 +2750,7 @@ export const table: Apartment[] = [
         id: '21/8-7',
       },
     ],
+    // в спальне на против кровати у окна в 2 спальне слева в углу
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '3',
@@ -2717,7 +2764,7 @@ export const table: Apartment[] = [
     sort: '2',
   },
   {
-    name: '21/6',
+    name: '21-6',
     balcony: false,
     studio: false,
     oneRoom: false,
@@ -2770,6 +2817,7 @@ export const table: Apartment[] = [
         id: '21/6-7',
       },
     ],
+    // потолочный кондиционер
     summerPrice: '10 000',
     winterPrice: '6 000',
     rooms: '2',
