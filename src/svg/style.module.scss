@@ -5,3 +5,10 @@
   cursor: pointer;
   z-index: 1;
 }
+
+.newSvg {
+  width: calc(20px + 20 * (100vw / 1920));
+  height: calc(20px + 20 * (100vw / 1920));
+
+  z-index: 1;
+}

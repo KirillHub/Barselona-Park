@@ -1,16 +1,20 @@
 .category-page-container__apartments {
   position: relative;
+  display: flex;
 
+  width: 72%;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
   .category-page-container__apartments-card {
-    display: flex;
     position: relative;
 
     margin: 0 0 calc(40px + 20 * (100vw / 1920)) 0;
 
-    width: 100%;
-    height: auto;
-
     justify-content: space-between;
+
+    box-shadow: 0px 0px 2px 1px rgba(172, 172, 172, 0.66);
 
     @media (width < 600px) {
       display: block;
@@ -18,7 +22,7 @@
 
     .category-page-container__apartments-card-slider {
       position: relative;
-      width: 48%;
+      width: 500px;
 
       @media (width < 600px) {
         width: 100%;
@@ -26,7 +30,7 @@
     }
 
     .category-page-container__apartments-card-info {
-      width: 48%;
+      width: 500px;
 
       @media (width < 600px) {
         width: 100% !important;

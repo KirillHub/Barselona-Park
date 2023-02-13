@@ -15,11 +15,11 @@ export const ApartmentInfo = ({ apartment }: MyProps) => {
     <div className="category-page-container__apartments-card__info">
       <TitleAndButton apartment={apartment} />
 
-      <Price apartment={apartment} />
-
       <ImportantInfo apartment={apartment} />
 
       <Icons apartment={apartment} />
+
+      <Price apartment={apartment} />
     </div>
   );
 };

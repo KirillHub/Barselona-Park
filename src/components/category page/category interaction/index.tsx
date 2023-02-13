@@ -178,11 +178,11 @@ export const CategoryInteraction = () => {
 
   return (
     <div className="category-page-container__sorting">
+      <SelectCategory />
+
       <Sort resetSorts={resetSorts} />
 
       <Options onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
-
-      <SelectCategory />
     </div>
   );
 };

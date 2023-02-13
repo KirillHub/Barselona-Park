@@ -1,4 +1,4 @@
-export * from './telegram'
+export * from './telegram';
 export * from './whatsapp';
 export * from './conditioner';
 export * from './coffee machine';
@@ -19,3 +19,8 @@ export * from './kettle';
 export * from './sea';
 export * from './city';
 export * from './towels';
+export * from './rooms';
+export * from './blueprint';
+export * from './bed';
+export * from './ruble';
+export * from './more';

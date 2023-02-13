@@ -116,9 +116,6 @@ export const ApartmentCard = () => {
     <div className="category-page-container__apartments">
       {apartments.map((apartment: Apartment, index: number) => (
         <div className="category-page-container__apartments-card" key={apartment.name}>
-          <div className="category-page-container__apartments-card-info">
-            <ApartmentInfo apartment={apartment} />
-          </div>
           <div className="category-page-container__apartments-card-slider">
             <SliderImages
               apartment={apartment}
@@ -127,10 +124,13 @@ export const ApartmentCard = () => {
                 className: 'category-page-container__apartments-card__images-picture',
                 sizes: '375px',
                 fit: 'cover',
-                lazy: 2,
+                lazy: 1,
                 quality: 75,
               }}
             />
+          </div>
+          <div className="category-page-container__apartments-card-info">
+            <ApartmentInfo apartment={apartment} />
           </div>
         </div>
       ))}

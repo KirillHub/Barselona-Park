@@ -109,6 +109,21 @@ export const Icons = ({ apartment }: MyProps) => {
     false,
   ]);
 
+  let fixSpace = 1;
+
+  if (apartment.balcony) {
+    fixSpace += 1;
+  }
+  if (apartment.oven) {
+    fixSpace += 1;
+  }
+  if (apartment.dishwasher) {
+    fixSpace += 1;
+  }
+  if (apartment.coffeeMachine) {
+    fixSpace += 1;
+  }
+
   const showTitle = (iconIndex: number) => {
     setTitles(titles.map((title, index) => (index === iconIndex ? true : title)));
 
@@ -119,54 +134,82 @@ export const Icons = ({ apartment }: MyProps) => {
 
   return (
     <div className="category-page-container__apartments-card__info__icons">
-      {apartment.balcony ? (
-        <div onClick={() => showTitle(0)}>
-          <Balcony />
-          <span className={`${titles[0] ? 'visible-title' : 'hidden-title'}`}>Балкон</span>
-        </div>
-      ) : null}
+      <div className="showicons">
+        {apartment.balcony ? (
+          <div onClick={() => showTitle(0)}>
+            <Balcony />
+            <span className={`${titles[0] ? 'visible-title' : 'hidden-title'}`}>Балкон</span>
+          </div>
+        ) : null}
 
-      {apartment.view ? (
-        <div onClick={() => showTitle(1)}>
-          <Sea />
-          <span className={`${titles[1] ? 'visible-title' : 'hidden-title'}`}>Вид на море</span>
-        </div>
-      ) : (
-        <div onClick={() => showTitle(2)}>
-          <City />
-          <span className={`${titles[2] ? 'visible-title' : 'hidden-title'}`}>Вид на город</span>
-        </div>
-      )}
+        {apartment.view ? (
+          <div onClick={() => showTitle(1)}>
+            <Sea />
+            <span className={`${titles[1] ? 'visible-title' : 'hidden-title'}`}>Вид на море</span>
+          </div>
+        ) : (
+          <div onClick={() => showTitle(2)}>
+            <City />
+            <span className={`${titles[2] ? 'visible-title' : 'hidden-title'}`}>Вид на город</span>
+          </div>
+        )}
 
-      {apartment.oven ? (
-        <div onClick={() => showTitle(3)}>
-          <Stove />
-          <span className={`${titles[3] ? 'visible-title' : 'hidden-title'}`}>Духовка</span>
-        </div>
-      ) : null}
+        {apartment.oven ? (
+          <div onClick={() => showTitle(3)}>
+            <Stove />
+            <span className={`${titles[3] ? 'visible-title' : 'hidden-title'}`}>Духовка</span>
+          </div>
+        ) : null}
 
-      {apartment.dishwasher ? (
-        <div onClick={() => showTitle(4)}>
-          <Dishwasher />
-          <span className={`${titles[4] ? 'visible-title' : 'hidden-title'}`}>Посудомоечная машина</span>
-        </div>
-      ) : null}
+        {apartment.dishwasher ? (
+          <div onClick={() => showTitle(4)}>
+            <Dishwasher />
+            <span className={`${titles[4] ? 'visible-title' : 'hidden-title'}`}>
+              Посудомоечная машина
+            </span>
+          </div>
+        ) : null}
 
-      {apartment.coffeeMachine ? (
-        <div onClick={() => showTitle(5)}>
-          <CoffeeMachine />
-          <span className={`${titles[5] ? 'visible-title' : 'hidden-title'}`}>Кофемашина</span>
-        </div>
-      ) : null}
+        {apartment.coffeeMachine ? (
+          <div onClick={() => showTitle(5)}>
+            <CoffeeMachine />
+            <span className={`${titles[5] ? 'visible-title' : 'hidden-title'}`}>Кофемашина</span>
+          </div>
+        ) : null}
 
-      {icons.map((icon, index) => (
-        <div onClick={() => showTitle(index + 6)} key={icon.title}>
-          {icon.jsx}
-          <span className={`${titles[index + 6] ? 'visible-title' : 'hidden-title'}`}>
-            {icon.title}
-          </span>
+        {fixSpace < 5
+          ? icons.map((icon, index) =>
+              index < 5 - fixSpace ? (
+                <div onClick={() => showTitle(index + 6)} key={icon.title}>
+                  {icon.jsx}
+                  <span className={`${titles[index + 6] ? 'visible-title' : 'hidden-title'}`}>
+                    {icon.title}
+                  </span>
+                </div>
+              ) : (
+                ''
+              ),
+            )
+          : ''}
+      </div>
+
+      <div className="hiddenicons">
+        <p>Все услуги</p>
+        <div className="hiddenicons-icon">
+          {icons.map((icon, index) =>
+            index > 5 - fixSpace ? (
+              <div onClick={() => showTitle(index + 6)} key={icon.title}>
+                {icon.jsx}
+                <span className={`${titles[index + 6] ? 'visible-title' : 'hidden-title'}`}>
+                  {icon.title}
+                </span>
+              </div>
+            ) : (
+              ''
+            ),
+          )}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

@@ -1,17 +1,18 @@
 .category-page-container__apartments-card__info__important-info {
   display: flex;
 
-  padding: calc(6px + 10 * (100vw / 1920)) 0;
+  padding: 1vh 0;
 
-  border-bottom: 2px solid white;
-
-  font-size: calc(9px + 8 * (100vw / 1920));
-
-  justify-content: space-around;
-
+  justify-content: space-between;
+  border-top: 0.2vh solid rgba(128, 128, 128, 0.219);
+  
   z-index: 0;
+  div {
+    display: flex;
+    align-items: center;
+  }
 
-span {
-  text-align: center;
-}
+  p {
+    margin-left: 0.5vw;
+  }
 }

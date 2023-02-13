@@ -1,46 +1,67 @@
 .category-page-container__apartments-card__info__price {
   display: flex;
 
-  height: calc(50px + 10 * (100vw / 1920));
+  padding: 1vh 0;
 
-  border-bottom: 2px solid white;
+  justify-content: space-between;
 
-  & div {
+  border-top: 0.2vh solid rgba(128, 128, 128, 0.219);
+
+  .button-30 {
+    display: inline-flex;
     position: relative;
 
-    width: 100%;
-    top: 0;
+    padding: 1vh 1vw;
 
-    &:first-child {
-      border-right: 2px solid white;
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: calc(8px + 8 * (100vw / 1920));
+
+    transition: box-shadow 0.15s, transform 0.15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+
+    box-shadow: rgba(228, 228, 228, 0.4) 0 2px 4px, rgba(218, 218, 218, 0.3) 0 7px 6px -3px,
+      #000000 0 -3px 0 inset;
+
+    color: #ffffff;
+    background-color: #363636;
+
+    user-select: none;
+    cursor: pointer;
+
+    &:focus {
+      box-shadow: #2f2f30 0 0 0 1.5px inset, rgba(176, 165, 201, 0.4) 0 2px 4px,
+        rgba(197, 190, 212, 0.3) 0 7px 6px -3px, #343438 0 -3px 0 inset;
     }
 
-    font-size: calc(6px + 6 * (100vw / 1920));
+    &:hover {
+      box-shadow: rgba(255, 255, 255, 0.4) 0 4px 8px, rgba(255, 255, 255, 0.3) 0 7px 6px -3px,
+        #181818 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      box-shadow: #4b4b4b 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+  }
+
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
   }
 
   & p {
-    display: block;
-
-    margin: auto 0;
-    padding-top: calc(6px + 0 * (100vw / 1920));
-
     text-align: center;
 
-    font-size: calc(12px + 8 * (100vw / 1920));
+    font-size: calc(14px + 12 * (100vw / 1920));
     font-weight: bold;
-  }
-
-  & span {
-    position: absolute;
-
-    padding: 0 calc(5px + 5 * (100vw / 1920));
-
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    text-align: center;
-    font-size: calc(7px + 10 * (100vw / 1920));
-    font-weight: normal;
   }
 }

@@ -1,60 +1,33 @@
 .category-page-container__apartments-card__info {
 
+  padding: 0 1vw;
+  
+  background-color: rgb(0, 0, 0);
+  span {
+    position: absolute;
 
-  border: 2px solid white;
-  background-color: rgba(0, 0, 0, 0.753)
-  ;
-  .category-page-container__apartments-card__info__apartment {
-    display: flex;
+    padding: 0.2vw 0.6vw;
 
-    height: calc(40px + 30 * (100vw / 1920));
+    bottom: -2.4vh;
+    left: -2vw;
 
-    border-bottom: 2px solid white;
+    font-size: calc(8px + 5 * (100vw / 1920));
 
-    & div {
-      position: relative;
+    white-space: nowrap;
 
-      width: 50%;
-      height: 100%;
-    }
+    border: 1px solid white;
 
-    & p {
-      display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(22, 22, 22);
 
-      margin: auto 0;
+    z-index: 2;
+  }
 
-      height: 100%;
-      align-items: center;
-      justify-content: space-evenly;
+  .visible-title {
+    visibility: visible;
+  }
 
-      border-right: 2px solid white;
-
-      font-size: calc(10px + 18 * (100vw / 1920));
-      font-weight: bold;
-
-      & span {
-        font-weight: normal;
-      }
-    }
-
-    & button {
-      position: relative;
-      width: 50%;
-
-      border: 0;
-
-      font-size: calc(8px + 10 * (100vw / 1920));
-      font-weight: bold;
-
-      color: white;
-      background-color: rgba(255, 255, 255, 0);
-
-      cursor: pointer;
-
-      &:hover {
-        color: white;
-        background-color: rgb(122, 122, 122);
-      }
-    }
+  .hidden-title {
+    visibility: hidden;
   }
 }
