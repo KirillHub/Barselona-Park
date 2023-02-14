@@ -7,10 +7,10 @@ import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 import { Sort } from './sort';
-import { Options } from './options';
+import { Services } from './services';
 
 import './style.scss';
-import { SelectCategory } from './select category';
+import { Options } from './options';
 
 interface MyParams {
   category: string;
@@ -178,11 +178,12 @@ export const CategoryInteraction = () => {
 
   return (
     <div className="category-page-container__sorting">
-      <SelectCategory />
+
+      <Options/>
+
+      <Services onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
 
       <Sort resetSorts={resetSorts} />
-
-      <Options onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
     </div>
   );
 };

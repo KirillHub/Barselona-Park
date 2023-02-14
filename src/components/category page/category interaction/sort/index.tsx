@@ -4,6 +4,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import './style.scss';
 
 interface MyParams {
   category: string;
@@ -18,8 +19,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
   // const dispatch = useAppDispatch();
   // const categoryPage = useAppSelector((state) => state.categoryPage);
 
-
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const category = pathname?.split('/')[3];
   const sort = pathname?.split('/')[4];
@@ -45,7 +45,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
     },
     {
       option: 'Sorted-by-number-of-beds',
-      name: 'По количеству спальных мест',
+      name: 'По количеству мест',
     },
     {
       option: 'Sorted-by-square-meters',
@@ -58,25 +58,20 @@ export const Sort = ({ resetSorts }: MyProps) => {
   };
 
   return (
-    <div className="category-page-container__sorting__dropdown">
-      <button className="category-page-container__sorting__dropdown-button">Сортировка</button>
-      <div className="category-page-container__sorting__dropdown__content">
+    <div className="services">
+      <p className="services-title">Сортировка</p>
+      <div className="services-checkbox">
         {sortBy.map((option, index) => (
           <Link
-            className={`${sort === option.option ? 'active' : ''}`}
+            className="services-checkbox-span"
             href={`/Category/${category}/${option.option}${'categoryPage.opitionsSortedLink'}`}
             onClick={() => onHandleClick(index)}
-            key={index}>
-
-          </Link>
+            key={index}>{`> ${option.name} `}</Link>
         ))}
-        <a href="https://wa.me/79996304650?text=Меня%20интересует%20ваше%20объявление%20о%20продаже%20машины">
-          123
-        </a>
-        <span onClick={() => resetSorts('sort')}>Сброс</span>
       </div>
+      <span onClick={() => resetSorts('sort')}>Сброс</span>
     </div>
   );
 };
 
-//  {`${option.name} ${categoryPage.checkSign[index] ? '<' : '>'}`}
+//{`${option.name} ${categoryPage.checkSign[index] ? '<' : '>'}`}

@@ -1,0 +1,14 @@
+.options-container {
+  padding: 2vh 1vw;
+
+  width: 400px;
+  height: 420px;
+  background-color: rgb(37, 37, 37);
+
+  .check-guests {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+  }
+}

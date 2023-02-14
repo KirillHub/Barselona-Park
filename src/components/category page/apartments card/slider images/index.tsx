@@ -34,7 +34,7 @@ export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) =>
           <SwiperSlide key={picture.id}>
             <div className={options?.className}>
               <Image
-                priority={apartmentIndex < 4 ? (index < options?.lazy ? true : false) : false}
+                priority={apartmentIndex < 2 ? (index < options?.lazy ? true : false) : false}
                 fill
                 quality={options?.quality}
                 sizes={options?.sizes}

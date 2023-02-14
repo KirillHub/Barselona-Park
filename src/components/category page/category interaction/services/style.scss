@@ -1,0 +1,33 @@
+.services {
+  position: relative;
+  margin: 2vh 0;
+
+  width: 100%;
+  height: auto;
+
+  .services-title {
+    font-size: 24px;
+  }
+
+  .services-checkbox {
+    display: flex;
+
+    padding-top: 1vh;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    .services-checkbox-span {
+      width: 50%;
+
+      white-space: nowrap;
+
+      font-size: 16px;
+
+      .services-checkbox-span-input {
+        margin-right: 0.5vw;
+      }
+    }
+  }
+}

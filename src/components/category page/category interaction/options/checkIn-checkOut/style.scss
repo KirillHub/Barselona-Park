@@ -1,0 +1,46 @@
+.checkIn {
+  margin: 0 0 1vw 0;
+  padding: 1vh 0.5vw;
+  width: 44%;
+  height: 12vh;
+
+  background-color: black;
+
+  user-select: none;
+  .check-title {
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .check-date {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    .check-date-number {
+      padding-left: 0.5vw;
+      font-size: 54px;
+    }
+    .check-date-date {
+      font-size: 20px;
+    }
+    .check-date-date-more {
+      margin: 0 auto;
+      width: 30px;
+      height: 30px;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.nigths {
+  font-size: 54px;
+}
+
+.wrap {
+  transform: rotate(180deg);
+}

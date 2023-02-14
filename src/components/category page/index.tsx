@@ -7,7 +7,7 @@ import './style.scss';
 export const Category = () => {
   return (
     <>
-      <h1 className="category-page-container__name">{123123}</h1>
+      <h1 className="category-page-container__name">Категория</h1>
       <div className="category-page-container">
         <CategoryInteraction />
 

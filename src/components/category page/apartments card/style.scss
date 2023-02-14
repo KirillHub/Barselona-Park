@@ -2,11 +2,12 @@
   position: relative;
   display: flex;
 
-  width: 72%;
+  width: 70%;
 
   justify-content: space-between;
 
   flex-wrap: wrap;
+
   .category-page-container__apartments-card {
     position: relative;
 
@@ -26,15 +27,6 @@
 
       @media (width < 600px) {
         width: 100%;
-      }
-    }
-
-    .category-page-container__apartments-card-info {
-      width: 500px;
-
-      @media (width < 600px) {
-        width: 100% !important;
-        margin-bottom: 2vh;
       }
     }
   }

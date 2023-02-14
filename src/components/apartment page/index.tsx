@@ -1,10 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-// import { useAppDispatch, useAppSelector } from '../../store/store';
-// import { setApartment } from '../../store/apartment/slice';
-
 import { SliderImages } from '../category page/apartments card/slider images';
-import { ApartmentInfo } from '../category page/apartments card/apartment info';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
 import ru from 'date-fns/locale/ru';
@@ -13,9 +9,9 @@ import { usePathname } from 'next/navigation';
 import { table } from '../../backend/withoutBalcony';
 import 'react-datepicker/dist/react-datepicker.css';
 import './style.scss';
-import { start } from 'repl';
 
-import Image from 'next/image';
+import { reservationDays } from '../functions/reservationDays';
+
 
 export const Apartment = () => {
   // const dispatch = useAppDispatch();
@@ -39,137 +35,12 @@ export const Apartment = () => {
   };
 
   const pathname = usePathname();
-  const apartmentId = pathname?.split('/')[2];
 
-  const aa: any = [];
+  const apartmentId = pathname?.split('/')[2];
 
   const apartment = table?.find((x) => x.name === apartmentId);
 
-  if (apartment?.balcony) {
-    aa.push('балкон');
-  }
-  if (apartment?.view) {
-    aa.push('вид на море');
-  }
-  if (apartment?.view === false) {
-    aa.push('вид на город');
-  }
-
-  if (apartment?.dishwasher) {
-    aa.push('посудомоечная машина');
-  }
-
-  if (apartment?.oven) {
-    aa.push('духовка');
-  }
-
-  if (apartment?.coffeeMachine) {
-    aa.push('кофемашина');
-  }
-
-  const rom =
-    apartment?.rooms === '3'
-      ? 'Трехкомнатный апартамент'
-      : apartment?.rooms === '2'
-      ? 'Двухкомнатный апартамент'
-      : apartment?.rooms === '1'
-      ? 'Однокомнатный апартамент'
-      : 'Апартамент студия';
-
-
-  const first = `площадью ${apartment?.squareMeters} кв/м с ${apartment?.sleepingPlaces} спальными местами для семьи или компании друзей`;
-
-  const second =
-    '  диван, обеденный стол и кондиционер, ванная комната совмещена с туалетом, в апартаменте всегда чистое постельное белье, свежесть и комфорт';
-
-  const vse = aa
-    .concat([
-      'wi-fi',
-      '3 кондиционера',
-      'телевизор',
-      'фен',
-      'полотенца',
-      'утюг',
-      'стиральная машина',
-      'микроволновка',
-      'чайник',
-      'холодильник',
-      'можно с детьми и животными',
-    ])
-    .join(', ');
-
-  // console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
-
-
-  console.log(
-    'Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей – это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания: духовка, wifi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также любимых питомцев!'.split('.'),
-  );
-
-  const booking = [
-    { start: new Date(2023, 1, 8), end: new Date(2023, 1, 10) },
-    { start: new Date(2023, 1, 14), end: new Date(2023, 1, 15) },
-  ];
-
-  const newBok = [];
-
-  for (let i = 0; i < booking.length; i++) {
-    newBok.push({ start: subDays(booking[i].start, 0), end: addDays(booking[i].end, 0) });
-  }
-
-  const userReservation = {
-    days: [],
-    email: 'bizi@gmail.com',
-    phoneNumber: '+7 (981) 654-32-10',
-    fullName: 'Boris Borisovich',
-    comment: 'Мы готовы приехать',
-    bookingTime: new Date(),
-    peopleNumber: '',
-    children: '',
-    animals: '',
-  };
-
-  const bron = [
-    {
-      start: new Date('Mon Feb 06 2023'),
-      end: new Date('Sun Mar 12 2023'),
-    },
-  ];
-
-  function getNumberOfDays(start: Date, end: Date) {
-    const date1 = new Date(start);
-    const date2 = new Date(end);
-
-    const oneDay = 1000 * 60 * 60 * 24;
-
-    const diffInTime = date2.getTime() - date1.getTime();
-
-    const diffInDays = Math.round(diffInTime / oneDay);
-
-    return diffInDays;
-  }
-
-  const between = bron.map((x) => getNumberOfDays(x.start, x.end));
-
-  const asa = [];
-
-  for (let i = 0; i < between.length; i++) {
-    for (let j = 1; j < between[i]; j++) {
-      const date = new Date(bron[i].start);
-
-      date.setDate(date.getDate() + j);
-
-      asa.push(date);
-    }
-
-    asa.unshift(bron[i].start);
-    asa.push(bron[i].end);
-  }
-
-  const most = asa.sort(function (a, b) {
-    return a.getTime() - b.getTime();
-  });
-
-  const suki = [
+  const excludedDates = [
     'Wed Feb 08 2023',
     'Thu Feb 09 2023',
     'Fri Feb 10 2023',
@@ -183,9 +54,9 @@ export const Apartment = () => {
     'Fri Mar 10 2023',
   ].map((x) => new Date(x));
 
-  const blay = most.filter((x) =>
-    suki.every((elem) => elem.toDateString() !== x.toDateString()) ? x : '',
-  );
+  if (endDate !== null) {
+    console.log(reservationDays(startDate, endDate, excludedDates));
+  }
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
@@ -242,7 +113,7 @@ export const Apartment = () => {
               endDate={endDate}
               locale={ru}
               onChange={onChange}
-              excludeDates={suki}
+              excludeDates={excludedDates}
               selectsRange
               minDate={subDays(new Date(), 0)}
               maxDate={addDays(new Date(), 365)}
@@ -325,4 +196,78 @@ export const Apartment = () => {
     </>
   );
 };
+
 export default Apartment;
+
+
+// const aa: any = [];
+
+  // if (apartment?.balcony) {
+  //   aa.push('балкон');
+  // }
+  // if (apartment?.view) {
+  //   aa.push('вид на море');
+  // }
+  // if (apartment?.view === false) {
+  //   aa.push('вид на город');
+  // }
+
+  // if (apartment?.dishwasher) {
+  //   aa.push('посудомоечная машина');
+  // }
+
+  // if (apartment?.oven) {
+  //   aa.push('духовка');
+  // }
+
+  // if (apartment?.coffeeMachine) {
+  //   aa.push('кофемашина');
+  // }
+
+  // const rom =
+  //   apartment?.rooms === '3'
+  //     ? 'Трехкомнатный апартамент'
+  //     : apartment?.rooms === '2'
+  //     ? 'Двухкомнатный апартамент'
+  //     : apartment?.rooms === '1'
+  //     ? 'Однокомнатный апартамент'
+  //     : 'Апартамент студия';
+
+  // const first = `площадью ${apartment?.squareMeters} кв/м с ${apartment?.sleepingPlaces} спальными местами для семьи или компании друзей`;
+
+  // const second =
+  //   '  диван, обеденный стол и кондиционер, ванная комната совмещена с туалетом, в апартаменте всегда чистое постельное белье, свежесть и комфорт';
+
+  // const vse = aa
+  //   .concat([
+  //     'wi-fi',
+  //     '3 кондиционера',
+  //     'телевизор',
+  //     'фен',
+  //     'полотенца',
+  //     'утюг',
+  //     'стиральная машина',
+  //     'микроволновка',
+  //     'чайник',
+  //     'холодильник',
+  //     'можно с детьми и животными',
+  //   ])
+  //   .join(', ');
+
+  // console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
+
+  // console.log(
+  //   'Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей – это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания: духовка, wifi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также любимых питомцев!'.split('.'),
+  // );
+
+  // const userReservation = {
+  //   days: [],
+  //   email: 'bizi@gmail.com',
+  //   phoneNumber: '+7 (981) 654-32-10',
+  //   fullName: 'Boris Borisovich',
+  //   comment: 'Мы готовы приехать',
+  //   bookingTime: new Date(),
+  //   peopleNumber: '',
+  //   children: '',
+  //   animals: '',
+  // };

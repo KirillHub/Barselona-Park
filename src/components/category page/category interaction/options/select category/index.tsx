@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { meta } from '../../../meta/categoryMeta';
-import { More } from '../../../../svg';
+import { meta } from '../../../../meta/categoryMeta';
+import { More } from '../../../../../svg';
+
+import './style.scss';
 
 export const SelectCategory = () => {
   // const dispatch = useAppDispatch();
@@ -9,7 +11,9 @@ export const SelectCategory = () => {
     <div className="category-page-container__sorting__dropdown">
       <button className="category-page-container__sorting__dropdown-button">
         Сменить категорию
-        <div className='more-more'><More/></div>
+        <div className="more-more">
+          <More />
+        </div>
       </button>
       <div className="category-page-container__sorting__dropdown__content">
         {meta.map((x) => (
