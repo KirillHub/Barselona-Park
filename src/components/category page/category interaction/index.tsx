@@ -152,29 +152,29 @@ export const CategoryInteraction = () => {
     }
   };
 
-  const firstRender = () => {
-    if (options !== undefined) {
-      const opitionsLink = options.split('+');
-      const newOpitionsLink = [
-        'sea-view',
-        'city-view',
-        'balcony',
-        'oven',
-        'dishwasher',
-        'coffee-machine',
-      ];
+  // const firstRender = () => {
+  //   if (options !== undefined) {
+  //     const opitionsLink = options.split('+');
+  //     const newOpitionsLink = [
+  //       'sea-view',
+  //       'city-view',
+  //       'balcony',
+  //       'oven',
+  //       'dishwasher',
+  //       'coffee-machine',
+  //     ];
 
-      const updateOpitionsLink = newOpitionsLink
-        .map((d, i) => opitionsLink.findIndex((x) => x === d))
-        .map((x) => x !== -1);
+  //     const updateOpitionsLink = newOpitionsLink
+  //       .map((d, i) => opitionsLink.findIndex((x) => x === d))
+  //       .map((x) => x !== -1);
 
-      // dispatch(setCheckBox(updateOpitionsLink));
-    }
-  };
+  //     // dispatch(setCheckBox(updateOpitionsLink));
+  //   }
+  // };
 
-  useEffect(() => {
-    firstRender();
-  }, []);
+  // useEffect(() => {
+  //   firstRender();
+  // }, []);
 
   return (
     <div className="category-page-container__sorting">
