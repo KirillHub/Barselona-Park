@@ -1,9 +1,12 @@
 .options-container {
   padding: 2vh 1vw;
 
-  width: 400px;
-  height: 420px;
-  background-color: rgb(37, 37, 37);
+  width: 90%;
+
+  border-radius: 1vh;
+  box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
+
+  background-color: rgb(28,28,28);
 
   .check-guests {
     display: flex;

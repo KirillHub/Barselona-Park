@@ -1,10 +1,12 @@
 .checkIn {
-  margin: 0 0 1vw 0;
+  margin: 2vh 0 0 0;
   padding: 1vh 0.5vw;
   width: 44%;
   height: 12vh;
 
-  background-color: black;
+  border-radius: 1vh;
+
+  background-color: rgb(21,21,21);
 
   user-select: none;
   .check-title {
@@ -23,9 +25,12 @@
     .check-date-number {
       padding-left: 0.5vw;
       font-size: 54px;
+
+      color: rgb(166,140,117);
     }
     .check-date-date {
       font-size: 20px;
+      color: rgb(166,140,117);
     }
     .check-date-date-more {
       margin: 0 auto;
@@ -39,6 +44,7 @@
 
 .nigths {
   font-size: 54px;
+  color: rgb(166,140,117);
 }
 
 .wrap {

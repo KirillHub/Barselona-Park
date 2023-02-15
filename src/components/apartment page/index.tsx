@@ -187,7 +187,7 @@ export const Apartment = () => {
                     <input type="checkbox" placeholder="Животные" {...register('Животные', {})} />
                   </span>
                 </p>
-                <input className="button-30" type="submit" value="Забронировать" />
+                <input className="main-buttons-style" type="submit" value="Забронировать" />
               </div>
             </form>
           </div>

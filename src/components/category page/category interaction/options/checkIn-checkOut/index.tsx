@@ -13,6 +13,11 @@ export const CheckInCheckOut = () => {
 
   // console.log(reservationDays(startDate, endDate));
 
+
+  if (startDate.getTime() > endDate.getTime()) {
+    setEndDate(startDate);
+  }
+
   const ExampleCustomInput = forwardRef(({ value, onClick }: any, ref: any) => (
     <div className="check-date" onClick={onClick} ref={ref}>
       <span className="check-date-number">{value.split(' ')[0]}</span>

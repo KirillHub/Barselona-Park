@@ -5,6 +5,10 @@
     position: relative;
 
     height: calc(165px + 115 * (100vw / 1920));
+
+    .images-slider-span {
+      line-height: calc(165px + 115 * (100vw / 1920));
+    }
   }
 
   .category-page-container__apartments-card__images-picture-2 {
@@ -12,10 +16,32 @@
 
     height: calc(120px + 415 * (100vw / 1920));
     z-index: 1;
+
+    .images-slider-span {
+      height: calc(120px + 415 * (100vw / 1920));
+    }
   }
 
   .swiper-button-prev::after,
   .swiper-button-next::after {
-    color: rgb(0, 81, 255);
+    color: rgb(0, 0, 0);
   }
+}
+
+.images-slider-span {
+  position: absolute;
+  width: 100%;
+
+  text-align: center;
+
+  font-size: 20px;
+}
+
+.images-slider-image {
+  position: relative;
+}
+
+.swiper-horizontal {
+  border-top-right-radius: 1vh;
+  border-top-left-radius: 1vh;
 }

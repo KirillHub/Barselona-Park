@@ -33,12 +33,14 @@ export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) =>
         <span key={picture.id}>
           <SwiperSlide key={picture.id}>
             <div className={options?.className}>
+              <span className='images-slider-span'> Фотография загружается...</span>
               <Image
+                className="images-slider-image"
                 priority={apartmentIndex < 2 ? (index < options?.lazy ? true : false) : false}
                 fill
                 quality={options?.quality}
                 sizes={options?.sizes}
-                style={{ objectFit: options?.fit, }}
+                style={{ objectFit: options?.fit }}
                 src={picture.img}
                 alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
                   picture.id.split('-')[1]

@@ -189,87 +189,46 @@
         }
       }
 
-      .button-30 {
-        display: inline-flex;
-        position: relative;
 
-        box-sizing: border-box;
-
-        width: calc(180px + 222 * (100vw / 1920));
-
-        align-items: center;
-        justify-content: center;
-
-        font-size: calc(10px + 10 * (100vw / 1920));
-
-        transition: box-shadow 0.15s, transform 0.15s;
-        touch-action: manipulation;
-        will-change: box-shadow, transform;
-
-        box-shadow: rgba(228, 228, 228, 0.4) 0 2px 4px, rgba(218, 218, 218, 0.3) 0 7px 13px -3px,
-          #000000 0 -3px 0 inset;
-
-        color: #ffffff;
-        background-color: #363636;
-
-        user-select: none;
-        cursor: pointer;
-
-        &:focus {
-          box-shadow: #2f2f30 0 0 0 1.5px inset, rgba(176, 165, 201, 0.4) 0 2px 4px,
-            rgba(197, 190, 212, 0.3) 0 7px 13px -3px, #343438 0 -3px 0 inset;
-        }
-
-        &:hover {
-          box-shadow: rgba(255, 255, 255, 0.4) 0 4px 8px, rgba(255, 255, 255, 0.3) 0 7px 13px -3px,
-            #181818 0 -3px 0 inset;
-          transform: translateY(-2px);
-        }
-
-        &:active {
-          box-shadow: #4b4b4b 0 3px 7px inset;
-          transform: translateY(2px);
-        }
-      }
 
       @media (width < 1540px) {
         .text-input,
         .select-checkbox,
-        .button-30 {
+        .main-buttons-style {
           width: calc(180px + 150 * (100vw / 1920));
         }
 
         @media (width < 1140px) {
           .text-input,
           .select-checkbox,
-          .button-30 {
+          .main-buttons-style {
             width: calc(150px + 130 * (100vw / 1920));
           }
 
           @media (width < 900px) {
             .text-input,
             .select-checkbox,
-            .button-30 {
+            .main-buttons-style {
               width: calc(110px + 130 * (100vw / 1920));
             }
 
             @media (width < 600px) {
               .text-input,
               .select-checkbox,
-              .button-30 {
+              .main-buttons-style  {
                 width: calc(150px + 150 * (100vw / 1920));
               }
 
               @media (width < 440px) {
                 .text-input,
                 .select-checkbox,
-                .button-30 {
+                .main-buttons-style {
                   width: calc(120px + 120 * (100vw / 1920));
                 }
 
                 @media (width < 330px) {
 
-                  .button-30 {
+                  .main-buttons-style {
                     margin: 2vh 0;
                     height: calc(40px + 40 * (100vw / 1920)) !important;
                   }
@@ -283,4 +242,3 @@
     }
   }
 }
-

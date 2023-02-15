@@ -1,84 +1,76 @@
-.category-page-container__sorting__dropdown {
-    position: relative;
-    margin-bottom: 1vh;
+.categories-container {
+  position: relative;
 
-    width: 100%;
-    height: 24%;
+  width: 100%;
+  height: 8vh;
+  z-index: 3;
+}
+
+.more-more {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+
+.categories-container-button {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 1vh;
+
+  font-size: calc(6px + 16 * (100vw / 1920));
+
+  color: white;
+  background-color: rgb(21, 21, 21);
+
+  cursor: pointer;
+
+  z-index: 3;
+}
+
+.categories-container-content {
+  position: relative;
+
+  width: 100%;
+  height: 50vh;
+
+  overflow-y: scroll;
+
+  border-radius: 1vh;
+  box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
+
+  background-color: rgb(28, 28, 28);
+  z-index:1;
+
+  &::-webkit-scrollbar {
+    width: 10px;
   }
 
-  .more-more {
-    margin: 0 auto;
-    width: 30px;
-    height: 30px;
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(21, 21, 21);
+
+    &:hover {
+      background-color: rgb(61, 61, 61);
+    }
   }
 
-  .category-page-container__sorting__dropdown-button {
-    width: 100%;
-    height: 100%;
+  & a {
+    display: flex;
 
-    border: none;
+    flex-wrap: wrap;
+    list-style: none;
 
-    font-size: calc(6px + 16 * (100vw / 1920));
+    padding: calc(5px + 5 * (100vw / 1920));
+
+    text-decoration: none;
+
+    font-size: calc(8px + 7 * (100vw / 1920));
 
     color: white;
-    background-color: #000000;
-
     cursor: pointer;
-  }
 
-  .category-page-container__sorting__dropdown__content {
-    display: none;
-    position: absolute;
-
-    width: 100%;
-    height: 50vh;
-
-    overflow-y: scroll;
-
-    border: 1px solid white;
-
-    background-color: #000000;
-    z-index: 2;
-
-    .active {
-      border: 2px solid rgb(99, 99, 99);
-      background-color: #3d3d3d;
-    }
-
-    & a {
-      display: flex;
-
-      flex-wrap: wrap;
-      list-style: none;
-
-      padding: calc(5px + 5 * (100vw / 1920));
-
-      text-decoration: none;
-
-      font-size: calc(8px + 7 * (100vw / 1920));
-
-      color: white;
-      cursor: pointer;
-
-      @media (width < 800px) {
-        align-items: center;
-      }
-
-      &:hover {
-        background-color: #3d3d3d !important;
-      }
+    &:hover {
+      background-color: #3d3d3d !important;
     }
   }
-
-  .category-page-container__sorting__dropdown__content a:hover {
-    background-color: #ddd;
-  }
-
-  .category-page-container__sorting__dropdown:hover
-    .category-page-container__sorting__dropdown__content {
-    display: block;
-  }
-
-  .category-page-container__sorting__dropdown:hover .category-page-container__sorting__dropdown-button {
-    background-color: #3d3d3d;
-  }
+}

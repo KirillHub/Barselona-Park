@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import './style.scss';
+
 
 interface MyParams {
   category: string;
@@ -32,6 +32,10 @@ export const Sort = ({ resetSorts }: MyProps) => {
       name: 'По цене Летний сезон',
     },
     {
+      option: 'Sorted-by-square-meters',
+      name: 'По кв. м',
+    },
+    {
       option: 'Sorted-by-winter-season',
       name: 'По цене Зимний сезон ',
     },
@@ -43,13 +47,10 @@ export const Sort = ({ resetSorts }: MyProps) => {
       option: 'Sorted-by-number-of-rooms',
       name: 'По количеству комнат',
     },
+
     {
       option: 'Sorted-by-number-of-beds',
       name: 'По количеству мест',
-    },
-    {
-      option: 'Sorted-by-square-meters',
-      name: 'По кв. м',
     },
   ];
 
@@ -66,7 +67,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
             className="services-checkbox-span"
             href={`/Category/${category}/${option.option}${'categoryPage.opitionsSortedLink'}`}
             onClick={() => onHandleClick(index)}
-            key={index}>{`> ${option.name} `}</Link>
+            key={index}>{`⇵ ${option.name} `}</Link>
         ))}
       </div>
       <span onClick={() => resetSorts('sort')}>Сброс</span>
