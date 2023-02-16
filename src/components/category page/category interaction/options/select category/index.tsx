@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { meta } from '../../../../meta/categoryMeta';
 import { More } from '../../../../../svg';
-
-import './style.scss';
+import { meta } from '../../../../meta/categoryMeta';
+import styles from '../style.module.scss';
 
 export const SelectCategory = () => {
   const [showCategories, setShowCategories] = useState(false);
@@ -12,17 +11,19 @@ export const SelectCategory = () => {
 
   return (
     <div
-      className="categories-container"
+      className={styles.swapCategory}
       onClick={() => setShowCategories((prev) => !prev)}
       onMouseLeave={() => setShowCategories(false)}>
-      <button className="categories-container-button">
+      <button className={styles.swapCategoryButton}>
         Сменить категорию
-        <div className="more-more">
+        <div className={styles.optionsIcon}>
           <More />
         </div>
       </button>
       <div
-        className={`categories-container-content ${showCategories ? 'visible-title' : 'hidden-title'}`}>
+        className={
+          styles.swapCategoryContent + ' ' + `${showCategories ? styles.visible : styles.hidden}`
+        }>
         {meta.map((x) => (
           <Link href={`/Category/${x.id}`} key={x.id}>
             {x.name}

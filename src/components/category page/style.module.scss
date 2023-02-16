@@ -1,0 +1,20 @@
+.categoryPage {
+  margin: 4vh 8vw;
+
+  @media (width < 800px) {
+    margin: 0 4vw;
+  }
+
+  .categoryPageTitle {
+    text-align: center !important;
+  }
+
+  .categoryPageBlocks {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: space-between;
+  }
+}

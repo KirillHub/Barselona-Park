@@ -1,10 +1,6 @@
-// import { useAppDispatch, useAppSelector } from '../../../../store/store';
-// import { setCheckSign } from '../../../../store/category/slice';
-// import { useParams, Link } from 'react-router-dom';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
+import styles from '../style.module.scss';
 
 interface MyParams {
   category: string;
@@ -16,15 +12,11 @@ interface MyProps {
 }
 
 export const Sort = ({ resetSorts }: MyProps) => {
-  // const dispatch = useAppDispatch();
-  // const categoryPage = useAppSelector((state) => state.categoryPage);
 
   const pathname = usePathname();
 
   const category = pathname?.split('/')[3];
   const sort = pathname?.split('/')[4];
-
-  // const { category, sort } = useParams<keyof MyParams>() as MyParams;
 
   const sortBy = [
     {
@@ -59,13 +51,14 @@ export const Sort = ({ resetSorts }: MyProps) => {
   };
 
   return (
-    <div className="services">
-      <p className="services-title">Сортировка</p>
-      <div className="services-checkbox">
+    <div className={styles.servicesSort}>
+      <p className={styles.servicesSortTitle}>Сортировка</p>
+
+      <div className={styles.servicesSortBox}>
         {sortBy.map((option, index) => (
           <Link
-            className="services-checkbox-span"
             href={`/Category/${category}/${option.option}${'categoryPage.opitionsSortedLink'}`}
+            className={styles.servicesSortBoxOption}
             onClick={() => onHandleClick(index)}
             key={index}>{`⇵ ${option.name} `}</Link>
         ))}

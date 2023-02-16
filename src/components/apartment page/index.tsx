@@ -8,10 +8,9 @@ import { subDays, addDays } from 'date-fns';
 import { usePathname } from 'next/navigation';
 import { table } from '../../backend/withoutBalcony';
 import 'react-datepicker/dist/react-datepicker.css';
-import './style.scss';
+import styles from './style.module.scss';
 
 import { reservationDays } from '../functions/reservationDays';
-
 
 export const Apartment = () => {
   // const dispatch = useAppDispatch();
@@ -95,7 +94,7 @@ export const Apartment = () => {
               apartment={apartment}
               apartmentIndex={0}
               options={{
-                className: 'category-page-container__apartments-card__images-picture-2',
+                className: styles.sliderImageApartment,
                 sizes: '600px',
                 fit: 'contain',
                 lazy: 1,
@@ -199,75 +198,74 @@ export const Apartment = () => {
 
 export default Apartment;
 
-
 // const aa: any = [];
 
-  // if (apartment?.balcony) {
-  //   aa.push('балкон');
-  // }
-  // if (apartment?.view) {
-  //   aa.push('вид на море');
-  // }
-  // if (apartment?.view === false) {
-  //   aa.push('вид на город');
-  // }
+// if (apartment?.balcony) {
+//   aa.push('балкон');
+// }
+// if (apartment?.view) {
+//   aa.push('вид на море');
+// }
+// if (apartment?.view === false) {
+//   aa.push('вид на город');
+// }
 
-  // if (apartment?.dishwasher) {
-  //   aa.push('посудомоечная машина');
-  // }
+// if (apartment?.dishwasher) {
+//   aa.push('посудомоечная машина');
+// }
 
-  // if (apartment?.oven) {
-  //   aa.push('духовка');
-  // }
+// if (apartment?.oven) {
+//   aa.push('духовка');
+// }
 
-  // if (apartment?.coffeeMachine) {
-  //   aa.push('кофемашина');
-  // }
+// if (apartment?.coffeeMachine) {
+//   aa.push('кофемашина');
+// }
 
-  // const rom =
-  //   apartment?.rooms === '3'
-  //     ? 'Трехкомнатный апартамент'
-  //     : apartment?.rooms === '2'
-  //     ? 'Двухкомнатный апартамент'
-  //     : apartment?.rooms === '1'
-  //     ? 'Однокомнатный апартамент'
-  //     : 'Апартамент студия';
+// const rom =
+//   apartment?.rooms === '3'
+//     ? 'Трехкомнатный апартамент'
+//     : apartment?.rooms === '2'
+//     ? 'Двухкомнатный апартамент'
+//     : apartment?.rooms === '1'
+//     ? 'Однокомнатный апартамент'
+//     : 'Апартамент студия';
 
-  // const first = `площадью ${apartment?.squareMeters} кв/м с ${apartment?.sleepingPlaces} спальными местами для семьи или компании друзей`;
+// const first = `площадью ${apartment?.squareMeters} кв/м с ${apartment?.sleepingPlaces} спальными местами для семьи или компании друзей`;
 
-  // const second =
-  //   '  диван, обеденный стол и кондиционер, ванная комната совмещена с туалетом, в апартаменте всегда чистое постельное белье, свежесть и комфорт';
+// const second =
+//   '  диван, обеденный стол и кондиционер, ванная комната совмещена с туалетом, в апартаменте всегда чистое постельное белье, свежесть и комфорт';
 
-  // const vse = aa
-  //   .concat([
-  //     'wi-fi',
-  //     '3 кондиционера',
-  //     'телевизор',
-  //     'фен',
-  //     'полотенца',
-  //     'утюг',
-  //     'стиральная машина',
-  //     'микроволновка',
-  //     'чайник',
-  //     'холодильник',
-  //     'можно с детьми и животными',
-  //   ])
-  //   .join(', ');
+// const vse = aa
+//   .concat([
+//     'wi-fi',
+//     '3 кондиционера',
+//     'телевизор',
+//     'фен',
+//     'полотенца',
+//     'утюг',
+//     'стиральная машина',
+//     'микроволновка',
+//     'чайник',
+//     'холодильник',
+//     'можно с детьми и животными',
+//   ])
+//   .join(', ');
 
-  // console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
+// console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
 
-  // console.log(
-  //   'Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей – это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания: духовка, wifi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также любимых питомцев!'.split('.'),
-  // );
+// console.log(
+//   'Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей – это идеальное место для отдыха и пребывания. Комнаты оборудованы двуспальными кроватями с прикроватными тумбочками и кондиционерами, а зал располагает кухней, диваном, обеденным столом и кондиционером. В апартаменте всегда чистое постельное белье, свежесть и комфорт. Вы можете наслаждаться прекрасным видом на море и иметь все необходимое для проживания: духовка, wifi, 3 кондиционера, телевизор, фен, полотенца, утюг, стиральная машина, микроволновка, чайник, холодильник. Апартамент приглашает Вас и Ваших детей, а также любимых питомцев!'.split('.'),
+// );
 
-  // const userReservation = {
-  //   days: [],
-  //   email: 'bizi@gmail.com',
-  //   phoneNumber: '+7 (981) 654-32-10',
-  //   fullName: 'Boris Borisovich',
-  //   comment: 'Мы готовы приехать',
-  //   bookingTime: new Date(),
-  //   peopleNumber: '',
-  //   children: '',
-  //   animals: '',
-  // };
+// const userReservation = {
+//   days: [],
+//   email: 'bizi@gmail.com',
+//   phoneNumber: '+7 (981) 654-32-10',
+//   fullName: 'Boris Borisovich',
+//   comment: 'Мы готовы приехать',
+//   bookingTime: new Date(),
+//   peopleNumber: '',
+//   children: '',
+//   animals: '',
+// };

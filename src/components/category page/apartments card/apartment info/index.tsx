@@ -1,23 +1,27 @@
-import { ImportantInfo } from './important info';
-import { Price } from './price';
-import { TitleAndButton } from './title and button';
-import { Icons } from './icons';
+import { useRouter } from 'next/navigation';
+import { Options } from './options';
+import { Service } from './service';
+import { Price } from './price and button';
 import { Apartment } from '../../../types/type';
-
-import './style.scss';
+import styles from './style.module.scss';
 
 interface MyProps {
   apartment: Apartment;
 }
 
 export const ApartmentInfo = ({ apartment }: MyProps) => {
+  const router = useRouter();
+  const handleClick = () => router.push(`/Apartment/${apartment.name}`);
+
   return (
-    <div className="category-page-container__apartments-card__info">
-      <TitleAndButton apartment={apartment} />
+    <div className={styles.info}>
+      <p className={styles.infoTitle} onClick={handleClick}>
+        Апартамент {apartment.name}
+      </p>
 
-      <ImportantInfo apartment={apartment} />
+      <Options apartment={apartment} />
 
-      <Icons apartment={apartment} />
+      <Service apartment={apartment} />
 
       <Price apartment={apartment} />
     </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Apartment } from '../../../../types/type';
-import './style.scss';
+import styles from '../style.module.scss';
 
 interface MyProps {
   apartment: Apartment;
@@ -23,17 +23,17 @@ export const Price = ({ apartment }: MyProps) => {
   };
 
   return (
-    <div className="category-page-container__apartments-card__info__price">
+    <div className={styles.infoPriceButton}>
       <div>
         <div onClick={() => showTitle(0)}>
           <p>{apartment.summerPrice} ₽ -</p> &nbsp;
-          <span className={`${titles[0] ? 'visible-title' : 'hidden-title'}`}>
+          <span className={`${titles[0] ? styles.visible : styles.hidden}`}>
             Летний сезон (с 1 июня по 1 октября)
           </span>
         </div>
         <div onClick={() => showTitle(1)}>
           <p>{apartment.winterPrice} ₽</p>
-          <span className={`${titles[1] ? 'visible-title' : 'hidden-title'}`}>
+          <span className={`${titles[1] ? styles.visible : styles.hidden}`}>
             Зимний сезон (с 1 октября по 1 июня)
           </span>
         </div>

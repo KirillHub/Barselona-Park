@@ -1,0 +1,150 @@
+.info {
+  padding: 0 1vw;
+
+  span {
+    position: absolute;
+
+    padding: 0.2vw 0.6vw;
+
+    bottom: -2.4vh;
+    left: -2vw;
+
+    font-size: calc(8px + 5 * (100vw / 1920));
+
+    white-space: nowrap;
+
+    border: 2px solid rgb(60, 60, 60);
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(28, 28, 28);
+
+    z-index: 2;
+  }
+
+  .infoTitle {
+    padding: 1vh 0;
+
+    width: 100%;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    cursor: pointer;
+  }
+
+  .infoOptions {
+    display: flex;
+
+    padding: 1vh 0;
+
+    justify-content: space-between;
+    border-top: 3px solid rgb(40, 40, 40);
+
+    z-index: 0;
+
+    .infoDescription {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin-left: 0.5vw;
+      }
+    }
+  }
+}
+
+.infoService {
+  position: relative;
+  display: flex;
+
+  padding: 1vh 0;
+
+  border-top: 3px solid rgb(40, 40, 40);
+
+  user-select: none;
+
+  svg:hover {
+    z-index: 2;
+  }
+
+  .infoServiceShownIcons,
+  .infoServiceAllIcons {
+    display: flex;
+    position: relative;
+
+    width: 70%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    user-select: none;
+    div {
+      position: relative;
+    }
+  }
+
+  .infoServiceAll {
+    width: 30%;
+
+    p {
+      text-align: right;
+
+      font-weight: 600;
+
+      line-height: calc(16px + 12 * (100vw / 1920));
+
+      &:hover {
+        color: grey;
+      }
+
+      cursor: pointer;
+    }
+
+    .infoServiceAllIcons {
+      position: absolute;
+
+      padding: 0.5vh;
+
+      width: 100%;
+
+      left: 0;
+
+      justify-content: space-between;
+      border: 2px solid rgb(60, 60, 60);
+      background-color: rgb(28, 28, 28);
+      z-index: 2;
+    }
+  }
+}
+
+.infoPriceButton {
+  display: flex;
+
+  padding: 1vh 0;
+
+  justify-content: space-between;
+
+  border-top: 3px solid rgb(40, 40, 40);
+
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  p {
+    text-align: center;
+
+    font-size: calc(14px + 12 * (100vw / 1920));
+    font-weight: bold;
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}

@@ -1,4 +1,17 @@
-.services {
+.categoryContainer {
+  position: sticky;
+
+  margin-right: 2vw;
+
+  width: 30%;
+  height: 100%;
+
+  top: 7vh;
+
+  z-index: 1;
+}
+
+.servicesSort {
   position: relative;
   margin: 3vh 0;
   padding: 2vh 1vw;
@@ -10,11 +23,11 @@
 
   background-color: rgb(28, 28, 28);
 
-  .services-title {
+  .servicesSortTitle {
     font-size: 24px;
   }
 
-  .services-checkbox {
+  .servicesSortBox {
     display: flex;
 
     padding-top: 1vh;
@@ -23,7 +36,7 @@
 
     flex-wrap: wrap;
 
-    .services-checkbox-span {
+    .servicesSortBoxOption {
       margin-bottom: 1vh;
 
       width: 40%;
@@ -32,7 +45,7 @@
 
       font-size: 15px;
 
-      .services-checkbox-span-input {
+      & input {
         margin-right: 0.5vw;
       }
     }

@@ -4,10 +4,9 @@ import Image from 'next/image';
 import { Apartment } from '../../../types/type';
 import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
 import 'swiper/css/navigation';
-import './style.scss';
+import 'swiper/css';
+import styles from '../style.module.scss';
 
 interface MyProps {
   apartment: Apartment;
@@ -28,14 +27,14 @@ export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) =>
       spaceBetween={5}
       slidesPerView={options?.lazy}
       navigation
-      className="category-page-container__apartments-card__images">
+      className={styles.slider}>
       {apartment.pictures.map((picture, index) => (
         <span key={picture.id}>
           <SwiperSlide key={picture.id}>
             <div className={options?.className}>
-              <span className='images-slider-span'> Фотография загружается...</span>
+              <span className={styles.sliderImageSpan}> Фотография загружается...</span>
               <Image
-                className="images-slider-image"
+                className={styles.sliderImagePicture}
                 priority={apartmentIndex < 2 ? (index < options?.lazy ? true : false) : false}
                 fill
                 quality={options?.quality}

@@ -2,18 +2,19 @@
 
 import { ApartmentCard } from '../../components/category page/apartments card';
 import { CategoryInteraction } from '../../components/category page/category interaction';
-import './style.scss';
+import styles from './style.module.scss';
 
 export const Category = () => {
   return (
-    <>
-      <h1 className="category-page-container__name">Категория</h1>
-      <div className="category-page-container">
+    <div className={styles.categoryPage}>
+      <h1 className={styles.categoryPageTitle}>Категория</h1>
+
+      <div className={styles.categoryPageBlocks}>
         <CategoryInteraction />
 
         <ApartmentCard />
       </div>
-    </>
+    </div>
   );
 };
 

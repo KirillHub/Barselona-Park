@@ -1,17 +1,12 @@
 'use client';
-// import { useAppSelector } from '../../../store/store';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
 import { categoryMeta } from '../../meta/categoryMeta';
-// import { useParams } from 'react-router-dom';
-import { Apartment } from '../../types/type';
-
-import { usePathname } from 'next/navigation';
-
-import './style.scss';
-
 import { table } from '../../../backend/withoutBalcony';
-import { useEffect } from 'react';
+import { Apartment } from '../../types/type';
+import styles from './style.module.scss';
 
 interface MyParams {
   sort: string;
@@ -27,8 +22,6 @@ export const ApartmentCard = () => {
   // const categoryPage = useAppSelector((state) => state.categoryPage);
 
   // const { sort, options } = useParams<keyof MyParams>() as MyParams;
-
-
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
@@ -113,15 +106,15 @@ export const ApartmentCard = () => {
   apartments = apartments.sort(sorter(sortBy));
 
   return (
-    <div className="category-page-container__apartments">
+    <div className={styles.categoryPageRightBlock}>
       {apartments.map((apartment: Apartment, index: number) => (
-        <div className="category-page-container__apartments-card" key={apartment.name}>
-          <div className="category-page-container__apartments-card-slider">
+        <div className={styles.categoryPageRightBlockCard} key={apartment.name}>
+          <div className={styles.categoryPageRightBlockCardSlider}>
             <SliderImages
               apartment={apartment}
               apartmentIndex={index}
               options={{
-                className: 'category-page-container__apartments-card__images-picture',
+                className: styles.sliderImage,
                 sizes: '375px',
                 fit: 'cover',
                 lazy: 1,
@@ -129,9 +122,8 @@ export const ApartmentCard = () => {
               }}
             />
           </div>
-          <div className="category-page-container__apartments-card-info">
-            <ApartmentInfo apartment={apartment} />
-          </div>
+
+          <ApartmentInfo apartment={apartment} />
         </div>
       ))}
     </div>

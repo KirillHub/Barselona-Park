@@ -51,6 +51,11 @@ a:hover {
   color: rgb(145, 145, 145);
 }
 
+.swiper-horizontal {
+  border-top-right-radius: 1vh !important;
+  border-top-left-radius: 1vh !important;
+}
+
 .visible-title {
   visibility: visible;
 }
