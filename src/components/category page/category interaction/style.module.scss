@@ -1,52 +1,59 @@
 .categoryContainer {
   position: sticky;
 
-  margin-right: 2vw;
-
-  width: 30%;
+  width: 33%;
   height: 100%;
 
-  top: 7vh;
+  top: calc(5px + 35 * (100vw / 1920));
 
   z-index: 1;
+
+  @media (width < 805px) {
+    width: 40%;
+    @media (width < 605px) {
+      position: fixed;
+      width: 60%;
+    }
+  }
 }
+
 
 .servicesSort {
   position: relative;
-  margin: 3vh 0;
-  padding: 2vh 1vw;
+  margin: calc(15px + 15 * (100vw / 1920)) 0;
+  padding: calc(5px + 15 * (100vw / 1920));
 
   width: 90%;
 
-  border-radius: 1vh;
-  box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
+  border-radius: calc(5px + 5 * (100vw / 1920));
+  box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
 
   background-color: rgb(28, 28, 28);
 
   .servicesSortTitle {
-    font-size: 24px;
+    font-size: calc(12px + 12 * (100vw / 1920));
   }
 
   .servicesSortBox {
     display: flex;
 
-    padding-top: 1vh;
+    padding-top: calc(5px + 5 * (100vw / 1920));
 
     justify-content: space-between;
 
     flex-wrap: wrap;
 
     .servicesSortBoxOption {
-      margin-bottom: 1vh;
-
+      display: flex;
+      margin-bottom: calc(5px + 5 * (100vw / 1920));
       width: 40%;
 
-      white-space: nowrap;
+      align-items: center;
 
-      font-size: 15px;
+      font-size: calc(6px + 8 * (100vw / 1920));
 
-      & input {
-        margin-right: 0.5vw;
+      input {
+        margin-right: calc(5px + 5 * (100vw / 1920));
       }
     }
   }

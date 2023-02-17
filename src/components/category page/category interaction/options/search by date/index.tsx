@@ -9,7 +9,7 @@ import styles from '../style.module.scss';
 
 interface Custom {
   value: string;
-  onClick: React.MouseEventHandler<HTMLDivElement> | undefined ;
+  onClick: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
 export type Ref = HTMLDivElement;
 
@@ -22,6 +22,8 @@ export const CheckInCheckOut = () => {
   if (startDate.getTime() > endDate.getTime()) {
     setEndDate(startDate);
   }
+
+  const excludedDates = ['Fri Feb 17 2023', 'Sat Feb 18 2023'].map((x) => new Date(x));
 
   const CustomInput = forwardRef<Ref, Custom>(({ value, onClick }, ref) => (
     <div className={styles.boxDate} onClick={onClick} ref={ref}>
@@ -47,6 +49,7 @@ export const CheckInCheckOut = () => {
           locale={ru}
           calendarStartDay={1}
           dateFormat="d MMM"
+          excludeDates={excludedDates}
           minDate={subDays(new Date(), 0)}
           maxDate={addDays(new Date(), 365)}
           onChange={(date: Date) => setStartDate(date)}
@@ -64,6 +67,7 @@ export const CheckInCheckOut = () => {
           locale={ru}
           calendarStartDay={1}
           dateFormat="d MMM"
+          excludeDates={excludedDates}
           minDate={startDate}
           maxDate={addDays(new Date(), 365)}
           onChange={(date: Date) => setEndDate(date)}

@@ -1,17 +1,17 @@
 .options {
-  padding: 2vh 1vw;
+  padding: calc(5px + 15 * (100vw / 1920));
 
   width: 90%;
 
-  border-radius: 1vh;
+  border-radius: calc(5px + 5 * (100vw / 1920));
   box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
 
   background-color: rgb(28, 28, 28);
 
   .optionsIcon {
     margin: 0 auto;
-    width: 30px;
-    height: 30px;
+    width: calc(15px + 15 * (100vw / 1920));
+    height: calc(15px + 15 * (100vw / 1920));
 
     cursor: pointer;
   }
@@ -24,14 +24,14 @@
     position: relative;
 
     width: 100%;
-    height: 8vh;
+    height: calc(40px + 40 * (100vw / 1920));
     z-index: 3;
 
     .swapCategoryButton {
       width: 100%;
       height: 100%;
 
-      border-radius: 1vh;
+      border-radius: calc(5px + 5 * (100vw / 1920));
 
       font-size: calc(6px + 16 * (100vw / 1920));
 
@@ -51,14 +51,14 @@
 
       overflow-y: scroll;
 
-      border-radius: 1vh;
+      border-radius: calc(5px + 5 * (100vw / 1920));
       box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
 
       background-color: rgb(28, 28, 28);
       z-index: 1;
 
       &::-webkit-scrollbar {
-        width: 10px;
+        width: calc(5px + 5 * (100vw / 1920));
       }
 
       &::-webkit-scrollbar-thumb {
@@ -98,22 +98,22 @@
     justify-content: space-between;
 
     .box {
-      margin: 2vh 0 0 0;
-      padding: 1vh 0.5vw;
-      width: 44%;
-      height: 12vh;
+      margin: calc(10px + 10 * (100vw / 1920)) 0 0 0;
+      padding: calc(5px + 5 * (100vw / 1920)) calc(3px + 2 * (100vw / 1920));
 
-      border-radius: 1vh;
+      width: 45%;
+      height: calc(40px + 70 * (100vw / 1920));
+
+      border-radius: calc(5px + 5 * (100vw / 1920));
 
       background-color: rgb(21, 21, 21);
 
       user-select: none;
       .boxTitle {
         text-align: center;
-        font-size: 16px;
+        font-size: calc(4px + 12 * (100vw / 1920));
         text-transform: uppercase;
       }
-      
 
       .boxDate {
         display: flex;
@@ -124,17 +124,13 @@
 
         color: rgb(166, 140, 117);
 
-        .boxDateNumber {
-          padding-left: 0.5vw;
-          font-size: 54px;
+        .boxDateNumber,
+        .boxNights {
+          font-size: calc(20px + 30 * (100vw / 1920));
         }
 
         .boxDateTitle {
-          font-size: 20px;
-        }
-
-        .boxNights {
-          font-size: 54px;
+          font-size: calc(6px + 14 * (100vw / 1920));
         }
       }
     }
@@ -152,7 +148,7 @@
     width: 100%;
     height: 100%;
 
-    border-radius: 1vh;
+    border-radius: calc(5px + 5 * (100vw / 1920));
 
     font-size: calc(6px + 16 * (100vw / 1920));
 
@@ -172,7 +168,7 @@
 
     overflow-y: scroll;
 
-    border-radius: 1vh;
+    border-radius: calc(5px + 5 * (100vw / 1920));
     box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
 
     background-color: rgb(28, 28, 28);

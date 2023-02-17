@@ -13,7 +13,7 @@
 
     white-space: nowrap;
 
-    border: 2px solid rgb(60, 60, 60);
+    border: calc(2px + 1 * (100vw / 1920)) solid rgb(60, 60, 60);
 
     color: rgb(255, 255, 255);
     background-color: rgb(28, 28, 28);
@@ -22,11 +22,11 @@
   }
 
   .infoTitle {
-    padding: 1vh 0;
+    padding: calc(5px + 5 * (100vw / 1920)) 0;
 
     width: 100%;
 
-    font-size: 30px;
+    font-size: calc(12px + 15 * (100vw / 1920));
     font-weight: bold;
 
     cursor: pointer;
@@ -35,12 +35,19 @@
   .infoOptions {
     display: flex;
 
-    padding: 1vh 0;
+    padding: calc(5px + 5 * (100vw / 1920)) 0;
 
     justify-content: space-between;
-    border-top: 3px solid rgb(40, 40, 40);
+    border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40, 40, 40);
 
     z-index: 0;
+    flex-wrap: wrap;
+
+    @media (width < 805px) {
+      p {
+        font-size: calc(8px + 12 * (100vw / 1920)) !important;
+      }
+    }
 
     .infoDescription {
       display: flex;
@@ -48,6 +55,7 @@
 
       p {
         margin-left: 0.5vw;
+        font-size: calc(6px + 8 * (100vw / 1920));
       }
     }
   }
@@ -57,9 +65,11 @@
   position: relative;
   display: flex;
 
-  padding: 1vh 0;
+  padding: calc(5px + 5 * (100vw / 1920)) 0;
 
-  border-top: 3px solid rgb(40, 40, 40);
+  align-items: baseline;
+
+  border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40, 40, 40);
 
   user-select: none;
 
@@ -73,7 +83,9 @@
     position: relative;
 
     width: 70%;
+
     flex-flow: row wrap;
+
     justify-content: space-between;
 
     user-select: none;
@@ -85,12 +97,20 @@
   .infoServiceAll {
     width: 30%;
 
+    @media (width < 805px) {
+      p {
+        font-size: calc(10px + 12 * (100vw / 1920)) !important;
+      }
+    }
+
     p {
       text-align: right;
 
       font-weight: 600;
 
       line-height: calc(16px + 12 * (100vw / 1920));
+
+      font-size: calc(8px + 8 * (100vw / 1920));
 
       &:hover {
         color: grey;
@@ -109,7 +129,7 @@
       left: 0;
 
       justify-content: space-between;
-      border: 2px solid rgb(60, 60, 60);
+      border: calc(2px + 1 * (100vw / 1920)) solid rgb(60, 60, 60);
       background-color: rgb(28, 28, 28);
       z-index: 2;
     }
@@ -123,7 +143,26 @@
 
   justify-content: space-between;
 
-  border-top: 3px solid rgb(40, 40, 40);
+  border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40, 40, 40);
+
+  @media (width < 805px) {
+    p {
+      font-size: calc(10px + 16 * (100vw / 1920)) !important;
+    }
+
+    .infoPriceButtonButn {
+      width: calc(70px + 175 * (100vw / 1920)) !important;
+
+      font-size: calc(6px + 8 * (100vw / 1920)) !important;
+    }
+  }
+
+  .infoPriceButtonButn {
+    width: calc(35px + 175 * (100vw / 1920));
+    height: calc(20px + 20 * (100vw / 1920));
+
+    font-size: calc(5px + 8 * (100vw / 1920));
+  }
 
   div {
     position: relative;
@@ -136,7 +175,7 @@
   p {
     text-align: center;
 
-    font-size: calc(14px + 12 * (100vw / 1920));
+    font-size: calc(7px + 14 * (100vw / 1920));
     font-weight: bold;
   }
 }

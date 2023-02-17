@@ -116,7 +116,7 @@ export const ApartmentCard = () => {
               options={{
                 className: styles.sliderImage,
                 sizes: '375px',
-                fit: 'cover',
+                fit: 'fill',
                 lazy: 1,
                 quality: 75,
               }}

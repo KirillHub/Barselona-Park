@@ -1,9 +1,10 @@
 .categoryPage {
   margin: 4vh 8vw;
 
-  @media (width < 800px) {
+  @media (width < 1200px) {
     margin: 0 4vw;
   }
+
 
   .categoryPageTitle {
     text-align: center !important;

@@ -6,7 +6,6 @@ interface MyProps {
 }
 
 export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
-
   const sortBy = [
     'Вид на море',
     'Балкон',
@@ -19,12 +18,12 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
   return (
     <div className={styles.servicesSort}>
       <p className={styles.servicesSortTitle}>Услуги</p>
-      
+
       <div className={styles.servicesSortBox}>
         {sortBy.map((option, index) => (
           <span key={index} className={styles.servicesSortBoxOption}>
             <input type="checkbox" onChange={() => onCheckBoxFirstChange(index)} checked={false} />
-            {option}
+            <span>{option}</span>
           </span>
         ))}
       </div>

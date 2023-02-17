@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import { Sort } from './sort';
 import { Services } from './services';
 
-import  styles from './style.module.scss';
+import styles from './style.module.scss';
 import { Options } from './options';
 
 interface MyParams {
@@ -103,6 +103,7 @@ export const CategoryInteraction = () => {
     return changeRoute();
   };
 
+
   const changeRoute = () => {
     const opitionsLink = checkOpitionsLink();
 
@@ -177,12 +178,12 @@ export const CategoryInteraction = () => {
   // }, []);
 
   return (
-    <div className={styles.categoryContainer}>
+    <aside className={styles.categoryContainer}>
       <Options />
 
       <Services onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
 
       <Sort resetSorts={resetSorts} />
-    </div>
+    </aside>
   );
 };

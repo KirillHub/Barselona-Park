@@ -1,14 +1,16 @@
 .svg {
-  width: calc(16px + 12 * (100vw / 1920));
-  height: calc(16px + 12 * (100vw / 1920));
+  width: calc(12px + 18 * (100vw / 1920));
+  height: calc(12px + 18 * (100vw / 1920));
+
+  vertical-align: middle;
 
   cursor: pointer;
   z-index: 1;
 }
 
 .newSvg {
-   width: calc(20px + 14 * (100vw / 1920));
-  height: calc(20px + 14 * (100vw / 1920));
+   width: calc(15px + 20 * (100vw / 1920));
+  height: calc(15px + 20 * (100vw / 1920));
 
   z-index: 1;
 }

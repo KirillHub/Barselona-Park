@@ -11,28 +11,32 @@
 
   z-index: 0;
 
+  @media (width < 805px) {
+    width: 60%;
+  }
+
   .categoryPageRightBlockCard {
     position: relative;
 
-    margin: 0 0 calc(40px + 20 * (100vw / 1920)) 0;
+    margin: 0 0 calc(20px + 30 * (100vw / 1920)) 0;
 
     justify-content: space-between;
 
-    border-radius: 1vh;
+    border-radius: calc(5px + 5 * (100vw / 1920));
 
     box-shadow: rgb(34, 34, 34) 0px 0px 0px 6px;
 
     background-color: rgb(28, 28, 28);
 
-    @media (width < 600px) {
-      display: block;
+    @media (width < 805px) {
+      width: 100%;
     }
 
     .categoryPageRightBlockCardSlider {
       position: relative;
-      width: 500px;
+      width: calc(50px + 450 * (100vw / 1920));
 
-      @media (width < 600px) {
+      @media (width < 805px) {
         width: 100%;
       }
     }
@@ -75,7 +79,8 @@
 
   text-align: center;
 
-  font-size: 20px;
+  font-size: calc(10px + 10 * (100vw / 1920));
+  color: rgba(255, 255, 255, 0.76);
 }
 
 .sliderImagePicture {

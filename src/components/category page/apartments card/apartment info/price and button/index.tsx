@@ -26,7 +26,7 @@ export const Price = ({ apartment }: MyProps) => {
     <div className={styles.infoPriceButton}>
       <div>
         <div onClick={() => showTitle(0)}>
-          <p>{apartment.summerPrice} ₽ -</p> &nbsp;
+          <p>{apartment.summerPrice} -</p> &nbsp;
           <span className={`${titles[0] ? styles.visible : styles.hidden}`}>
             Летний сезон (с 1 июня по 1 октября)
           </span>
@@ -39,9 +39,11 @@ export const Price = ({ apartment }: MyProps) => {
         </div>
       </div>
 
-      <button className="main-buttons-style" onClick={() => handleClick(apartment.name)}>
-        Перейти к апартаменту
-      </button>
+      <div className={styles.infoPriceButtonButn}>
+        <button className="main-buttons-style" onClick={() => handleClick(apartment.name)}>
+          Перейти к апартаменту
+        </button>
+      </div>
     </div>
   );
 };

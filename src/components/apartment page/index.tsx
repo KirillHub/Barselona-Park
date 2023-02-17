@@ -22,7 +22,6 @@ export const Apartment = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data: any) => console.log();
-  // console.log(errors);
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
@@ -54,7 +53,7 @@ export const Apartment = () => {
   ].map((x) => new Date(x));
 
   if (endDate !== null) {
-    console.log(reservationDays(startDate, endDate, excludedDates));
+    // console.log(reservationDays(startDate, endDate, excludedDates));
   }
 
   if (apartment === undefined) return <div>Загрузка</div>;

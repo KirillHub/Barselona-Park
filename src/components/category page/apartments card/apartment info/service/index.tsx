@@ -31,10 +31,6 @@ export const Service = ({ apartment }: MyProps) => {
     false,
     false,
     false,
-    false,
-    false,
-    false,
-    false,
   ]);
 
   let fixSpace = 1;
@@ -77,7 +73,7 @@ export const Service = ({ apartment }: MyProps) => {
 
       <div
         className={styles.infoServiceAll}
-        onClick={() => setShowService((prev) => !prev)}
+        onClick={() => setShowService(true)}
         onMouseLeave={() => setShowService(false)}>
         <p>Все услуги</p>
         <div

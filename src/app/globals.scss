@@ -81,7 +81,7 @@ a:hover {
   display: flex;
 
   border: 0 !important;
-  border-radius: 1vh;
+  border-radius: calc(5px + 5 * (100vw / 1920));
 
   box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
 
@@ -107,7 +107,7 @@ a:hover {
   .react-datepicker__month-container {
     width: 100%;
 
-    border-radius: 1vh;
+    border-radius: calc(5px + 5 * (100vw / 1920));
     font-size: calc(6px + 8 * (100vw / 1920));
 
     background-color: rgb(28, 28, 28);
@@ -199,23 +199,24 @@ a:hover {
   display: inline-flex;
   position: relative;
 
-  padding: 1vh 1vw;
+  width: 100%;
+  height: 100%;
 
   box-sizing: border-box;
 
   align-items: center;
   justify-content: center;
 
-  border-radius: 1vh;
+  border-radius: calc(5px + 5 * (100vw / 1920));
 
-  font-size: calc(8px + 8 * (100vw / 1920));
+
 
   transition: box-shadow 0.15s, transform 0.15s;
   touch-action: manipulation;
   will-change: box-shadow, transform;
 
-  box-shadow: rgba(187, 187, 187, 0.4) 0 2px 4px, rgba(187, 187, 187, 0.3) 0 7px 6px -3px,
-    rgb(0, 0, 0) 0 -4px 0 inset;
+  box-shadow: rgba(187, 187, 187, 0.4) 0 0.2vw 0.4vw, rgba(187, 187, 187, 0.3) 0 0.7vw 0.6vw -0.3vw,
+    rgb(0, 0, 0) 0 -0.4vw 0 inset;
 
   background-color: rgb(40, 40, 40);
 
@@ -223,18 +224,18 @@ a:hover {
   cursor: pointer;
 
   &:focus {
-    box-shadow: rgba(187, 187, 187, 0.4) 0 4px 8px, rgba(187, 187, 187, 0.3) 0 7px 6px -3px,
-      rgb(0, 0, 0) 0 -4px 0 inset;
+    box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vw 0.8vw, rgba(187, 187, 187, 0.3) 0 0.7vw 0.6vw -0.3vw,
+      rgb(0, 0, 0) 0 -0.4vw 0 inset;
   }
 
   &:hover {
-    box-shadow: rgba(187, 187, 187, 0.4) 0 4px 8px, rgba(187, 187, 187, 0.3) 0 7px 6px -3px,
-      rgb(0, 0, 0) 0 -4px 0 inset;
+     box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vw 0.8vw, rgba(187, 187, 187, 0.3) 0 0.7vw 0.6vw -0.3vw,
+      rgb(0, 0, 0) 0 -0.4vw 0 inset;
     transform: translateY(-2px);
   }
 
   &:active {
-    box-shadow: rgb(0, 0, 0) 0 3px 7px inset;
-    transform: translateY(2px);
+    box-shadow: rgb(0, 0, 0) 0 0.3vw 0.7vw inset;
+    transform: translateY(0.2vw);
   }
 }
