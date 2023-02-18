@@ -13,6 +13,10 @@
 
   @media (width < 805px) {
     width: 60%;
+
+    @media (width < 605px) {
+      width: 100%;
+    }
   }
 
   .categoryPageRightBlockCard {

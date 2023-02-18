@@ -11,7 +11,7 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
     'Балкон',
     'Вид на город',
     'Духовка',
-    'Посудомоечная машина',
+    'Посудомоечная',
     'Кофемашина',
   ];
 

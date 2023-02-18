@@ -1,10 +1,33 @@
+.categoryOpen {
+  visibility: hidden;
+  @media (width < 605px) {
+    position: fixed;
+    visibility: visible;
+
+    width: calc(20px + 20 * (100vw / 605));
+    height:  calc(20px + 20 * (100vw / 605));
+
+    top: calc(40px + 75 * (100vw / 605));
+    right: 3.5vw;
+
+    z-index: 10;
+
+    &:active .categoryContainer {
+      left: 0;
+    }
+  }
+
+  color: #992525;
+}
+
+.active,
 .categoryContainer {
   position: sticky;
 
   width: 33%;
   height: 100%;
 
-  top: calc(5px + 35 * (100vw / 1920));
+  top: calc(10px + 35 * (100vw / 1920));
 
   z-index: 1;
 
@@ -13,14 +36,24 @@
     @media (width < 605px) {
       position: fixed;
       width: 60%;
+      height: auto;
+
+      top: calc(70px + 98 * (100vw / 605));
+      right: -360px;
+
+      transition: 850ms;
     }
   }
 }
 
+.active {
+  right: 3.5vw;
+  transition: 350ms;
+}
 
 .servicesSort {
   position: relative;
-  margin: calc(15px + 15 * (100vw / 1920)) 0;
+  margin: calc(10px + 20 * (100vw / 1920)) 0;
   padding: calc(5px + 15 * (100vw / 1920));
 
   width: 90%;
@@ -29,6 +62,10 @@
   box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
 
   background-color: rgb(28, 28, 28);
+
+  @media (width < 605px) {
+    width: 100%;
+  }
 
   .servicesSortTitle {
     font-size: calc(12px + 12 * (100vw / 1920));

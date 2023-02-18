@@ -24,3 +24,4 @@ export * from './blueprint';
 export * from './bed';
 export * from './ruble';
 export * from './more';
+export * from './categoryMenu';

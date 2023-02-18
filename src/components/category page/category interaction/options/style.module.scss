@@ -4,9 +4,13 @@
   width: 90%;
 
   border-radius: calc(5px + 5 * (100vw / 1920));
-  box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
+  box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
 
   background-color: rgb(28, 28, 28);
+
+  @media (width < 605px) {
+    width: 100%;
+  }
 
   .optionsIcon {
     margin: 0 auto;

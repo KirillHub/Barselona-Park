@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // import { useAppDispatch, useAppSelector } from '../../../store/store';
 // import { setOpitionsSortedLink, setCheckBox } from '../../../store/category/slice';
 // import { useParams, useNavigate } from 'react-router-dom';
@@ -11,6 +11,8 @@ import { Services } from './services';
 
 import styles from './style.module.scss';
 import { Options } from './options';
+
+import { CategoryMenu } from '../../../svg';
 
 interface MyParams {
   category: string;
@@ -35,6 +37,7 @@ export const CategoryInteraction = () => {
   // const checkBox = [...categoryPage.checkBox];
 
   const checkBox = [false, false, false, false, false, false];
+  const [sideBar, setSideBar] = useState(false);
 
   const checkOpitionsLink = () => {
     let opitionsLink = [];
@@ -102,7 +105,6 @@ export const CategoryInteraction = () => {
 
     return changeRoute();
   };
-
 
   const changeRoute = () => {
     const opitionsLink = checkOpitionsLink();
@@ -178,12 +180,18 @@ export const CategoryInteraction = () => {
   // }, []);
 
   return (
-    <aside className={styles.categoryContainer}>
-      <Options />
+    <>
+      <div className={styles.categoryOpen} onClick={() => setSideBar(!sideBar)}>
+        <CategoryMenu color={sideBar} />
+      </div>
 
-      <Services onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
+      <aside className={sideBar ? styles.active : styles.categoryContainer}>
+        <Options />
 
-      <Sort resetSorts={resetSorts} />
-    </aside>
+        <Services onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
+
+        <Sort resetSorts={resetSorts} />
+      </aside>
+    </>
   );
 };
