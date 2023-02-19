@@ -10,6 +10,7 @@ body {
 
   color: white;
   background-color: rgb(16, 16, 16);
+  background-image: url('/image.svg');
 }
 
 *,
@@ -49,6 +50,19 @@ a {
 
 a:hover {
   color: rgb(145, 145, 145);
+}
+
+::-webkit-scrollbar {
+  width: calc(5px + 5 * (100vw / 1920));
+  height: calc(5px + 5 * (100vw / 1920));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(87, 87, 87);
+
+  &:hover {
+    background-color: rgb(61, 61, 61);
+  }
 }
 
 .swiper-horizontal {
@@ -209,14 +223,12 @@ a:hover {
 
   border-radius: calc(5px + 5 * (100vw / 1920));
 
-
-
   transition: box-shadow 0.15s, transform 0.15s;
   touch-action: manipulation;
   will-change: box-shadow, transform;
 
-  box-shadow: rgba(187, 187, 187, 0.4) 0 0.2vw 0.4vw, rgba(187, 187, 187, 0.3) 0 0.7vw 0.6vw -0.3vw,
-    rgb(0, 0, 0) 0 -0.4vw 0 inset;
+  box-shadow: rgba(187, 187, 187, 0.4) 0 0.2vh 0.4vh, rgba(187, 187, 187, 0.3) 0 0.7vh 0.6vh -0.3vh,
+    rgb(0, 0, 0) 0 -0.4vh 0 inset;
 
   background-color: rgb(40, 40, 40);
 
@@ -224,18 +236,18 @@ a:hover {
   cursor: pointer;
 
   &:focus {
-    box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vw 0.8vw, rgba(187, 187, 187, 0.3) 0 0.7vw 0.6vw -0.3vw,
-      rgb(0, 0, 0) 0 -0.4vw 0 inset;
+    box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vh 0.8vh, rgba(187, 187, 187, 0.3) 0 0.7vh 0.6vh -0.3vh,
+      rgb(0, 0, 0) 0 -0.4vh 0 inset;
   }
 
   &:hover {
-     box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vw 0.8vw, rgba(187, 187, 187, 0.3) 0 0.7vw 0.6vw -0.3vw,
-      rgb(0, 0, 0) 0 -0.4vw 0 inset;
+    box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vh 0.8vh, rgba(187, 187, 187, 0.3) 0 0.7vh 0.6vh -0.3vh,
+      rgb(0, 0, 0) 0 -0.4vh 0 inset;
     transform: translateY(-2px);
   }
 
   &:active {
-    box-shadow: rgb(0, 0, 0) 0 0.3vw 0.7vw inset;
-    transform: translateY(0.2vw);
+    box-shadow: rgb(0, 0, 0) 0 0.3vh 0.7vh inset;
+    transform: translateY(0.2vh);
   }
 }

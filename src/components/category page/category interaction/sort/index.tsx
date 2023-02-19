@@ -60,10 +60,15 @@ export const Sort = ({ resetSorts }: MyProps) => {
             href={`/Category/${category}/${option.option}${'categoryPage.opitionsSortedLink'}`}
             className={styles.servicesSortBoxOption}
             onClick={() => onHandleClick(index)}
-            key={index}>{`⇵ ${option.name} `}</Link>
+            key={index}
+          >{`⇵ ${option.name} `}</Link>
         ))}
       </div>
-      <span onClick={() => resetSorts('sort')}>Сброс</span>
+      
+      <div className={styles.servicesSortDownBlock}>
+        <span>Применить</span>
+        <span onClick={() => resetSorts('sort')}>Cброс</span>
+      </div>
     </div>
   );
 };

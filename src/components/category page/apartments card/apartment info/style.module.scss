@@ -19,6 +19,10 @@
     background-color: rgb(28, 28, 28);
 
     z-index: 2;
+
+    @media (width < 605px) {
+      font-size: calc(6px + 6 * (100vw / 605));
+    }
   }
 
   .infoTitle {
@@ -30,6 +34,10 @@
     font-weight: bold;
 
     cursor: pointer;
+
+    @media (width < 605px) {
+      font-size: calc(8px + 15 * (100vw / 605));
+    }
   }
 
   .infoOptions {
@@ -46,6 +54,13 @@
     @media (width < 805px) {
       p {
         font-size: calc(8px + 12 * (100vw / 1920)) !important;
+      }
+
+      @media (width < 605px) {
+
+        p {
+          font-size: calc(6px + 12 * (100vw / 605)) !important;
+        }
       }
     }
 
@@ -101,6 +116,12 @@
       p {
         font-size: calc(10px + 12 * (100vw / 1920)) !important;
       }
+
+      @media (width < 605px) {
+        p {
+          font-size: calc(4px + 10 * (100vw / 605)) !important;
+        }
+      }
     }
 
     p {
@@ -154,6 +175,20 @@
       width: calc(70px + 175 * (100vw / 1920)) !important;
 
       font-size: calc(6px + 8 * (100vw / 1920)) !important;
+    }
+
+    @media (width < 605px) {
+      p {
+        font-size: calc(6px + 14 * (100vw / 605)) !important;
+      }
+
+      .infoPriceButtonButn {
+        width: calc(30px + 175 * (100vw / 605)) !important;
+
+        height: calc(16px + 20 * (100vw / 605)) !important;
+
+        font-size: calc(5px + 8 * (100vw / 605)) !important;
+      }
     }
   }
 

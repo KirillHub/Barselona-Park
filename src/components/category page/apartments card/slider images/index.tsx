@@ -27,7 +27,8 @@ export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) =>
       spaceBetween={5}
       slidesPerView={options?.lazy}
       navigation
-      className={styles.slider}>
+      className={styles.slider}
+    >
       {apartment.pictures.map((picture, index) => (
         <span key={picture.id}>
           <SwiperSlide key={picture.id}>

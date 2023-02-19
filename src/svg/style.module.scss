@@ -6,6 +6,11 @@
 
   cursor: pointer;
   z-index: 1;
+
+  @media (width < 605px) {
+    width: calc(8px + 18 * (100vw / 605));
+    height: calc(8px + 18 * (100vw / 605));
+  }
 }
 
 .newSvg {
@@ -13,6 +18,11 @@
   height: calc(15px + 20 * (100vw / 1920));
 
   z-index: 1;
+
+  @media (width < 605px) {
+    width: calc(8px + 20 * (100vw / 605));
+    height: calc(8px + 20 * (100vw / 605));
+  }
 }
 
 .categoryButton {

@@ -5,10 +5,10 @@
     visibility: visible;
 
     width: calc(20px + 20 * (100vw / 605));
-    height:  calc(20px + 20 * (100vw / 605));
+    height: calc(20px + 20 * (100vw / 605));
 
     top: calc(40px + 75 * (100vw / 605));
-    right: 3.5vw;
+    right: calc(10px + 12 * (100vw / 605));
 
     z-index: 10;
 
@@ -39,15 +39,20 @@
       height: auto;
 
       top: calc(70px + 98 * (100vw / 605));
-      right: -360px;
+      right: -370px;
 
       transition: 850ms;
     }
   }
+
+  // @media (height < 580px) {
+  //   position: fixed;
+  //   overflow-y: scroll;
+  // }
 }
 
 .active {
-  right: 3.5vw;
+  right: calc(10px + 12 * (100vw / 605));
   transition: 350ms;
 }
 
@@ -89,9 +94,32 @@
 
       font-size: calc(6px + 8 * (100vw / 1920));
 
+      @media (width < 605px) {
+        width: 45%;
+        input {
+          width: calc(5px + 10 * (100vw / 605));
+        }
+      }
+
       input {
         margin-right: calc(5px + 5 * (100vw / 1920));
       }
+    }
+  }
+
+  .servicesSortDownBlock {
+    display: flex;
+
+    justify-content: space-between;
+
+    span {
+      font-size: calc(8px + 12 * (100vw / 1920));
+
+      cursor: pointer;
+    }
+
+    span:hover {
+      color: grey;
     }
   }
 }

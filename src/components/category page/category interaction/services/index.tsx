@@ -28,7 +28,10 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
         ))}
       </div>
 
-      <span onClick={() => resetSorts('availability')}>Cброс</span>
+      <div className={styles.servicesSortDownBlock}>
+        <span>Применить</span>
+        <span onClick={() => resetSorts('availability')}>Cброс</span>
+      </div>
     </div>
   );
 };
