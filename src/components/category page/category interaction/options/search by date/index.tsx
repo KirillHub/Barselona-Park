@@ -37,6 +37,8 @@ export const CheckInCheckOut = () => {
     </div>
   ));
 
+  CustomInput.displayName = 'MyApp';
+
   return (
     <>
       <div className={styles.box}>
@@ -78,6 +80,6 @@ export const CheckInCheckOut = () => {
   );
 };
 
-CheckInCheckOut.displayName = 'MyApp';
+
 
 export default CheckInCheckOut;
