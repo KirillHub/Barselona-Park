@@ -77,3 +77,7 @@ export const CheckInCheckOut = () => {
     </>
   );
 };
+
+CheckInCheckOut.displayName = 'MyApp';
+
+export default CheckInCheckOut;
