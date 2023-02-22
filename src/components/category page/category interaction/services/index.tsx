@@ -1,3 +1,4 @@
+import useStore from '../../../../store/useStore';
 import styles from '../style.module.scss';
 
 interface MyProps {
@@ -6,14 +7,9 @@ interface MyProps {
 }
 
 export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
-  const sortBy = [
-    'Вид на море',
-    'Балкон',
-    'Вид на город',
-    'Духовка',
-    'Посудомоечная',
-    'Кофемашина',
-  ];
+  const checkBox = useStore((state) => state.checkBox);
+
+  const sortBy = ['Вид на море', 'Вид на город', 'Балкон', 'Духовка', 'Посудомоечная', 'Кофемашина'];
 
   return (
     <div className={styles.servicesSort}>
@@ -22,7 +18,7 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
       <div className={styles.servicesSortBox}>
         {sortBy.map((option, index) => (
           <span key={index} className={styles.servicesSortBoxOption}>
-            <input type="checkbox" onChange={() => onCheckBoxFirstChange(index)} checked={false} />
+            <input type="checkbox" onChange={() => onCheckBoxFirstChange(index)} checked={checkBox[index]} />
             <span>{option}</span>
           </span>
         ))}

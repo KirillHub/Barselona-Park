@@ -6,11 +6,10 @@ import styles from '../style.module.scss';
 export const GuestsNights = () => {
 
   const guests = useStore((state) => state.guests);
-  
+
   const plusGuests = useStore((state) => state.plusGuests);
   const minusGuests = useStore((state) => state.minusGuests);
 
-  console.log(guests);
 
   const onClickGuests = (action: string) => {
     if ((guests === 1 && action === 'minus') || (guests === 8 && action === 'plus')) {

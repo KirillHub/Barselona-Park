@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from '../style.module.scss';
+import useStore from '../../../../store/useStore';
 
 interface MyParams {
   category: string;
@@ -12,9 +13,13 @@ interface MyProps {
 }
 
 export const Sort = ({ resetSorts }: MyProps) => {
-
+  const setCheckSign = useStore((state) => state.setCheckSign);
+  const setSignIndex = useStore((state) => state.setSignIndex);
+  const checkSign = useStore((state) => state.checkSign);
+  const opitionsSortedLink = useStore((state) => state.opitionsSortedLink);
   const pathname = usePathname();
 
+  const ha = pathname?.split('/')[2];
   const category = pathname?.split('/')[3];
   const sort = pathname?.split('/')[4];
 
@@ -24,13 +29,14 @@ export const Sort = ({ resetSorts }: MyProps) => {
       name: 'По цене Летний сезон',
     },
     {
-      option: 'Sorted-by-square-meters',
-      name: 'По кв. м',
-    },
-    {
       option: 'Sorted-by-winter-season',
       name: 'По цене Зимний сезон ',
     },
+    {
+      option: 'Sorted-by-square-meters',
+      name: 'По кв. м',
+    },
+
     {
       option: 'Sorted-by-floor',
       name: 'По этажу',
@@ -47,7 +53,18 @@ export const Sort = ({ resetSorts }: MyProps) => {
   ];
 
   const onHandleClick = (index: number) => {
-    // dispatch(setCheckSign(index));
+    setSignIndex(index);
+
+    const sign = [...checkSign];
+
+    if (sign[index]) {
+      sign.splice(index, 1, false);
+
+      setCheckSign(sign);
+    } else {
+      sign.splice(index, 1, true);
+      setCheckSign(sign);
+    }
   };
 
   return (
@@ -57,14 +74,14 @@ export const Sort = ({ resetSorts }: MyProps) => {
       <div className={styles.servicesSortBox}>
         {sortBy.map((option, index) => (
           <Link
-            href={`/Category/${category}/${option.option}${'categoryPage.opitionsSortedLink'}`}
+            href={`/Category/${ha}/${option.option}/${opitionsSortedLink}`}
             className={styles.servicesSortBoxOption}
             onClick={() => onHandleClick(index)}
             key={index}
           >{`⇵ ${option.name} `}</Link>
         ))}
       </div>
-      
+
       <div className={styles.servicesSortDownBlock}>
         <span>Применить</span>
         <span onClick={() => resetSorts('sort')}>Cброс</span>

@@ -7,21 +7,21 @@ import { categoryMeta } from '../../meta/categoryMeta';
 import { table } from '../../../backend/withoutBalcony';
 import { Apartment } from '../../types/type';
 import styles from './style.module.scss';
-
+import useStore from '../../../store/useStore';
 interface MyParams {
   sort: string;
   options: string;
 }
 
 export const ApartmentCard = () => {
+  const checkSign = useStore((state) => state.checkSign);
+  const signIndex = useStore((state) => state.signIndex);
   const pathname = usePathname();
+
 
   const sort = pathname?.split('/')[2];
   const options = pathname?.split('/')[3];
-
-  // const categoryPage = useAppSelector((state) => state.categoryPage);
-
-  // const { sort, options } = useParams<keyof MyParams>() as MyParams;
+  const service = pathname?.split('/')[4];
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
@@ -38,8 +38,8 @@ export const ApartmentCard = () => {
           x[filterBy[2] as keyof Apartment] === filterBy[3],
       );
     }
-    if (options) {
-      const checkOptions = options.split('+');
+    if (service) {
+      const checkOptions = service.split('+');
 
       const view = checkOptions.find((x) => x === 'sea-view' || x === 'city-view');
 
@@ -79,27 +79,30 @@ export const ApartmentCard = () => {
   filterByPage();
 
   const sorter = (field: string) => {
-    // if (categoryPage.checkSign[categoryPage.signIndex]) {
-    //   return (a: any, b: any) =>
-    //     +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
-    // } else {
-    //   return (a: any, b: any) =>
-    //     +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
-    // }
+    if (checkSign[signIndex]) {
+
+      return (a: any, b: any) =>
+        +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
+    } else {
+
+      return (a: any, b: any) =>
+        +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
+    }
   };
 
+
   const sortBy =
-    sort === 'Sorted-by-summer-season'
+    options === 'Sorted-by-summer-season'
       ? 'summerPrice'
-      : sort === 'Sorted-by-winter-season'
+      : options === 'Sorted-by-winter-season'
       ? 'winterPrice'
-      : sort === 'Sorted-by-number-of-rooms'
+      : options === 'Sorted-by-number-of-rooms'
       ? 'rooms'
-      : sort === 'Sorted-by-number-of-beds'
+      : options === 'Sorted-by-number-of-beds'
       ? 'sleepingPlaces'
-      : sort === 'Sorted-by-square-meters'
+      : options === 'Sorted-by-square-meters'
       ? 'squareMeters'
-      : sort === 'Sorted-by-floor'
+      : options === 'Sorted-by-floor'
       ? 'floor'
       : 'sort';
 
