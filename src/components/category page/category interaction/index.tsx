@@ -182,7 +182,7 @@ export const CategoryInteraction = () => {
 
   useEffect(() => {
     firstRender();
-  }, []);
+  });
 
   return (
     <>
