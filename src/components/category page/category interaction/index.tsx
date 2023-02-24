@@ -1,8 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { useAppDispatch, useAppSelector } from '../../../store/store';
-// import { setOpitionsSortedLink, setCheckBox } from '../../../store/category/slice';
-// import { useParams, useNavigate } from 'react-router-dom';
-
 import useStore from '../../../store/useStore';
 
 import { usePathname } from 'next/navigation';
@@ -27,7 +23,7 @@ export const CategoryInteraction = () => {
   const setOpitionsSortedLink = useStore((state) => state.setOpitionsSortedLink);
 
   const opitionsSortedLink = useStore((state) => state.opitionsSortedLink);
-  const checkBox = useStore((state) => state.checkBox);
+  const checkBox = useStore((state) => [...state.checkBox]);
 
   const pathname = usePathname();
 
@@ -37,74 +33,54 @@ export const CategoryInteraction = () => {
 
   const router = useRouter();
 
-
   const [sideBar, setSideBar] = useState(false);
 
+  const getOptionsLink = () => {
+    const optionLabels = ['sea-view', 'city-view', 'balcony', 'oven', 'dishwasher', 'coffee-machine'];
+
+    const selectedOptions = optionLabels.filter((option, index) => checkBox[index]);
+
+    return selectedOptions.join('+');
+  };
+
   const checkOpitionsLink = () => {
-    let opitionsLink = [];
+    const savedLink = getOptionsLink();
+    const newSavedLink = savedLink || '';
+    setOpitionsSortedLink(newSavedLink ? `/${newSavedLink}` : '');
 
-    if (checkBox[0]) {
-      opitionsLink.push('sea-view');
-    }
-    if (checkBox[1]) {
-      opitionsLink.push('city-view');
-    }
-    if (checkBox[2]) {
-      opitionsLink.push('balcony');
-    }
+    return savedLink;
+  };
 
-    if (checkBox[3]) {
-      opitionsLink.push('oven');
-    }
-    if (checkBox[4]) {
-      opitionsLink.push('dishwasher');
-    }
-    if (checkBox[5]) {
-      opitionsLink.push('coffee-machine');
-    }
+  const updateCheckBox = (index: number, value: boolean) => {
+    const newState = checkBox;
+    newState[index] = value;
 
-    const savedLink = opitionsLink.join('+');
-
-    const newSavedLink = savedLink !== undefined ? savedLink : '';
-    setOpitionsSortedLink(newSavedLink.length !== 0 ? `/${newSavedLink}` : '');
-
-    return savedLink !== undefined ? savedLink : '';
+    setCheckBox(newState);
   };
 
   const onCheckBoxFirstChange = (checkBoxIndex: number) => {
-    const box = checkBox;
-
     if (checkBoxIndex === 0 || checkBoxIndex === 1) {
-      if (!box[0] && !box[1]) {
-        box.splice(checkBoxIndex, 1, true);
-        setCheckBox([...box]);
-      } else if (box[0]) {
-        if (checkBoxIndex === 0) {
-          box.splice(0, 1, false);
-        } else {
-          box.splice(0, 2, false, true);
-        }
+      const shouldSetFirstCheckbox = !checkBox[0] && !checkBox[1];
 
-        setCheckBox([...box]);
+      if (shouldSetFirstCheckbox) {
+        updateCheckBox(checkBoxIndex, true);
+      } else if (checkBox[0]) {
+        if (checkBoxIndex === 0) {
+          updateCheckBox(0, false);
+        } else {
+          updateCheckBox(0, false);
+          updateCheckBox(1, true);
+        }
       } else {
         if (checkBoxIndex === 1) {
-          box.splice(1, 1, false);
+          updateCheckBox(1, false);
         } else {
-          box.splice(0, 2, true, false);
+          updateCheckBox(0, true);
+          updateCheckBox(1, false);
         }
-
-        setCheckBox([...box]);
       }
     } else {
-      if (checkBox[checkBoxIndex]) {
-        box.splice(checkBoxIndex, 1, false);
-
-        setCheckBox([...box]);
-      } else {
-        box.splice(checkBoxIndex, 1, true);
-
-        setCheckBox([...box]);
-      }
+      updateCheckBox(checkBoxIndex, !checkBox[checkBoxIndex]);
     }
 
     return changeRoute();
@@ -112,58 +88,44 @@ export const CategoryInteraction = () => {
 
   const changeRoute = () => {
     const opitionsLink = checkOpitionsLink();
-
-    const sorted = sort === undefined ? '' : sort;
+    const sorted = sort || '';
 
     let newRoute = '';
 
-    if (sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length === 0) {
-      newRoute = `/${sorted}`;
-    }
-
-    if ((sorted.length === 0 || sorted === 'Without-sort') && opitionsLink.length === 0) {
-      newRoute = '';
-    }
-
-    if (sorted.length !== 0 && opitionsLink.length !== 0) {
-      newRoute = `/${sorted}/${opitionsLink}`;
-    }
-
-    if (sorted.length === 0 && opitionsLink.length !== 0) {
+    if (opitionsLink.length === 0) {
+      newRoute = sorted === 'Without-sort' ? '' : `/${sorted}`;
+    } else if (sorted.length === 0) {
       newRoute = `/Without-sort/${opitionsLink}`;
+    } else {
+      newRoute = `/${sorted}/${opitionsLink}`;
     }
 
     router.push(`/Category/${category}${newRoute}`);
   };
 
   const resetSorts = (whatsReset: string) => {
-    const sorted = sort === undefined ? '' : sort;
+    const sorted = sort ?? '';
 
     if (whatsReset === 'availability') {
       setCheckBox([false, false, false, false, false, false]);
       setOpitionsSortedLink('');
 
-
-      if (sorted.length !== 0 && sorted !== 'Without-sort') {
-        router.push(`/Category/${category}/${sorted}`);
-      } else {
-        router.push(`/Category/${category}`);
-      }
+      const newSortPath = sorted.length !== 0 && sorted !== 'Without-sort' ? `/${sorted}` : '';
+      router.push(`/Category/${category}${newSortPath}`);
     } else {
       const opitionsLink = checkOpitionsLink();
-      if (sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length !== 0) {
-        router.push(`/Category/${category}/Without-sort/${opitionsLink}`);
-      }
 
-      if (sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length === 0) {
-        router.push(`/Category/${category}`);
-      }
+      const newSortPath =
+        sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length !== 0
+          ? `/Without-sort/${opitionsLink}`
+          : '';
+
+      router.push(`/Category/${category}${newSortPath}`);
     }
   };
 
   const firstRender = () => {
-    if (service !== undefined) {
-      const opitionsLink = service.split('+');
+    if (service) {
       const newOpitionsLink = [
         'sea-view',
         'city-view',
@@ -172,17 +134,14 @@ export const CategoryInteraction = () => {
         'dishwasher',
         'coffee-machine',
       ];
-
-      const updateOpitionsLink = newOpitionsLink
-        .map((d, i) => opitionsLink.findIndex((x) => x === d))
-        .map((x) => x !== -1);
+      const updateOpitionsLink = newOpitionsLink.map((d) => service.includes(d));
       setCheckBox(updateOpitionsLink);
     }
   };
 
   useEffect(() => {
     firstRender();
-  });
+  }, []);
 
   return (
     <>

@@ -14,7 +14,6 @@ interface MyProps {
 
 export const Sort = ({ resetSorts }: MyProps) => {
   const setCheckSign = useStore((state) => state.setCheckSign);
-  const setSignIndex = useStore((state) => state.setSignIndex);
   const checkSign = useStore((state) => state.checkSign);
   const opitionsSortedLink = useStore((state) => state.opitionsSortedLink);
   const pathname = usePathname();
@@ -53,18 +52,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
   ];
 
   const onHandleClick = (index: number) => {
-    setSignIndex(index);
-
-    const sign = [...checkSign];
-
-    if (sign[index]) {
-      sign.splice(index, 1, false);
-
-      setCheckSign(sign);
-    } else {
-      sign.splice(index, 1, true);
-      setCheckSign(sign);
-    }
+    setCheckSign(index);
   };
 
   return (

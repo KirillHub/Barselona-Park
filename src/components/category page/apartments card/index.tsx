@@ -18,14 +18,13 @@ export const ApartmentCard = () => {
   const signIndex = useStore((state) => state.signIndex);
   const pathname = usePathname();
 
-
   const sort = pathname?.split('/')[2];
   const options = pathname?.split('/')[3];
   const service = pathname?.split('/')[4];
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
-  let apartments: any = [];
+  let apartments: Apartment[] = [];
 
   const filterByPage = () => {
     if (filterBy?.length === 2) {
@@ -80,33 +79,34 @@ export const ApartmentCard = () => {
 
   const sorter = (field: string) => {
     if (checkSign[signIndex]) {
-
       return (a: any, b: any) =>
         +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
     } else {
-
       return (a: any, b: any) =>
         +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
     }
   };
 
+  const sortBy = (() => {
+    switch (options) {
+      case 'Sorted-by-summer-season':
+        return 'summerPrice';
+      case 'Sorted-by-winter-season':
+        return 'winterPrice';
+      case 'Sorted-by-number-of-rooms':
+        return 'rooms';
+      case 'Sorted-by-number-of-beds':
+        return 'sleepingPlaces';
+      case 'Sorted-by-square-meters':
+        return 'squareMeters';
+      case 'Sorted-by-floor':
+        return 'floor';
+      default:
+        return 'sort';
+    }
+  })();
 
-  const sortBy =
-    options === 'Sorted-by-summer-season'
-      ? 'summerPrice'
-      : options === 'Sorted-by-winter-season'
-      ? 'winterPrice'
-      : options === 'Sorted-by-number-of-rooms'
-      ? 'rooms'
-      : options === 'Sorted-by-number-of-beds'
-      ? 'sleepingPlaces'
-      : options === 'Sorted-by-square-meters'
-      ? 'squareMeters'
-      : options === 'Sorted-by-floor'
-      ? 'floor'
-      : 'sort';
-
-  apartments = apartments.sort(sorter(sortBy));
+  apartments.sort(sorter(sortBy));
 
   return (
     <div className={styles.categoryPageRightBlock}>

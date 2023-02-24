@@ -1,6 +1,6 @@
 import { StateCreator } from 'zustand';
 
-export interface IGuests {
+interface CategoryStore {
   selectedPageId: string;
   checkSign: boolean[];
   signIndex: number;
@@ -9,37 +9,32 @@ export interface IGuests {
   checkBox: boolean[];
 
   setSelectedPageId: (pageId: string) => void;
-  setCheckSign: (index: boolean[]) => void;
-  setSignIndex: (index: number) => void;
-  setOpitionsSortedLink: (index: string) => void;
-  setCheckBox: (index: boolean[]) => void;
+  setCheckSign: (index: number) => void;
+  setOpitionsSortedLink: (link: string) => void;
+  setCheckBox: (box: boolean[]) => void;
 }
 
-export const createCategorySlice: StateCreator<IGuests> = (set, get) => ({
+export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
   selectedPageId: 'Select-category',
   checkSign: [true, true, true, true, true, true],
   signIndex: 10,
-
   opitionsSortedLink: '',
   checkBox: [false, false, false, false, false, false],
 
-  setSelectedPageId(pageId) {
-    set((state) => ({ selectedPageId: (state.selectedPageId = pageId) }));
-  },
+  setSelectedPageId: (pageId: string) => set(() => ({ selectedPageId: pageId })),
+  setCheckSign: (index: number) =>
+    set((state) => {
+      const sign = [...state.checkSign];
+      sign.splice(index, 1, !sign[index]);
 
-  setCheckSign(index) {
-    set((state) => ({...state.checkSign,  checkSign: (state.checkSign = index) }));
-  },
+      return {
+        checkSign: sign,
+        signIndex: index,
+      };
+    }),
 
-  setSignIndex(index) {
-    set((state) => ({ signIndex: (state.signIndex = index) }));
-  },
-
-  setOpitionsSortedLink(index) {
-    set((state) => ({ opitionsSortedLink: (state.opitionsSortedLink = index) }));
-  },
-
-  setCheckBox(index) {
-    set((state) => ({...state.checkBox, checkBox: (state.checkBox = index) }));
+  setOpitionsSortedLink: (link: string) => set(() => ({ opitionsSortedLink: link })),
+  setCheckBox(box: boolean[]) {
+    set((state) => ({ ...state.checkBox, checkBox: box }));
   },
 });
