@@ -89,7 +89,7 @@ export const readyIcons = (apartment: Apartment) => {
     },
     {
       jsx: <Parking />,
-      title: 'Парковка',
+      title: 'Парковка платная',
     },
     {
       jsx: <Elevator />,

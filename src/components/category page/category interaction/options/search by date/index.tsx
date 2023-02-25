@@ -1,4 +1,4 @@
-import { useState, forwardRef } from 'react';
+import { useState, forwardRef, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { subDays, addDays } from 'date-fns';
 import ru from 'date-fns/locale/ru';
@@ -6,6 +6,7 @@ import { reservationDays } from '../../../../functions/reservationDays';
 import { More } from '../../../../../svg';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from '../style.module.scss';
+import useStore from '../../../../../store/useStore';
 
 interface Custom {
   value: string;
@@ -14,16 +15,22 @@ interface Custom {
 export type Ref = HTMLDivElement;
 
 export const CheckInCheckOut = () => {
+
+  const setNights = useStore((state) => state.setNights)
+
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-
-  // console.log(reservationDays(startDate, endDate));
 
   if (startDate.getTime() > endDate.getTime()) {
     setEndDate(startDate);
   }
 
-  const excludedDates = ['Fri Feb 17 2023', 'Sat Feb 18 2023'].map((x) => new Date(x));
+  const dateLength = (start: Date, end: Date) => {
+    const dates = reservationDays(start, end);
+    setNights(dates.length);
+  };
+
+  const excludedDates = ['', ''].map((x) => new Date(x));
 
   const CustomInput = forwardRef<Ref, Custom>(({ value, onClick }, ref) => (
     <div className={styles.boxDate} onClick={onClick} ref={ref}>
@@ -38,6 +45,10 @@ export const CheckInCheckOut = () => {
   ));
 
   CustomInput.displayName = 'MyApp';
+
+  useEffect(() => {
+    dateLength(startDate, endDate);
+  }, [startDate, endDate]);
 
   return (
     <>
@@ -79,7 +90,5 @@ export const CheckInCheckOut = () => {
     </>
   );
 };
-
-
 
 export default CheckInCheckOut;

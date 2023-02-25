@@ -1,27 +1,43 @@
 import { StateCreator } from 'zustand';
 
 export interface CategoryStore {
-  selectedPageId: string;
+  selectedPageId: string | undefined;
   checkSign: boolean[];
   signIndex: number;
 
   opitionsSortedLink: string;
   checkBox: boolean[];
 
-  setSelectedPageId: (pageId: string) => void;
+  guests: number;
+
+  nights: number;
+
+  setSelectedPageId: (pageId: string | undefined) => void;
   setCheckSign: (index: number) => void;
   setOpitionsSortedLink: (link: string) => void;
   setCheckBox: (box: boolean[]) => void;
+  updateGuests: (increment: boolean) => void;
+
+  setNights: (length: number) => void;
 }
 
 export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
   selectedPageId: 'Select-category',
+
   checkSign: [true, true, true, true, true, true],
+
   signIndex: 10,
+
   opitionsSortedLink: '',
+
   checkBox: [false, false, false, false, false, false],
 
-  setSelectedPageId: (pageId: string) => set(() => ({ selectedPageId: pageId })),
+  guests: 1,
+
+  nights: 1,
+
+  setSelectedPageId: (pageId: string | undefined) => set(() => ({ selectedPageId: pageId })),
+
   setCheckSign: (index: number) =>
     set((state) => {
       const sign = [...state.checkSign];
@@ -34,7 +50,20 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
     }),
 
   setOpitionsSortedLink: (link: string) => set(() => ({ opitionsSortedLink: link })),
+
   setCheckBox(box: boolean[]) {
     set((state) => ({ ...state.checkBox, checkBox: box }));
   },
+
+  updateGuests: (increment: boolean) =>
+    set((state) => ({
+      guests:
+        increment && state.guests < 8
+          ? state.guests + 1
+          : !increment && state.guests > 1
+          ? state.guests - 1
+          : state.guests,
+    })),
+
+  setNights: (length: number) => set(() => ({ nights: length })),
 });

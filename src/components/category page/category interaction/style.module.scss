@@ -85,6 +85,17 @@
 
     flex-wrap: wrap;
 
+    .swapCategoryContent {
+      width: 100%;
+
+      a {
+        width:2vw;
+        height: 2vh;
+      }
+    }
+
+
+
     .servicesSortBoxOption {
       display: flex;
       margin-bottom: calc(5px + 5 * (100vw / 1920));
