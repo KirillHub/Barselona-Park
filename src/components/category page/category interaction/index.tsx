@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useStore from '../../../store/useStore';
 
 import { usePathname } from 'next/navigation';
@@ -124,7 +124,7 @@ export const CategoryInteraction = () => {
     }
   };
 
-  const firstRender = () => {
+  const firstRender = useCallback(() => {
     if (service) {
       const newOpitionsLink = [
         'sea-view',
@@ -137,11 +137,11 @@ export const CategoryInteraction = () => {
       const updateOpitionsLink = newOpitionsLink.map((d) => service.includes(d));
       setCheckBox(updateOpitionsLink);
     }
-  };
+  }, [service, setCheckBox]);
 
   useEffect(() => {
     firstRender();
-  }, []);
+  }, [firstRender]);
 
   return (
     <>
