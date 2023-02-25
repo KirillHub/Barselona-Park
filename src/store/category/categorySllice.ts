@@ -1,6 +1,6 @@
 import { StateCreator } from 'zustand';
 
-interface CategoryStore {
+export interface CategoryStore {
   selectedPageId: string;
   checkSign: boolean[];
   signIndex: number;

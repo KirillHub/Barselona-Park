@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import { createCategorySlice, IGuests } from './category/categorySllice';
+import { createCategorySlice, CategoryStore } from './category/categorySllice';
 
-const useStore = create<IGuests>()((...a) => ({
+const useStore = create<CategoryStore>()((...a) => ({
   ...createCategorySlice(...a),
 }));
 
