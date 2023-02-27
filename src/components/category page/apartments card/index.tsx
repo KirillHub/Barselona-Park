@@ -8,6 +8,8 @@ import { table } from '../../../backend/withoutBalcony';
 import { Apartment } from '../../types/type';
 import styles from './style.module.scss';
 import useStore from '../../../store/useStore';
+
+
 interface MyParams {
   sort: string;
   options: string;

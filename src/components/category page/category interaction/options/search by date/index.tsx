@@ -15,8 +15,7 @@ interface Custom {
 export type Ref = HTMLDivElement;
 
 export const CheckInCheckOut = () => {
-
-  const setNights = useStore((state) => state.setNights)
+  const setNights = useStore((state) => state.setNights);
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -31,6 +30,11 @@ export const CheckInCheckOut = () => {
   };
 
   const excludedDates = ['', ''].map((x) => new Date(x));
+
+  const [isOpen, setIsOpen] = useState(false);
+  const handleChange = () => {
+    setIsOpen(!isOpen);
+  };
 
   const CustomInput = forwardRef<Ref, Custom>(({ value, onClick }, ref) => (
     <div className={styles.boxDate} onClick={onClick} ref={ref}>

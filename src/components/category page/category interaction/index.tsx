@@ -61,7 +61,6 @@ export const CategoryInteraction = () => {
   const onCheckBoxFirstChange = (checkBoxIndex: number) => {
     if (checkBoxIndex === 0 || checkBoxIndex === 1) {
       const shouldSetFirstCheckbox = !checkBox[0] && !checkBox[1];
-
       if (shouldSetFirstCheckbox) {
         updateCheckBox(checkBoxIndex, true);
       } else if (checkBox[0]) {
@@ -85,6 +84,15 @@ export const CategoryInteraction = () => {
 
     return changeRoute();
   };
+
+  // const ob = {
+  //   'Sorted-by-summer-season': { more: false, less: false },
+  //   'Sorted-by-winter-season': { more: false, less: false },
+  //   'Sorted-by-number-of-rooms': { more: false, less: false },
+  //   'Sorted-by-number-of-beds': { more: false, less: false },
+  //   'Sorted-by-square-meters': { more: false, less: false },
+  //   'Sorted-by-floor': { more: false, less: false },
+  // };
 
   const changeRoute = () => {
     const opitionsLink = checkOpitionsLink();

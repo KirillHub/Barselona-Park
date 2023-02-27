@@ -12,20 +12,25 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
   const sortBy = ['Вид на море', 'Вид на город', 'Балкон', 'Духовка', 'Посудомоечная', 'Кофемашина'];
 
   return (
-    <div className={styles.servicesSort}>
-      <p className={styles.servicesSortTitle}>Услуги</p>
+    <div className={styles.sort}>
+      <p className={styles.sortTitle}>Услуги</p>
 
-      <div className={styles.servicesSortBox}>
+      <div className={styles.sortBox}>
         {sortBy.map((option, index) => (
-          <span key={index} className={styles.servicesSortBoxOption}>
-            <input type="checkbox" onChange={() => onCheckBoxFirstChange(index)} checked={checkBox[index]} />
-            <span>{option}</span>
+          <span key={index} className={styles.sortBoxInside}>
+            <input
+              type="checkbox"
+              onChange={() => onCheckBoxFirstChange(index)}
+              checked={checkBox[index]}
+            />
+            <span onClick={() => onCheckBoxFirstChange(index)} className={styles.sortBoxInsideOption}>
+              {option}
+            </span>
           </span>
         ))}
       </div>
 
-      <div className={styles.servicesSortDownBlock}>
-        <span>Применить</span>
+      <div className={styles.sortDownBlock}>
         <span onClick={() => resetSorts('availability')}>Cброс</span>
       </div>
     </div>

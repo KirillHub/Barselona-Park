@@ -31,6 +31,8 @@
 
   z-index: 1;
 
+  user-select: none;
+
   @media (width < 805px) {
     width: 40%;
     @media (width < 605px) {
@@ -56,7 +58,7 @@
   transition: 350ms;
 }
 
-.servicesSort {
+.sort {
   position: relative;
   margin: calc(10px + 20 * (100vw / 1920)) 0;
   padding: calc(5px + 15 * (100vw / 1920));
@@ -72,11 +74,11 @@
     width: 100%;
   }
 
-  .servicesSortTitle {
+  .sortTitle {
     font-size: calc(12px + 12 * (100vw / 1920));
   }
 
-  .servicesSortBox {
+  .sortBox {
     display: flex;
 
     padding-top: calc(5px + 5 * (100vw / 1920));
@@ -85,25 +87,12 @@
 
     flex-wrap: wrap;
 
-    .swapCategoryContent {
-      width: 100%;
-
-      a {
-        width:2vw;
-        height: 2vh;
-      }
-    }
-
-
-
-    .servicesSortBoxOption {
+    .sortBoxInside {
       display: flex;
-      margin-bottom: calc(5px + 5 * (100vw / 1920));
+      position: relative;
       width: 40%;
 
-      align-items: center;
-
-      font-size: calc(6px + 8 * (100vw / 1920));
+      margin-bottom: calc(5px + 5 * (100vw / 1920));
 
       @media (width < 605px) {
         width: 45%;
@@ -115,10 +104,51 @@
       input {
         margin-right: calc(5px + 5 * (100vw / 1920));
       }
+
+      .sortBoxInsideOption {
+        font-size: calc(6px + 8 * (100vw / 1920));
+
+        cursor: pointer;
+
+        &:hover {
+          color: rgb(80, 80, 80);
+        }
+      }
+
+      .sortBoxSelect {
+        color: rgb(110, 110, 110) !important;
+      }
+
+      .sortBoxInsideDropDown {
+        position: absolute;
+
+        border-radius: calc(5px + 5 * (100vw / 1920));
+        box-shadow: rgb(45, 45, 45) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
+
+        background-color: rgb(28, 28, 28);
+
+        z-index: 3;
+
+        .sortBoxInsideDropDownSelect {
+          background-color: rgb(55, 55, 55) !important;
+        }
+
+        a {
+          padding: 0.5vh 1vw;
+          width: 100%;
+
+          border-radius: calc(5px + 5 * (100vw / 1920));
+
+          &:hover {
+            color: white;
+            background-color: rgb(80, 80, 80);
+          }
+        }
+      }
     }
   }
 
-  .servicesSortDownBlock {
+  .sortDownBlock {
     display: flex;
 
     justify-content: space-between;

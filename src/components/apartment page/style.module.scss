@@ -1,239 +1,41 @@
-.new-container {
+.apartment {
   position: relative;
 
   margin: 2vh 8vw 2vh 8vw;
-
-  border-radius: calc(20px + 20 * (100vw / 1920));
 
   @media (width < 800px) {
     margin: 1vh 4vw 2vh 4vw;
   }
 
-  .top-block {
+  .apartmentName {
+    margin-bottom: 2vh;
+
+    font-size: 34px;
+
+  }
+
+  .apartmentTop {
     display: flex;
 
-    height: 65%;
+    justify-content: space-between;
 
-    @media (width < 600px) {
-      width: 100%;
-      display: inline-block;
-    }
+    .apartmentTopSlider {
+      width: 58%;
 
-    .left {
-      padding: 1vh 1vw;
+      .apartmentTopSliderImage {
+        position: relative;
 
-      width: 40%;
+        height: calc(120px + 240 * (100vw / 1920));
+        z-index: 1;
 
-      @media (width < 600px) {
-        width: 100%;
-      }
-
-      .apartment-name {
-        margin-bottom: 2vh;
-        padding-bottom: 1vh;
-
-        text-align: center;
-        font-weight: 600;
-        font-size: calc(15px + 15 * (100vw / 1920));
-
-        color: rgb(255, 255, 255);
-      }
-
-      .apartment-price {
-        display: flex;
-
-        justify-content: space-between;
-
-        .price {
-          margin-bottom: 2vh;
-          padding: 0.2vw;
-          width: 48%;
-
-          text-align: center;
-
-          border-radius: calc(5px + 5 * (100vw / 1920));
-
-          color: rgb(255, 255, 255);
-          background-color: rgb(59, 59, 59);
-
-          fill: white !important;
-
-          .price-span-top {
-            font-size: calc(10px + 10 * (100vw / 1920));
-            font-weight: 600;
-          }
-          .price-span-down {
-            font-size: calc(6px + 6 * (100vw / 1920));
-          }
+        .sliderImageSpan {
+          height: calc(120px + 315 * (100vw / 1920));
         }
       }
     }
 
-    .div-img {
+    .apartmentTopCalendar {
       position: relative;
-      width: 60%;
-      @media (width < 600px) {
-        padding: 0 1vw;
-        width: 100%;
-      }
-    }
-  }
-
-  .bottom-block {
-    display: flex;
-
-    width: 100%;
-
-    @media (width < 600px) {
-      display: inline-block;
-    }
-  }
-
-  .bottom-left {
-    width: 40%;
-    padding: 1vh 1vw;
-
-    @media (width < 600px) {
-      width: 100%;
-    }
-  }
-
-  .apartment-container__calendar {
-    position: relative;
-    margin-top: 1vh;
-    width: 60%;
-
-    // border: 1px solid grey;
-
-    @media (width < 600px) {
-      width: 100%;
-    }
-
-    .calendar-form {
-      padding: 1vh;
-
-      border-top: 1px solid grey;
-
-      .div-bloc {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
-
-      .text-input {
-        margin: 0.5vh 0;
-        padding: calc(5px + 5 * (100vw / 1920));
-
-        width: calc(180px + 222 * (100vw / 1920));
-        height: calc(16px + 20 * (100vw / 1920));
-
-        font-size: calc(10px + 10 * (100vw / 1920));
-
-        color: white;
-        background-color: grey;
-
-        &::-webkit-input-placeholder {
-          color: rgb(255, 255, 255) !important;
-        }
-      }
-
-      & select {
-        color: black;
-        background-color: white;
-      }
-
-      .block-select {
-        display: flex;
-
-        margin: 1vh 0;
-
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
-
-      .select-checkbox {
-        width: calc(180px + 222 * (100vw / 1920));
-
-        .select {
-          text-align: center;
-
-          & select {
-            margin: 0 0 0 calc(5px + 5 * (100vw / 1920));
-
-            font-size: calc(6px + 10 * (100vw / 1920));
-            color: white;
-            background-color: #161616;
-          }
-        }
-
-        .checkbox {
-          display: flex;
-
-          margin-top: 1vh;
-
-          align-items: center;
-
-          & input {
-            margin: 0 1vw;
-
-            width: calc(11px + 11 * (100vw / 1920));
-            height: calc(11px + 11 * (100vw / 1920));
-          }
-        }
-
-        & label {
-          font-size: calc(7px + 10 * (100vw / 1920));
-
-          cursor: default;
-        }
-      }
-
-      @media (width < 1540px) {
-        .text-input,
-        .select-checkbox,
-        .main-buttons-style {
-          width: calc(180px + 150 * (100vw / 1920));
-        }
-
-        @media (width < 1140px) {
-          .text-input,
-          .select-checkbox,
-          .main-buttons-style {
-            width: calc(150px + 130 * (100vw / 1920));
-          }
-
-          @media (width < 900px) {
-            .text-input,
-            .select-checkbox,
-            .main-buttons-style {
-              width: calc(110px + 130 * (100vw / 1920));
-            }
-
-            @media (width < 600px) {
-              .text-input,
-              .select-checkbox,
-              .main-buttons-style {
-                width: calc(150px + 150 * (100vw / 1920));
-              }
-
-              @media (width < 440px) {
-                .text-input,
-                .select-checkbox,
-                .main-buttons-style {
-                  width: calc(120px + 120 * (100vw / 1920));
-                }
-
-                @media (width < 330px) {
-                  .main-buttons-style {
-                    margin: 2vh 0;
-                    height: calc(40px + 40 * (100vw / 1920)) !important;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 }

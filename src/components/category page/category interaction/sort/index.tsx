@@ -28,24 +28,16 @@ export const Sort = ({ resetSorts }: MyProps) => {
       option: 'Sorted-by-summer-season',
       name: 'По цене Летний сезон',
       ru: {
-        more: 'дороже',
-        less: 'дешевле',
-      },
-      eng: {
-        more: 'expensive',
-        less: 'cheaper',
+        more: 'Дороже',
+        less: 'Дешевле',
       },
     },
     {
       option: 'Sorted-by-winter-season',
       name: 'По цене Зимний сезон ',
       ru: {
-        more: 'дороже',
-        less: 'дешевле',
-      },
-      eng: {
-        more: 'expensive',
-        less: 'cheaper',
+        more: 'Дороже',
+        less: 'Дешевле',
       },
     },
     {
@@ -54,10 +46,6 @@ export const Sort = ({ resetSorts }: MyProps) => {
       ru: {
         more: 'Больше',
         less: 'Меньше',
-      },
-      eng: {
-        more: 'more',
-        less: 'less',
       },
     },
     {
@@ -68,10 +56,6 @@ export const Sort = ({ resetSorts }: MyProps) => {
         more: 'Выше',
         less: 'Ниже',
       },
-      eng: {
-        more: 'higher',
-        less: 'lower',
-      },
     },
     {
       option: 'Sorted-by-number-of-rooms',
@@ -80,10 +64,6 @@ export const Sort = ({ resetSorts }: MyProps) => {
         more: 'Больше',
         less: 'Меньше',
       },
-      eng: {
-        more: 'more',
-        less: 'less',
-      },
     },
     {
       option: 'Sorted-by-number-of-beds',
@@ -91,10 +71,6 @@ export const Sort = ({ resetSorts }: MyProps) => {
       ru: {
         more: 'Больше',
         less: 'Меньше',
-      },
-      eng: {
-        more: 'more',
-        less: 'less',
       },
     },
   ];
@@ -109,29 +85,62 @@ export const Sort = ({ resetSorts }: MyProps) => {
     setCheckSign(index);
   };
 
-  return (
-    <div className={styles.servicesSort}>
-      <p className={styles.servicesSortTitle}>Сортировка</p>
+  const checkLink = !category || category !== 'Without-sort';
 
-      <div className={styles.servicesSortBox}>
+  return (
+    <div className={styles.sort}>
+      <p className={styles.sortTitle}>Сортировка</p>
+
+      <div className={styles.sortBox}>
         {sortBy.map((option, index) => (
-          <div key={option.option} className="dropdown">
-            <div className="dropdown-header" onClick={() => toggleDropdown(index)}>
+          <div
+            className={styles.sortBoxInside}
+            key={option.option}
+            onMouseLeave={() => toggleDropdown(openDropdownIndex)}
+          >
+            <div
+              className={`
+                ${styles.sortBoxInsideOption} ${
+                category?.split('+')[0] === option.option ? styles.sortBoxSelect : ''
+              }`}
+              onClick={() => toggleDropdown(index)}
+            >
               {option.name}
             </div>
+
             {openDropdownIndex === index && (
-              <div className="dropdown-menu">
-                <div className="dropdown-item">{option.ru.more}</div>
-                <div className="dropdown-item">{option.ru.less}</div>
+              <div className={styles.sortBoxInsideDropDown}>
+                <Link
+                  href={`/Category/${ha}/${option.option}+more/${opitionsSortedLink}`}
+                  className={
+                    category?.split('+')[1] === 'more' && category?.split('+')[0] === option.option
+                      ? styles.sortBoxInsideDropDownSelect
+                      : ''
+                  }
+                  onClick={() => onHandleClick(index)}
+                >
+                  {option.ru.more}
+                </Link>
+
+                <Link
+                  href={`/Category/${ha}/${option.option}+less/${opitionsSortedLink}`}
+                  className={
+                    category?.split('+')[1] === 'less' && category?.split('+')[0] === option.option
+                      ? styles.sortBoxInsideDropDownSelect
+                      : ''
+                  }
+                  onClick={() => onHandleClick(index)}
+                >
+                  {option.ru.less}
+                </Link>
               </div>
             )}
           </div>
         ))}
       </div>
 
-      <div className={styles.servicesSortDownBlock}>
-        <span>Применить</span>
-        <span onClick={() => resetSorts('sort')}>Cброс</span>
+      <div className={styles.sortDownBlock}>
+        <span onClick={() => (checkLink ? resetSorts('sort') : '')}>Cброс</span>
       </div>
     </div>
   );

@@ -65,11 +65,6 @@ a:hover {
   }
 }
 
-.swiper-horizontal {
-  border-top-right-radius: 1vh !important;
-  border-top-left-radius: 1vh !important;
-}
-
 .visible-title {
   visibility: visible;
 }
@@ -120,7 +115,6 @@ a:hover {
 
   .react-datepicker__month-container {
     width: 100%;
-
     border-radius: calc(5px + 5 * (100vw / 1920));
     font-size: calc(6px + 8 * (100vw / 1920));
 

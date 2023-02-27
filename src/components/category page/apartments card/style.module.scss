@@ -16,9 +16,9 @@
 
     @media (width < 605px) {
       width: 100%;
-
     }
   }
+  
 
   .categoryPageRightBlockCard {
     position: relative;
@@ -48,6 +48,8 @@
   }
 }
 
+
+
 .slider {
   user-select: none;
 
@@ -62,17 +64,6 @@
 
     @media (width < 605px) {
       height: calc(100px + 120 * (100vw / 605));
-    }
-  }
-
-  .sliderImageApartment {
-    position: relative;
-
-    height: calc(120px + 415 * (100vw / 1920));
-    z-index: 1;
-
-    .sliderImageSpan {
-      height: calc(120px + 415 * (100vw / 1920));
     }
   }
 

@@ -39,163 +39,181 @@ export const Apartment = () => {
   const apartment = table?.find((x) => x.name === apartmentId);
 
   const excludedDates = [
-    'Wed Feb 08 2023',
-    'Thu Feb 09 2023',
-    'Fri Feb 10 2023',
-    'Tue Feb 14 2023',
-    'Wed Feb 15 2023',
-    'Thu Feb 16 2023',
-    'Sat Feb 18 2023',
-    'Sun Feb 19 2023',
-    'Wed Mar 08 2023',
-    'Thu Mar 09 2023',
-    'Fri Mar 10 2023',
+    'Mar 08 2023',
+    'Mar 09 2023',
+    'Mar 10 2023',
+    'Mar 12 2023',
+    'Mar 13 2023',
+    'Mar 14 2023',
+    'Mar 23 2023',
+    'Mar 24 2023',
+    'Mar 25 2023',
   ].map((x) => new Date(x));
 
   if (endDate !== null) {
     // console.log(reservationDays(startDate, endDate, excludedDates));
   }
 
+  const aa: any = [];
+
+  if (apartment?.balcony) {
+    aa.push('балкон');
+  }
+  if (apartment?.view) {
+    aa.push('вид на море');
+  }
+  if (apartment?.view === false) {
+    aa.push('вид на город');
+  }
+
+  if (apartment?.dishwasher) {
+    aa.push('посудомоечная машина');
+  }
+
+  if (apartment?.oven) {
+    aa.push('духовка');
+  }
+
+  if (apartment?.coffeeMachine) {
+    aa.push('кофемашина');
+  }
+
+  const rom =
+    apartment?.rooms === '3'
+      ? 'Трехкомнатный апартамент'
+      : apartment?.rooms === '2'
+      ? 'Двухкомнатный апартамент'
+      : apartment?.rooms === '1'
+      ? 'Однокомнатный апартамент'
+      : 'Апартамент студия';
+
+  const first = `площадью ${apartment?.squareMeters} кв/м с ${apartment?.sleepingPlaces} спальными местами для семьи или компании друзей`;
+
+  const second =
+    '  диван, обеденный стол и кондиционер, ванная комната совмещена с туалетом, в апартаменте всегда чистое постельное белье, свежесть и комфорт';
+
+  const vse = aa
+    .concat([
+      'wi-fi',
+      'кол кондиционера',
+      'телевизор',
+      'фен',
+      'полотенца',
+      'утюг',
+      'стиральная машина',
+      'микроволновка',
+      'чайник',
+      'холодильник',
+      'можно с детьми и животными',
+    ])
+    .join(', ');
+
+  console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
+
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
-    <>
-      <div className="new-container">
-        <div className="top-block">
-          <div className="left">
-            <div className="apartment-name">
-              <span className="apartment-name-1">АПАРТАМЕНТ {apartment.name}</span>
-            </div>
-            <div className="apartment-price">
-              <div className="price">
-                <span className="price-span-top">{apartment.summerPrice} ₽</span>
-                <br />
-                <span className="price-span-down">
-                  Летний сезон <br /> (с 1 июня по 1 октября)
-                </span>
-              </div>
-              <div className="price">
-                <span className="price-span-top">{apartment.winterPrice} ₽</span> <br />
-                <span className="price-span-down">
-                  Зимний сезон <br />
-                  (с 1 октября по 1 июня)
-                </span>
-              </div>
-            </div>
+    <div className={styles.apartment}>
+      <div className={styles.apartmentName}>Апартамент {apartment.name}</div>
 
-            <div>
-              Трехкомнатный апартамент с площадью 60 кв м и 6 спальными местами для семьи или друзей –
-              это идеальное место для отдыха и пребывания.
-            </div>
-          </div>
-
-          <div className="div-img">
-            <SliderImages
-              apartment={apartment}
-              apartmentIndex={0}
-              options={{
-                className: styles.sliderImageApartment,
-                sizes: '600px',
-                fit: 'contain',
-                lazy: 1,
-                quality: 100,
-              }}
-            />
-          </div>
+      <div className={styles.apartmentTop}>
+        <div className={styles.apartmentTopSlider}>
+          <SliderImages
+            apartment={apartment}
+            apartmentIndex={0}
+            options={{
+              className: styles.apartmentTopSliderImage,
+              sizes: '600px',
+              fit: 'fill',
+              lazy: 1,
+              quality: 100,
+            }}
+          />
         </div>
 
-        <div className="bottom-block">
-          <div className="bottom-left">1</div>
-          <div className="apartment-container__calendar">
-            <DatePicker
-              startDate={startDate}
-              endDate={endDate}
-              locale={ru}
-              onChange={onChange}
-              excludeDates={excludedDates}
-              selectsRange
-              minDate={subDays(new Date(), 0)}
-              maxDate={addDays(new Date(), 365)}
-              monthsShown={3}
-              calendarStartDay={1}
-              inline
-              fixedHeight
-            />
-
-            <form className="calendar-form" onSubmit={handleSubmit(onSubmit)}>
-              <div className="div-bloc">
-                <p>
-                  <input
-                    className="text-input"
-                    type="text"
-                    placeholder="Имя и фамилия"
-                    {...register('Имя и фамилия', { required: true, maxLength: 120 })}
-                  />
-                  <br />
-                  <input
-                    className="text-input"
-                    type="tel"
-                    placeholder="Номер телефона"
-                    {...register('Номер телефона', { required: true, maxLength: 12 })}
-                  />
-                </p>
-                <p>
-                  <input
-                    className="text-input"
-                    type="text"
-                    placeholder="Email"
-                    {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
-                  />
-                  <br />
-                  <input
-                    className="text-input"
-                    type="text"
-                    placeholder="Комментарий"
-                    {...register('Комментарий', { required: true, maxLength: 180 })}
-                  />
-                </p>
-              </div>
-
-              <div className="block-select">
-                <p className="select-checkbox">
-                  <span className="select">
-                    <label>Количество людей</label>
-                    <select
-                      placeholder="Количество людей"
-                      {...register('Количество людей', { required: true })}>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                    </select>
-                  </span>
-
-                  <br />
-                  <span className="checkbox">
-                    <label>Дети</label>
-                    <input
-                      type="checkbox"
-                      placeholder="Дети"
-                      {...register('Дети', { required: true })}
-                    />
-                    <label>Животные</label>
-                    <input type="checkbox" placeholder="Животные" {...register('Животные', {})} />
-                  </span>
-                </p>
-                <input className="main-buttons-style" type="submit" value="Забронировать" />
-              </div>
-            </form>
-          </div>
+        <div className={styles.apartmentTopCalendar}>
+          <DatePicker
+            startDate={startDate}
+            endDate={endDate}
+            locale={ru}
+            onChange={onChange}
+            excludeDates={excludedDates}
+            selectsRange
+            minDate={subDays(new Date(), 0)}
+            maxDate={addDays(new Date(), 365)}
+            monthsShown={1}
+            calendarStartDay={1}
+            inline
+            fixedHeight
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default Apartment;
+
+// <form className="calendar-form" onSubmit={handleSubmit(onSubmit)}>
+//   <div className="div-bloc">
+//     <p>
+//       <input
+//         className="text-input"
+//         type="text"
+//         placeholder="Имя и фамилия"
+//         {...register('Имя и фамилия', { required: true, maxLength: 120 })}
+//       />
+//       <br />
+//       <input
+//         className="text-input"
+//         type="tel"
+//         placeholder="Номер телефона"
+//         {...register('Номер телефона', { required: true, maxLength: 12 })}
+//       />
+//     </p>
+//     <p>
+//       <input
+//         className="text-input"
+//         type="text"
+//         placeholder="Email"
+//         {...register('Email', { required: true, pattern: /^\S+@\S+$/i })}
+//       />
+//       <br />
+//       <input
+//         className="text-input"
+//         type="text"
+//         placeholder="Комментарий"
+//         {...register('Комментарий', { required: true, maxLength: 180 })}
+//       />
+//     </p>
+//   </div>
+
+//   <div className="block-select">
+//     <p className="select-checkbox">
+//       <span className="select">
+//         <label>Количество людей</label>
+//         <select placeholder="Количество людей" {...register('Количество людей', { required: true })}>
+//           <option value="1">1</option>
+//           <option value="2">2</option>
+//           <option value="3">3</option>
+//           <option value="4">4</option>
+//           <option value="5">5</option>
+//           <option value="6">6</option>
+//           <option value="7">7</option>
+//           <option value="8">8</option>
+//         </select>
+//       </span>
+
+//       <br />
+//       <span className="checkbox">
+//         <label>Дети</label>
+//         <input type="checkbox" placeholder="Дети" {...register('Дети', { required: true })} />
+//         <label>Животные</label>
+//         <input type="checkbox" placeholder="Животные" {...register('Животные', {})} />
+//       </span>
+//     </p>
+//     <input className="main-buttons-style" type="submit" value="Забронировать" />
+//   </div>
+// </form>;
 
 // const aa: any = [];
 

@@ -21,6 +21,7 @@ export type Apartment = {
   pictures: Images[];
   summerPrice: string;
   winterPrice: string;
+  description: string[]
   rooms: string;
   floor: string;
   meta: Meta;
