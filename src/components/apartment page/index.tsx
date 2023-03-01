@@ -38,6 +38,8 @@ export const Apartment = () => {
 
   const apartment = table?.find((x) => x.name === apartmentId);
 
+// console.log(apartment?.description.join(' '))
+
   const excludedDates = [
     'Mar 08 2023',
     'Mar 09 2023',
@@ -106,14 +108,14 @@ export const Apartment = () => {
     ])
     .join(', ');
 
-  console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
+  // console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
     <div className={styles.apartment}>
       <div className={styles.apartmentName}>Апартамент {apartment.name}</div>
 
-      <div className={styles.apartmentTop}>
+      {/* <div className={styles.apartmentTop}>
         <div className={styles.apartmentTopSlider}>
           <SliderImages
             apartment={apartment}
@@ -144,7 +146,13 @@ export const Apartment = () => {
             fixedHeight
           />
         </div>
-      </div>
+      </div> */}
+      
+      <ul className={styles.apartmentUl}>
+        {apartment.description.map((x,i) => (
+          <li key={i} className={styles.apartmentUlLi}>{x}</li>
+        ))}
+      </ul>
     </div>
   );
 };

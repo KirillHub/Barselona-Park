@@ -28,6 +28,8 @@ export const ApartmentCard = () => {
 
   let apartments: Apartment[] = [];
 
+  
+
   const filterByPage = () => {
     if (filterBy?.length === 2) {
       apartments = table.filter((x) => x[filterBy[0] as keyof Apartment] === filterBy[1]);
