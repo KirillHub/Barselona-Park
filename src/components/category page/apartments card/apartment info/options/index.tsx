@@ -16,7 +16,7 @@ export const Options = ({ apartment }: MyProps) => {
 
       <div className={styles.infoDescription}>
         <Blueprint />
-        <p>кв. м - {apartment.squareMeters}</p>
+        <p>m² - {apartment.squareMeters}</p>
       </div>
 
       <div className={styles.infoDescription}>
