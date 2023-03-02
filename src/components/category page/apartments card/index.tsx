@@ -9,7 +9,6 @@ import { Apartment } from '../../types/type';
 import styles from './style.module.scss';
 import useStore from '../../../store/useStore';
 
-
 interface MyParams {
   sort: string;
   options: string;
@@ -27,8 +26,6 @@ export const ApartmentCard = () => {
   const filterBy = categoryMeta(sort)?.filterBy;
 
   let apartments: Apartment[] = [];
-
-  
 
   const filterByPage = () => {
     if (filterBy?.length === 2) {
@@ -122,7 +119,8 @@ export const ApartmentCard = () => {
               apartmentIndex={index}
               options={{
                 className: styles.sliderImage,
-                sizes: '375px',
+                sizes:
+                  'calc(165px + 115 * (100vw / 1920)), (max-width: 605px) calc(100px + 120 * (100vw / 605))',
                 fit: 'fill',
                 lazy: 1,
                 quality: 75,

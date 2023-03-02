@@ -109,36 +109,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1415/1.jpg',
+        img: '/assets/apartments/1415/1.webp',
         id: '1415-0',
       },
       {
-        img: '/assets/apartments/1415/2.jpg',
+        img: '/assets/apartments/1415/2.webp',
         id: '1415-1',
       },
       {
-        img: '/assets/apartments/1415/3.jpg',
+        img: '/assets/apartments/1415/3.webp',
         id: '1415-2',
       },
       {
-        img: '/assets/apartments/1415/4.jpg',
+        img: '/assets/apartments/1415/4.webp',
         id: '1415-3',
       },
       {
-        img: '/assets/apartments/1415/5.jpg',
+        img: '/assets/apartments/1415/5.webp',
         id: '1415-4',
       },
       {
-        img: '/assets/apartments/1415/6.jpg',
+        img: '/assets/apartments/1415/6.webp',
         id: '1415-5',
       },
       {
-        img: '/assets/apartments/1415/7.jpg',
+        img: '/assets/apartments/1415/7.webp',
         id: '1415-6',
       },
       {
-        img: '/assets/apartments/1415/8.jpg',
+        img: '/assets/apartments/1415/8.webp',
         id: '1415-7',
+      },
+      {
+        img: '/assets/apartments/1415/9.webp',
+        id: '1415-8',
+      },
+      {
+        img: '/assets/apartments/1415/10.webp',
+        id: '1415-9',
+      },
+      {
+        img: '/assets/apartments/1415/11.webp',
+        id: '1415-10',
+      },
+      {
+        img: '/assets/apartments/1415/12.webp',
+        id: '1415-11',
       },
     ],
 
@@ -198,36 +214,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1410/1.jpg',
+        img: '/assets/apartments/1410/1.webp',
         id: '1410-0',
       },
       {
-        img: '/assets/apartments/1410/2.jpg',
+        img: '/assets/apartments/1410/2.webp',
         id: '1410-1',
       },
       {
-        img: '/assets/apartments/1410/3.jpg',
+        img: '/assets/apartments/1410/3.webp',
         id: '1410-2',
       },
       {
-        img: '/assets/apartments/1410/4.jpg',
+        img: '/assets/apartments/1410/4.webp',
         id: '1410-3',
       },
       {
-        img: '/assets/apartments/1410/5.jpg',
+        img: '/assets/apartments/1410/5.webp',
         id: '1410-4',
       },
       {
-        img: '/assets/apartments/1410/6.jpg',
+        img: '/assets/apartments/1410/6.webp',
         id: '1410-5',
       },
       {
-        img: '/assets/apartments/1410/7.jpg',
+        img: '/assets/apartments/1410/7.webp',
         id: '1410-6',
       },
       {
-        img: '/assets/apartments/1410/8.jpg',
+        img: '/assets/apartments/1410/8.webp',
         id: '1410-7',
+      },
+      {
+        img: '/assets/apartments/1410/9.webp',
+        id: '1410-8',
+      },
+      {
+        img: '/assets/apartments/1410/10.webp',
+        id: '1410-9',
+      },
+      {
+        img: '/assets/apartments/1410/11.webp',
+        id: '1410-10',
+      },
+      {
+        img: '/assets/apartments/1410/12.webp',
+        id: '1410-11',
       },
     ],
     summerPrice: '12 000',
@@ -375,36 +407,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1404/1.jpg',
+        img: '/assets/apartments/1404/1.webp',
         id: '1404-0',
       },
       {
-        img: '/assets/apartments/1404/2.jpg',
+        img: '/assets/apartments/1404/2.webp',
         id: '1404-1',
       },
       {
-        img: '/assets/apartments/1404/3.jpg',
+        img: '/assets/apartments/1404/3.webp',
         id: '1404-2',
       },
       {
-        img: '/assets/apartments/1404/4.jpg',
+        img: '/assets/apartments/1404/4.webp',
         id: '1404-3',
       },
       {
-        img: '/assets/apartments/1404/5.jpg',
+        img: '/assets/apartments/1404/5.webp',
         id: '1404-4',
       },
       {
-        img: '/assets/apartments/1404/6.jpg',
+        img: '/assets/apartments/1404/6.webp',
         id: '1404-5',
       },
       {
-        img: '/assets/apartments/1404/7.jpg',
+        img: '/assets/apartments/1404/7.webp',
         id: '1404-6',
       },
       {
-        img: '/assets/apartments/1404/8.jpg',
+        img: '/assets/apartments/1404/8.webp',
         id: '1404-7',
+      },
+      {
+        img: '/assets/apartments/1404/9.webp',
+        id: '1404-8',
+      },
+      {
+        img: '/assets/apartments/1404/10.webp',
+        id: '1404-9',
+      },
+      {
+        img: '/assets/apartments/1404/11.webp',
+        id: '1404-10',
+      },
+      {
+        img: '/assets/apartments/1404/12.webp',
+        id: '1404-11',
       },
     ],
 
@@ -549,36 +597,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1304 - 1305/1.jpg',
+        img: '/assets/apartments/1305/1.webp',
         id: '1305-0',
       },
       {
-        img: '/assets/apartments/1304 - 1305/2.jpg',
+        img: '/assets/apartments/1305/2.webp',
         id: '1305-1',
       },
       {
-        img: '/assets/apartments/1304 - 1305/3.jpg',
+        img: '/assets/apartments/1305/3.webp',
         id: '1305-2',
       },
       {
-        img: '/assets/apartments/1304 - 1305/4.jpg',
+        img: '/assets/apartments/1305/4.webp',
         id: '1305-3',
       },
       {
-        img: '/assets/apartments/1304 - 1305/5.jpg',
+        img: '/assets/apartments/1305/5.webp',
         id: '1305-4',
       },
       {
-        img: '/assets/apartments/1304 - 1305/6.jpg',
+        img: '/assets/apartments/1305/6.webp',
         id: '1305-5',
       },
       {
-        img: '/assets/apartments/1304 - 1305/7.jpg',
+        img: '/assets/apartments/1305/7.webp',
         id: '1305-6',
       },
       {
-        img: '/assets/apartments/1304 - 1305/8.jpg',
+        img: '/assets/apartments/1305/8.webp',
         id: '1305-7',
+      },
+      {
+        img: '/assets/apartments/1305/9.webp',
+        id: '1305-8',
+      },
+      {
+        img: '/assets/apartments/1305/10.webp',
+        id: '1305-9',
+      },
+      {
+        img: '/assets/apartments/1305/11.webp',
+        id: '1305-10',
+      },
+      {
+        img: '/assets/apartments/1305/12.webp',
+        id: '1305-12',
       },
     ],
 
@@ -636,36 +700,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1304 - 1305/1.jpg',
+        img: '/assets/apartments/1304/1.webp',
         id: '1304-0',
       },
       {
-        img: '/assets/apartments/1304 - 1305/2.jpg',
+        img: '/assets/apartments/1304/2.webp',
         id: '1304-1',
       },
       {
-        img: '/assets/apartments/1304 - 1305/3.jpg',
+        img: '/assets/apartments/1304/3.webp',
         id: '1304-2',
       },
       {
-        img: '/assets/apartments/1304 - 1305/4.jpg',
+        img: '/assets/apartments/1304/4.webp',
         id: '1304-3',
       },
       {
-        img: '/assets/apartments/1304 - 1305/5.jpg',
+        img: '/assets/apartments/1304/5.webp',
         id: '1304-4',
       },
       {
-        img: '/assets/apartments/1304 - 1305/6.jpg',
+        img: '/assets/apartments/1304/6.webp',
         id: '1304-5',
       },
       {
-        img: '/assets/apartments/1304 - 1305/7.jpg',
+        img: '/assets/apartments/1304/7.webp',
         id: '1304-6',
       },
       {
-        img: '/assets/apartments/1304 - 1305/8.jpg',
+        img: '/assets/apartments/1304/8.webp',
         id: '1304-7',
+      },
+      {
+        img: '/assets/apartments/1304/9.webp',
+        id: '1304-8',
+      },
+      {
+        img: '/assets/apartments/1304/10.webp',
+        id: '1304-9',
+      },
+      {
+        img: '/assets/apartments/1304/11.webp',
+        id: '1304-10',
+      },
+      {
+        img: '/assets/apartments/1304/12.webp',
+        id: '1304-11',
       },
     ],
 
@@ -725,36 +805,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1303/1.jpg',
+        img: '/assets/apartments/1303/1.webp',
         id: '1303-0',
       },
       {
-        img: '/assets/apartments/1303/2.jpg',
+        img: '/assets/apartments/1303/2.webp',
         id: '1303-1',
       },
       {
-        img: '/assets/apartments/1303/3.jpg',
+        img: '/assets/apartments/1303/3.webp',
         id: '1303-2',
       },
       {
-        img: '/assets/apartments/1303/4.jpg',
+        img: '/assets/apartments/1303/4.webp',
         id: '1303-3',
       },
       {
-        img: '/assets/apartments/1303/5.jpg',
+        img: '/assets/apartments/1303/5.webp',
         id: '1303-4',
       },
       {
-        img: '/assets/apartments/1303/6.jpg',
+        img: '/assets/apartments/1303/6.webp',
         id: '1303-5',
       },
       {
-        img: '/assets/apartments/1303/7.jpg',
+        img: '/assets/apartments/1303/7.webp',
         id: '1303-6',
       },
       {
-        img: '/assets/apartments/1303/8.jpg',
+        img: '/assets/apartments/1303/8.webp',
         id: '1303-7',
+      },
+      {
+        img: '/assets/apartments/1303/9.webp',
+        id: '1303-8',
+      },
+      {
+        img: '/assets/apartments/1303/10.webp',
+        id: '1303-9',
+      },
+      {
+        img: '/assets/apartments/1303/11.webp',
+        id: '1303-10',
+      },
+      {
+        img: '/assets/apartments/1303/12.webp',
+        id: '1303-11',
       },
     ],
 
@@ -1019,6 +1115,22 @@ export const table: Apartment[] = [
         img: '/assets/apartments/1206/8.webp',
         id: '1206-7',
       },
+      {
+        img: '/assets/apartments/1206/9.webp',
+        id: '1206-8',
+      },
+      {
+        img: '/assets/apartments/1206/10.webp',
+        id: '1206-9',
+      },
+      {
+        img: '/assets/apartments/1206/11.webp',
+        id: '1206-10',
+      },
+      {
+        img: '/assets/apartments/1206/12.webp',
+        id: '1206-11',
+      },
     ],
 
     description: [
@@ -1030,7 +1142,7 @@ export const table: Apartment[] = [
 
       'На обеденном столе, который находится рядом с кондиционером, вы сможете насладиться вкусной едой в прохладной обстановке.',
 
-      'Балкон с видом на море позволит вам наслаждаться красивыми закатами и расслабляться под звуки волн.',
+      'Балкон с видом на море позволит вам наслаждаться красивыми закатами и расслабляться.',
 
       'В апартаменте всегда чистое постельное белье, а воздух наполнен свежим ароматом, который создает приятную атмосферу.',
 
@@ -1164,36 +1276,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1110/1.jpg',
+        img: '/assets/apartments/1110/1.webp',
         id: '1110-0',
       },
       {
-        img: '/assets/apartments/1110/2.jpg',
+        img: '/assets/apartments/1110/2.webp',
         id: '1110-1',
       },
       {
-        img: '/assets/apartments/1110/3.jpg',
+        img: '/assets/apartments/1110/3.webp',
         id: '1110-2',
       },
       {
-        img: '/assets/apartments/1110/4.jpg',
+        img: '/assets/apartments/1110/4.webp',
         id: '1110-3',
       },
       {
-        img: '/assets/apartments/1110/5.jpg',
+        img: '/assets/apartments/1110/5.webp',
         id: '1110-4',
       },
       {
-        img: '/assets/apartments/1110/6.jpg',
+        img: '/assets/apartments/1110/6.webp',
         id: '1110-5',
       },
       {
-        img: '/assets/apartments/1110/7.jpg',
+        img: '/assets/apartments/1110/7.webp',
         id: '1110-6',
       },
       {
-        img: '/assets/apartments/1110/8.jpg',
+        img: '/assets/apartments/1110/8.webp',
         id: '1110-7',
+      },
+      {
+        img: '/assets/apartments/1110/9.webp',
+        id: '1110-8',
+      },
+      {
+        img: '/assets/apartments/1110/10.webp',
+        id: '1110-9',
+      },
+      {
+        img: '/assets/apartments/1110/11.webp',
+        id: '1110-10',
+      },
+      {
+        img: '/assets/apartments/1110/12.webp',
+        id: '1110-11',
       },
     ],
 
@@ -1336,36 +1464,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1104 - 1105/1.jpg',
+        img: '/assets/apartments/1105/1.webp',
         id: '1105-0',
       },
       {
-        img: '/assets/apartments/1104 - 1105/2.jpg',
+        img: '/assets/apartments/1105/2.webp',
         id: '1105-1',
       },
       {
-        img: '/assets/apartments/1104 - 1105/3.jpg',
+        img: '/assets/apartments/1105/3.webp',
         id: '1105-2',
       },
       {
-        img: '/assets/apartments/1104 - 1105/4.jpg',
+        img: '/assets/apartments/1105/4.webp',
         id: '1105-3',
       },
       {
-        img: '/assets/apartments/1104 - 1105/5.jpg',
+        img: '/assets/apartments/1105/5.webp',
         id: '1105-4',
       },
       {
-        img: '/assets/apartments/1104 - 1105/6.jpg',
+        img: '/assets/apartments/1105/6.webp',
         id: '1105-5',
       },
       {
-        img: '/assets/apartments/1104 - 1105/7.jpg',
+        img: '/assets/apartments/1105/7.webp',
         id: '1105-6',
       },
       {
-        img: '/assets/apartments/1104 - 1105/8.jpg',
+        img: '/assets/apartments/1105/8.webp',
         id: '1105-7',
+      },
+      {
+        img: '/assets/apartments/1105/9.webp',
+        id: '1105-8',
+      },
+      {
+        img: '/assets/apartments/1105/10.webp',
+        id: '1105-9',
+      },
+      {
+        img: '/assets/apartments/1105/11.webp',
+        id: '1105-10',
+      },
+      {
+        img: '/assets/apartments/1105/12.webp',
+        id: '1105-11',
       },
     ],
 
@@ -1425,36 +1569,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1104 - 1105/1.jpg',
+        img: '/assets/apartments/1104/1.webp',
         id: '1104-0',
       },
       {
-        img: '/assets/apartments/1104 - 1105/2.jpg',
+        img: '/assets/apartments/1104/2.webp',
         id: '1104-1',
       },
       {
-        img: '/assets/apartments/1104 - 1105/3.jpg',
+        img: '/assets/apartments/1104/3.webp',
         id: '1104-2',
       },
       {
-        img: '/assets/apartments/1104 - 1105/4.jpg',
+        img: '/assets/apartments/1104/4.webp',
         id: '1104-3',
       },
       {
-        img: '/assets/apartments/1104 - 1105/5.jpg',
+        img: '/assets/apartments/1104/5.webp',
         id: '1104-4',
       },
       {
-        img: '/assets/apartments/1104 - 1105/6.jpg',
+        img: '/assets/apartments/1104/6.webp',
         id: '1104-5',
       },
       {
-        img: '/assets/apartments/1104 - 1105/7.jpg',
+        img: '/assets/apartments/1104/7.webp',
         id: '1104-6',
       },
       {
-        img: '/assets/apartments/1104 - 1105/8.jpg',
+        img: '/assets/apartments/1104/8.webp',
         id: '1104-7',
+      },
+      {
+        img: '/assets/apartments/1104/9.webp',
+        id: '1104-8',
+      },
+      {
+        img: '/assets/apartments/1104/10.webp',
+        id: '1104-9',
+      },
+      {
+        img: '/assets/apartments/1104/11.webp',
+        id: '1104-10',
+      },
+      {
+        img: '/assets/apartments/1104/12.webp',
+        id: '1104-11',
       },
     ],
 
@@ -1514,36 +1674,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1103/1.jpg',
+        img: '/assets/apartments/1103/1.webp',
         id: '1103-0',
       },
       {
-        img: '/assets/apartments/1103/2.jpg',
+        img: '/assets/apartments/1103/2.webp',
         id: '1103-1',
       },
       {
-        img: '/assets/apartments/1103/3.jpg',
+        img: '/assets/apartments/1103/3.webp',
         id: '1103-2',
       },
       {
-        img: '/assets/apartments/1103/4.jpg',
+        img: '/assets/apartments/1103/4.webp',
         id: '1103-3',
       },
       {
-        img: '/assets/apartments/1103/5.jpg',
+        img: '/assets/apartments/1103/5.webp',
         id: '1103-4',
       },
       {
-        img: '/assets/apartments/1103/6.jpg',
+        img: '/assets/apartments/1103/6.webp',
         id: '1103-5',
       },
       {
-        img: '/assets/apartments/1103/7.jpg',
+        img: '/assets/apartments/1103/7.webp',
         id: '1103-6',
       },
       {
-        img: '/assets/apartments/1103/8.jpg',
+        img: '/assets/apartments/1103/8.webp',
         id: '1103-7',
+      },
+      {
+        img: '/assets/apartments/1103/9.webp',
+        id: '1103-8',
+      },
+      {
+        img: '/assets/apartments/1103/10.webp',
+        id: '1103-9',
+      },
+      {
+        img: '/assets/apartments/1103/11.webp',
+        id: '1103-10',
+      },
+      {
+        img: '/assets/apartments/1103/12.webp',
+        id: '1103-11',
       },
     ],
 
@@ -1601,36 +1777,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1013 - 1014/1.jpg',
+        img: '/assets/apartments/1013 - 1014/1.webp',
         id: '1014-0',
       },
       {
-        img: '/assets/apartments/1013 - 1014/2.jpg',
+        img: '/assets/apartments/1013 - 1014/2.webp',
         id: '1014-1',
       },
       {
-        img: '/assets/apartments/1013 - 1014/3.jpg',
+        img: '/assets/apartments/1013 - 1014/3.webp',
         id: '1014-2',
       },
       {
-        img: '/assets/apartments/1013 - 1014/4.jpg',
+        img: '/assets/apartments/1013 - 1014/4.webp',
         id: '1014-3',
       },
       {
-        img: '/assets/apartments/1013 - 1014/5.jpg',
+        img: '/assets/apartments/1013 - 1014/5.webp',
         id: '1014-4',
       },
       {
-        img: '/assets/apartments/1013 - 1014/6.jpg',
+        img: '/assets/apartments/1013 - 1014/6.webp',
         id: '1014-5',
       },
       {
-        img: '/assets/apartments/1013 - 1014/7.jpg',
+        img: '/assets/apartments/1013 - 1014/7.webp',
         id: '1014-6',
       },
       {
-        img: '/assets/apartments/1013 - 1014/8.jpg',
+        img: '/assets/apartments/1013 - 1014/8.webp',
         id: '1014-7',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/9.webp',
+        id: '1014-8',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/10.webp',
+        id: '1014-9',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/11.webp',
+        id: '1014-10',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/12.webp',
+        id: '1014-11',
       },
     ],
 
@@ -1687,36 +1879,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/1013 - 1014/1.jpg',
+        img: '/assets/apartments/1013 - 1014/1.webp',
         id: '1013-0',
       },
       {
-        img: '/assets/apartments/1013 - 1014/2.jpg',
+        img: '/assets/apartments/1013 - 1014/2.webp',
         id: '1013-1',
       },
       {
-        img: '/assets/apartments/1013 - 1014/3.jpg',
+        img: '/assets/apartments/1013 - 1014/3.webp',
         id: '1013-2',
       },
       {
-        img: '/assets/apartments/1013 - 1014/4.jpg',
+        img: '/assets/apartments/1013 - 1014/4.webp',
         id: '1013-3',
       },
       {
-        img: '/assets/apartments/1013 - 1014/5.jpg',
+        img: '/assets/apartments/1013 - 1014/5.webp',
         id: '1013-4',
       },
       {
-        img: '/assets/apartments/1013 - 1014/6.jpg',
+        img: '/assets/apartments/1013 - 1014/6.webp',
         id: '1013-5',
       },
       {
-        img: '/assets/apartments/1013 - 1014/7.jpg',
+        img: '/assets/apartments/1013 - 1014/7.webp',
         id: '1013-6',
       },
       {
-        img: '/assets/apartments/1013 - 1014/8.jpg',
+        img: '/assets/apartments/1013 - 1014/8.webp',
         id: '1013-7',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/9.webp',
+        id: '1013-8',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/10.webp',
+        id: '1013-9',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/11.webp',
+        id: '1013-10',
+      },
+      {
+        img: '/assets/apartments/1013 - 1014/12.webp',
+        id: '1013-11',
       },
     ],
 
@@ -1946,36 +2154,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/805/1.jpg',
+        img: '/assets/apartments/805/1.webp',
         id: '805-0',
       },
       {
-        img: '/assets/apartments/805/2.jpg',
+        img: '/assets/apartments/805/2.webp',
         id: '805-1',
       },
       {
-        img: '/assets/apartments/805/3.jpg',
+        img: '/assets/apartments/805/3.webp',
         id: '805-2',
       },
       {
-        img: '/assets/apartments/805/4.jpg',
+        img: '/assets/apartments/805/4.webp',
         id: '805-3',
       },
       {
-        img: '/assets/apartments/805/5.jpg',
+        img: '/assets/apartments/805/5.webp',
         id: '805-4',
       },
       {
-        img: '/assets/apartments/805/6.jpg',
+        img: '/assets/apartments/805/6.webp',
         id: '805-5',
       },
       {
-        img: '/assets/apartments/805/7.jpg',
+        img: '/assets/apartments/805/7.webp',
         id: '805-6',
       },
       {
-        img: '/assets/apartments/805/8.jpg',
+        img: '/assets/apartments/805/8.webp',
         id: '805-7',
+      },
+      {
+        img: '/assets/apartments/805/9.webp',
+        id: '805-8',
+      },
+      {
+        img: '/assets/apartments/805/10.webp',
+        id: '805-9',
+      },
+      {
+        img: '/assets/apartments/805/11.webp',
+        id: '805-10',
+      },
+      {
+        img: '/assets/apartments/805/12.webp',
+        id: '805-11',
       },
     ],
 
@@ -2030,36 +2254,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/716/1.jpg',
+        img: '/assets/apartments/716/1.webp',
         id: '716-0',
       },
       {
-        img: '/assets/apartments/716/2.jpg',
+        img: '/assets/apartments/716/2.webp',
         id: '716-1',
       },
       {
-        img: '/assets/apartments/716/3.jpg',
+        img: '/assets/apartments/716/3.webp',
         id: '716-2',
       },
       {
-        img: '/assets/apartments/716/4.jpg',
+        img: '/assets/apartments/716/4.webp',
         id: '716-3',
       },
       {
-        img: '/assets/apartments/716/5.jpg',
+        img: '/assets/apartments/716/5.webp',
         id: '716-4',
       },
       {
-        img: '/assets/apartments/716/6.jpg',
+        img: '/assets/apartments/716/6.webp',
         id: '716-5',
       },
       {
-        img: '/assets/apartments/716/7.jpg',
+        img: '/assets/apartments/716/7.webp',
         id: '716-6',
       },
       {
-        img: '/assets/apartments/716/8.jpg',
+        img: '/assets/apartments/716/8.webp',
         id: '716-7',
+      },
+      {
+        img: '/assets/apartments/716/9.webp',
+        id: '716-8',
+      },
+      {
+        img: '/assets/apartments/716/10.webp',
+        id: '716-9',
+      },
+      {
+        img: '/assets/apartments/716/11.webp',
+        id: '716-10',
+      },
+      {
+        img: '/assets/apartments/716/12.webp',
+        id: '716-11',
       },
     ],
 
@@ -2117,36 +2357,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/715/1.jpg',
+        img: '/assets/apartments/715/1.webp',
         id: '715-0',
       },
       {
-        img: '/assets/apartments/715/2.jpg',
+        img: '/assets/apartments/715/2.webp',
         id: '715-1',
       },
       {
-        img: '/assets/apartments/715/3.jpg',
+        img: '/assets/apartments/715/3.webp',
         id: '715-2',
       },
       {
-        img: '/assets/apartments/715/4.jpg',
+        img: '/assets/apartments/715/4.webp',
         id: '715-3',
       },
       {
-        img: '/assets/apartments/715/5.jpg',
+        img: '/assets/apartments/715/5.webp',
         id: '715-4',
       },
       {
-        img: '/assets/apartments/715/6.jpg',
+        img: '/assets/apartments/715/6.webp',
         id: '715-5',
       },
       {
-        img: '/assets/apartments/715/7.jpg',
+        img: '/assets/apartments/715/7.webp',
         id: '715-6',
       },
       {
-        img: '/assets/apartments/715/8.jpg',
+        img: '/assets/apartments/715/8.webp',
         id: '715-7',
+      },
+      {
+        img: '/assets/apartments/715/9.webp',
+        id: '715-8',
+      },
+      {
+        img: '/assets/apartments/715/10.webp',
+        id: '715-9',
+      },
+      {
+        img: '/assets/apartments/715/11.webp',
+        id: '715-10',
+      },
+      {
+        img: '/assets/apartments/715/12.webp',
+        id: '715-11',
       },
     ],
 
@@ -2204,36 +2460,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/712/1.jpg',
+        img: '/assets/apartments/712/1.webp',
         id: '712-0',
       },
       {
-        img: '/assets/apartments/712/2.jpg',
+        img: '/assets/apartments/712/2.webp',
         id: '712-1',
       },
       {
-        img: '/assets/apartments/712/3.jpg',
+        img: '/assets/apartments/712/3.webp',
         id: '712-2',
       },
       {
-        img: '/assets/apartments/712/4.jpg',
+        img: '/assets/apartments/712/4.webp',
         id: '712-3',
       },
       {
-        img: '/assets/apartments/712/5.jpg',
+        img: '/assets/apartments/712/5.webp',
         id: '712-4',
       },
       {
-        img: '/assets/apartments/712/6.jpg',
+        img: '/assets/apartments/712/6.webp',
         id: '712-5',
       },
       {
-        img: '/assets/apartments/712/7.jpg',
+        img: '/assets/apartments/712/7.webp',
         id: '712-6',
       },
       {
-        img: '/assets/apartments/712/8.jpg',
+        img: '/assets/apartments/712/8.webp',
         id: '712-7',
+      },
+      {
+        img: '/assets/apartments/712/9.webp',
+        id: '712-8',
+      },
+      {
+        img: '/assets/apartments/712/10.webp',
+        id: '712-9',
+      },
+      {
+        img: '/assets/apartments/712/11.webp',
+        id: '712-10',
+      },
+      {
+        img: '/assets/apartments/712/12.webp',
+        id: '712-11',
       },
     ],
 
@@ -2288,36 +2560,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/709/1.jpg',
+        img: '/assets/apartments/709/1.webp',
         id: '709-0',
       },
       {
-        img: '/assets/apartments/709/2.jpg',
+        img: '/assets/apartments/709/2.webp',
         id: '709-1',
       },
       {
-        img: '/assets/apartments/709/3.jpg',
+        img: '/assets/apartments/709/3.webp',
         id: '709-2',
       },
       {
-        img: '/assets/apartments/709/4.jpg',
+        img: '/assets/apartments/709/4.webp',
         id: '709-3',
       },
       {
-        img: '/assets/apartments/709/5.jpg',
+        img: '/assets/apartments/709/5.webp',
         id: '709-4',
       },
       {
-        img: '/assets/apartments/709/6.jpg',
+        img: '/assets/apartments/709/6.webp',
         id: '709-5',
       },
       {
-        img: '/assets/apartments/709/7.jpg',
+        img: '/assets/apartments/709/7.webp',
         id: '709-6',
       },
       {
-        img: '/assets/apartments/709/8.jpg',
+        img: '/assets/apartments/709/8.webp',
         id: '709-7',
+      },
+      {
+        img: '/assets/apartments/709/9.webp',
+        id: '709-8',
+      },
+      {
+        img: '/assets/apartments/709/10.webp',
+        id: '709-9',
+      },
+      {
+        img: '/assets/apartments/709/11.webp',
+        id: '709-10',
+      },
+      {
+        img: '/assets/apartments/709/12.webp',
+        id: '709-11',
       },
     ],
 
@@ -2377,36 +2665,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/705/1.jpg',
+        img: '/assets/apartments/705/1.webp',
         id: '705-0',
       },
       {
-        img: '/assets/apartments/705/2.jpg',
+        img: '/assets/apartments/705/2.webp',
         id: '705-1',
       },
       {
-        img: '/assets/apartments/705/3.jpg',
+        img: '/assets/apartments/705/3.webp',
         id: '705-2',
       },
       {
-        img: '/assets/apartments/705/4.jpg',
+        img: '/assets/apartments/705/4.webp',
         id: '705-3',
       },
       {
-        img: '/assets/apartments/705/5.jpg',
+        img: '/assets/apartments/705/5.webp',
         id: '705-4',
       },
       {
-        img: '/assets/apartments/705/6.jpg',
+        img: '/assets/apartments/705/6.webp',
         id: '705-5',
       },
       {
-        img: '/assets/apartments/705/7.jpg',
+        img: '/assets/apartments/705/7.webp',
         id: '705-6',
       },
       {
-        img: '/assets/apartments/705/8.jpg',
+        img: '/assets/apartments/705/8.webp',
         id: '705-7',
+      },
+      {
+        img: '/assets/apartments/705/9.webp',
+        id: '705-8',
+      },
+      {
+        img: '/assets/apartments/705/10.webp',
+        id: '705-9',
+      },
+      {
+        img: '/assets/apartments/705/11.webp',
+        id: '705-10',
+      },
+      {
+        img: '/assets/apartments/705/12.webp',
+        id: '705-11',
       },
     ],
 
@@ -2461,36 +2765,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/613/1.jpg',
+        img: '/assets/apartments/613/1.webp',
         id: '613-0',
       },
       {
-        img: '/assets/apartments/613/2.jpg',
+        img: '/assets/apartments/613/2.webp',
         id: '613-1',
       },
       {
-        img: '/assets/apartments/613/3.jpg',
+        img: '/assets/apartments/613/3.webp',
         id: '613-2',
       },
       {
-        img: '/assets/apartments/613/4.jpg',
+        img: '/assets/apartments/613/4.webp',
         id: '613-3',
       },
       {
-        img: '/assets/apartments/613/5.jpg',
+        img: '/assets/apartments/613/5.webp',
         id: '613-4',
       },
       {
-        img: '/assets/apartments/613/6.jpg',
+        img: '/assets/apartments/613/6.webp',
         id: '613-5',
       },
       {
-        img: '/assets/apartments/613/7.jpg',
+        img: '/assets/apartments/613/7.webp',
         id: '613-6',
       },
       {
-        img: '/assets/apartments/613/8.jpg',
+        img: '/assets/apartments/613/8.webp',
         id: '613-7',
+      },
+      {
+        img: '/assets/apartments/613/9.webp',
+        id: '613-8',
+      },
+      {
+        img: '/assets/apartments/613/10.webp',
+        id: '613-9',
+      },
+      {
+        img: '/assets/apartments/613/11.webp',
+        id: '613-10',
+      },
+      {
+        img: '/assets/apartments/613/12.webp',
+        id: '613-11',
       },
     ],
 
@@ -2549,36 +2869,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/612/1.jpg',
+        img: '/assets/apartments/612/1.webp',
         id: '612-0',
       },
       {
-        img: '/assets/apartments/612/2.jpg',
+        img: '/assets/apartments/612/2.webp',
         id: '612-1',
       },
       {
-        img: '/assets/apartments/612/3.jpg',
+        img: '/assets/apartments/612/3.webp',
         id: '612-2',
       },
       {
-        img: '/assets/apartments/612/4.jpg',
+        img: '/assets/apartments/612/4.webp',
         id: '612-3',
       },
       {
-        img: '/assets/apartments/612/5.jpg',
+        img: '/assets/apartments/612/5.webp',
         id: '612-4',
       },
       {
-        img: '/assets/apartments/612/6.jpg',
+        img: '/assets/apartments/612/6.webp',
         id: '612-5',
       },
       {
-        img: '/assets/apartments/612/7.jpg',
+        img: '/assets/apartments/612/7.webp',
         id: '612-6',
       },
       {
-        img: '/assets/apartments/612/8.jpg',
+        img: '/assets/apartments/612/8.webp',
         id: '612-7',
+      },
+      {
+        img: '/assets/apartments/612/9.webp',
+        id: '612-8',
+      },
+      {
+        img: '/assets/apartments/612/10.webp',
+        id: '612-9',
+      },
+      {
+        img: '/assets/apartments/612/11.webp',
+        id: '612-10',
+      },
+      {
+        img: '/assets/apartments/612/12.webp',
+        id: '612-11',
       },
     ],
 
@@ -2634,36 +2970,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/607/1.jpg',
+        img: '/assets/apartments/607/1.webp',
         id: '607-0',
       },
       {
-        img: '/assets/apartments/607/2.jpg',
+        img: '/assets/apartments/607/2.webp',
         id: '607-1',
       },
       {
-        img: '/assets/apartments/607/3.jpg',
+        img: '/assets/apartments/607/3.webp',
         id: '607-2',
       },
       {
-        img: '/assets/apartments/607/4.jpg',
+        img: '/assets/apartments/607/4.webp',
         id: '607-3',
       },
       {
-        img: '/assets/apartments/607/5.jpg',
+        img: '/assets/apartments/607/5.webp',
         id: '607-4',
       },
       {
-        img: '/assets/apartments/607/6.jpg',
+        img: '/assets/apartments/607/6.webp',
         id: '607-5',
       },
       {
-        img: '/assets/apartments/607/7.jpg',
+        img: '/assets/apartments/607/7.webp',
         id: '607-6',
       },
       {
-        img: '/assets/apartments/607/8.jpg',
+        img: '/assets/apartments/607/8.webp',
         id: '607-7',
+      },
+      {
+        img: '/assets/apartments/607/9.webp',
+        id: '607-8',
+      },
+      {
+        img: '/assets/apartments/607/10.webp',
+        id: '607-9',
+      },
+      {
+        img: '/assets/apartments/607/11.webp',
+        id: '607-10',
+      },
+      {
+        img: '/assets/apartments/607/12.webp',
+        id: '607-11',
       },
     ],
 
@@ -2721,36 +3073,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/606/1.jpg',
+        img: '/assets/apartments/606/1.webp',
         id: '606-0',
       },
       {
-        img: '/assets/apartments/606/2.jpg',
+        img: '/assets/apartments/606/2.webp',
         id: '606-1',
       },
       {
-        img: '/assets/apartments/606/3.jpg',
+        img: '/assets/apartments/606/3.webp',
         id: '606-2',
       },
       {
-        img: '/assets/apartments/606/4.jpg',
+        img: '/assets/apartments/606/4.webp',
         id: '606-3',
       },
       {
-        img: '/assets/apartments/606/5.jpg',
+        img: '/assets/apartments/606/5.webp',
         id: '606-4',
       },
       {
-        img: '/assets/apartments/606/6.jpg',
+        img: '/assets/apartments/606/6.webp',
         id: '606-5',
       },
       {
-        img: '/assets/apartments/606/7.jpg',
+        img: '/assets/apartments/606/7.webp',
         id: '606-6',
       },
       {
-        img: '/assets/apartments/606/8.jpg',
+        img: '/assets/apartments/606/8.webp',
         id: '606-7',
+      },
+      {
+        img: '/assets/apartments/606/9.webp',
+        id: '606-8',
+      },
+      {
+        img: '/assets/apartments/606/10.webp',
+        id: '606-9',
+      },
+      {
+        img: '/assets/apartments/606/11.webp',
+        id: '606-10',
+      },
+      {
+        img: '/assets/apartments/606/12.webp',
+        id: '606-11',
       },
     ],
 
@@ -2810,36 +3178,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/605/1.jpg',
+        img: '/assets/apartments/605/1.webp',
         id: '605-0',
       },
       {
-        img: '/assets/apartments/605/2.jpg',
+        img: '/assets/apartments/605/2.webp',
         id: '605-1',
       },
       {
-        img: '/assets/apartments/605/3.jpg',
+        img: '/assets/apartments/605/3.webp',
         id: '605-2',
       },
       {
-        img: '/assets/apartments/605/4.jpg',
+        img: '/assets/apartments/605/4.webp',
         id: '605-3',
       },
       {
-        img: '/assets/apartments/605/5.jpg',
+        img: '/assets/apartments/605/5.webp',
         id: '605-4',
       },
       {
-        img: '/assets/apartments/605/6.jpg',
+        img: '/assets/apartments/605/6.webp',
         id: '605-5',
       },
       {
-        img: '/assets/apartments/605/7.jpg',
+        img: '/assets/apartments/605/7.webp',
         id: '605-6',
       },
       {
-        img: '/assets/apartments/605/8.jpg',
+        img: '/assets/apartments/605/8.webp',
         id: '605-7',
+      },
+      {
+        img: '/assets/apartments/605/9.webp',
+        id: '605-8',
+      },
+      {
+        img: '/assets/apartments/605/10.webp',
+        id: '605-9',
+      },
+      {
+        img: '/assets/apartments/605/11.webp',
+        id: '605-10',
+      },
+      {
+        img: '/assets/apartments/605/12.webp',
+        id: '605-11',
       },
     ],
 
@@ -2984,36 +3368,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/503/1.jpg',
+        img: '/assets/apartments/503/1.webp',
         id: '503-0',
       },
       {
-        img: '/assets/apartments/503/2.jpg',
+        img: '/assets/apartments/503/2.webp',
         id: '503-1',
       },
       {
-        img: '/assets/apartments/503/3.jpg',
+        img: '/assets/apartments/503/3.webp',
         id: '503-2',
       },
       {
-        img: '/assets/apartments/503/4.jpg',
+        img: '/assets/apartments/503/4.webp',
         id: '503-3',
       },
       {
-        img: '/assets/apartments/503/5.jpg',
+        img: '/assets/apartments/503/5.webp',
         id: '503-4',
       },
       {
-        img: '/assets/apartments/503/6.jpg',
+        img: '/assets/apartments/503/6.webp',
         id: '503-5',
       },
       {
-        img: '/assets/apartments/503/7.jpg',
+        img: '/assets/apartments/503/7.webp',
         id: '503-6',
       },
       {
-        img: '/assets/apartments/503/8.jpg',
+        img: '/assets/apartments/503/8.webp',
         id: '503-7',
+      },
+      {
+        img: '/assets/apartments/503/9.webp',
+        id: '503-8',
+      },
+      {
+        img: '/assets/apartments/503/10.webp',
+        id: '503-9',
+      },
+      {
+        img: '/assets/apartments/503/11.webp',
+        id: '503-10',
+      },
+      {
+        img: '/assets/apartments/503/12.webp',
+        id: '503-11',
       },
     ],
 
@@ -3073,36 +3473,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/416/1.jpg',
+        img: '/assets/apartments/416/1.webp',
         id: '416-0',
       },
       {
-        img: '/assets/apartments/416/2.jpg',
+        img: '/assets/apartments/416/2.webp',
         id: '416-1',
       },
       {
-        img: '/assets/apartments/416/3.jpg',
+        img: '/assets/apartments/416/3.webp',
         id: '416-2',
       },
       {
-        img: '/assets/apartments/416/4.jpg',
+        img: '/assets/apartments/416/4.webp',
         id: '416-3',
       },
       {
-        img: '/assets/apartments/416/5.jpg',
+        img: '/assets/apartments/416/5.webp',
         id: '416-4',
       },
       {
-        img: '/assets/apartments/416/6.jpg',
+        img: '/assets/apartments/416/6.v',
         id: '416-5',
       },
       {
-        img: '/assets/apartments/416/7.jpg',
+        img: '/assets/apartments/416/7.webp',
         id: '416-6',
       },
       {
-        img: '/assets/apartments/416/8.jpg',
+        img: '/assets/apartments/416/8.webp',
         id: '416-7',
+      },
+      {
+        img: '/assets/apartments/416/9.webp',
+        id: '416-8',
+      },
+      {
+        img: '/assets/apartments/416/10.webp',
+        id: '416-9',
+      },
+      {
+        img: '/assets/apartments/416/11.webp',
+        id: '416-10',
+      },
+      {
+        img: '/assets/apartments/416/12.webp',
+        id: '416-11',
       },
     ],
 
@@ -3247,36 +3663,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/402/1.jpg',
+        img: '/assets/apartments/402/1.webp',
         id: '402-0',
       },
       {
-        img: '/assets/apartments/402/2.jpg',
+        img: '/assets/apartments/402/2.webp',
         id: '402-1',
       },
       {
-        img: '/assets/apartments/402/3.jpg',
+        img: '/assets/apartments/402/3.webp',
         id: '402-2',
       },
       {
-        img: '/assets/apartments/402/4.jpg',
+        img: '/assets/apartments/402/4.webp',
         id: '402-3',
       },
       {
-        img: '/assets/apartments/402/5.jpg',
+        img: '/assets/apartments/402/5.webp',
         id: '402-4',
       },
       {
-        img: '/assets/apartments/402/6.jpg',
+        img: '/assets/apartments/402/6.webp',
         id: '402-5',
       },
       {
-        img: '/assets/apartments/402/7.jpg',
+        img: '/assets/apartments/402/7.webp',
         id: '402-6',
       },
       {
-        img: '/assets/apartments/402/8.jpg',
+        img: '/assets/apartments/402/8.webp',
         id: '402-7',
+      },
+      {
+        img: '/assets/apartments/402/9.webp',
+        id: '402-8',
+      },
+      {
+        img: '/assets/apartments/402/10.webp',
+        id: '402-9',
+      },
+      {
+        img: '/assets/apartments/402/11.webp',
+        id: '402-10',
+      },
+      {
+        img: '/assets/apartments/402/12.webp',
+        id: '402-11',
       },
     ],
 
@@ -3336,36 +3768,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/312/1.jpg',
+        img: '/assets/apartments/312/1.webp',
         id: '312-0',
       },
       {
-        img: '/assets/apartments/312/2.jpg',
+        img: '/assets/apartments/312/2.webp',
         id: '312-1',
       },
       {
-        img: '/assets/apartments/312/3.jpg',
+        img: '/assets/apartments/312/3.webp',
         id: '312-2',
       },
       {
-        img: '/assets/apartments/312/4.jpg',
+        img: '/assets/apartments/312/4.webp',
         id: '312-3',
       },
       {
-        img: '/assets/apartments/312/5.jpg',
+        img: '/assets/apartments/312/5.webp',
         id: '312-4',
       },
       {
-        img: '/assets/apartments/312/6.jpg',
+        img: '/assets/apartments/312/6.webp',
         id: '312-5',
       },
       {
-        img: '/assets/apartments/312/7.jpg',
+        img: '/assets/apartments/312/7.webp',
         id: '312-6',
       },
       {
-        img: '/assets/apartments/312/8.jpg',
+        img: '/assets/apartments/312/8.webp',
         id: '312-7',
+      },
+      {
+        img: '/assets/apartments/312/9.webp',
+        id: '312-8',
+      },
+      {
+        img: '/assets/apartments/312/10.webp',
+        id: '312-9',
+      },
+      {
+        img: '/assets/apartments/312/11.webp',
+        id: '312-10',
+      },
+      {
+        img: '/assets/apartments/312/12.webp',
+        id: '312-11',
       },
     ],
 
@@ -3512,36 +3960,52 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/21-8/1.jpg',
+        img: '/assets/apartments/21-8/1.webp',
         id: '21/8-0',
       },
       {
-        img: '/assets/apartments/21-8/2.jpg',
+        img: '/assets/apartments/21-8/2.webp',
         id: '21/8-1',
       },
       {
-        img: '/assets/apartments/21-8/3.jpg',
+        img: '/assets/apartments/21-8/3.webp',
         id: '21/8-2',
       },
       {
-        img: '/assets/apartments/21-8/4.jpg',
+        img: '/assets/apartments/21-8/4.webp',
         id: '21/8-3',
       },
       {
-        img: '/assets/apartments/21-8/5.jpg',
+        img: '/assets/apartments/21-8/5.webp',
         id: '21/8-4',
       },
       {
-        img: '/assets/apartments/21-8/6.jpg',
+        img: '/assets/apartments/21-8/6.webp',
         id: '21/8-5',
       },
       {
-        img: '/assets/apartments/21-8/7.jpg',
+        img: '/assets/apartments/21-8/7.webp',
         id: '21/8-6',
       },
       {
-        img: '/assets/apartments/21-8/8.jpg',
+        img: '/assets/apartments/21-8/8.webp',
         id: '21/8-7',
+      },
+      {
+        img: '/assets/apartments/21-8/9.webp',
+        id: '21/8-8',
+      },
+      {
+        img: '/assets/apartments/21-8/10.webp',
+        id: '21/8-9',
+      },
+      {
+        img: '/assets/apartments/21-8/11.webp',
+        id: '21/8-10',
+      },
+      {
+        img: '/assets/apartments/21-8/12.webp',
+        id: '21/8-11',
       },
     ],
 
@@ -3601,36 +4065,56 @@ export const table: Apartment[] = [
     microwave: true,
     pictures: [
       {
-        img: '/assets/apartments/21-6/1.jpg',
+        img: '/assets/apartments/21-6/1.webp',
         id: '21/6-0',
       },
       {
-        img: '/assets/apartments/21-6/2.jpg',
+        img: '/assets/apartments/21-6/2.webp',
         id: '21/6-1',
       },
       {
-        img: '/assets/apartments/21-6/3.jpg',
+        img: '/assets/apartments/21-6/3.webp',
         id: '21/6-2',
       },
       {
-        img: '/assets/apartments/21-6/4.jpg',
+        img: '/assets/apartments/21-6/4.webp',
         id: '21/6-3',
       },
       {
-        img: '/assets/apartments/21-6/5.jpg',
+        img: '/assets/apartments/21-6/5.webp',
         id: '21/6-4',
       },
       {
-        img: '/assets/apartments/21-6/6.jpg',
+        img: '/assets/apartments/21-6/6.webp',
         id: '21/6-5',
       },
       {
-        img: '/assets/apartments/21-6/7.jpg',
+        img: '/assets/apartments/21-6/7.webp',
         id: '21/6-6',
       },
       {
-        img: '/assets/apartments/21-6/8.jpg',
+        img: '/assets/apartments/21-6/8.webp',
         id: '21/6-7',
+      },
+      {
+        img: '/assets/apartments/21-6/9.webp',
+        id: '21/6-8',
+      },
+      {
+        img: '/assets/apartments/21-6/10.webp',
+        id: '21/6-9',
+      },
+      {
+        img: '/assets/apartments/21-6/11.webp',
+        id: '21/6-10',
+      },
+      {
+        img: '/assets/apartments/21-6/12.webp',
+        id: '21/6-11',
+      },
+      {
+        img: '/assets/apartments/21-6/8.webp',
+        id: '21/6-12',
       },
     ],
 
