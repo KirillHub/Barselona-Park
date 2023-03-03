@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import ru from 'date-fns/locale/ru';
 import { subDays, addDays } from 'date-fns';
 import { usePathname } from 'next/navigation';
-import { table } from '../../backend/apartmnetsData';
+import { apartmentsData } from '../../backend/apartmnetsData';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './style.module.scss';
 
@@ -36,7 +36,7 @@ export const Apartment = () => {
 
   const apartmentId = pathname?.split('/')[2];
 
-  const apartment = table?.find((x) => x.name === apartmentId);
+  const apartment = apartmentsData?.find((x) => x.apartment === apartmentId);
 
   // console.log(apartment?.description.join(' '))
 
@@ -56,64 +56,11 @@ export const Apartment = () => {
     // console.log(reservationDays(startDate, endDate, excludedDates));
   }
 
-  const aa: any = [];
-
-  if (apartment?.balcony) {
-    aa.push('балкон');
-  }
-  if (apartment?.view) {
-    aa.push('вид на море');
-  }
-  if (apartment?.view === false) {
-    aa.push('вид на город');
-  }
-
-  if (apartment?.dishwasher) {
-    aa.push('посудомоечная машина');
-  }
-
-  if (apartment?.oven) {
-    aa.push('духовка');
-  }
-
-  if (apartment?.coffeeMachine) {
-    aa.push('кофемашина');
-  }
-
-  const rom =
-    apartment?.rooms === '3'
-      ? 'Трехкомнатный апартамент'
-      : apartment?.rooms === '2'
-      ? 'Двухкомнатный апартамент'
-      : apartment?.rooms === '1'
-      ? 'Однокомнатный апартамент'
-      : 'Апартамент студия';
-
-  const first = `площадью ${apartment?.squareMeters} кв/м с ${apartment?.sleepingPlaces} спальными местами для семьи или компании друзей`;
-
-  const second =
-    ' @. В гостиной стоит диван, обеденный стол, кондиционер и отличная кухня. В апартаменте всегда чистое постельное белье, свежий запах и комфорт. Ванная комната совмещена с туалетом.';
-
-  const vse = aa
-    .concat([
-      'бесплатный Wi-Fi',
-      'телевизор',
-      'фен',
-      'полотенца',
-      'утюг',
-      'стиральная машина',
-      'микроволновка',
-      'чайник',
-      'холодильник',
-    ])
-    .join(', ');
-
-  // console.log(`${rom} ${first}. ${second}. Апартамент включает в себя ${vse}!`);
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
     <div className={styles.apartment}>
-      <div className={styles.apartmentName}>Апартамент {apartment.name}</div>
+      <div className={styles.apartmentName}>Апартамент {apartment.apartment}</div>
 
       {/* <div className={styles.apartmentTop}>
         <div className={styles.apartmentTopSlider}>
@@ -150,7 +97,7 @@ export const Apartment = () => {
       </div> */}
 
       <ul className={styles.apartmentUl}>
-        {apartment.description.map((x, i) => (
+        {apartment.about.description.map((x, i) => (
           <li key={i} className={styles.apartmentUlLi}>
             {x}
           </li>
