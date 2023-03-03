@@ -35,18 +35,19 @@ export const Service = ({ apartment }: MyProps) => {
 
   let fixSpace = 1;
 
-  if (apartment.balcony) {
+  if (apartment.about.balcony = 'С балконом') {
     fixSpace += 1;
   }
-  if (apartment.oven) {
+  if (apartment.services.stove) {
     fixSpace += 1;
   }
-  if (apartment.dishwasher) {
+  if (apartment.services.dishwasher) {
     fixSpace += 1;
   }
-  if (apartment.coffeeMachine) {
+  if (apartment.services.coffeeMachine) {
     fixSpace += 1;
   }
+
 
   const showTitle = (iconIndex: number) => {
     setTitles(titles.map((title, index) => (index === iconIndex ? true : title)));

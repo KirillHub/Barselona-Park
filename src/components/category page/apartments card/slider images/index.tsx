@@ -16,6 +16,7 @@ interface MyProps {
     sizes: string;
     fit: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
     lazy: number;
+    border: number;
     quality: number;
   };
 }
@@ -29,22 +30,26 @@ export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) =>
       navigation
       className={styles.slider}
     >
-      {apartment.pictures.map((picture, index) => (
+      {apartment.images.map((picture, index) => (
         <span key={picture.id}>
           <SwiperSlide key={picture.id}>
             <div className={options?.className}>
               <span className={styles.sliderImageSpan}> Фотография загружается...</span>
               <Image
-                className={styles.sliderImagePicture}
-                priority={apartmentIndex < 2 ? (index < options?.lazy ? true : false) : false}
+                src={picture.image}
                 fill
-                quality={options?.quality}
                 sizes={options?.sizes}
-                style={{ objectFit: options?.fit }}
-                src={picture.img}
+                quality={options?.quality}
+                priority={apartmentIndex < 2 ? (index < options?.lazy ? true : false) : false}
+                className={styles.sliderImagePicture}
                 alt={`Фотография Апартамента ${picture.id.split('-')[0]}. Номер ${
                   picture.id.split('-')[1]
                 }`}
+                style={{
+                  objectFit: options?.fit,
+                  borderTopRightRadius: `calc(${options.border}px + ${options.border} * (100vw / 1920))`,
+                  borderTopLeftRadius: `calc(${options.border}px + ${options.border} * (100vw / 1920))`,
+                }}
               />
             </div>
           </SwiperSlide>

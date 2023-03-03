@@ -41,11 +41,6 @@ export const MainPicture = () => {
     { name: 'Стиральная машина', svg: <WashingMachine /> },
   ];
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-  }, []);
 
   return (
     <div className="main-page">

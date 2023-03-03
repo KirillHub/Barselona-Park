@@ -1,40 +1,45 @@
 export type Apartment = {
-  name: string;
-  balcony: boolean;
-  studio: boolean;
-  oneRoom: boolean;
-  twoRoom: boolean;
-  threeRoom: boolean;
-  squareMeters: string;
-  view: boolean;
-  hairDryer: boolean;
-  dishwasher: boolean;
-  oven: boolean;
-  sleepingPlaces: string;
-  wifi: boolean;
-  coffeeMachine: boolean;
-  towels: boolean;
-  iron: boolean;
-  conditioner: boolean;
-  washer: boolean;
-  microwave: boolean;
-  pictures: Images[];
+  apartment: string;
   summerPrice: string;
   winterPrice: string;
-  description: string[]
-  rooms: string;
-  floor: string;
-  meta: Meta;
   sort: string;
+  about: About;
+  images: Images[];
+  services: Services;
+  meta: Meta;
 };
+
+interface About {
+  view: string;
+  balcony: string;
+  rooms: string;
+  sleepingPlaces: string;
+  squareMeters: string;
+  floor: string;
+  description: string[];
+}
+
+interface Images {
+  id: string;
+  image: string;
+  alt: string;
+}
+
+interface Services {
+  stove: boolean
+  dishwasher: boolean;
+  coffeeMachine: boolean;
+  conditioner: boolean;
+  wifi: boolean;
+  washer: boolean;
+  microwave: boolean;
+  hairDryer: boolean;
+  iron: boolean;
+  towels: boolean;
+}
 
 interface Meta {
   title: string;
   description: string;
   keywords: string;
-}
-
-interface Images {
-  id: string;
-  img: string;
 }

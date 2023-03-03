@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import ru from 'date-fns/locale/ru';
 import { subDays, addDays } from 'date-fns';
 import { usePathname } from 'next/navigation';
-import { table } from '../../backend/withoutBalcony';
+import { table } from '../../backend/apartmnetsData';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './style.module.scss';
 
@@ -38,7 +38,7 @@ export const Apartment = () => {
 
   const apartment = table?.find((x) => x.name === apartmentId);
 
-// console.log(apartment?.description.join(' '))
+  // console.log(apartment?.description.join(' '))
 
   const excludedDates = [
     'Mar 08 2023',
@@ -104,7 +104,7 @@ export const Apartment = () => {
       'стиральная машина',
       'микроволновка',
       'чайник',
-      'холодильник'
+      'холодильник',
     ])
     .join(', ');
 
@@ -125,6 +125,7 @@ export const Apartment = () => {
               sizes: '600px',
               fit: 'fill',
               lazy: 1,
+              border: 0,
               quality: 100,
             }}
           />
@@ -147,10 +148,12 @@ export const Apartment = () => {
           />
         </div>
       </div> */}
-      
+
       <ul className={styles.apartmentUl}>
-        {apartment.description.map((x,i) => (
-          <li key={i} className={styles.apartmentUlLi}>{x}</li>
+        {apartment.description.map((x, i) => (
+          <li key={i} className={styles.apartmentUlLi}>
+            {x}
+          </li>
         ))}
       </ul>
     </div>

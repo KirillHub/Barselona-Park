@@ -6,13 +6,13 @@
 
     @media (width < 605px) {
       margin: 0 8vw;
-
-    
     }
   }
 
   .categoryPageTitle {
     text-align: center !important;
+
+    font-size: calc(15px + 15 * (100vw / 1920));
   }
 
   .categoryPageBlocks {

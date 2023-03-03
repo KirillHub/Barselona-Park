@@ -117,12 +117,7 @@ export const SelectCategory = () => {
       {categories.map((category) => (
         <Link
           href={category.link}
-          key={category.name}
-          onClick={() =>
-            window.scrollTo({
-              top: 0,
-            })
-          }>
+          key={category.name}>
           <span>{category.name}</span>
           <div className="main-page-container__categories-img">
             <Image

@@ -12,13 +12,12 @@
   z-index: 0;
 
   @media (width < 805px) {
-    width: 60%;
+    width: 50%;
 
     @media (width < 605px) {
       width: 100%;
     }
   }
-
 
   .categoryPageRightBlockCard {
     position: relative;
@@ -34,36 +33,48 @@
     background-color: rgb(28, 28, 28);
 
     @media (width < 805px) {
-      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
     }
 
     .categoryPageRightBlockCardSlider {
       position: relative;
-      width: calc(50px + 450 * (100vw / 1920));
-
-      @media (width < 805px) {
-        width: 100%;
-      }
     }
   }
 }
 
-
-
 .slider {
+  width: calc(60px + 420 * (100vw / 1920));
+  height: calc(50px + 270 * (100vw / 1920));
+
+
   user-select: none;
+
+  @media (width < 805px) {
+    width: calc(100px + 225 * (100vw / 805));
+    height: calc(90px + 125 * (100vw / 805));
+
+    @media (width < 605px) {
+      width: calc(5px + 465 * (100vw / 605));
+      height: calc(35px + 265 * (100vw / 605));
+    }
+  }
 
   .sliderImage {
     position: relative;
-
-    height: calc(165px + 115 * (100vw / 1920));
+    width: 100%;
+    height: 100%;
 
     .sliderImageSpan {
-      line-height: calc(165px + 115 * (100vw / 1920));
-    }
+      line-height: calc(50px + 270 * (100vw / 1920));
 
-    @media (width < 605px) {
-      height: calc(100px + 120 * (100vw / 605));
+      @media (width < 805px) {
+        line-height: calc(90px + 125 * (100vw / 805));
+
+        @media (width < 605px) {
+          line-height: calc(35px + 265 * (100vw / 605));
+        }
+      }
     }
   }
 

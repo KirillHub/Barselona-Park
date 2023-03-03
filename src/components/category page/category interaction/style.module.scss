@@ -1,5 +1,6 @@
 .categoryOpen {
   visibility: hidden;
+
   @media (width < 605px) {
     position: fixed;
     visibility: visible;
@@ -34,7 +35,7 @@
   user-select: none;
 
   @media (width < 805px) {
-    width: 40%;
+    width: 50%;
     @media (width < 605px) {
       position: fixed;
       width: 60%;

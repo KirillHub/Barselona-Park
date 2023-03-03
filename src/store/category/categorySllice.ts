@@ -12,6 +12,8 @@ export interface CategoryStore {
 
   nights: number;
 
+  apartmentsLength: number;
+
   setSelectedPageId: (pageId: string | undefined) => void;
   setCheckSign: (index: number) => void;
   setOpitionsSortedLink: (link: string) => void;
@@ -19,6 +21,8 @@ export interface CategoryStore {
   updateGuests: (increment: boolean) => void;
 
   setNights: (length: number) => void;
+
+  setApartmentsLength: (length: number) => void;
 }
 
 export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
@@ -35,6 +39,8 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
   guests: 1,
 
   nights: 1,
+
+  apartmentsLength: 0,
 
   setSelectedPageId: (pageId: string | undefined) => set(() => ({ selectedPageId: pageId })),
 
@@ -66,4 +72,6 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
     })),
 
   setNights: (length: number) => set(() => ({ nights: length })),
+
+  setApartmentsLength: (length: number) => set(() => ({ apartmentsLength: length })),
 });

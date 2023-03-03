@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
 import { categoryMeta } from '../../meta/categoryMeta';
-import { table } from '../../../backend/withoutBalcony';
+import { apartmentsData } from '../../../backend/apartmnetsData';
 import { Apartment } from '../../types/type';
 import styles from './style.module.scss';
 import useStore from '../../../store/useStore';
@@ -15,8 +15,11 @@ interface MyParams {
 }
 
 export const ApartmentCard = () => {
+  const setApartmentsLength = useStore((state) => state.setApartmentsLength);
+
   const checkSign = useStore((state) => state.checkSign);
   const signIndex = useStore((state) => state.signIndex);
+
   const pathname = usePathname();
 
   const sort = pathname?.split('/')[2];
@@ -25,68 +28,68 @@ export const ApartmentCard = () => {
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
-  let apartments: Apartment[] = [];
+  let apartments: Apartment[] = apartmentsData;
 
-  const filterByPage = () => {
-    if (filterBy?.length === 2) {
-      apartments = table.filter((x) => x[filterBy[0] as keyof Apartment] === filterBy[1]);
-    }
-    if (filterBy?.length === 4) {
-      apartments = table.filter(
-        (x) =>
-          x[filterBy[0] as keyof Apartment] === filterBy[1] &&
-          x[filterBy[2] as keyof Apartment] === filterBy[3],
-      );
-    }
-    if (service) {
-      const checkOptions = service.split('+');
+  // const filterByPage = () => {
+  //   if (filterBy?.length === 2) {
+  //     apartments = apartmentsData.filter((x) => x[filterBy[0] as keyof Apartment] === filterBy[1]);
+  //   }
+  //   if (filterBy?.length === 4) {
+  //     apartments = apartmentsData.filter(
+  //       (x) =>
+  //         x[filterBy[0] as keyof Apartment] === filterBy[1] &&
+  //         x[filterBy[2] as keyof Apartment] === filterBy[3],
+  //     );
+  //   }
+  //   if (service) {
+  //     const checkOptions = service.split('+');
 
-      const view = checkOptions.find((x) => x === 'sea-view' || x === 'city-view');
+  //     const view = checkOptions.find((x) => x === 'sea-view' || x === 'city-view');
 
-      const balcony = checkOptions.find((x) => x === 'balcony');
+  //     const balcony = checkOptions.find((x) => x === 'balcony');
 
-      const oven = checkOptions.find((x) => x === 'oven');
+  //     const oven = checkOptions.find((x) => x === 'oven');
 
-      const dishwasher = checkOptions.find((x) => x === 'dishwasher');
+  //     const dishwasher = checkOptions.find((x) => x === 'dishwasher');
 
-      const coffeeMachine = checkOptions.find((x) => x === 'coffee-machine');
+  //     const coffeeMachine = checkOptions.find((x) => x === 'coffee-machine');
 
-      if (view !== undefined) {
-        apartments =
-          view === 'sea-view'
-            ? apartments.filter((x: Apartment) => x.view === true)
-            : apartments.filter((x: Apartment) => x.view === false);
-      }
+  //     if (view !== undefined) {
+  //       apartments =
+  //         view === 'sea-view'
+  //           ? apartments.filter((x: Apartment) => x.about.view === 'Вид на море')
+  //           : apartments.filter((x: Apartment) => x.about.view === 'Вид на город');
+  //     }
 
-      if (balcony !== undefined && balcony) {
-        apartments = apartments.filter((x: Apartment) => x.balcony === true);
-      }
+  //     if (balcony !== undefined && balcony) {
+  //       apartments = apartments.filter((x: Apartment) => x.about.balcony === 'С балконом');
+  //     }
 
-      if (oven !== undefined && oven) {
-        apartments = apartments.filter((x: Apartment) => x.oven === true);
-      }
+  //     if (oven !== undefined && oven) {
+  //       apartments = apartments.filter((x: Apartment) => x.services.stove === true);
+  //     }
 
-      if (dishwasher !== undefined && dishwasher) {
-        apartments = apartments.filter((x: Apartment) => x.dishwasher === true);
-      }
+  //     if (dishwasher !== undefined && dishwasher) {
+  //       apartments = apartments.filter((x: Apartment) => x.services.dishwasher === true);
+  //     }
 
-      if (coffeeMachine !== undefined && coffeeMachine) {
-        apartments = apartments.filter((x: Apartment) => x.coffeeMachine === true);
-      }
-    }
-  };
+  //     if (coffeeMachine !== undefined && coffeeMachine) {
+  //       apartments = apartments.filter((x: Apartment) => x.services.coffeeMachine === true);
+  //     }
+  //   }
+  // };
 
-  filterByPage();
+  // filterByPage();
 
-  const sorter = (field: string) => {
-    if (checkSign[signIndex]) {
-      return (a: any, b: any) =>
-        +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
-    } else {
-      return (a: any, b: any) =>
-        +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
-    }
-  };
+  // const sorter = (field: string) => {
+  //   if (checkSign[signIndex]) {
+  //     return (a: any, b: any) =>
+  //       +a[field].split(' ').join('') > +b[field].split(' ').join('') ? 1 : -1;
+  //   } else {
+  //     return (a: any, b: any) =>
+  //       +a[field].split(' ').join('') < +b[field].split(' ').join('') ? 1 : -1;
+  //   }
+  // };
 
   const sortBy = (() => {
     switch (options) {
@@ -107,12 +110,16 @@ export const ApartmentCard = () => {
     }
   })();
 
-  apartments.sort(sorter(sortBy));
+  // apartments.sort(sorter(sortBy));
+
+  useEffect(() => {
+    setApartmentsLength(apartments.length);
+  }, [apartments.length]);
 
   return (
     <div className={styles.categoryPageRightBlock}>
       {apartments.map((apartment: Apartment, index: number) => (
-        <div className={styles.categoryPageRightBlockCard} key={apartment.name}>
+        <div className={styles.categoryPageRightBlockCard} key={apartment.apartment}>
           <div className={styles.categoryPageRightBlockCardSlider}>
             <SliderImages
               apartment={apartment}
@@ -120,8 +127,9 @@ export const ApartmentCard = () => {
               options={{
                 className: styles.sliderImage,
                 sizes:
-                  'calc(165px + 115 * (100vw / 1920)), (max-width: 605px) calc(100px + 120 * (100vw / 605))',
-                fit: 'fill',
+                  'calc(60px + 420 * (100vw / 1920)), (max-width: 805px) calc(100px + 225 * (100vw / 805)), (max-width: 605px) calc(5px + 465 * (100vw / 605))',
+                fit: 'contain',
+                border: 5,
                 lazy: 1,
                 quality: 75,
               }}

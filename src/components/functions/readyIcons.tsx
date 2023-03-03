@@ -24,24 +24,24 @@ import { Apartment } from '../types/type';
 export const readyIcons = (apartment: Apartment) => {
   return [
     {
-      jsx: apartment.balcony ? <Balcony /> : '',
-      title: apartment.balcony ? 'Балкон' : '',
+      jsx: apartment.about.balcony === 'С балконом' ? <Balcony /> : '',
+      title: apartment.about.balcony,
     },
     {
-      jsx: apartment.view ? <Sea /> : <City />,
-      title: apartment.view ? 'Вид на море' : 'Вид на город',
+      jsx: apartment.about.view === 'Вид на море' ? <Sea /> : <City />,
+      title: apartment.about.view,
     },
     {
-      jsx: apartment.oven ? <Stove /> : '',
-      title: apartment.oven ? 'Духовка' : '',
+      jsx: apartment.services.stove ? <Stove /> : '',
+      title: apartment.services.stove ? 'Духовка' : '',
     },
     {
-      jsx: apartment.dishwasher ? <Dishwasher /> : '',
-      title: apartment.dishwasher ? 'Посудомоечная машина' : '',
+      jsx: apartment.services.dishwasher ? <Dishwasher /> : '',
+      title: apartment.services.dishwasher ? 'Посудомоечная машина' : '',
     },
     {
-      jsx: apartment.coffeeMachine ? <CoffeeMachine /> : '',
-      title: apartment.coffeeMachine ? 'Кофемашина' : '',
+      jsx: apartment.services.coffeeMachine ? <CoffeeMachine /> : '',
+      title: apartment.services.coffeeMachine ? 'Кофемашина' : '',
     },
     {
       jsx: <WashingMachine />,
