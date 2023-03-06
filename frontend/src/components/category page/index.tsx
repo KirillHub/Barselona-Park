@@ -27,7 +27,7 @@ export const Category = () => {
 
   return (
     <>
-      <div className={styles.categoryPage}>
+      <div className={styles.categoryPage}>   123123 
         <h1 className={styles.categoryPageTitle}>
           {meta?.name} - {apartmentsLenth}
         </h1>
