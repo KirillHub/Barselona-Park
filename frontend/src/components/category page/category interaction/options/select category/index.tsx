@@ -26,17 +26,21 @@ export const SelectCategory = () => {
           <More />
         </div>
       </button>
-      
+
       <div
         className={
           styles.swapCategoryContent + ' ' + `${showCategories ? styles.visible : styles.hidden}`
         }
       >
-        {meta.map((x) => (
-          <Link href={`/Category/${x.id}`} key={x.id} className={selectedMeta?.id === x.id ? styles.selectedCategory : ''}>
-            {x.name}
-          </Link>
-        ))}
+          {meta.map((x) => (
+            <Link
+              href={`/Category/${x.id}`}
+              key={x.id}
+              className={selectedMeta?.id === x.id ? styles.selectedCategory : ''}
+            >
+              {x.name}
+            </Link>
+          ))}
       </div>
     </div>
   );

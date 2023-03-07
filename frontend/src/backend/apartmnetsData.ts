@@ -2,7 +2,7 @@ import { Apartment } from '../components/types/type';
 
 export const apartmentsData: Apartment[] = [
   {
-    apartment: '1416',
+    apartmentName: '1416',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '42',
@@ -87,7 +87,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1415',
+    apartmentName: '1415',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '41',
@@ -115,62 +115,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1415-0',
         image: '/assets/apartments/1415/1.webp',
-        alt: '',
+        alt: 'Кровать в первой комнате',
       },
       {
         id: '1415-1',
         image: '/assets/apartments/1415/2.webp',
-        alt: '',
+        alt: 'Кровать в первой комнате с другого ракурса',
       },
       {
         id: '1415-2',
         image: '/assets/apartments/1415/3.webp',
-        alt: '',
+        alt: 'Кровать в второй комнате',
       },
       {
         id: '1415-3',
         image: '/assets/apartments/1415/4.webp',
-        alt: '',
+        alt: 'Кровать в второй комнате с другого ракурса',
       },
       {
         id: '1415-4',
         image: '/assets/apartments/1415/5.webp',
-        alt: '',
+        alt: 'Гостиная - видно белую кухню и красный диван',
       },
       {
         id: '1415-5',
         image: '/assets/apartments/1415/6.webp',
-        alt: '',
+        alt: 'Со стороны дивана видно стол а над ним телевизор',
       },
       {
         id: '1415-6',
         image: '/assets/apartments/1415/7.webp',
-        alt: '',
+        alt: 'Общее фото гостиной',
       },
       {
         id: '1415-7',
         image: '/assets/apartments/1415/8.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1415-8',
         image: '/assets/apartments/1415/9.webp',
-        alt: '',
+        alt: 'Фото со стороны кухни видно два входа в комнаты',
       },
       {
         id: '1415-9',
         image: '/assets/apartments/1415/10.webp',
-        alt: '',
+        alt: 'Коридор',
       },
       {
         id: '1415-10',
         image: '/assets/apartments/1415/11.webp',
-        alt: '',
+        alt: 'Раковина с зеркалом в туалете',
       },
       {
         id: '1415-11',
         image: '/assets/apartments/1415/12.webp',
-        alt: '',
+        alt: 'Душевая кабина',
       },
     ],
     services: {
@@ -193,7 +193,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1410',
+    apartmentName: '1410',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '40',
@@ -206,7 +206,7 @@ export const apartmentsData: Apartment[] = [
       floor: '14',
       description: [
         'Представляем вам уютные двухкомнатные апартаменты площадью 54 m², где могут разместиться до 4 гостей - идеальный выбор для семейного отдыха или компании друзей.',
-        'В спальне расположена удобная двуспальная кровать, а в гостинной Вы можете расслабиться на раскладном диване и насладиться потрясающим видом на море.',
+        'В спальне расположена удобная двуспальная кровать, а в гостиной Вы можете расслабиться на раскладном диване и насладиться потрясающим видом на море.',
         'В гостиной есть обеденный стол и полностью оборудованная кухня с новой техникой, включая духовку, кофемашину, микроволновку, посудомоечную машину, чайник и холодильник.',
         'Кроме того, гости могут насладиться свежим воздухом и панорамным видом на море, отдыхая на балконе.',
         'Для обеспечения максимального удовольствия в апартаментах установлена потолочная система кондиционирования, которой легко управлять с помощью пульта.',
@@ -221,62 +221,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1410-0',
         image: '/assets/apartments/1410/1.webp',
-        alt: '',
+        alt: 'Кровать в главной спальне',
       },
       {
         id: '1410-1',
         image: '/assets/apartments/1410/2.webp',
-        alt: '',
+        alt: 'Гостиная диван и кухонный стол',
       },
       {
         id: '1410-2',
         image: '/assets/apartments/1410/3.webp',
-        alt: '',
+        alt: 'Ракурс с стола на диван и телевизор',
       },
       {
         id: '1410-3',
         image: '/assets/apartments/1410/4.webp',
-        alt: '',
+        alt: 'Общий ракурс видно вход в спальню',
       },
       {
         id: '1410-4',
         image: '/assets/apartments/1410/5.webp',
-        alt: '',
+        alt: 'Кухня и коридор',
       },
       {
         id: '1410-5',
         image: '/assets/apartments/1410/6.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1410-6',
         image: '/assets/apartments/1410/7.webp',
-        alt: '',
+        alt: 'Общий ракурс из коридора видно все',
       },
       {
         id: '1410-7',
         image: '/assets/apartments/1410/8.webp',
-        alt: '',
+        alt: 'Дальний ракурс из коридара видно вход в туалет',
       },
       {
         id: '1410-8',
         image: '/assets/apartments/1410/9.webp',
-        alt: '',
+        alt: 'Балкон',
       },
       {
         id: '1410-9',
         image: '/assets/apartments/1410/10.webp',
-        alt: '',
+        alt: 'Балкон видно отдельный вход в спальню с балкона',
       },
       {
         id: '1410-10',
         image: '/assets/apartments/1410/11.webp',
-        alt: '',
+        alt: 'Раковина и зеркало в туалете',
       },
       {
         id: '1410-11',
         image: '/assets/apartments/1410/12.webp',
-        alt: '',
+        alt: 'Душевая кобина',
       },
     ],
     services: {
@@ -299,7 +299,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1409',
+    apartmentName: '1409',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '39',
@@ -385,7 +385,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1404',
+    apartmentName: '1404',
     summerPrice: '15 000',
     winterPrice: '6 000',
     sort: '38',
@@ -411,62 +411,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1404-0',
         image: '/assets/apartments/1404/1.webp',
-        alt: '',
+        alt: 'Кровать в главной спальне',
       },
       {
         id: '1404-1',
         image: '/assets/apartments/1404/2.webp',
-        alt: '',
+        alt: 'Гостиная диван и телевизор',
       },
       {
         id: '1404-2',
         image: '/assets/apartments/1404/3.webp',
-        alt: '',
+        alt: 'Ракурс со стороны окна на гостиную',
       },
       {
         id: '1404-3',
         image: '/assets/apartments/1404/4.webp',
-        alt: '',
+        alt: 'Вся гостинная с кухней',
       },
       {
         id: '1404-4',
         image: '/assets/apartments/1404/5.webp',
-        alt: '',
+        alt: 'Кухонный стол и диван',
       },
       {
         id: '1404-5',
         image: '/assets/apartments/1404/6.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1404-6',
         image: '/assets/apartments/1404/7.webp',
-        alt: '',
+        alt: 'Коридор, вход в гостиную и комнату',
       },
       {
         id: '1404-7',
         image: '/assets/apartments/1404/8.webp',
-        alt: '',
+        alt: 'Коридор и вход в комнату',
       },
       {
         id: '1404-8',
         image: '/assets/apartments/1404/9.webp',
-        alt: '',
+        alt: 'Коридор',
       },
       {
         id: '1404-9',
         image: '/assets/apartments/1404/10.webp',
-        alt: '',
+        alt: 'Балкон с ротанговыми креслами',
       },
       {
         id: '1404-10',
         image: '/assets/apartments/1404/11.webp',
-        alt: '',
+        alt: 'Раковина и зеркало в туалете',
       },
       {
         id: '1404-11',
         image: '/assets/apartments/1404/12.webp',
-        alt: '',
+        alt: 'Душевая, раковина и зеркало',
       },
     ],
     services: {
@@ -489,7 +489,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1313',
+    apartmentName: '1313',
     summerPrice: '12 500',
     winterPrice: '7 000',
     sort: '37',
@@ -575,7 +575,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1305',
+    apartmentName: '1305',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '36',
@@ -589,7 +589,7 @@ export const apartmentsData: Apartment[] = [
       description: [
         'Добро пожаловать в наш трехкомнатный апартамент площадью 59 m², который идеально подходит для семейного отдыха или отдыха в компании друзей, апартамент рассчитан на 6 спальных мест и предлагает невероятный дизайн, который точно не оставит вас равнодушными.',
         'Спальня с прозрачной стеной и большой кроватью создают уютную и романтическую атмосферу, над кроватью обеспечивает прохладную атмосферу кондиционер.',
-        'В гостинной расположены два раскладывающихся дивана, которые удобны в использовании.',
+        'В гостиной расположены два раскладывающихся дивана, которые удобны в использовании.',
         'Кроме того, здесь вы найдете кухню и обеденный стол, а также кондиционер при входе в апартамент, чтобы наслаждаться прохладой в жаркие дни.',
         'Ванная комната совмещена с туалетом всегда чиста и аккуратна.',
         'Постельное белье всегда свежее, а апартамент обеспечен всем необходимым для приятного пребывания: отличной посудомоечной машиной, духовкой, кофемашиной,бесплатным Wi-Fi, телевизором и феном.',
@@ -602,62 +602,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1305-0',
         image: '/assets/apartments/1305/1.webp',
-        alt: '',
+        alt: 'Спальня с кроватью и кондиционером',
       },
       {
         id: '1305-1',
         image: '/assets/apartments/1305/2.webp',
-        alt: '',
+        alt: 'Спальня с другого ракурса',
       },
       {
         id: '1305-2',
         image: '/assets/apartments/1305/3.webp',
-        alt: '',
+        alt: 'Гостиная видно диван и спальню',
       },
       {
         id: '1305-3',
         image: '/assets/apartments/1305/4.webp',
-        alt: '',
+        alt: 'Гостиная со стороны спальни - стол и кухня',
       },
       {
         id: '1305-4',
         image: '/assets/apartments/1305/5.webp',
-        alt: '',
+        alt: 'Диван и шкаф с постельным бельем',
       },
       {
         id: '1305-5',
         image: '/assets/apartments/1305/6.webp',
-        alt: '',
+        alt: 'Кухонный стол, телевизор и второй диван',
       },
       {
         id: '1305-6',
         image: '/assets/apartments/1305/7.webp',
-        alt: '',
+        alt: 'Кухня и коридор',
       },
       {
         id: '1305-7',
         image: '/assets/apartments/1305/8.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1305-8',
         image: '/assets/apartments/1305/9.webp',
-        alt: '',
+        alt: 'Шкаф с постельным бельем и коридор',
       },
       {
         id: '1305-9',
         image: '/assets/apartments/1305/10.webp',
-        alt: '',
+        alt: 'Общее фото всей гостинной с спальней',
       },
       {
         id: '1305-10',
         image: '/assets/apartments/1305/11.webp',
-        alt: '',
+        alt: 'Раковина, зеркало и полотенце сушитель',
       },
       {
         id: '1305-12',
         image: '/assets/apartments/1305/12.webp',
-        alt: '',
+        alt: 'Душевая кабина и дверь',
       },
     ],
     services: {
@@ -680,7 +680,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1304',
+    apartmentName: '1304',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '35',
@@ -695,7 +695,7 @@ export const apartmentsData: Apartment[] = [
         'Добро пожаловать в наш трехкомнатный апартамент площадью 59 m², который идеально подходит для семейного отдыха или отдыха в компании друзей!',
         'Апартамент рассчитан на 6 спальных мест и предлагает невероятный дизайн, который точно не оставит вас равнодушными.',
         'В главной спальне с прозрачной стеной и большой кроватью создается уютная и романтическая атмосфера, а кондиционер обеспечивает прохладу в жаркие дни.',
-        'В гостинной вы найдете два раскладывающихся дивана, которые удобны в использовании.',
+        'В гостиной вы найдете два раскладывающихся дивана, которые удобны в использовании.',
         'Кроме того, здесь расположены кухня и обеденный стол, а также кондиционер при входе в апартамент, чтобы вы могли наслаждаться прохладой в жаркие дни.',
         'Ванная комната совмещена с туалетом и всегда чиста и аккуратна.',
         'Постельное белье всегда свежее, а в апартаменте есть все необходимое для приятного пребывания: отличная посудомоечная машина, духовка, кофемашина, бесплатный Wi-Fi, телевизор и фен.',
@@ -708,62 +708,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1304-0',
         image: '/assets/apartments/1304/1.webp',
-        alt: '',
+        alt: 'Спальня с кроватью и кондиционером',
       },
       {
         id: '1304-1',
         image: '/assets/apartments/1304/2.webp',
-        alt: '',
+        alt: 'Спальня с другого ракурса',
       },
       {
         id: '1304-2',
         image: '/assets/apartments/1304/3.webp',
-        alt: '',
+        alt: 'Диван в гостиной',
       },
       {
         id: '1304-3',
         image: '/assets/apartments/1304/4.webp',
-        alt: '',
+        alt: 'Диван в гостиной',
       },
       {
         id: '1304-4',
         image: '/assets/apartments/1304/5.webp',
-        alt: '',
+        alt: 'Кухонный стол, телевизор и кухня',
       },
       {
         id: '1304-5',
         image: '/assets/apartments/1304/6.webp',
-        alt: '',
+        alt: 'Кухонный стол, телевизор и второй диван',
       },
       {
         id: '1304-6',
         image: '/assets/apartments/1304/7.webp',
-        alt: '',
+        alt: 'Ракурс от второго дивана видно стол и кухню',
       },
       {
         id: '1304-7',
         image: '/assets/apartments/1304/8.webp',
-        alt: '',
+        alt: 'Ракурс от стола видно первый диван и кухню',
       },
       {
         id: '1304-8',
         image: '/assets/apartments/1304/9.webp',
-        alt: '',
+        alt: 'Кухня и коридор',
       },
       {
         id: '1304-9',
         image: '/assets/apartments/1304/10.webp',
-        alt: '',
+        alt: 'Ракурс от кухни видно спальню, стол и два дивана',
       },
       {
         id: '1304-10',
         image: '/assets/apartments/1304/11.webp',
-        alt: '',
+        alt: 'Раковина, зеркало и полотенце сушитель',
       },
       {
         id: '1304-11',
         image: '/assets/apartments/1304/12.webp',
-        alt: '',
+        alt: 'Душевая кабина',
       },
     ],
     services: {
@@ -786,7 +786,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1303',
+    apartmentName: '1303',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '34',
@@ -814,62 +814,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1303-0',
         image: '/assets/apartments/1303/1.webp',
-        alt: '',
+        alt: 'Спальня видно кровать',
       },
       {
         id: '1303-1',
         image: '/assets/apartments/1303/2.webp',
-        alt: '',
+        alt: 'Кровать с другого ракурса',
       },
       {
         id: '1303-2',
         image: '/assets/apartments/1303/3.webp',
-        alt: '',
+        alt: 'Спальня кресло и диван так же видно кухню',
       },
       {
         id: '1303-3',
         image: '/assets/apartments/1303/4.webp',
-        alt: '',
+        alt: 'Ракурс от кровати видно телевизор, кресло и диван',
       },
       {
         id: '1303-4',
         image: '/assets/apartments/1303/5.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1303-5',
         image: '/assets/apartments/1303/6.webp',
-        alt: '',
+        alt: 'Кухня вблизи',
       },
       {
         id: '1303-6',
         image: '/assets/apartments/1303/7.webp',
-        alt: '',
+        alt: 'Ракурс с кухни видно спальню - диван',
       },
       {
         id: '1303-7',
         image: '/assets/apartments/1303/8.webp',
-        alt: '',
+        alt: 'Широкая барная стойка с барными стульями',
       },
       {
         id: '1303-8',
         image: '/assets/apartments/1303/9.webp',
-        alt: '',
+        alt: 'Коридор',
       },
       {
         id: '1303-9',
         image: '/assets/apartments/1303/10.webp',
-        alt: '',
+        alt: 'Балкон фото на город',
       },
       {
         id: '1303-10',
         image: '/assets/apartments/1303/11.webp',
-        alt: '',
+        alt: 'Унитаз, душевая кабина, раковина и зеркало',
       },
       {
         id: '1303-11',
         image: '/assets/apartments/1303/12.webp',
-        alt: '',
+        alt: 'Раковина и зеркало',
       },
     ],
     services: {
@@ -892,7 +892,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1208',
+    apartmentName: '1208',
     summerPrice: '12 000',
     winterPrice: '7 000',
     sort: '33',
@@ -978,7 +978,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1207',
+    apartmentName: '1207',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '32',
@@ -1063,7 +1063,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1206',
+    apartmentName: '1206',
     summerPrice: '11 000',
     winterPrice: '6 000',
     sort: '31',
@@ -1091,62 +1091,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1206-0',
         image: '/assets/apartments/1206/1.webp',
-        alt: '',
+        alt: 'Кровать в спальне',
       },
       {
         id: '1206-1',
         image: '/assets/apartments/1206/2.webp',
-        alt: '',
+        alt: 'Кровать и видно две тумбочки',
       },
       {
         id: '1206-2',
         image: '/assets/apartments/1206/3.webp',
-        alt: '',
+        alt: 'Диван и телевизор',
       },
       {
         id: '1206-3',
         image: '/assets/apartments/1206/4.webp',
-        alt: '',
+        alt: 'Диван',
       },
       {
         id: '1206-4',
         image: '/assets/apartments/1206/5.webp',
-        alt: '',
+        alt: 'Ракурс от окон диван, телевизор, спальня и кухня',
       },
       {
         id: '1206-5',
         image: '/assets/apartments/1206/6.webp',
-        alt: '',
+        alt: 'Кухонный стол и кондиционер',
       },
       {
         id: '1206-6',
         image: '/assets/apartments/1206/7.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1206-7',
         image: '/assets/apartments/1206/8.webp',
-        alt: '',
+        alt: 'Ракурс из коридора на всю гостиную',
       },
       {
         id: '1206-8',
         image: '/assets/apartments/1206/9.webp',
-        alt: '',
+        alt: 'Ракурс от кухни на всю гостиную',
       },
       {
         id: '1206-9',
         image: '/assets/apartments/1206/10.webp',
-        alt: '',
+        alt: 'Балкон с двумя стульями и столиком',
       },
       {
         id: '1206-10',
         image: '/assets/apartments/1206/11.webp',
-        alt: '',
+        alt: 'Стиральная машина, раковина и зеркало в туалете',
       },
       {
         id: '1206-11',
         image: '/assets/apartments/1206/12.webp',
-        alt: '',
+        alt: 'Душевая кабина и дверь в туалет',
       },
     ],
     services: {
@@ -1169,7 +1169,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1111',
+    apartmentName: '1111',
     summerPrice: '11 000',
     winterPrice: '5 500',
     sort: '30',
@@ -1254,7 +1254,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1110',
+    apartmentName: '1110',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '29',
@@ -1281,62 +1281,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1110-0',
         image: '/assets/apartments/1110/1.webp',
-        alt: '',
+        alt: 'Спальня кровать и тумбочка',
       },
       {
         id: '1110-1',
         image: '/assets/apartments/1110/2.webp',
-        alt: '',
+        alt: 'Кровать и две тумбочки',
       },
       {
         id: '1110-2',
         image: '/assets/apartments/1110/3.webp',
-        alt: '',
+        alt: 'Гостиная - диван, стол, телевизор и два входа',
       },
       {
         id: '1110-3',
         image: '/assets/apartments/1110/4.webp',
-        alt: '',
+        alt: 'Вторая спальня с диваном',
       },
       {
         id: '1110-4',
         image: '/assets/apartments/1110/5.webp',
-        alt: '',
+        alt: 'Ракурс от дивана видно телевизор',
       },
       {
         id: '1110-5',
         image: '/assets/apartments/1110/6.webp',
-        alt: '',
+        alt: 'Гостиная видно стол, диван и два входа',
       },
       {
         id: '1110-6',
         image: '/assets/apartments/1110/7.webp',
-        alt: '',
+        alt: 'Кухня, стол и диван',
       },
       {
         id: '1110-7',
         image: '/assets/apartments/1110/8.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1110-8',
         image: '/assets/apartments/1110/9.webp',
-        alt: '',
+        alt: 'Коридор',
       },
       {
         id: '1110-9',
         image: '/assets/apartments/1110/10.webp',
-        alt: '',
+        alt: 'Балкон с двумя стульями и столиком',
       },
       {
         id: '1110-10',
         image: '/assets/apartments/1110/11.webp',
-        alt: '',
+        alt: 'Туалет - раковина, зеркало и душевая',
       },
       {
         id: '1110-11',
         image: '/assets/apartments/1110/12.webp',
-        alt: '',
+        alt: 'Душевая',
       },
     ],
     services: {
@@ -1359,7 +1359,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1109',
+    apartmentName: '1109',
     summerPrice: '10 000',
     winterPrice: '5 000',
     sort: '28',
@@ -1443,7 +1443,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1105',
+    apartmentName: '1105',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '27',
@@ -1471,62 +1471,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1105-0',
         image: '/assets/apartments/1105/1.webp',
-        alt: '',
+        alt: 'Спальня - кровать',
       },
       {
         id: '1105-1',
         image: '/assets/apartments/1105/2.webp',
-        alt: '',
+        alt: 'Кровать ракурс на гостиную',
       },
       {
         id: '1105-2',
         image: '/assets/apartments/1105/3.webp',
-        alt: '',
+        alt: 'Ракурс от стола видно диван и спальню',
       },
       {
         id: '1105-3',
         image: '/assets/apartments/1105/4.webp',
-        alt: '',
+        alt: 'Стол, диван, спальня и второй диван',
       },
       {
         id: '1105-4',
         image: '/assets/apartments/1105/5.webp',
-        alt: '',
+        alt: 'Стол и второй диван',
       },
       {
         id: '1105-5',
         image: '/assets/apartments/1105/6.webp',
-        alt: '',
+        alt: 'Второй диван',
       },
       {
         id: '1105-6',
         image: '/assets/apartments/1105/7.webp',
-        alt: '',
+        alt: 'Кухня ',
       },
       {
         id: '1105-7',
         image: '/assets/apartments/1105/8.webp',
-        alt: '',
+        alt: 'Шкаф с постельным бельем',
       },
       {
         id: '1105-8',
         image: '/assets/apartments/1105/9.webp',
-        alt: '',
+        alt: 'Коридор',
       },
       {
         id: '1105-9',
         image: '/assets/apartments/1105/10.webp',
-        alt: '',
+        alt: 'Балкон с диваном, cтоликом и двумя креслами',
       },
       {
         id: '1105-10',
         image: '/assets/apartments/1105/11.webp',
-        alt: '',
+        alt: 'Туалет - зеркало и раковина',
       },
       {
         id: '1105-11',
         image: '/assets/apartments/1105/12.webp',
-        alt: '',
+        alt: 'Душевая кабина и дверь',
       },
     ],
     services: {
@@ -1549,7 +1549,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1104',
+    apartmentName: '1104',
     summerPrice: '12 000',
     winterPrice: '6 000',
     sort: '26',
@@ -1577,62 +1577,62 @@ export const apartmentsData: Apartment[] = [
       {
         id: '1104-0',
         image: '/assets/apartments/1104/1.webp',
-        alt: '',
+        alt: 'Спальня - кровать и кондиционер',
       },
       {
         id: '1104-1',
         image: '/assets/apartments/1104/2.webp',
-        alt: '',
+        alt: 'Кровать',
       },
       {
         id: '1104-2',
         image: '/assets/apartments/1104/3.webp',
-        alt: '',
+        alt: 'Диван и видно спальню',
       },
       {
         id: '1104-3',
         image: '/assets/apartments/1104/4.webp',
-        alt: '',
+        alt: 'Диван, стол, спальня и второй диван',
       },
       {
         id: '1104-4',
         image: '/assets/apartments/1104/5.webp',
-        alt: '',
+        alt: 'Стол, телевизор и второй диван',
       },
       {
         id: '1104-5',
         image: '/assets/apartments/1104/6.webp',
-        alt: '',
+        alt: 'Второй диван и гостиная',
       },
       {
         id: '1104-6',
         image: '/assets/apartments/1104/7.webp',
-        alt: '',
+        alt: 'Кухня с коридором',
       },
       {
         id: '1104-7',
         image: '/assets/apartments/1104/8.webp',
-        alt: '',
+        alt: 'Кухня',
       },
       {
         id: '1104-8',
         image: '/assets/apartments/1104/9.webp',
-        alt: '',
+        alt: 'Коридор',
       },
       {
         id: '1104-9',
         image: '/assets/apartments/1104/10.webp',
-        alt: '',
+        alt: 'Балкон с тремя креслами',
       },
       {
         id: '1104-10',
         image: '/assets/apartments/1104/11.webp',
-        alt: '',
+        alt: 'Туалет - раковина и зеркало',
       },
       {
         id: '1104-11',
         image: '/assets/apartments/1104/12.webp',
-        alt: '',
+        alt: 'Душевая кабина и дверь',
       },
     ],
     services: {
@@ -1655,7 +1655,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1103',
+    apartmentName: '1103',
     summerPrice: '10 000',
     winterPrice: '5 000',
     sort: '25',
@@ -1760,7 +1760,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1014',
+    apartmentName: '1014',
     summerPrice: '12 000',
     winterPrice: '7 000',
     sort: '24',
@@ -1865,7 +1865,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1013',
+    apartmentName: '1013',
     summerPrice: '12 000',
     winterPrice: '7 000',
     sort: '23',
@@ -1970,7 +1970,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '1003',
+    apartmentName: '1003',
     summerPrice: '10 000',
     winterPrice: '5 000',
     sort: '22',
@@ -2054,7 +2054,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '907',
+    apartmentName: '907',
     summerPrice: '11 000',
     winterPrice: '6 000',
     sort: '21',
@@ -2139,7 +2139,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '805',
+    apartmentName: '805',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '20',
@@ -2243,7 +2243,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '716',
+    apartmentName: '716',
     summerPrice: '10 000',
     winterPrice: '6 500',
     sort: '19',
@@ -2348,7 +2348,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '715',
+    apartmentName: '715',
     summerPrice: '10 000',
     winterPrice: '6 500',
     sort: '18',
@@ -2453,7 +2453,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '712',
+    apartmentName: '712',
     summerPrice: '10 000',
     winterPrice: '6 500',
     sort: '17',
@@ -2557,7 +2557,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '709',
+    apartmentName: '709',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '16',
@@ -2663,7 +2663,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '705',
+    apartmentName: '705',
     summerPrice: '9 000',
     winterPrice: '5 000',
     sort: '15',
@@ -2767,7 +2767,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '613',
+    apartmentName: '613',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '14',
@@ -2873,7 +2873,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '612',
+    apartmentName: '612',
     summerPrice: '11 000',
     winterPrice: '6 000',
     sort: '13',
@@ -2977,7 +2977,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '607',
+    apartmentName: '607',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '12',
@@ -3082,7 +3082,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '606',
+    apartmentName: '606',
     summerPrice: '9 000',
     winterPrice: '5 000',
     sort: '11',
@@ -3188,7 +3188,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '605',
+    apartmentName: '605',
     summerPrice: '8 500',
     winterPrice: '5 000',
     sort: '10',
@@ -3293,7 +3293,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '509',
+    apartmentName: '509',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '9',
@@ -3378,7 +3378,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '503',
+    apartmentName: '503',
     summerPrice: '9 000',
     winterPrice: '5 000',
     sort: '8',
@@ -3484,7 +3484,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '416',
+    apartmentName: '416',
     summerPrice: '8 500',
     winterPrice: '5 000',
     sort: '7',
@@ -3590,7 +3590,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '415',
+    apartmentName: '415',
     summerPrice: '8 000',
     winterPrice: '4 500',
     sort: '6',
@@ -3674,7 +3674,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '402',
+    apartmentName: '402',
     summerPrice: '10 000',
     winterPrice: '5 000',
     sort: '5',
@@ -3780,7 +3780,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '312',
+    apartmentName: '312',
     summerPrice: '9 000',
     winterPrice: '6 000',
     sort: '4',
@@ -3885,7 +3885,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '310',
+    apartmentName: '310',
     summerPrice: '9 000',
     winterPrice: '5 000',
     sort: '3',
@@ -3971,7 +3971,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '21-8',
+    apartmentName: '21-8',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '2',
@@ -4077,7 +4077,7 @@ export const apartmentsData: Apartment[] = [
     },
   },
   {
-    apartment: '21-6',
+    apartmentName: '21-6',
     summerPrice: '10 000',
     winterPrice: '6 000',
     sort: '1',
@@ -4188,3 +4188,15 @@ export const apartmentsData: Apartment[] = [
     },
   },
 ];
+
+// for (let i = 0; i < arr.length; i++) {
+//   fetch('http://localhost:3500/addNewApartment', {
+//     method: 'POST',
+//     body: JSON.stringify(arr[i]),
+//     headers: {
+//       'Content-type': 'application/json; charset=UTF-8',
+//     },
+//   })
+//     .then((res) => res.json())
+//     .then(console.log);
+// }

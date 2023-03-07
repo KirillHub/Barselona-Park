@@ -1,10 +1,12 @@
 'use client';
 import Image from 'next/image';
-// import { Link } from 'react-router-dom';
 import Link from 'next/link';
 import './style.scss';
 
+
 export const SelectCategory = () => {
+
+
   const categories = [
     {
       name: 'Все апартаменты',
@@ -115,9 +117,7 @@ export const SelectCategory = () => {
       <h2>Категории</h2>
 
       {categories.map((category) => (
-        <Link
-          href={category.link}
-          key={category.name}>
+        <Link href={category.link} key={category.name}>
           <span>{category.name}</span>
           <div className="main-page-container__categories-img">
             <Image

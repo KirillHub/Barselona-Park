@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
@@ -14,7 +14,12 @@ interface MyParams {
   options: string;
 }
 
-export const ApartmentCard = () => {
+interface MyProps {
+  apartment: Apartment;
+  index: number
+}
+
+export const ApartmentCard = ({ apartment, index }: MyProps) => {
   const setApartmentsLength = useStore((state) => state.setApartmentsLength);
 
   const checkSign = useStore((state) => state.checkSign);
@@ -28,8 +33,7 @@ export const ApartmentCard = () => {
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
-  let apartments: Apartment[] = apartmentsData;
-
+  // let apartments: Apartment[] = apartmentsData;
 
   // const filterByPage = () => {
   //   if (filterBy?.length === 2) {
@@ -92,54 +96,51 @@ export const ApartmentCard = () => {
   //   }
   // };
 
-  const sortBy = (() => {
-    switch (options) {
-      case 'Sorted-by-summer-season':
-        return 'summerPrice';
-      case 'Sorted-by-winter-season':
-        return 'winterPrice';
-      case 'Sorted-by-number-of-rooms':
-        return 'rooms';
-      case 'Sorted-by-number-of-beds':
-        return 'sleepingPlaces';
-      case 'Sorted-by-square-meters':
-        return 'squareMeters';
-      case 'Sorted-by-floor':
-        return 'floor';
-      default:
-        return 'sort';
-    }
-  })();
+  // const sortBy = (() => {
+  //   switch (options) {
+  //     case 'Sorted-by-summer-season':
+  //       return 'summerPrice';
+  //     case 'Sorted-by-winter-season':
+  //       return 'winterPrice';
+  //     case 'Sorted-by-number-of-rooms':
+  //       return 'rooms';
+  //     case 'Sorted-by-number-of-beds':
+  //       return 'sleepingPlaces';
+  //     case 'Sorted-by-square-meters':
+  //       return 'squareMeters';
+  //     case 'Sorted-by-floor':
+  //       return 'floor';
+  //     default:
+  //       return 'sort';
+  //   }
+  // })();
 
-  // apartments.sort(sorter(sortBy));
+  //  'http://localhost:3500/addNewApartment'
 
-  useEffect(() => {
-    setApartmentsLength(apartments.length);
-  }, [apartments.length]);
+  // useEffect(() => {
+  //   setApartmentsLength(apartments.length);
+  // }, [apartments.length]);
 
   return (
-    <div className={styles.categoryPageRightBlock}>
-      {apartments.map((apartment: Apartment, index: number) => (
-        <div className={styles.categoryPageRightBlockCard} key={apartment.apartment}>
-          <div className={styles.categoryPageRightBlockCardSlider}>
-            <SliderImages
-              apartment={apartment}
-              apartmentIndex={index}
-              options={{
-                className: styles.sliderImage,
-                sizes:
-                  'calc(60px + 420 * (100vw / 1920)), (max-width: 805px) calc(100px + 225 * (100vw / 805)), (max-width: 605px) calc(5px + 465 * (100vw / 605))',
-                fit: 'contain',
-                border: 5,
-                lazy: 1,
-                quality: 75,
-              }}
-            />
-          </div>
 
-          <ApartmentInfo apartment={apartment} />
+      <div className={styles.categoryPageRightBlockCard}>
+        <div className={styles.categoryPageRightBlockCardSlider}>
+          <SliderImages
+            apartment={apartment}
+            apartmentIndex={index}
+            options={{
+              className: styles.sliderImage,
+              sizes:
+                'calc(60px + 420 * (100vw / 1920)), (max-width: 805px) calc(100px + 225 * (100vw / 805)), (max-width: 605px) calc(5px + 465 * (100vw / 605))',
+              fit: 'contain',
+              border: 5,
+              lazy: 1,
+              quality: 75,
+            }}
+          />
         </div>
-      ))}
-    </div>
+
+        <ApartmentInfo apartment={apartment} />
+      </div>
   );
 };

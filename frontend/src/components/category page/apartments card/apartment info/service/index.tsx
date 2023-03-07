@@ -60,29 +60,8 @@ export const Service = ({ apartment }: MyProps) => {
   return (
     <div className={styles.infoService}>
       <div className={styles.infoServiceShownIcons}>
-        {icons.map((icon, index) =>
-          index < 10 - fixSpace && icon.title !== '' ? (
-            <div onClick={() => showTitle(index)} key={icon.title}>
-              {icon.jsx}
-              <span className={`${titles[index] ? styles.visible : styles.hidden}`}>{icon.title}</span>
-            </div>
-          ) : (
-            ''
-          ),
-        )}
-      </div>
-
-      <div
-        className={styles.infoServiceAll}
-        onClick={() => setShowService(true)}
-        onMouseLeave={() => setShowService(false)}>
-        <p>Все услуги</p>
-        <div
-          className={
-            styles.infoServiceAllIcons + ' ' + `${showService ? styles.visible : styles.hidden}`
-          }>
           {icons.map((icon, index) =>
-            index > 9 - fixSpace && icon.title !== '' ? (
+            index < 10 - fixSpace && icon.title !== '' ? (
               <div onClick={() => showTitle(index)} key={icon.title}>
                 {icon.jsx}
                 <span className={`${titles[index] ? styles.visible : styles.hidden}`}>{icon.title}</span>
@@ -91,6 +70,31 @@ export const Service = ({ apartment }: MyProps) => {
               ''
             ),
           )}
+      </div>
+
+      <div
+        className={styles.infoServiceAll}
+        onClick={() => setShowService(true)}
+        onMouseLeave={() => setShowService(false)}
+      >
+        <p>Все услуги</p>
+        <div
+          className={
+            styles.infoServiceAllIcons + ' ' + `${showService ? styles.visible : styles.hidden}`
+          }
+        >
+            {icons.map((icon, index) =>
+              index > 9 - fixSpace && icon.title !== '' ? (
+                <div onClick={() => showTitle(index)} key={icon.title}>
+                  {icon.jsx}
+                  <span className={`${titles[index] ? styles.visible : styles.hidden}`}>
+                    {icon.title}
+                  </span>
+                </div>
+              ) : (
+                ''
+              ),
+            )}
         </div>
       </div>
     </div>

@@ -19,7 +19,6 @@ export const getAllApartments = async (req: any, res: any) => {
 export const addApartments = async (req: any, res: any) => {
   try {
 
-
     const apartments = new ApartmentSchema({
       apartmentName: req.body.apartment,
       summerPrice: req.body.summerPrice,
@@ -29,7 +28,6 @@ export const addApartments = async (req: any, res: any) => {
       about: req.body.about,
 
       images: req.body.images,
-
 
       services: req.body.services,
 

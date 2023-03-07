@@ -1,5 +1,5 @@
 export type Apartment = {
-  apartment: string;
+  apartmentName: string;
   summerPrice: string;
   winterPrice: string;
   sort: string;
