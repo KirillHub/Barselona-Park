@@ -40,7 +40,7 @@ export const Price = ({ apartment }: MyProps) => {
       </div>
 
       <div className={styles.infoPriceButtonButn}>
-        <button className="main-buttons-style" onClick={() => handleClick(apartment.apartment)}>
+        <button className="main-buttons-style" onClick={() => handleClick(apartment.apartmentName)}>
           Перейти к апартаменту
         </button>
       </div>

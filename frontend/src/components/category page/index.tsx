@@ -33,14 +33,12 @@ export default function Category() {
 
   const apartmentsLenth = useStore((state) => state.apartmentsLength);
 
-
   const pathname = usePathname();
   const sort = pathname?.split('/')[2];
 
   const meta = categoryMeta(selectedPageId);
 
   const { user, isLoading, isError } = useCategory(selectedPageId);
-
 
   useEffect(() => {
     setSelectedPageId(sort!);
@@ -56,7 +54,7 @@ export default function Category() {
         <CategoryInteraction />
 
         <div className={styles.categoryPageRightBlock}>
-          {user?.map((apartment, index) => (
+          {user?.map((apartment: Apartment, index) => (
             <ApartmentCard apartment={apartment} index={index} key={apartment.apartmentName} />
           ))}
         </div>
