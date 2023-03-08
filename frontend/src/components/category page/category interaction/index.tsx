@@ -162,7 +162,7 @@ export const CategoryInteraction = () => {
 
         <Services onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
 
-        {/* <Sort resetSorts={resetSorts} />; */}
+         <Sort resetSorts={resetSorts} />
       </aside>
     </>
   );

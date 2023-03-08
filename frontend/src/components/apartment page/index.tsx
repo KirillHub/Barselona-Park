@@ -36,7 +36,7 @@ export const Apartment = () => {
 
   const apartmentId = pathname?.split('/')[2];
 
-  const apartment = apartmentsData?.find((x) => x.apartment === apartmentId);
+  const apartment = apartmentsData?.find((x) => x.apartmentName === apartmentId);
 
   // console.log(apartment?.description.join(' '))
 
@@ -55,12 +55,38 @@ export const Apartment = () => {
   if (endDate !== null) {
     // console.log(reservationDays(startDate, endDate, excludedDates));
   }
+  let i = 0;
 
+    // fetch('http://localhost:3500/addNewApartment', {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(apartmentsData[0]),
+    // })
+    //   .then((response) => response.json())
+    //   .then((response) => console.log(JSON.stringify(response)));
+
+  // useEffect(() => {
+  //   apartmentsData.map(x => {
+  //     fetch('http://localhost:3500/addNewApartment', {
+  //     method: 'POST',
+  //     headers: {
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(x),
+  //   })
+  //     .then((response) => response.json())
+  //         .then((response) => console.log(JSON.stringify(response)));
+  //   })
+  // }, []);
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
     <div className={styles.apartment}>
-      <div className={styles.apartmentName}>Апартамент {apartment.apartment}</div>
+      <div className={styles.apartmentName}>Апартамент {apartment.apartmentName}</div>
 
       {/* <div className={styles.apartmentTop}>
         <div className={styles.apartmentTopSlider}>

@@ -11,12 +11,12 @@ interface MyProps {
 
 export const ApartmentInfo = ({ apartment }: MyProps) => {
   const router = useRouter();
-  const handleClick = () => router.push(`/Apartment/${apartment.apartment}`);
+  const handleClick = () => router.push(`/Apartment/${apartment.apartmentName}`);
 
   return (
     <div className={styles.info}>
       <p className={styles.infoTitle} onClick={handleClick}>
-        Апартамент {apartment.apartment}
+        Апартамент {apartment.apartmentName}
       </p>
 
       <Options apartment={apartment} />

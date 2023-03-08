@@ -1,12 +1,21 @@
 import ApartmentSchema from '../../models/apartment.js';
-
+import { categoryPars } from '../../helpers/categoryParse.js';
 // import mongoose from 'mongoose';
 
 export const getAllApartments = async (req: any, res: any) => {
   try {
-    const apartments = await ApartmentSchema.find().populate('_id').exec();
-    console.log('lets go');
-    res.json(apartments);
+    const category = categoryPars(req.params.category);
+
+    console.log(category);
+
+    const a = {
+      'about.floor': { $gt: '0' },
+    };
+
+    if (category !== undefined) {
+      const apartments = await ApartmentSchema.find(category).limit(6);
+      res.json(apartments);
+    }
   } catch (err) {
     console.log(err);
 
@@ -18,9 +27,9 @@ export const getAllApartments = async (req: any, res: any) => {
 
 export const addApartments = async (req: any, res: any) => {
   try {
-
+    console.log('add');
     const apartments = new ApartmentSchema({
-      apartmentName: req.body.apartment,
+      apartmentName: req.body.apartmentName,
       summerPrice: req.body.summerPrice,
       winterPrice: req.body.winterPrice,
       sortIndex: req.body.sort,

@@ -1,7 +1,7 @@
 import { StateCreator } from 'zustand';
 
 export interface CategoryStore {
-  selectedPageId: string | undefined;
+  selectedPageId: string;
   checkSign: boolean[];
   signIndex: number;
 
@@ -14,7 +14,7 @@ export interface CategoryStore {
 
   apartmentsLength: number;
 
-  setSelectedPageId: (pageId: string | undefined) => void;
+  setSelectedPageId: (pageId: string) => void;
   setCheckSign: (index: number) => void;
   setOpitionsSortedLink: (link: string) => void;
   setCheckBox: (box: boolean[]) => void;
@@ -42,7 +42,7 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
 
   apartmentsLength: 0,
 
-  setSelectedPageId: (pageId: string | undefined) => set(() => ({ selectedPageId: pageId })),
+  setSelectedPageId: (pageId: string) => set(() => ({ selectedPageId: pageId })),
 
   setCheckSign: (index: number) =>
     set((state) => {

@@ -8,27 +8,42 @@ import { categoryMeta } from '../meta/categoryMeta';
 import { useEffect } from 'react';
 import Head from 'next/head';
 import { Apartment } from '../types/type';
+import useSWR from 'swr';
 
+import axios from 'axios';
 
-interface MyProps {
-  apartmentsData: Apartment[];
-}
+const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
-const Category = ({ apartmentsData }: MyProps) => {
+const useCategory = (category: string) => {
+  const { data, error, isLoading } = useSWR<Apartment[], any, any>(
+    `http://localhost:3500/Apartments/${category}/Sorted-by-summer-season+more/sea-view/6`,
+    fetcher,
+  );
+
+  return {
+    user: data,
+    isLoading,
+    isError: error,
+  };
+};
+
+export default function Category() {
   const setSelectedPageId = useStore((state) => state.setSelectedPageId);
   const selectedPageId = useStore((state) => state.selectedPageId);
 
   const apartmentsLenth = useStore((state) => state.apartmentsLength);
 
-  console.log(apartmentsData);
 
   const pathname = usePathname();
   const sort = pathname?.split('/')[2];
 
   const meta = categoryMeta(selectedPageId);
 
+  const { user, isLoading, isError } = useCategory(selectedPageId);
+
+
   useEffect(() => {
-    setSelectedPageId(sort);
+    setSelectedPageId(sort!);
   }, []);
 
   return (
@@ -39,15 +54,13 @@ const Category = ({ apartmentsData }: MyProps) => {
 
       <div className={styles.categoryPageBlocks}>
         <CategoryInteraction />
-        
+
         <div className={styles.categoryPageRightBlock}>
-          {apartmentsData.map((apartment, index) => (
+          {user?.map((apartment, index) => (
             <ApartmentCard apartment={apartment} index={index} key={apartment.apartmentName} />
           ))}
         </div>
       </div>
     </div>
   );
-};
-
-export default Category;
+}

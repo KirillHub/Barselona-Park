@@ -25,6 +25,7 @@ const ApartmentSchema = new mongoose.Schema(
     },
 
     about: {
+      type: Object,
       viev: {
         type: String,
         require: true,

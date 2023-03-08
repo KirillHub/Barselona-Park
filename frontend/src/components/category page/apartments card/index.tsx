@@ -19,6 +19,8 @@ interface MyProps {
   index: number
 }
 
+
+
 export const ApartmentCard = ({ apartment, index }: MyProps) => {
   const setApartmentsLength = useStore((state) => state.setApartmentsLength);
 
@@ -32,6 +34,8 @@ export const ApartmentCard = ({ apartment, index }: MyProps) => {
   const service = pathname?.split('/')[4];
 
   const filterBy = categoryMeta(sort)?.filterBy;
+
+
 
   // let apartments: Apartment[] = apartmentsData;
 
