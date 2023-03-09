@@ -58,7 +58,7 @@ export const categoryPars = (category: string) => {
     },
     {
       id: 'With-oven',
-      filterBy: { 'services.oven': true },
+      filterBy: { 'services.stove': true },
     },
     {
       id: 'With-dishwasher',
@@ -70,6 +70,5 @@ export const categoryPars = (category: string) => {
     },
   ];
 
-
-  return allCategories.find(obj => obj.id === category)?.filterBy
+  return allCategories.find((obj) => obj.id === category)?.filterBy;
 };

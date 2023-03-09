@@ -21,6 +21,8 @@ export const ApartmentInfo = ({ apartment }: MyProps) => {
 
       <Options apartment={apartment} />
 
+      <Service apartment={apartment} />
+      
       <Price apartment={apartment} />
     </div>
   );

@@ -4190,13 +4190,13 @@ export const apartmentsData: Apartment[] = [
 ];
 
 // for (let i = 0; i < arr.length; i++) {
-//   fetch('http://localhost:3500/addNewApartment', {
-//     method: 'POST',
-//     body: JSON.stringify(arr[i]),
-//     headers: {
-//       'Content-type': 'application/json; charset=UTF-8',
-//     },
-//   })
-//     .then((res) => res.json())
-//     .then(console.log);
+  // fetch('http://localhost:3500/addNewApartment', {
+  //   method: 'POST',
+  //   body: JSON.stringify(arr[i]),
+  //   headers: {
+  //     'Content-type': 'application/json; charset=UTF-8',
+  //   },
+  // })
+  //   .then((res) => res.json())
+  //   .then(console.log);
 // }

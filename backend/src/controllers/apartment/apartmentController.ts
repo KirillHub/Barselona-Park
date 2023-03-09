@@ -1,21 +1,33 @@
 import ApartmentSchema from '../../models/apartment.js';
 import { categoryPars } from '../../helpers/categoryParse.js';
+import { categorySort } from '../../helpers/categorySort.js';
+import { categoryService } from '../../helpers/service.js';
 // import mongoose from 'mongoose';
 
 export const getAllApartments = async (req: any, res: any) => {
   try {
     const category = categoryPars(req.params.category);
 
-    console.log(category);
+    if (category === undefined) return;
 
-    const a = {
-      'about.floor': { $gt: '0' },
-    };
+    const service = categoryService(req.params.service);
 
-    if (category !== undefined) {
-      const apartments = await ApartmentSchema.find(category).limit(6);
-      res.json(apartments);
-    }
+    const mergedObj = Object.assign({}, ...service, category);
+
+    const apartments: any = await ApartmentSchema.find({
+      $and: [mergedObj],
+    });
+
+    const cutApartments = [...apartments].slice(0, req.params.quantity);
+
+
+    const sort = req.params.sort !== 'undefined' ? req.params.sort : 'Without-sort';
+
+    const sortedApartments = categorySort([...cutApartments], sort);
+
+    const readyData = sort === 'Without-sort' ? cutApartments : sortedApartments;
+
+    res.json({ data: readyData, length: apartments.length });
   } catch (err) {
     console.log(err);
 

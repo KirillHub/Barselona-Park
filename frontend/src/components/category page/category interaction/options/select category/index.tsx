@@ -4,14 +4,16 @@ import { More } from '../../../../../svg';
 import { categoryMeta, meta } from '../../../../meta/categoryMeta';
 import styles from '../style.module.scss';
 import useStore from '../../../../../store/useStore';
+import { usePathname } from 'next/navigation';
 
 export const SelectCategory = () => {
   const [showCategories, setShowCategories] = useState(false);
-  const selectedPageId = useStore(state => state.selectedPageId)
 
+  const selectedPageId = useStore((state) => state.selectedPageId);
+  const setCheckBox = useStore((state) => state.setCheckBox);
 
-
-  const selectedMeta = categoryMeta(selectedPageId);
+ const pathname = usePathname();
+ const category = pathname?.split('/')[2];
 
 
   return (
@@ -32,15 +34,16 @@ export const SelectCategory = () => {
           styles.swapCategoryContent + ' ' + `${showCategories ? styles.visible : styles.hidden}`
         }
       >
-          {meta.map((x) => (
-            <Link
-              href={`/Category/${x.id}`}
-              key={x.id}
-              className={selectedMeta?.id === x.id ? styles.selectedCategory : ''}
-            >
-              {x.name}
-            </Link>
-          ))}
+        {meta.map((x) => (
+          <Link
+            href={`/Category/${x.id}`}
+            key={x.id}
+            className={category === x.id ? styles.selectedCategory : ''}
+            onClick={() => setCheckBox([false, false, false, false, false, false])}
+          >
+            {x.name}
+          </Link>
+        ))}
       </div>
     </div>
   );

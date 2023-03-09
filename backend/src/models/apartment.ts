@@ -4,7 +4,6 @@ const ApartmentSchema = new mongoose.Schema(
   {
     apartmentName: {
       type: String,
-      require: true,
       unique: true,
     },
 
