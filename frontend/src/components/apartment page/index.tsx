@@ -11,8 +11,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 import styles from './style.module.scss';
 
 import { reservationDays } from '../functions/reservationDays';
+import { Apartment } from '../types/type';
 
-export const Apartment = () => {
+interface MyProps {
+  linkId: string;
+}
+
+export default function Apart({ linkId }: MyProps) {
   // const dispatch = useAppDispatch();
   // const apartmentPage = useAppSelector((state) => state.apartmentPage);
 
@@ -34,9 +39,9 @@ export const Apartment = () => {
 
   const pathname = usePathname();
 
-  const apartmentId = pathname?.split('/')[2];
+  const apartmentId = pathname?.split('/')[1];
 
-  const apartment = apartmentsData?.find((x) => x.apartmentName === apartmentId);
+  const apartment1 = apartmentsData?.find((x) => x.apartmentName === apartmentId?.split('-')[1]);
 
   // console.log(apartment?.description.join(' '))
 
@@ -57,16 +62,16 @@ export const Apartment = () => {
   }
   let i = 0;
 
-    // fetch('http://localhost:3500/addNewApartment', {
-    //   method: 'POST',
-    //   headers: {
-    //     Accept: 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(apartmentsData[0]),
-    // })
-    //   .then((response) => response.json())
-    //   .then((response) => console.log(JSON.stringify(response)));
+  // fetch('http://localhost:3500/addNewApartment', {
+  //   method: 'POST',
+  //   headers: {
+  //     Accept: 'application/json',
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify(apartmentsData[0]),
+  // })
+  //   .then((response) => response.json())
+  //   .then((response) => console.log(JSON.stringify(response)));
 
   // useEffect(() => {
   //   apartmentsData.map(x => {
@@ -83,10 +88,10 @@ export const Apartment = () => {
   //   })
   // }, []);
 
-  if (apartment === undefined) return <div>Загрузка</div>;
+  if (apartment1 === undefined) return <div>Загрузка</div>;
   return (
     <div className={styles.apartment}>
-      <div className={styles.apartmentName}>Апартамент {apartment.apartmentName}</div>
+      <div className={styles.apartmentName}>Апартамент {apartment1?.apartmentName}</div>
 
       {/* <div className={styles.apartmentTop}>
         <div className={styles.apartmentTopSlider}>
@@ -123,7 +128,7 @@ export const Apartment = () => {
       </div> */}
 
       <ul className={styles.apartmentUl}>
-        {apartment.about.description.map((x, i) => (
+        {apartment1?.about.description.map((x, i) => (
           <li key={i} className={styles.apartmentUlLi}>
             {x}
           </li>
@@ -131,9 +136,7 @@ export const Apartment = () => {
       </ul>
     </div>
   );
-};
-
-export default Apartment;
+}
 
 // <form className="calendar-form" onSubmit={handleSubmit(onSubmit)}>
 //   <div className="div-bloc">

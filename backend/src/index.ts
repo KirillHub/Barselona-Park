@@ -16,7 +16,7 @@ app.use(express.json({ limit: '1mb' }), cors());
 
 
 
-app.get('/Apartments/:category/:sort/:service/:quantity', ApartmentController.getAllApartments);
+app.get('/:category/:sort/:service/:quantity', ApartmentController.getAllApartments);
 app.post('/addNewApartment', ApartmentController.addApartments);
 
 

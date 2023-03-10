@@ -8,6 +8,8 @@ export const getAllApartments = async (req: any, res: any) => {
   try {
     const category = categoryPars(req.params.category);
 
+    console.log('get ' + req.params.category);
+
     if (category === undefined) return;
 
     const service = categoryService(req.params.service);
@@ -19,7 +21,6 @@ export const getAllApartments = async (req: any, res: any) => {
     });
 
     const cutApartments = [...apartments].slice(0, req.params.quantity);
-
 
     const sort = req.params.sort !== 'undefined' ? req.params.sort : 'Without-sort';
 
