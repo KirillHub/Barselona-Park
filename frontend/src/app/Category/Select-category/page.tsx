@@ -1,7 +1,5 @@
-import SelectCategory from "../../../components/main page/category";
-
+import SelectCategory from '../../../components/select category/selectCategory';
 
 export default async function Select() {
-
-  return <SelectCategory  />;
-};
+  return <SelectCategory />;
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { readyIcons } from '../../../../functions/readyIcons';
-import { Apartment } from '../../../../types/type';
+import { readyIcons } from '../../../../helpers/functions/readyIcons';
+import { Apartment } from '../../../../helpers/types/type';
 import styles from '../style.module.scss';
 
 interface MyProps {
@@ -35,7 +35,7 @@ export const Service = ({ apartment }: MyProps) => {
 
   let fixSpace = 1;
 
-  if (apartment.about.balcony = 'С балконом') {
+  if ((apartment.about.balcony = 'С балконом')) {
     fixSpace += 1;
   }
   if (apartment.services.stove) {
@@ -48,7 +48,6 @@ export const Service = ({ apartment }: MyProps) => {
     fixSpace += 1;
   }
 
-
   const showTitle = (iconIndex: number) => {
     setTitles(titles.map((title, index) => (index === iconIndex ? true : title)));
 
@@ -60,16 +59,16 @@ export const Service = ({ apartment }: MyProps) => {
   return (
     <div className={styles.infoService}>
       <div className={styles.infoServiceShownIcons}>
-          {icons.map((icon, index) =>
-            index < 10 - fixSpace && icon.title !== '' ? (
-              <div onClick={() => showTitle(index)} key={icon.title}>
-                {icon.jsx}
-                <span className={`${titles[index] ? styles.visible : styles.hidden}`}>{icon.title}</span>
-              </div>
-            ) : (
-              ''
-            ),
-          )}
+        {icons.map((icon, index) =>
+          index < 10 - fixSpace && icon.title !== '' ? (
+            <div onClick={() => showTitle(index)} key={icon.title}>
+              {icon.jsx}
+              <span className={`${titles[index] ? styles.visible : styles.hidden}`}>{icon.title}</span>
+            </div>
+          ) : (
+            ''
+          ),
+        )}
       </div>
 
       <div
@@ -83,18 +82,16 @@ export const Service = ({ apartment }: MyProps) => {
             styles.infoServiceAllIcons + ' ' + `${showService ? styles.visible : styles.hidden}`
           }
         >
-            {icons.map((icon, index) =>
-              index > 9 - fixSpace && icon.title !== '' ? (
-                <div onClick={() => showTitle(index)} key={icon.title}>
-                  {icon.jsx}
-                  <span className={`${titles[index] ? styles.visible : styles.hidden}`}>
-                    {icon.title}
-                  </span>
-                </div>
-              ) : (
-                ''
-              ),
-            )}
+          {icons.map((icon, index) =>
+            index > 9 - fixSpace && icon.title !== '' ? (
+              <div onClick={() => showTitle(index)} key={icon.title}>
+                {icon.jsx}
+                <span className={`${titles[index] ? styles.visible : styles.hidden}`}>{icon.title}</span>
+              </div>
+            ) : (
+              ''
+            ),
+          )}
         </div>
       </div>
     </div>

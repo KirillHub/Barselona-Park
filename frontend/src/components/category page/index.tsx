@@ -4,10 +4,10 @@ import { ApartmentCard } from '../../components/category page/apartments card';
 import { CategoryInteraction } from '../../components/category page/category interaction';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from './style.module.scss';
-import { categoryMeta } from '../meta/categoryMeta';
+import { categoryMeta } from '../helpers/meta/categoryMeta';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Apartment } from '../types/type';
+import { Apartment } from '../helpers/types/type';
 import useSWR from 'swr';
 import { apartmentsData } from '../../backend/apartmnetsData';
 
@@ -21,9 +21,6 @@ interface Myfetch {
 const fetcher = (url: string) => fetch(url, { cache: 'force-cache' }).then((res) => res.json());
 
 const useCategory = (category: string, sort: string, service: string, quantity: number) => {
-
-  console.log(`http://localhost:3500/${category}/${sort}/${service}/${quantity}`);
-
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
     `http://localhost:3500/${category}/${sort}/${service}/${quantity}`,
     fetcher,

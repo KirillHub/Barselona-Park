@@ -2,7 +2,7 @@ import { useState, forwardRef, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { subDays, addDays } from 'date-fns';
 import ru from 'date-fns/locale/ru';
-import { reservationDays } from '../../../../functions/reservationDays';
+import { reservationDays } from '../../../../helpers/functions/reservationDays';
 import { More } from '../../../../../svg';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from '../style.module.scss';

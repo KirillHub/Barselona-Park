@@ -18,7 +18,7 @@ import {
   Sea,
   City,
   Towels,
-} from '../../svg';
+} from '../../../svg';
 import { Apartment } from '../types/type';
 
 export const readyIcons = (apartment: Apartment) => {

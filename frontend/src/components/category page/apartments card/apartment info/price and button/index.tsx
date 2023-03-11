@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Apartment } from '../../../../types/type';
+import { Apartment } from '../../../../helpers/types/type';
 import styles from '../style.module.scss';
 
 interface MyProps {

@@ -1,4 +1,4 @@
-import { Apartment } from '../../components/types/type';
+import { Apartment } from '../../components/helpers/types/type';
 import Apart from '../../components/apartment page';
 
 export async function generateStaticParams() {

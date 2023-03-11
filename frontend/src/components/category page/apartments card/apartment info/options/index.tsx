@@ -1,4 +1,4 @@
-import { Apartment } from '../../../../types/type';
+import { Apartment } from '../../../../helpers/types/type';
 import { Rooms, Blueprint, Bed } from '../../../../../svg';
 import styles from '../style.module.scss';
 

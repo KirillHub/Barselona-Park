@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { More } from '../../../../../svg';
-import { categoryMeta, meta } from '../../../../meta/categoryMeta';
+import { categoryMeta, meta } from '../../../../helpers/meta/categoryMeta';
 import styles from '../style.module.scss';
 import useStore from '../../../../../store/useStore';
 import { usePathname } from 'next/navigation';
@@ -12,9 +12,8 @@ export const SelectCategory = () => {
   const selectedPageId = useStore((state) => state.selectedPageId);
   const setCheckBox = useStore((state) => state.setCheckBox);
 
- const pathname = usePathname();
- const category = pathname?.split('/')[2];
-
+  const pathname = usePathname();
+  const category = pathname?.split('/')[2];
 
   return (
     <div

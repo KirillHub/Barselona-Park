@@ -10,8 +10,8 @@ import { apartmentsData } from '../../backend/apartmnetsData';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './style.module.scss';
 
-import { reservationDays } from '../functions/reservationDays';
-import { Apartment } from '../types/type';
+import { reservationDays } from '../helpers/functions/reservationDays';
+import { Apartment } from '../helpers/types/type';
 
 interface MyProps {
   linkId: string;

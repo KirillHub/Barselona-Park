@@ -43,7 +43,15 @@
     height: 100%;
 
     .sliderImageSpan {
+      position: absolute;
+      width: 100%;
+
+      text-align: center;
+
       line-height: calc(50px + 270 * (100vw / 1920));
+
+      font-size: calc(10px + 10 * (100vw / 1920));
+      color: rgba(255, 255, 255, 0.76);
 
       @media (width < 805px) {
         line-height: calc(90px + 125 * (100vw / 805));
@@ -59,18 +67,4 @@
   .swiper-button-next::after {
     color: rgb(0, 0, 0);
   }
-}
-
-.sliderImageSpan {
-  position: absolute;
-  width: 100%;
-
-  text-align: center;
-
-  font-size: calc(10px + 10 * (100vw / 1920));
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.sliderImagePicture {
-  position: relative;
 }

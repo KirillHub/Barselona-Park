@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation';
 import { Options } from './options';
 import { Service } from './service';
 import { Price } from './price and button';
-import { Apartment } from '../../../types/type';
+import { Apartment } from '../../../helpers/types/type';
 import styles from './style.module.scss';
 
 interface MyProps {
@@ -22,7 +22,7 @@ export const ApartmentInfo = ({ apartment }: MyProps) => {
       <Options apartment={apartment} />
 
       <Service apartment={apartment} />
-      
+
       <Price apartment={apartment} />
     </div>
   );
