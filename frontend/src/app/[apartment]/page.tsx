@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   const apartments: Arara = await response.json();
 
   return apartments.data.map((apartment: Apartment) => ({
-    apartment: apartment.apartmentName,
+    apartment: `Apartment-${apartment.apartmentName}`,
   }));
 }
 

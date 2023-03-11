@@ -12,7 +12,7 @@ export const Price = ({ apartment }: MyProps) => {
 
   const router = useRouter();
 
-  const handleClick = (id: string) => router.push(`/Apartment/${id}`);
+  const handleClick = (id: string) => router.push(`/Apartment-${id}`);
 
   const showTitle = (iconIndex: number) => {
     setTitles(titles.map((title, index) => (index === iconIndex ? true : title)));
