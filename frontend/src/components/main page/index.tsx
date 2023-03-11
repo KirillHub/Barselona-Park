@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { useEffect } from 'react';
 
-import { SelectCategory } from '../select category/selectCategory';
+import SelectCategory from '../select category/selectCategory';
 import { Telegram, Whatsapp } from '../../svg';
 import {
   Conditioner,
