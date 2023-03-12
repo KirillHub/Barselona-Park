@@ -22,7 +22,7 @@ const fetcher = (url: string) => fetch(url, { cache: 'force-cache' }).then((res)
 
 const useCategory = (category: string, sort: string, service: string, quantity: number) => {
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
-    `http://localhost:3500/${category}/${sort}/${service}/${50}`,
+    `https://barsa-back.onrender.com/${category}/${sort}/${service}/${50}`,
     fetcher,
   );
 
