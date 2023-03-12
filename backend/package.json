@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm nodemon",
-    "build": "pnpm tsc",
+    "build": "npm tsc",
     "start": "node build/index"
   },
   "keywords": [],
