@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm nodemon",
-    "build": "pnpm tsc",
-    "start": "pnpm run build && node build/index"
+    "build": "npm tsc",
+    "start": "npm run build && node build/index"
   },
   "keywords": [],
   "author": "bi_zi",
