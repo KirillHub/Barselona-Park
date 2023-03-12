@@ -58,19 +58,11 @@ export const MainPicture = () => {
           <Image
             priority
             fill
-            sizes="1000px"
             quality={100}
-            style={{ objectFit: 'cover' }}
-            src="/mainImage.jpg"
+            style={{ objectFit: 'fill' }}
+            src="/2.jpg"
             alt="Апартамент-1104"
           />
-        </div>
-
-        <div className="main-page-container__barselona-park">
-          <h1>Barselona Park </h1>
-          <a className="main-page-container__barselona-park__button" href="https://clck.ru/33DmGb">
-            Расположение
-          </a>
         </div>
 
         <div className="main-page-container-service">

@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { Apartment } from '../helpers/types/type';
 import useSWR from 'swr';
-import { apartmentsData } from '../../backend/apartmnetsData';
+import { apartmentsData } from '../../fake/apartmnetsData';
 
 export const dynamic = 'force-static';
 

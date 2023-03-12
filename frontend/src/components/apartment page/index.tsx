@@ -6,18 +6,15 @@ import { useForm } from 'react-hook-form';
 import ru from 'date-fns/locale/ru';
 import { subDays, addDays } from 'date-fns';
 import { usePathname } from 'next/navigation';
-import { apartmentsData } from '../../backend/apartmnetsData';
+import { apartmentsData } from '../../fake/apartmnetsData';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './style.module.scss';
 
 import { reservationDays } from '../helpers/functions/reservationDays';
 import { Apartment } from '../helpers/types/type';
 
-interface MyProps {
-  linkId: string;
-}
 
-export default function Apart({ linkId }: MyProps) {
+export default function Apart() {
   // const dispatch = useAppDispatch();
   // const apartmentPage = useAppSelector((state) => state.apartmentPage);
 
