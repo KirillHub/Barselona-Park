@@ -1,7 +1,7 @@
-import ApartmentSchema from '../../models/apartment.js';
-import { categoryPars } from '../../helpers/categoryParse.js';
-import { categorySort } from '../../helpers/categorySort.js';
-import { categoryService } from '../../helpers/service.js';
+import ApartmentSchema from '#/models/apartment';
+import { categoryPars } from '#/helpers/categoryParse';
+import { categorySort } from '#/helpers/categorySort';
+import { categoryService } from '#/helpers/service';
 // import mongoose from 'mongoose';
 
 export const getAllApartments = async (req: any, res: any) => {

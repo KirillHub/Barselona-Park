@@ -1,1 +1,1 @@
-export * as ApartmentController from './apartment/apartmentController.js';
+export * as ApartmentController from '#/controllers/apartment/apartmentController';

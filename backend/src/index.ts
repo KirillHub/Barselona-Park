@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
-import { ApartmentController } from './controllers/index.js';
+import { ApartmentController } from '#/controllers/index';
 
 mongoose
   .connect(`mongodb+srv://${process.env.MONGO}@barselonadb.tad5xvw.mongodb.net/barselonaPark`)
