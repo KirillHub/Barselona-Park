@@ -1,6 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { SliderImages } from '../category page/apartments card/slider images';
+import { useEffect, useState, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import { useForm } from 'react-hook-form';
 import ru from 'date-fns/locale/ru';
@@ -8,89 +7,100 @@ import { subDays, addDays } from 'date-fns';
 import { usePathname } from 'next/navigation';
 import { apartmentsData } from '../../fake/apartmnetsData';
 import 'react-datepicker/dist/react-datepicker.css';
+import Image from 'next/image';
 import styles from './style.module.scss';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, A11y, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Options } from '../category page/category interaction/options';
 
 import { reservationDays } from '../helpers/functions/reservationDays';
 import { Apartment } from '../helpers/types/type';
 
-
 export default function Apart() {
-  // const dispatch = useAppDispatch();
-  // const apartmentPage = useAppSelector((state) => state.apartmentPage);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data: any) => console.log();
-
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
-
-  const onChange = (dates: any) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
-  };
-
   const pathname = usePathname();
 
   const apartmentId = pathname?.split('/')[1];
 
-  const apartment1 = apartmentsData?.find((x) => x.apartmentName === apartmentId?.split('-')[1]);
+  const apartment = apartmentsData?.find((x) => x.apartmentName === apartmentId?.split('-')[1]);
 
-  // console.log(apartment?.description.join(' '))
-
-  const excludedDates = [
-    'Mar 08 2023',
-    'Mar 09 2023',
-    'Mar 10 2023',
-    'Mar 12 2023',
-    'Mar 13 2023',
-    'Mar 14 2023',
-    'Mar 23 2023',
-    'Mar 24 2023',
-    'Mar 25 2023',
-  ].map((x) => new Date(x));
-
-  if (endDate !== null) {
-    // console.log(reservationDays(startDate, endDate, excludedDates));
-  }
-  let i = 0;
-
-  // fetch('http://localhost:3500/addNewApartment', {
-  //   method: 'POST',
-  //   headers: {
-  //     Accept: 'application/json',
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify(apartmentsData[0]),
-  // })
-  //   .then((response) => response.json())
-  //   .then((response) => console.log(JSON.stringify(response)));
-
-  // useEffect(() => {
-  //   apartmentsData.map(x => {
-  //     fetch('http://localhost:3500/addNewApartment', {
-  //     method: 'POST',
-  //     headers: {
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(x),
-  //   })
-  //     .then((response) => response.json())
-  //         .then((response) => console.log(JSON.stringify(response)));
-  //   })
-  // }, []);
-
-  if (apartment1 === undefined) return <div>Загрузка</div>;
+  if (apartment === undefined) return <div>Загрузка</div>;
   return (
     <div className={styles.apartment}>
-      <div className={styles.apartmentName}>Апартамент {apartment1?.apartmentName}</div>
+      <p>Апартамент {apartment.apartmentName}</p>
 
-      {/* <div className={styles.apartmentTop}>
+      <Swiper
+        slidesPerView={2}
+        spaceBetween={30}
+        navigation
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Navigation, A11y, Pagination]}
+        className={styles.apartmentSlider}
+      >
+        {apartment?.images?.map((image, index) => (
+          <SwiperSlide key={image.id}>
+            <Image
+              src={image.image}
+              fill
+              sizes="790px"
+              priority={index < 2 ? true : false}
+              quality={100}
+              alt={`test`}
+              className={styles.apartmentSliderImage}
+              style={{ objectFit: 'contain' }}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div className={styles.apartmentSecondBlock}>
+        <ul className={styles.apartmentDesctiption}>
+          {apartment.about.description.map((text,index) => (
+            <li key={index}>{text}</li>
+          ))}
+        </ul>
+
+        <div className={styles.apartmentBooking}>
+          <Options />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// const [startDate, setStartDate] = useState(new Date());
+// const [endDate, setEndDate] = useState(null);
+
+// const onChange = (dates: any) => {
+//   const [start, end] = dates;
+//   setStartDate(start);
+//   setEndDate(end);
+// };
+
+// const excludedDates = [
+//   'Mar 08 2023',
+//   'Mar 09 2023',
+//   'Mar 10 2023',
+//   'Mar 12 2023',
+//   'Mar 13 2023',
+//   'Mar 14 2023',
+//   'Mar 23 2023',
+//   'Mar 24 2023',
+//   'Mar 25 2023',
+// ].map((x) => new Date(x));
+
+// if (endDate !== null) {
+//   // console.log(reservationDays(startDate, endDate, excludedDates));
+// }
+// let i = 0;
+
+/* <div className={styles.apartmentTop}>
         <div className={styles.apartmentTopSlider}>
           <SliderImages
             apartment={apartment}
@@ -122,18 +132,7 @@ export default function Apart() {
             fixedHeight
           />
         </div>
-      </div> */}
-
-      <ul className={styles.apartmentUl}>
-        {apartment1?.about.description.map((x, i) => (
-          <li key={i} className={styles.apartmentUlLi}>
-            {x}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+      </div> */
 
 // <form className="calendar-form" onSubmit={handleSubmit(onSubmit)}>
 //   <div className="div-bloc">

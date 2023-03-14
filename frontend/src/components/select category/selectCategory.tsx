@@ -8,12 +8,12 @@ export default function SelectCategory() {
     <div className={styles.selectCategory}>
       {categories.map((category) => (
         <Link href={category.link} key={category.name}>
-          <span>{category.name}</span>
+          <span className={styles.selectCategoryTitle}>{category.name}</span>
           <div className={styles.selectCategoryImage}>
             <Image
               fill
               quality={75}
-              sizes="calc(120px + 160 * (100vw / 1920))"
+              sizes="calc(100px + 150 * (100vw / 1920))"
               src={category.src}
               alt={category.alt}
               style={{ borderRadius: 'calc(8px + 8 * (100vw / 1920))', objectFit: 'contain' }}

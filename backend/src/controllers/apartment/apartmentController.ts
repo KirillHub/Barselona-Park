@@ -18,7 +18,9 @@ export const getAllApartments = async (req: any, res: any) => {
 
     const apartments: any = await ApartmentSchema.find({
       $and: [mergedObj],
-    });
+    }).sort({ apartmentName: 1 });
+
+
 
     const cutApartments = [...apartments].slice(0, req.params.quantity);
 

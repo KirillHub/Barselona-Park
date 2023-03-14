@@ -25,7 +25,7 @@ export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) =>
   return (
     <Swiper
       modules={[Navigation, A11y]}
-      spaceBetween={5}
+      spaceBetween={0}
       slidesPerView={options?.lazy}
       navigation
       className={styles.slider}

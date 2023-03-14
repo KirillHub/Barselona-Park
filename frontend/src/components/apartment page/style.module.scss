@@ -1,51 +1,50 @@
 .apartment {
   position: relative;
+  margin: 4vh 8vw;
 
-  margin: 2vh 8vw 2vh 8vw;
+  height: auto;
 
-  @media (width < 800px) {
-    margin: 1vh 4vw 2vh 4vw;
+  .apartmentSlider {
+    position: relative;
+    margin: 0 auto;
+
+    height: 525px;
+    z-index: 0;
+
+    .apartmentSliderImage {
+      width: 790px !important;
+    }
   }
 
-  .apartmentName {
-    margin-bottom: 2vh;
-
-    font-size: calc(17px + 15 * (100vw / 1920));
-  }
-
-  .apartmentTop {
+  .apartmentSecondBlock {
     display: flex;
+    position: relative;
+
+    margin-top: 2vh;
 
     justify-content: space-between;
 
-    .apartmentTopSlider {
-      width: 58%;
+    .apartmentDesctiption {
+      padding: calc(5px + 10 * (100vw / 1920));
+      width: 68%;
 
-      .apartmentTopSliderImage {
-        position: relative;
+      border-radius: calc(5px + 5 * (100vw / 1920));
+      box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
 
-        height: calc(120px + 240 * (100vw / 1920));
-        z-index: 1;
+      background-color: rgb(28, 28, 28);
 
-        .sliderImageSpan {
-          height: calc(120px + 315 * (100vw / 1920));
+      li {
+        margin-top: 0.5vw;
+        list-style: inside;
+
+        &:first-child {
+          margin: 0;
         }
       }
     }
 
-    .apartmentTopCalendar {
-      position: relative;
+    .apartmentBooking {
+      width: 28%;
     }
-  }
-}
-
-.apartmentUl {
-  display: list-item;
-  width: 60%;
-
-  .apartmentUlLi {
-    margin-bottom: 1.5vh;
-
-    font-size: calc(10px + 10 * (100vw / 1920));
   }
 }

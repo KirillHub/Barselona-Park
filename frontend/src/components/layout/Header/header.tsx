@@ -1,11 +1,34 @@
+'use client';
 import Link from 'next/link';
+
+import { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import './style.scss';
 
 export const Header = () => {
-  const onContactClick = () => {};
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const pathname = usePathname();
+  const apartment = pathname?.split('/')[1].split('-')[0];
+  const category = pathname?.split('/')[2];
+
+  const checkHeader = category === 'Select-category' || apartment === 'Apartment';
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="header">
+    <header className={`header ${scrollPosition >= 100 || checkHeader ? 'headerBlack' : ''}`}>
       <nav className="header-container">
         <p className="header-p">
           <Link href="">Барселона парк</Link>
