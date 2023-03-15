@@ -18,7 +18,7 @@ export const findSimilarApartments = (apartment: ApartmentsType, option: string)
     if (apartment.about?.balcony === 'С балконом') {
       service.push('balcony');
     }
-    if (apartment.services?.oven) {
+    if (apartment.services?.stove) {
       service.push('oven');
     }
     if (apartment.services?.dishwasher) {
