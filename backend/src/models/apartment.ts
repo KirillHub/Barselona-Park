@@ -3,22 +3,22 @@ import mongoose from 'mongoose';
 const ApartmentSchema = new mongoose.Schema(
   {
     apartmentName: {
-      type: String,
+      type: Number,
       unique: true,
     },
 
     summerPrice: {
-      type: String,
+      type: Number,
       require: true,
     },
 
     winterPrice: {
-      type: String,
+      type: Number,
       require: true,
     },
 
     sortIndex: {
-      type: String,
+      type: Number,
       require: true,
       unique: true,
     },
@@ -36,22 +36,22 @@ const ApartmentSchema = new mongoose.Schema(
       },
 
       rooms: {
-        type: String,
+        type: Number,
         require: true,
       },
 
       sleepingPlaces: {
-        type: String,
+        type: Number,
         require: true,
       },
 
       squareMeters: {
-        type: String,
+        type: Number,
         require: true,
       },
 
       floor: {
-        type: String,
+        type: Number,
         require: true,
       },
 

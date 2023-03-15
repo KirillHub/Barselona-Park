@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Apartment } from '../../../../helpers/types/type';
+import { MyApartments } from '../../../../helpers/types/type';
 import styles from '../style.module.scss';
 
 interface MyProps {
-  apartment: Apartment;
+  apartment: MyApartments;
 }
 
 export const Price = ({ apartment }: MyProps) => {
@@ -12,7 +12,7 @@ export const Price = ({ apartment }: MyProps) => {
 
   const router = useRouter();
 
-  const handleClick = (id: string) => router.push(`/Apartment-${id}`);
+  const handleClick = (id: number) => router.push(`/Apartment-${id}`);
 
   const showTitle = (iconIndex: number) => {
     setTitles(titles.map((title, index) => (index === iconIndex ? true : title)));

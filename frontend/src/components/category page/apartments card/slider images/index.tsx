@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Apartment } from '../../../helpers/types/type';
+import { MyApartments } from '../../../helpers/types/type';
 import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
@@ -9,7 +9,7 @@ import 'swiper/css';
 import styles from '../style.module.scss';
 
 interface MyProps {
-  apartment: Apartment;
+  apartment: MyApartments;
   apartmentIndex: number;
   options: {
     className: string | any;

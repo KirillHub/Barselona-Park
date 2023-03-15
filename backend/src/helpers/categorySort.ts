@@ -32,30 +32,23 @@ export const categorySort = (apartments: any, link: string) => {
   ];
 
   const selectedSort =
-    first === 'Sorted-by-summer-season' || first === 'Sorted-by-winter-season'
-      ? easySort
-      : hardSort;
+    first === 'Sorted-by-summer-season' || first === 'Sorted-by-winter-season' ? easySort : hardSort;
 
   const sortOption = selectedSort.find((x) => x.id === first);
-
 
   const sorter = (field: string) => {
     if (selectedSort.length === 2) {
       if (second === 'more') {
-        return (a: any, b: any) =>
-          +a[field]?.split(' ')?.join('') > +b[field]?.split(' ')?.join('') ? -1 : 1;
+        return (a: any, b: any) => (a[field] > b[field] ? -1 : 1);
       } else {
-        return (a: any, b: any) =>
-          +a[field]?.split(' ')?.join('') < +b[field]?.split(' ')?.join('') ? -1 : 1;
+        return (a: any, b: any) => (b[field] > a[field] ? -1 : 1);
       }
     } else {
-       if (second === 'more') {
-         return (a: any, b: any) =>
-           +a.about[field]?.split(' ')?.join('') > +b.about[field]?.split(' ')?.join('') ? -1 : 1;
-       } else {
-         return (a: any, b: any) =>
-           +a.about[field]?.split(' ')?.join('') < +b.about[field]?.split(' ')?.join('') ? -1 : 1;
-       }
+      if (second === 'more') {
+        return (a: any, b: any) => (a.about[field] > b.about[field] ? -1 : 1);
+      } else {
+        return (a: any, b: any) => (b.about[field] > a.about[field] ? -1 : 1);
+      }
     }
   };
 

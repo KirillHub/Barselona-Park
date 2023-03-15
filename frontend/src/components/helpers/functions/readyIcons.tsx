@@ -19,9 +19,9 @@ import {
   City,
   Towels,
 } from '../../../svg';
-import { Apartment } from '../types/type';
+import { MyApartments } from '../types/type';
 
-export const readyIcons = (apartment: Apartment) => {
+export const readyIcons = (apartment: MyApartments) => {
   return [
     {
       jsx: apartment.about.balcony === 'С балконом' ? <Balcony /> : '',

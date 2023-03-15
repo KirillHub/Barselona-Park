@@ -1,9 +1,9 @@
-import { Apartment } from '../../../../helpers/types/type';
+import { MyApartments } from '../../../../helpers/types/type';
 import { Rooms, Blueprint, Bed } from '../../../../../svg';
 import styles from '../style.module.scss';
 
 interface MyProps {
-  apartment: Apartment;
+  apartment: MyApartments;
 }
 
 export const Options = ({ apartment }: MyProps) => {

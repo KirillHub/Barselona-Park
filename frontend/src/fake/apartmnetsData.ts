@@ -1,18 +1,21 @@
-import { Apartment } from '../components/helpers/types/type';
+import { MyApartments } from '../components/helpers/types/type';
 
-export const apartmentsData: Apartment[] = [
+export const apartmentsData: MyApartments[] = [
   {
-    apartmentName: '1416',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '42',
+    _id: {
+      $oid: '6408367d4816f2c23e8ac41a',
+    },
+    apartmentName: 1416,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 42,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '3',
-      sleepingPlaces: '6',
-      squareMeters: '60',
-      floor: '14',
+      rooms: 3,
+      sleepingPlaces: 6,
+      squareMeters: 60,
+      floor: 14,
       description: [
         'Представляем вам уютный трехкомнатный апартамент площадью 60 m² с 6 спальными местами для комфортного проживания в компании семьи или друзей.',
         'В спальнях находятся двуспальные кровати и кондиционеры для того, чтобы гости могли комфортно отдохнуть и насладиться теплой атмосферой.',
@@ -85,19 +88,33 @@ export const apartmentsData: Apartment[] = [
         'Забронируйте уютный трехкомнатный апартамент площадью 60 m², 6 спальных мест в Барселона Парк, Сочи. Имеются две спальни с кондиционерами, балкон с видом на море и бесплатный Wi-Fi',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.681Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.681Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1415',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '41',
+    _id: {
+      $oid: '640836804816f2c23e8ac452',
+    },
+    apartmentName: 1415,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 41,
     about: {
       view: 'Вид на море',
       balcony: 'Без балкона',
-      rooms: '3',
-      sleepingPlaces: '6',
-      squareMeters: '60',
-      floor: '14',
+      rooms: 3,
+      sleepingPlaces: 6,
+      squareMeters: 60,
+      floor: 14,
       description: [
         'Добро пожаловать в уютный трехкомнатный апартамент, площадью 60 m², c 6 спальными местами, идеально подходящий для проживания вместе с семьей или друзьями.',
         'В двух спальнях находятся удобные двуспальные кровати и кондиционеры для того, чтобы гости могли полностью расслабиться и насладиться теплой атмосферой.',
@@ -191,19 +208,33 @@ export const apartmentsData: Apartment[] = [
         'Уютный трехкомнатный апартамент площадью 60 m² с 6 спальными местами в Барселона Парк, Сочи. Две спальни с кондиционерами, балкон с видом на море и бесплатный Wi-Fi - забронируйте уже сегодня!',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.119Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.119Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1410',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '40',
+    _id: {
+      $oid: '640836804816f2c23e8ac456',
+    },
+    apartmentName: 1410,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 40,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '54',
-      floor: '14',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 54,
+      floor: 14,
       description: [
         'Представляем вам уютные двухкомнатные апартаменты площадью 54 m², где могут разместиться до 4 гостей - идеальный выбор для семейного отдыха или компании друзей.',
         'В спальне расположена удобная двуспальная кровать, а в гостиной Вы можете расслабиться на раскладном диване и насладиться потрясающим видом на море.',
@@ -297,19 +328,33 @@ export const apartmentsData: Apartment[] = [
         'Уютные двухкомнатные апартаменты в Барселона Парк, Сочи. Разместят до 4 гостей, с потрясающим видом на море, оборудованной кухней и балконом. Бесплатный Wi-Fi и кондиционеры.',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.307Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.307Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1409',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '39',
+    _id: {
+      $oid: '640836804816f2c23e8ac458',
+    },
+    apartmentName: 1409,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 39,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '3',
-      squareMeters: '50',
-      floor: '14',
+      rooms: 2,
+      sleepingPlaces: 3,
+      squareMeters: 50,
+      floor: 14,
       description: [
         'Представляем вам двухкомнатный апартамент площадью 50 m² с 3 спальными местами, который идеально подходит для семьи или компании друзей.',
         'В спальне удобная кровать и кондиционер, чтобы обеспечить качественный сон.',
@@ -383,19 +428,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 50 m², 3 спальных места, 14 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.375Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.375Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1404',
-    summerPrice: '15 000',
-    winterPrice: '6 000',
-    sort: '38',
+    _id: {
+      $oid: '640836804816f2c23e8ac45a',
+    },
+    apartmentName: 1404,
+    summerPrice: 15000,
+    winterPrice: 6000,
+    sortIndex: 38,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '50',
-      floor: '14',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 50,
+      floor: 14,
       description: [
         'Добро пожаловать в наши просторные и уютные двухкомнатные апартаменты площадью 50 m², идеальный вариант для семьи или компании друзей до 4 человек, которые хотят насладиться прекрасными видами на море и провести время в комфорте.',
         'В нашей спальне вы найдете удобную кровать и кондиционер, который обеспечит прохладу и комфорт в течение всего дня.',
@@ -487,19 +546,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 50 m², 4 спальных места, 14 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.458Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.458Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1313',
-    summerPrice: '12 500',
-    winterPrice: '7 000',
-    sort: '37',
+    _id: {
+      $oid: '640836804816f2c23e8ac45c',
+    },
+    apartmentName: 1313,
+    summerPrice: 12500,
+    winterPrice: 7000,
+    sortIndex: 37,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '3',
-      sleepingPlaces: '6',
-      squareMeters: '58',
-      floor: '13',
+      rooms: 3,
+      sleepingPlaces: 6,
+      squareMeters: 58,
+      floor: 13,
       description: [
         'Добро пожаловать в уютный трехкомнатный апартамент, площадью 58 m², где с комфортом могут разместиться до 6 человек - идеальное решение для семейного отдыха или компании друзей.',
         'В апартаменте есть две уютные спальни, каждая оснащена телевизором для вашего удобства и отдыха.',
@@ -573,19 +646,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 58 m², 6 спальных мест, 13 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.523Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.523Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1305',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '36',
+    _id: {
+      $oid: '640836804816f2c23e8ac45e',
+    },
+    apartmentName: 1305,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 36,
     about: {
       view: 'Вид на город',
       balcony: 'Без балкона',
-      rooms: '3',
-      sleepingPlaces: '6',
-      squareMeters: '59',
-      floor: '13',
+      rooms: 3,
+      sleepingPlaces: 6,
+      squareMeters: 59,
+      floor: 13,
       description: [
         'Добро пожаловать в наш трехкомнатный апартамент площадью 59 m², который идеально подходит для семейного отдыха или отдыха в компании друзей, апартамент рассчитан на 6 спальных мест и предлагает невероятный дизайн, который точно не оставит вас равнодушными.',
         'Спальня с прозрачной стеной и большой кроватью создают уютную и романтическую атмосферу, над кроватью обеспечивает прохладную атмосферу кондиционер.',
@@ -678,19 +765,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 59 m², 6 спальных мест, 13 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.596Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.596Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1304',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '35',
+    _id: {
+      $oid: '640836804816f2c23e8ac460',
+    },
+    apartmentName: 1304,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 35,
     about: {
       view: 'Вид на город',
       balcony: 'Без балкона',
-      rooms: '3',
-      sleepingPlaces: '1',
-      squareMeters: '59',
-      floor: '13',
+      rooms: 3,
+      sleepingPlaces: 1,
+      squareMeters: 59,
+      floor: 13,
       description: [
         'Добро пожаловать в наш трехкомнатный апартамент площадью 59 m², который идеально подходит для семейного отдыха или отдыха в компании друзей!',
         'Апартамент рассчитан на 6 спальных мест и предлагает невероятный дизайн, который точно не оставит вас равнодушными.',
@@ -784,19 +885,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 58 m², 6 спальных мест, 13 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.688Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.688Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1303',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '34',
+    _id: {
+      $oid: '640836804816f2c23e8ac462',
+    },
+    apartmentName: 1303,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 34,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '0',
-      sleepingPlaces: '4',
-      squareMeters: '52',
-      floor: '13',
+      rooms: 0,
+      sleepingPlaces: 4,
+      squareMeters: 52,
+      floor: 13,
       description: [
         'Добро пожаловать в наш прекрасный апартамент-студию площадью 52 m², который идеально подойдет для семейного отдыха или отдыха с друзьями.',
         'Здесь есть 4 спальных места, которые гарантируют комфорт и уют.',
@@ -890,19 +1005,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 52 m², 4 спальных места, 13 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.762Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.762Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1208',
-    summerPrice: '12 000',
-    winterPrice: '7 000',
-    sort: '33',
+    _id: {
+      $oid: '640836804816f2c23e8ac464',
+    },
+    apartmentName: 1208,
+    summerPrice: 12000,
+    winterPrice: 7000,
+    sortIndex: 33,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '12',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 12,
       description: [
         'Добро пожаловать в наш двухкомнатный апартамент площадью 57 m², который идеально подходит для семейного отдыха или отдыха в компании друзей!',
         'В спальне вас ждет уникальная круглая кровать, которая гарантирует комфортный и незабываемый отдых, в спальне расположен отдеальный санузел, а кондиционер обеспечивает приятную прохладу в жаркие дни.',
@@ -976,19 +1105,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 12 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.834Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.834Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1207',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '32',
+    _id: {
+      $oid: '640836804816f2c23e8ac466',
+    },
+    apartmentName: 1207,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 32,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '0',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '12',
+      rooms: 0,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 12,
       description: [
         'Добро пожаловать в нашу просторную и уютную студию площадью 57 m², которая специально создана для приятного и комфортного отдыха семьи или компании друзей.',
         'В спальне вас встретят удобная кровать и диван, а также кондиционер, чтобы обеспечить прохладу в жаркие дни.',
@@ -1061,19 +1204,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 12 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.903Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.903Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1206',
-    summerPrice: '11 000',
-    winterPrice: '6 000',
-    sort: '31',
+    _id: {
+      $oid: '640836804816f2c23e8ac468',
+    },
+    apartmentName: 1206,
+    summerPrice: 11000,
+    winterPrice: 6000,
+    sortIndex: 31,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '12',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 12,
       description: [
         'Добро пожаловать в наш просторный двухкомнатный апартамент площадью 57 m², который идеально подойдет для отдыха семьи или компании друзей.',
         'В спальне вас ждет роскошная кровать с матовой стеклянной стеной, которая придает атмосферу уюта и изысканности, кондиционер, расположенный над кроватью, обеспечит комфортный сон.',
@@ -1167,19 +1324,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 12 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.974Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.974Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1111',
-    summerPrice: '11 000',
-    winterPrice: '5 500',
-    sort: '30',
+    _id: {
+      $oid: '640836814816f2c23e8ac46a',
+    },
+    apartmentName: 1111,
+    summerPrice: 11000,
+    winterPrice: 5500,
+    sortIndex: 30,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '58',
-      floor: '11',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 58,
+      floor: 11,
       description: [
         'Представляем Вашему вниманию уютный двухкомнатный апартамент, площадью 58 m², с 4 спальными местами для семьи или компании друзей.',
         'В спальне расположена удобная кровать и кондиционер, создающий идеальный микроклимат для сна.',
@@ -1252,19 +1423,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 58 m², 4 спальных места, 11 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:21.043Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:21.043Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1110',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '29',
+    _id: {
+      $oid: '640836814816f2c23e8ac46c',
+    },
+    apartmentName: 1110,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 29,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '3',
-      sleepingPlaces: '6',
-      squareMeters: '57',
-      floor: '11',
+      rooms: 3,
+      sleepingPlaces: 6,
+      squareMeters: 57,
+      floor: 11,
       description: [
         'Добро пожаловать в наши просторные трехкомнатные апартаменты площадью 57 m² с 6 уютными спальными местами, которые идеально подойдут для большой семьи или компании друзей.',
         'Вы можете отдохнуть в удивительно комфортабельных спальнях, где Вас ждут мягкие кровати и кондиционеры, создающие идеальный микроклимат для полноценного отдыха.',
@@ -1357,19 +1542,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 6 спальных мест, 11 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:21.114Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:21.114Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1109',
-    summerPrice: '10 000',
-    winterPrice: '5 000',
-    sort: '28',
+    _id: {
+      $oid: '6408367d4816f2c23e8ac41c',
+    },
+    apartmentName: 1109,
+    summerPrice: 10000,
+    winterPrice: 5000,
+    sortIndex: 28,
     about: {
       view: 'Вид на море',
       balcony: 'Без балкона',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '56',
-      floor: '11',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 56,
+      floor: 11,
       description: [
         'Добро пожаловать в наш двухкомнатный апартамент площадью 56 m², где вас ждут уют и приятная атмосфера на любой вкус.',
         'Апартамент идеально подойдет для семьи или компании друзей до 4 человек.',
@@ -1441,19 +1640,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 56 m², 4 спальных места, 11 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.763Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.763Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1105',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '27',
+    _id: {
+      $oid: '6408367d4816f2c23e8ac41e',
+    },
+    apartmentName: 1105,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 27,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '6',
-      squareMeters: '57',
-      floor: '11',
+      rooms: 2,
+      sleepingPlaces: 6,
+      squareMeters: 57,
+      floor: 11,
       description: [
         'Добро пожаловать в наши прекрасные двухкомнатные апартаменты, общей площадью 57 m², которые прекрасно подойдут для отдыха семьи или компании друзей до 6 человек.',
         'Интерьер апартаментов выполнен в незабываемом дизайне, который точно оставит Вас в восторге.',
@@ -1547,19 +1760,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 6 спальных мест, 11 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.841Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.841Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1104',
-    summerPrice: '12 000',
-    winterPrice: '6 000',
-    sort: '26',
+    _id: {
+      $oid: '6408367d4816f2c23e8ac420',
+    },
+    apartmentName: 1104,
+    summerPrice: 12000,
+    winterPrice: 6000,
+    sortIndex: 26,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '6',
-      squareMeters: '57',
-      floor: '11',
+      rooms: 2,
+      sleepingPlaces: 6,
+      squareMeters: 57,
+      floor: 11,
       description: [
         'Добро пожаловать в наш двухкомнатный апартамент площадью 57 m², который идеально подойдет для семьи или компании друзей до 6 человек.',
         'Апартамент выполнен в незабываемом дизайне, который не оставит Вас равнодушными.',
@@ -1653,19 +1880,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 6 спальных мест, 11 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.916Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.916Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1103',
-    summerPrice: '10 000',
-    winterPrice: '5 000',
-    sort: '25',
+    _id: {
+      $oid: '6408367d4816f2c23e8ac422',
+    },
+    apartmentName: 1103,
+    summerPrice: 10000,
+    winterPrice: 5000,
+    sortIndex: 25,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '5',
-      squareMeters: '57',
-      floor: '11',
+      rooms: 2,
+      sleepingPlaces: 5,
+      squareMeters: 57,
+      floor: 11,
       description: [
         'Добро пожаловать в наш уютный двухкомнатный апартамент площадью 57 m², который идеально подходит для семейного отдыха или прекрасной компании друзей до 5 человек.',
         'В спальне Вас ждет комфортная кровать и кондиционер, чтобы Вы могли насладиться здоровым сном и проснуться бодрым и свежим.',
@@ -1758,19 +1999,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 5 спальных мест, 11 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.989Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:17.989Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1014',
-    summerPrice: '12 000',
-    winterPrice: '7 000',
-    sort: '24',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac424',
+    },
+    apartmentName: 1014,
+    summerPrice: 12000,
+    winterPrice: 7000,
+    sortIndex: 24,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '1',
-      sleepingPlaces: '5',
-      squareMeters: '58',
-      floor: '10',
+      rooms: 1,
+      sleepingPlaces: 5,
+      squareMeters: 58,
+      floor: 10,
       description: [
         'Добро пожаловать в наш однокомнатный апартамент площадью 58 m², который подойдет для семьи или компании друзей до 5 человек.',
         'Вас ждет уникальный дизайн спальни, где стены выполнены из плотных штор, создавая уют и комфорт, а кровать невероятно удобна для полноценного отдыха.',
@@ -1863,19 +2118,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 58 m², 5 спальных мест, 10 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.062Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.062Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1013',
-    summerPrice: '12 000',
-    winterPrice: '7 000',
-    sort: '23',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac426',
+    },
+    apartmentName: 1013,
+    summerPrice: 12000,
+    winterPrice: 7000,
+    sortIndex: 23,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '1',
-      sleepingPlaces: '5',
-      squareMeters: '58',
-      floor: '10',
+      rooms: 1,
+      sleepingPlaces: 5,
+      squareMeters: 58,
+      floor: 10,
       description: [
         'Добро пожаловать в однокомнатный апартамент, площадью 58 m², который идеально подойдет для семейного отдыха или компании друзей до 5 человек.',
         'Вас ждет уникальный дизайн спальни, где стены выполнены из плотных штор, создавая уют и наслаждение, а кровать невероятно удобна для полноценного отдыха.',
@@ -1968,19 +2237,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 58 m², 5 спальных мест, 10 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.491Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.491Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '1003',
-    summerPrice: '10 000',
-    winterPrice: '5 000',
-    sort: '22',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac428',
+    },
+    apartmentName: 1003,
+    summerPrice: 10000,
+    winterPrice: 5000,
+    sortIndex: 22,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '10',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 10,
       description: [
         'Добро пожаловать в наш уютный двухкомнатный апартамент площадью 57 m², где с комфортом могут разместиться до 4 человек.',
         'В спальне Вас ждет удобная кровать и кондиционер, чтобы Вы смогли насладиться полноценным отдыхом.',
@@ -2052,19 +2335,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 10 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.573Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.573Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '907',
-    summerPrice: '11 000',
-    winterPrice: '6 000',
-    sort: '21',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac42a',
+    },
+    apartmentName: 907,
+    summerPrice: 11000,
+    winterPrice: 6000,
+    sortIndex: 21,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '9',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 9,
       description: [
         'Добро пожаловать в наш прекрасный двухкомнатный апартамент площадью 57 m², где с легкостью может разместиться семья или компания друзей до 4 человек.',
         'Наслаждайтесь изысканным дизайном, который не оставит вас равнодушными.',
@@ -2137,19 +2434,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 9 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.657Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.657Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '805',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '20',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac42c',
+    },
+    apartmentName: 805,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 20,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '5',
-      squareMeters: '57',
-      floor: '8',
+      rooms: 2,
+      sleepingPlaces: 5,
+      squareMeters: 57,
+      floor: 8,
       description: [
         'Роскошные двухкомнатные апартаменты площадью 57 m² с 5 спальными местами - прекрасное место для отдыха с семьей или друзьями.',
         'В апартаментах есть спальня с удобной кроватью и кондиционером, а также уютный диван между комнатами.',
@@ -2241,19 +2552,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 8 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.730Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.730Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '716',
-    summerPrice: '10 000',
-    winterPrice: '6 500',
-    sort: '19',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac42e',
+    },
+    apartmentName: 716,
+    summerPrice: 10000,
+    winterPrice: 6500,
+    sortIndex: 19,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '7',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 7,
       description: [
         'Добро пожаловать в просторные двухкомнатные апартаменты площадью 57 m², которые способны принять вас и вашу семью или компанию друзей на незабываемый отдых.',
         'В спальне расположена удобная кровать и стеклянная матовоя вставка в стене, которая добавляет неповторимости интерьеру.',
@@ -2346,19 +2671,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 7 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.802Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.802Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '715',
-    summerPrice: '10 000',
-    winterPrice: '6 500',
-    sort: '18',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac430',
+    },
+    apartmentName: 715,
+    summerPrice: 10000,
+    winterPrice: 6500,
+    sortIndex: 18,
     about: {
       view: 'Вид на море',
       balcony: 'Без балкона',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '7',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 7,
       description: [
         'Добро пожаловать в наши уютные двухкомнатные апартаменты площадью 57 m²! Они идеально подходят для семьи или компании друзей до 4 человек.',
         'Наш современный стиль выполнен с особой заботой о вашем комфорте.',
@@ -2451,19 +2790,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 7 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.887Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.887Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '712',
-    summerPrice: '10 000',
-    winterPrice: '6 500',
-    sort: '17',
+    _id: {
+      $oid: '6408367e4816f2c23e8ac432',
+    },
+    apartmentName: 712,
+    summerPrice: 10000,
+    winterPrice: 6500,
+    sortIndex: 17,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '57',
-      floor: '7',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 57,
+      floor: 7,
       description: [
         'Добро пожаловать в наши просторные двухкомнатные квартиры площадью 57 m²! Они подходят для семьи или компании друзей до 4 человек.',
         'В вашем распоряжении удобная кровать и кондиционер, чтобы вы могли наслаждаться комфортным отдыхом.',
@@ -2555,19 +2908,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 7 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.955Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:18.955Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '709',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '16',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac434',
+    },
+    apartmentName: 709,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 16,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '54',
-      floor: '7',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 54,
+      floor: 7,
       description: [
         'Добро пожаловать в наш двухкомнатный апартамент площадью 54 m², где могут комфортно разместиться семьи или компании друзей до 4 человек.',
         'Апартамент выполнен в интересном стиле, который наверняка понравится вам.',
@@ -2661,19 +3028,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 54 m², 4 спальных места, 7 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.041Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.041Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '705',
-    summerPrice: '9 000',
-    winterPrice: '5 000',
-    sort: '15',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac436',
+    },
+    apartmentName: 705,
+    summerPrice: 9000,
+    winterPrice: 5000,
+    sortIndex: 15,
     about: {
       view: 'Вид на море',
       balcony: 'С балконом',
-      rooms: '0',
-      sleepingPlaces: '4',
-      squareMeters: '53',
-      floor: '7',
+      rooms: 0,
+      sleepingPlaces: 4,
+      squareMeters: 53,
+      floor: 7,
       description: [
         'Приглашаем вас остановиться в уютном апартаменте-студии, площадью 53 m², где с комфортом могут разместиться до 4 человек.',
         'В номере вас ждут удобная двуспальная кровать, отличный диван и кондиционер, обеденный стол и современная кухня, оснащенная всем необходимым для приготовления еды.',
@@ -2765,19 +3146,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 53 m², 4 спальных места, 7 этаж, с видом на море в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.107Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.107Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '613',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '14',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac438',
+    },
+    apartmentName: 613,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 14,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '55',
-      floor: '6',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 55,
+      floor: 6,
       description: [
         'Представляем вам уютные двухкомнатные апартаменты площадью 55 m² с 4 спальными местами, где вы сможете отдохнуть вместе со своей семьей или компанией друзей.',
         'Наслаждайтесь потрясающим дизайном апартаментов и насладитесь незабываемой атмосферой, а потолочная система кондиционирования поможет создать комфортную температуру в любое время года.',
@@ -2871,19 +3266,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 4 спальных места, 6 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.180Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.180Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '612',
-    summerPrice: '11 000',
-    winterPrice: '6 000',
-    sort: '13',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac43a',
+    },
+    apartmentName: 612,
+    summerPrice: 11000,
+    winterPrice: 6000,
+    sortIndex: 13,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '5',
-      squareMeters: '55',
-      floor: '6',
+      rooms: 2,
+      sleepingPlaces: 5,
+      squareMeters: 55,
+      floor: 6,
       description: [
         'Добро пожаловать в двухкомнатный апартамент, площадью 55 m² и имеет 5 спальных мест для комфортного размещения семьи или друзей.',
         'В спальне Вас встречают удобная кровать и кондиционер, который позволит Вам наслаждаться прохладой в жаркие дни.',
@@ -2975,19 +3384,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 55 m², 5 спальных мест, 6 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.259Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.259Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '607',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '12',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac43c',
+    },
+    apartmentName: 607,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 12,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '53',
-      floor: '6',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 53,
+      floor: 6,
       description: [
         'Добро пожаловать в уютный двухкомнатный апартамент площадью 53 m² с 4 спальными местами для семьи или компании друзей.',
         'В спальне удобная кровать и кондиционер для комфортного отдыха.',
@@ -3080,19 +3503,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 53 m², 4 спальных места, 6 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.327Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.327Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '606',
-    summerPrice: '9 000',
-    winterPrice: '5 000',
-    sort: '11',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac43e',
+    },
+    apartmentName: 606,
+    summerPrice: 9000,
+    winterPrice: 5000,
+    sortIndex: 11,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '53',
-      floor: '6',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 53,
+      floor: 6,
       description: [
         'Добро пожаловать в уютный двухкомнатный апартамент площадью 53 m², который предоставит вам и вашей семье или друзьям 4 комфортных спальных места.',
         'Вы будете в восторге от дизайна этого прекрасного жилья, который запомнится на всю жизнь.',
@@ -3186,19 +3623,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 53 m², 4 спальных места, 6 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.398Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.398Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '605',
-    summerPrice: '8 500',
-    winterPrice: '5 000',
-    sort: '10',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac440',
+    },
+    apartmentName: 605,
+    summerPrice: 8500,
+    winterPrice: 5000,
+    sortIndex: 10,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '0',
-      sleepingPlaces: '4',
-      squareMeters: '50',
-      floor: '6',
+      rooms: 0,
+      sleepingPlaces: 4,
+      squareMeters: 50,
+      floor: 6,
       description: [
         'Добро пожаловать в нашу стильный апартамент-студию площадью 50 m², где найдется место для 4 гостей, будь то семья или компания друзей.',
         'Вас порадует удобная кровать и раскладной диван, а также просторный обеденный стол, где вы можете провести время вместе за вкусным обедом.',
@@ -3291,19 +3742,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 50 m², 4 спальных места, 6 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.471Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.471Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '509',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '9',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac442',
+    },
+    apartmentName: 509,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 9,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '5',
-      squareMeters: '57',
-      floor: '5',
+      rooms: 2,
+      sleepingPlaces: 5,
+      squareMeters: 57,
+      floor: 5,
       description: [
         'Добро пожаловать в просторные и уютные двухкомнатные апартаменты площадью 57 m² с 5 спальными местами, которые идеально подойдут для семейного отдыха или отдыха с друзьями.',
         'В спальне вы найдете мягкую кровать и мощный кондиционер для комфортного сна.',
@@ -3376,19 +3841,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 5 спальных мест, 5 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.548Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.548Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '503',
-    summerPrice: '9 000',
-    winterPrice: '5 000',
-    sort: '8',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac444',
+    },
+    apartmentName: 503,
+    summerPrice: 9000,
+    winterPrice: 5000,
+    sortIndex: 8,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '52',
-      floor: '5',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 52,
+      floor: 5,
       description: [
         'Добро пожаловать в наши двухкомнатные апартаменты, площадью 52 m² с 4 спальными местами, которые станут идеальным выбором для семейного отдыха или отдыха с друзьями.',
         'Здесь Вы ощутите незабываемый дизайн и комфорт на каждом шагу.',
@@ -3482,19 +3961,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 52 m², 4 спальных мест, 5 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.620Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.620Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '416',
-    summerPrice: '8 500',
-    winterPrice: '5 000',
-    sort: '7',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac446',
+    },
+    apartmentName: 416,
+    summerPrice: 8500,
+    winterPrice: 5000,
+    sortIndex: 7,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '1',
-      sleepingPlaces: '4',
-      squareMeters: '45',
-      floor: '4',
+      rooms: 1,
+      sleepingPlaces: 4,
+      squareMeters: 45,
+      floor: 4,
       description: [
         'Добро пожаловать в уютные однокомнатные апартаменты площадью 45 m², которые станут идеальным выбором для семьи или компании друзей.',
         'В нашем апартаменте есть всё необходимое для пребывания - 4 спальных места, чтобы каждый мог расслабиться и отдохнуть после насыщенного дня.',
@@ -3588,19 +4081,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 45 m², 4 спальных места, 4 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.692Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.692Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '415',
-    summerPrice: '8 000',
-    winterPrice: '4 500',
-    sort: '6',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac448',
+    },
+    apartmentName: 415,
+    summerPrice: 8000,
+    winterPrice: 4500,
+    sortIndex: 6,
     about: {
       view: 'Вид на город',
       balcony: 'Без балкона',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '45',
-      floor: '4',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 45,
+      floor: 4,
       description: [
         'Добро пожаловать в уютные и комфортабельные двухкомнатные апартаменты площадью 45 m², это идеальное место отдыха и развлечений для семьи или компании друзей, где есть 4 спальных места для вашего удобства.',
         'В спальне вы найдете уютную кровать и кондиционер, который обеспечит потрясающий сон после долгих прогулок по городу.',
@@ -3672,19 +4179,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 45 m², 4 спальных места, 4 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.764Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.764Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '402',
-    summerPrice: '10 000',
-    winterPrice: '5 000',
-    sort: '5',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac44a',
+    },
+    apartmentName: 402,
+    summerPrice: 10000,
+    winterPrice: 5000,
+    sortIndex: 5,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '3',
-      sleepingPlaces: '6',
-      squareMeters: '57',
-      floor: '4',
+      rooms: 3,
+      sleepingPlaces: 6,
+      squareMeters: 57,
+      floor: 4,
       description: [
         'Добро пожаловать в просторные и уютные трехкомнатные апартаменты площадью 57 m², которые идеально подойдут для проживания семьи или компании друзей.',
         'У нас есть 6 удобных спальных мест, чтобы каждый мог расслабиться и насладиться отдыхом.',
@@ -3778,19 +4299,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 57 m², 6 спальных мест, 4 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.828Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.828Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '312',
-    summerPrice: '9 000',
-    winterPrice: '6 000',
-    sort: '4',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac44c',
+    },
+    apartmentName: 312,
+    summerPrice: 9000,
+    winterPrice: 6000,
+    sortIndex: 4,
     about: {
       view: 'Вид на город',
       balcony: 'С балконом',
-      rooms: '1',
-      sleepingPlaces: '4',
-      squareMeters: '45',
-      floor: '3',
+      rooms: 1,
+      sleepingPlaces: 4,
+      squareMeters: 45,
+      floor: 3,
       description: [
         'Добро пожаловать в уютный однокомнатный апартамент площадью 45 m²!',
         'Он идеально подходит для семьи или компании друзей, ведь здесь есть четыре удобных спальных места.',
@@ -3883,19 +4418,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 45 m², 4 спальных места, 3 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.911Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.911Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '310',
-    summerPrice: '9 000',
-    winterPrice: '5 000',
-    sort: '3',
+    _id: {
+      $oid: '6408367f4816f2c23e8ac44e',
+    },
+    apartmentName: 310,
+    summerPrice: 9000,
+    winterPrice: 5000,
+    sortIndex: 3,
     about: {
       view: 'Вид на город',
       balcony: 'Без балкона',
-      rooms: '1',
-      sleepingPlaces: '4',
-      squareMeters: '45',
-      floor: '3',
+      rooms: 1,
+      sleepingPlaces: 4,
+      squareMeters: 45,
+      floor: 3,
       description: [
         'Добро пожаловать в наш однокомнатный апартамент площадью 45 m²!',
         'Здесь вы найдете четыре спальных места, идеально подходящих для семьи или компании друзей.',
@@ -3969,19 +4518,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 45 m², 4 спальных места, 3 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.975Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:19.975Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '21-8',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '2',
+    _id: {
+      $oid: '640836804816f2c23e8ac450',
+    },
+    apartmentName: 21.8,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 2,
     about: {
       view: 'Вид на город',
       balcony: 'Без балкона',
-      rooms: '3',
-      sleepingPlaces: '6',
-      squareMeters: '48',
-      floor: '1',
+      rooms: 3,
+      sleepingPlaces: 6,
+      squareMeters: 48,
+      floor: 1,
       description: [
         'Добро пожаловать в наш трехкомнатный апартамент площадью 48 m², который готов принять вас и вашу семью или компанию друзей.',
         'Вас ожидает превосходный дизайн, который порадует глаз и создаст уютную атмосферу.',
@@ -4075,19 +4638,33 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 48 m², 6 спальных мест, 1 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.048Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.048Z',
+      },
+    },
+    __v: 0,
   },
   {
-    apartmentName: '21-6',
-    summerPrice: '10 000',
-    winterPrice: '6 000',
-    sort: '1',
+    _id: {
+      $oid: '640836804816f2c23e8ac454',
+    },
+    apartmentName: 21.6,
+    summerPrice: 10000,
+    winterPrice: 6000,
+    sortIndex: 1,
     about: {
       view: 'Вид на город',
       balcony: 'Без балкона',
-      rooms: '2',
-      sleepingPlaces: '4',
-      squareMeters: '48',
-      floor: '1',
+      rooms: 2,
+      sleepingPlaces: 4,
+      squareMeters: 48,
+      floor: 1,
       description: [
         'Добро пожаловать в прекрасные и уютные двухкомнатные апартаменты площадью 48 m²!',
         'Наше жилье идеально подходит для семьи или компании друзей, у нас есть 4 спальных места для вашего удобства.',
@@ -4186,6 +4763,17 @@ export const apartmentsData: Apartment[] = [
         'Забронировать апартамент площадью 48 m², 4 спальных места, 1 этаж, с видом на город в Сочи',
       keywords: 'Бронирование апартамента, Барселона Парк, Апартамент Сочи, апартамент',
     },
+    createdAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.214Z',
+      },
+    },
+    updatedAt: {
+      $date: {
+        $numberLong: '2023-03-08T07:17:20.214Z',
+      },
+    },
+    __v: 0,
   },
 ];
 

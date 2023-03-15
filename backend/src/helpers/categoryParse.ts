@@ -2,7 +2,7 @@ export const categoryPars = (category: string) => {
   const allCategories = [
     {
       id: 'All-apartments',
-      filterBy: { 'about.floor': { $gt: '0' } },
+      filterBy: { 'about.floor': { $gt: 0 } },
     },
     {
       id: 'With-balcony',
@@ -14,19 +14,19 @@ export const categoryPars = (category: string) => {
     },
     {
       id: 'Studio',
-      filterBy: { 'about.rooms': '0' },
+      filterBy: { 'about.rooms': 0 },
     },
     {
       id: 'One-room',
-      filterBy: { 'about.rooms': '1' },
+      filterBy: { 'about.rooms': 1 },
     },
     {
       id: 'Two-room',
-      filterBy: { 'about.rooms': '2' },
+      filterBy: { 'about.rooms': 2 },
     },
     {
       id: 'Three-room',
-      filterBy: { 'about.rooms': '3' },
+      filterBy: { 'about.rooms': 3 },
     },
     {
       id: 'Sea-view',
@@ -38,19 +38,19 @@ export const categoryPars = (category: string) => {
     },
     {
       id: '3-sleeping-places',
-      filterBy: { 'about.sleepingPlaces': '3' },
+      filterBy: { 'about.sleepingPlaces': 3 },
     },
     {
       id: '4-sleeping-places',
-      filterBy: { 'about.sleepingPlaces': '4' },
+      filterBy: { 'about.sleepingPlaces': 4 },
     },
     {
       id: '5-sleeping-places',
-      filterBy: { 'about.sleepingPlaces': '5' },
+      filterBy: { 'about.sleepingPlaces': 5 },
     },
     {
       id: '6-sleeping-places',
-      filterBy: { 'about.sleepingPlaces': '6' },
+      filterBy: { 'about.sleepingPlaces': 6 },
     },
     {
       id: 'With-coffee-machine',
@@ -69,6 +69,7 @@ export const categoryPars = (category: string) => {
       filterBy: { 'services.oven': true, 'services.dishwasher': true },
     },
   ];
+
 
   return allCategories.find((obj) => obj.id === category)?.filterBy;
 };

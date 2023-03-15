@@ -50,7 +50,7 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
             <input
               type="checkbox"
               onChange={() => onCheckBoxFirstChange(option.index)}
-              checked={checkBox[index]}
+              checked={checkBox[option.index]}
             />
 
             <span

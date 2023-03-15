@@ -5,7 +5,7 @@ import { SliderImages } from './slider images';
 import { ApartmentInfo } from './apartment info';
 import { categoryMeta } from '../../helpers/meta/categoryMeta';
 import { apartmentsData } from '../../../fake/apartmnetsData';
-import { Apartment } from '../../helpers/types/type';
+import { MyApartments } from '../../helpers/types/type';
 import styles from './style.module.scss';
 import useStore from '../../../store/useStore';
 
@@ -15,7 +15,7 @@ interface MyParams {
 }
 
 interface MyProps {
-  apartment: Apartment;
+  apartment: MyApartments;
   index: number;
 }
 

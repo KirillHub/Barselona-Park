@@ -15,9 +15,12 @@ const app = express();
 app.use(express.json({ limit: '1mb' }), cors());
 
 
+app.get(`/GetSimilar/:apartmentName/:option`, ApartmentController.getSimilar);
 
-app.get('/:category/:sort/:service/:quantity', ApartmentController.getAllApartments);
-app.post('/addNewApartment', ApartmentController.addApartments);
+app.get('/Category/:category/:sort/:service', ApartmentController.getAllApartments);
+app.post('/AddNewApartment', ApartmentController.addApartments);
+
+
 
 
 app.listen(process.env.PORT || 4444, () => {

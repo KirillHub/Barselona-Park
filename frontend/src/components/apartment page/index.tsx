@@ -16,17 +16,20 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+
+import { SimilarApartments } from './similar apartments';
+
 import { Options } from '../category page/category interaction/options';
 
 import { reservationDays } from '../helpers/functions/reservationDays';
-import { Apartment } from '../helpers/types/type';
+import { MyApartments } from '../helpers/types/type';
 
 export default function Apart() {
   const pathname = usePathname();
 
   const apartmentId = pathname?.split('/')[1];
 
-  const apartment = apartmentsData?.find((x) => x.apartmentName === apartmentId?.split('-')[1]);
+  const apartment = apartmentsData?.find((x) => x.apartmentName === +apartmentId!?.split('-')[1]);
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
@@ -61,7 +64,7 @@ export default function Apart() {
 
       <div className={styles.apartmentSecondBlock}>
         <ul className={styles.apartmentDesctiption}>
-          {apartment.about.description.map((text,index) => (
+          {apartment.about.description.map((text, index) => (
             <li key={index}>{text}</li>
           ))}
         </ul>
@@ -70,6 +73,9 @@ export default function Apart() {
           <Options />
         </div>
       </div>
+
+      <SimilarApartments apartmentId={apartment.apartmentName} />
+
     </div>
   );
 }
@@ -96,7 +102,7 @@ export default function Apart() {
 // ].map((x) => new Date(x));
 
 // if (endDate !== null) {
-//   // console.log(reservationDays(startDate, endDate, excludedDates));
+//    console.log(reservationDays(startDate, endDate, excludedDates));
 // }
 // let i = 0;
 

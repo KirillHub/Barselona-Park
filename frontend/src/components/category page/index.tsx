@@ -7,14 +7,14 @@ import styles from './style.module.scss';
 import { categoryMeta } from '../helpers/meta/categoryMeta';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { Apartment } from '../helpers/types/type';
+import { MyApartments } from '../helpers/types/type';
 import useSWR from 'swr';
 import { apartmentsData } from '../../fake/apartmnetsData';
 
 export const dynamic = 'force-static';
 
 interface Myfetch {
-  data: Apartment[];
+  data: MyApartments[];
   length: number;
 }
 
@@ -22,10 +22,9 @@ const fetcher = (url: string) => fetch(url, { cache: 'force-cache' }).then((res)
 
 const path = 'http://localhost:3500' || 'https://barsa-back.onrender.com';
 
-
-const useCategory = (category: string, sort: string, service: string, quantity: number) => {
+const useCategory = (category: string, sort: string, service: string) => {
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
-    `http://localhost:3500/${category}/${sort}/${service}/${50}`,
+    `https://barsa-back.onrender.com/${category}/${sort}/${service}`,
     fetcher,
   );
 
@@ -51,21 +50,9 @@ export default function Category() {
 
   const meta = categoryMeta(category);
 
-  const { user, isLoading, isError } = useCategory(category!, sort!, service!, quantity);
+  const { user, isLoading, isError } = useCategory(category!, sort!, service!);
 
   const aparts = user?.data;
-
-  // useEffect(() => {
-  //   fetch('http://localhost:3500/addNewApartment', {
-  //     method: 'POST',
-  //     body: JSON.stringify(apartmentsData[0]),
-  //     headers: {
-  //       'Content-type': 'application/json; charset=UTF-8',
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then(console.log);
-  // },[])
 
   return (
     <div className={styles.categoryPage}>
@@ -77,13 +64,13 @@ export default function Category() {
         <CategoryInteraction />
 
         <div className={styles.categoryPageRightBlock}>
-          {aparts?.map((apartment: Apartment, index) => (
+          {aparts?.map((apartment: MyApartments, index) => (
             <ApartmentCard apartment={apartment} index={index} key={apartment.apartmentName} />
           ))}
         </div>
       </div>
 
-      {user!?.length > quantity ? (
+      {user!?.length >= quantity ? (
         <button className={styles.categoryPageButton1} onClick={() => setQuantity((prev) => prev + 6)}>
           Еще
         </button>

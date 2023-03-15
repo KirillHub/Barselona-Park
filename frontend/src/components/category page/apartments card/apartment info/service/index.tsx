@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { readyIcons } from '../../../../helpers/functions/readyIcons';
-import { Apartment } from '../../../../helpers/types/type';
+import { MyApartments } from '../../../../helpers/types/type';
 import styles from '../style.module.scss';
 
 interface MyProps {
-  apartment: Apartment;
+  apartment: MyApartments;
 }
 
 export const Service = ({ apartment }: MyProps) => {

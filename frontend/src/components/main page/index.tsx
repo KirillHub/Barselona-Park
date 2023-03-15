@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 
-import { useEffect } from 'react';
 
 import SelectCategory from '../select category/selectCategory';
 import { Telegram, Whatsapp } from '../../svg';
@@ -58,9 +57,9 @@ export const MainPicture = () => {
           <Image
             priority
             fill
-            quality={100}
-            style={{ objectFit: 'fill' }}
-            src="/2.jpg"
+            quality={75}
+            style={{ objectFit: 'cover' }}
+            src="/assets/main page/1.webp"
             alt="Апартамент-1104"
           />
         </div>

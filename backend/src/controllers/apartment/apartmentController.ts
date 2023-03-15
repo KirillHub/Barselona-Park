@@ -1,14 +1,34 @@
 import ApartmentSchema from '#/models/apartment';
 import { categoryPars } from '#/helpers/categoryParse';
 import { categorySort } from '#/helpers/categorySort';
-import { categoryService } from '#/helpers/service';
+import { categoryService } from '#/helpers/categoryService';
+import { findSimilarApartments } from '#/helpers/findSimilarApartments';
+import { ApartmentsType } from '../../type';
 // import mongoose from 'mongoose';
+
+export const getSimilar = async (req: any, res: any) => {
+  try {
+    const apartment: ApartmentsType[] = await ApartmentSchema.find({
+      apartmentName: req.params.apartmentName,
+    });
+
+    const similar = findSimilarApartments(apartment[0], req.params.option);
+
+    const similarApartments = await ApartmentSchema.find({ $and: [similar] });
+
+    res.json([...similarApartments].slice(0, 8));
+  } catch (err) {
+    console.log(err);
+
+    res.status(500).json({
+      message: 'Не удалось получить все апартаменты',
+    });
+  }
+};
 
 export const getAllApartments = async (req: any, res: any) => {
   try {
     const category = categoryPars(req.params.category);
-
-    console.log('get ' + req.params.category);
 
     if (category === undefined) return;
 
@@ -16,13 +36,13 @@ export const getAllApartments = async (req: any, res: any) => {
 
     const mergedObj = Object.assign({}, ...service, category);
 
+    console.log(mergedObj);
+
     const apartments: any = await ApartmentSchema.find({
       $and: [mergedObj],
-    }).sort({ apartmentName: 1 });
+    });
 
-
-
-    const cutApartments = [...apartments].slice(0, req.params.quantity);
+    const cutApartments = [...apartments];
 
     const sort = req.params.sort !== 'undefined' ? req.params.sort : 'Without-sort';
 
@@ -42,7 +62,6 @@ export const getAllApartments = async (req: any, res: any) => {
 
 export const addApartments = async (req: any, res: any) => {
   try {
-    console.log('add');
     const apartments = new ApartmentSchema({
       apartmentName: req.body.apartmentName,
       summerPrice: req.body.summerPrice,

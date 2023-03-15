@@ -1,4 +1,3 @@
-import { Apartment } from '../../components/helpers/types/type';
 import Apart from '../../components/apartment page';
 
 // interface Arara {

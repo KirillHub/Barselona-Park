@@ -1,21 +1,33 @@
-export type Apartment = {
-  apartmentName: string;
-  summerPrice: string;
-  winterPrice: string;
-  sort: string;
+export type MyApartments = {
+  _id: { $oid: string };
+  apartmentName: number;
+  summerPrice: number;
+  winterPrice: number;
+  sortIndex: number;
   about: About;
   images: Images[];
   services: Services;
   meta: Meta;
+  createdAt: {
+    $date: {
+      $numberLong: string;
+    };
+  };
+  updatedAt: {
+    $date: {
+      $numberLong: string;
+    };
+  };
+  __v: number;
 };
 
 interface About {
   view: string;
   balcony: string;
-  rooms: string;
-  sleepingPlaces: string;
-  squareMeters: string;
-  floor: string;
+  rooms: number;
+  sleepingPlaces: number;
+  squareMeters: number;
+  floor: number;
   description: string[];
 }
 
@@ -26,7 +38,7 @@ interface Images {
 }
 
 interface Services {
-  stove: boolean
+  stove: boolean;
   dishwasher: boolean;
   coffeeMachine: boolean;
   conditioner: boolean;
