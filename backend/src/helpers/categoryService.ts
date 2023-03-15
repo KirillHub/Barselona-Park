@@ -30,8 +30,6 @@ export const categoryService = (service: string) => {
 
   const splitService = service.split('+');
 
-  // console.log(splitService)
-
   const filteredArray = allService.filter((obj) => splitService.includes(obj.id));
 
   return filteredArray.map((x) => x.filterBy);
