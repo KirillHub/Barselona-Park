@@ -1,23 +1,30 @@
 .similar {
   position: relative;
-  margin: 0 0 10vw 0;
+  margin: calc(20px + 20 * (100vw / 1920)) 0;
 
-  padding: 4vh 8vw;
+  padding: calc(20px + 20 * (100vw / 1920)) 8vw;
 
   width: 100%;
 
   background-color: rgb(28, 28, 28);
 
+  @media (width < 815px) {
+    padding: calc(10px + 10 * (100vw / 1920)) 4vw;
+  }
+
   .similarInfo {
     p {
-      font-size: 24px;
+      font-size: calc(14px + 12 * (100vw / 1920));
       font-weight: bold;
+    }
+    span {
+      font-size: calc(12px + 8 * (100vw / 1920));
     }
   }
 
   .similarSlider {
     position: relative;
-    margin: 1vh 0;
+    margin: calc(5px + 5 * (100vw / 1920)) 0;
 
     height: 386px;
 
@@ -55,54 +62,79 @@
           margin-left: 0.5vw;
 
           white-space: nowrap;
+
+          font-size: calc(12px + 6 * (100vw / 1920));
           font-weight: bold;
         }
 
         span {
-          margin-left: 1vw;
-          text-align: center;
+          margin-left: calc(5px + 5 * (100vw / 1920));
+          padding: calc(1px + 1 * (100vw / 1920));
 
           border-radius: calc(5px + 5 * (100vw / 1920));
 
-          font-size: 14px;
+          text-align: center;
+
+          font-size: calc(10px + 4 * (100vw / 1920));
           background-color: rgba(21, 21, 21, 0.801);
+        }
+
+        @media (width < 916px) {
+          p {
+            font-size: calc(14px + 6 * (100vw / 1920));
+          }
+
+          span {
+            font-size: calc(12px + 4 * (100vw / 1920));
+          }
+          @media (width < 616px) {
+            p {
+              font-size: calc(20px + 10 * (100vw / 1920));
+            }
+
+            span {
+              padding: calc(3px + 2 * (100vw / 1920));
+
+              font-size: calc(12px + 10 * (100vw / 1920));
+            }
+          }
         }
       }
 
       .similarSliderBlockInfo {
         position: absolute;
 
-        padding: 1vw;
+        padding: calc(10px + 5 * (100vw / 1920));
 
         width: 100%;
         height: 60%;
 
-        bottom: -170px;
+        bottom: calc(-175px + -0 * (100vw / 1920));
         left: 0;
 
         transition: 850ms;
 
         .similarSliderBlockInfoName {
-          margin-bottom: 2vh;
+          margin-bottom: calc(10px + 10 * (100vw / 1920));
 
-          font-size: 24px;
+          font-size: calc(14px + 10 * (100vw / 1920));
           font-weight: bold;
         }
 
         .similarSliderBlockInfoText {
-          font-size: 17px;
+          font-size: calc(9px + 7 * (100vw / 1920));
         }
 
         .similarSliderBlockInfoLink {
-          margin-top: 3vh;
+          margin-top: calc(15px + 15 * (100vw / 1920));
 
           width: 50%;
-          height: 5vh;
+          height: calc(40px + 40 * (100vw / 1920));
 
-          line-height: 5vh;
+          line-height: calc(40px + 40 * (100vw / 1920));
           text-align: center;
 
-          font-size: 17px;
+          font-size: calc(10px + 7 * (100vw / 1920));
 
           border-radius: calc(5px + 5 * (100vw / 1920));
 
@@ -112,6 +144,40 @@
 
           &:active {
             transform: scale(0.9);
+          }
+        }
+
+        @media (width < 1015px) {
+          bottom: calc(-190px + -0 * (100vw / 1920));
+
+          @media (width < 915px) {
+            .similarSliderBlockInfoName {
+              font-size: calc(16px + 12 * (100vw / 1920));
+            }
+
+            .similarSliderBlockInfoText {
+              font-size: calc(12px + 7 * (100vw / 1920));
+            }
+
+            .similarSliderBlockInfoLink {
+              font-size: calc(12px + 7 * (100vw / 1920));
+            }
+
+            @media (width < 615px) {
+              .similarSliderBlockInfoName {
+                font-size: calc(20px + 12 * (100vw / 1920));
+              }
+
+              .similarSliderBlockInfoText {
+                font-size: calc(14px + 7 * (100vw / 1920));
+              }
+
+              .similarSliderBlockInfoLink {
+                margin-top: calc(30px + 20 * (100vw / 1920));
+
+                font-size: calc(14px + 7 * (100vw / 1920));
+              }
+            }
           }
         }
       }
@@ -124,11 +190,17 @@
 
     justify-content: space-around;
 
+    @media (width < 1415px) {
+      justify-content: space-between;
+    }
+
     button {
-      width: 10%;
-      height: 6vh;
+      width: calc(40px + 120 * (100vw / 1920));
+      height: calc(20px + 60 * (100vw / 1920));
 
       border-radius: calc(5px + 5 * (100vw / 1920));
+
+      font-size: calc(8px + 8 * (100vw / 1920));
 
       background-color: rgb(21, 21, 21);
 
@@ -136,6 +208,17 @@
 
       &:active {
         transform: scale(0.9);
+      }
+
+      @media (width < 915px) {
+        width: calc(60px + 120 * (100vw / 1920));
+        @media (width < 615px) {
+          height: calc(40px + 60 * (100vw / 1920));
+
+          @media (width < 470px) {
+            width: calc(40px + 120 * (100vw / 1920));
+          }
+        }
       }
     }
   }

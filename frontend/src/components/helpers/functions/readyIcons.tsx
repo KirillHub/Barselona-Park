@@ -25,7 +25,7 @@ export const readyIcons = (apartment: MyApartments) => {
   return [
     {
       jsx: apartment?.about.balcony === 'С балконом' ? <Balcony /> : '',
-      title: apartment?.about.balcony,
+      title: apartment?.about.balcony === 'С балконом' ? apartment?.about.balcony : '',
     },
     {
       jsx: apartment?.about.view === 'Вид на море' ? <Sea /> : <City />,

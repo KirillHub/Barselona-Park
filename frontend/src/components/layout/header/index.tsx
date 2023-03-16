@@ -41,7 +41,7 @@ export const Header = () => {
           <li>
             <Link href={`/Category/Select-category`}>Категории</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/">Отзывы</Link>
           </li>
           <li>
@@ -49,7 +49,7 @@ export const Header = () => {
           </li>
           <li>
             <Link href="/">Контакты</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

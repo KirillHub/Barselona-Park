@@ -60,7 +60,7 @@ export const getAllApartments = async (req: any, res: any) => {
       $and: [mergedObj],
     });
 
-    const cutApartments = [...apartments];
+    const cutApartments = [...apartments].sort((a, b) => b.sortIndex - a.sortIndex);
 
     const sort = req.params.sort !== 'undefined' ? req.params.sort : 'Without-sort';
 

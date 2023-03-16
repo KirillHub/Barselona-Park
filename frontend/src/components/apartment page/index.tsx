@@ -33,10 +33,11 @@ export default function Apart() {
 
   const service = readyIcons(apartment!);
 
+
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
     <div className={styles.apartment}>
-      <p>Апартамент {apartment.apartmentName}</p>
+      <h1>Апартамент {apartment.apartmentName}</h1>
 
       <Swiper
         slidesPerView={2}
@@ -77,12 +78,20 @@ export default function Apart() {
       </div>
 
       <div className={styles.apartmentServices}>
-        {service.map((service) => (
-          <div key={service?.title}>
-            {service?.jsx}
-            <span>{service?.title}</span>
-          </div>
-        ))}
+        <h3>Удобства и услгуи</h3>
+        <div className={styles.apartmentServicesIcons}>
+          {service.map((service) =>
+            service.title.length > 0 ? (
+              <div className={styles.apartmentServicesIconsIcon} key={service?.title}>
+                <span>{service?.jsx}</span>
+                <br />
+                <span>{service?.title}</span>
+              </div>
+            ) : (
+              ''
+            ),
+          )}
+        </div>
       </div>
 
       <SimilarApartments apartmentId={apartment.apartmentName} />

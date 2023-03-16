@@ -1,6 +1,6 @@
 'use client';
 import { MyApartments } from '../../helpers/types/type';
-import { useState } from 'react';
+import { LegacyRef, useEffect, useRef, useState } from 'react';
 import styles from './style.module.scss';
 import useSWR from 'swr';
 import Image from 'next/image';
@@ -22,7 +22,7 @@ const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 const useSimilar = (apartmentId: number, option: string) => {
   const { data, error, isLoading } = useSWR<MyApartments[], any, any>(
-    `https://barsa-back.onrender.com/GetSimilar/${apartmentId}/${option}`,
+    `http://localhost:3500/GetSimilar/${apartmentId}/${option}`,
     fetcher,
   );
 
@@ -55,8 +55,33 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
     }, 3000);
   };
 
+  const [size, setSize] = useState<any>({});
+  const ref = useRef<HTMLDivElement>();
+
+  const resizeHandler = () => {
+    const { clientHeight, clientWidth }: any = ref.current || {};
+    setSize({ clientHeight, clientWidth });
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', resizeHandler);
+    resizeHandler();
+    return () => {
+      window.removeEventListener('resize', resizeHandler);
+    };
+  }, []);
+
+  const apartmentsInSimilar =
+    size.clientWidth >= 1410
+      ? 4
+      : size.clientWidth <= 1410 && size.clientWidth >= 910
+      ? 3
+      : size.clientWidth <= 910 && size.clientWidth >= 610
+      ? 2
+      : 1;
+
   return (
-    <div className={styles.similar}>
+    <div className={styles.similar} ref={ref as LegacyRef<HTMLDivElement>}>
       <div className={styles.similarInfo}>
         <p>Вам также могут понравиться</p>
         <span>
@@ -72,7 +97,7 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
       </div>
 
       <Swiper
-        slidesPerView={4}
+        slidesPerView={apartmentsInSimilar}
         spaceBetween={30}
         navigation
         modules={[Navigation, A11y]}
@@ -124,8 +149,11 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
                 <span className={styles.similarSliderBlockInfoText}>
                   Размер апартамента: {apartment?.about.squareMeters} m², Количество комнат: &nbsp;
                   {apartment?.about.rooms}, Количество спальных мест: {apartment?.about.sleepingPlaces},
-                  {' ' + apartment?.about.view}, Этаж {apartment?.about.floor}, {apartment?.about.balcony}!
+                  {' ' + apartment?.about.view}, Этаж {apartment?.about.floor},{' '}
+                  {apartment?.about.balcony}!
                 </span>
+
+                <br />
 
                 <Link
                   href={`Aparment-${apartment.apartmentName}`}

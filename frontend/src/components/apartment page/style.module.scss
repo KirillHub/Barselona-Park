@@ -1,40 +1,40 @@
 .apartment {
   position: relative;
 
-  height: auto;
+  h1 {
+    margin: 2vh 8vw 0;
+  }
 
   .apartmentSlider {
     position: relative;
-    margin: 4vh 8vw;
-
-    height: 525px;
+    background-color: #000;
     z-index: 0;
+    margin: 0 8vw 2vh;
+    height: calc(0px + 518 * (100vw / 1920));
 
     .apartmentSliderImage {
-      width: 790px !important;
+      border-radius: calc(15px + 15 * (100vw / 1920));
+      background-color: #f00;
     }
   }
 
   .apartmentSecondBlock {
-    display: flex;
     position: relative;
-
-    margin: 4vh 8vw;
-
+    display: flex;
     justify-content: space-between;
+    margin: calc(20px + 20 * (100vw / 1920)) 8vw;
 
     .apartmentDesctiption {
+      border-radius: calc(5px + 5 * (100vw / 1920));
       padding: calc(5px + 10 * (100vw / 1920));
       width: 68%;
-
-      border-radius: calc(5px + 5 * (100vw / 1920));
-      box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
-
-      background-color: rgb(28, 28, 28);
+      box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+      font-size: calc(8px + 8 * (100vw / 1920));
+      background-color: rgb(28 28 28);
 
       li {
-        margin-top: 0.5vw;
         list-style: inside;
+        margin-top: 0.5vw;
 
         &:first-child {
           margin: 0;
@@ -44,15 +44,53 @@
 
     .apartmentBooking {
       width: 28%;
+      height: 100%;
     }
   }
 
   .apartmentServices {
-    display: flex;
-    margin: 4vh 8vw;
+    margin: calc(20px + 20 * (100vw / 1920)) 8vw;
+    border-radius: calc(5px + 5 * (100vw / 1920));
+    padding: 1vw 0;
+    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+    background-color: rgb(28 28 28);
 
-    height: 20vh;
+    h3 {
+      margin: 0 1vw;
+      font-size: calc(12px + 12 * (100vw / 1920));
+    }
 
-    justify-content: space-between;
+    .apartmentServicesIcons {
+      display: flex;
+      flex-flow: row wrap;
+      align-content: space-between;
+      justify-content: space-between;
+
+      .apartmentServicesIconsIcon {
+        margin: calc(5px + 5 * (100vw / 1920));
+        width: calc(50px + 75 * (100vw / 1920));
+        height: calc(50px + 50 * (100vw / 1920));
+        text-align: center;
+
+        span {
+          font-size: calc(8px + 8 * (100vw / 1920));
+        }
+      }
+    }
+  }
+
+  @media (width < 1000px) {
+    h1 {
+      margin: 2vh 4vw 0;
+    }
+
+    .apartmentSlider {
+      margin: 0 4vw 2vh !important;
+    }
+
+    .apartmentSecondBlock,
+    .apartmentServices {
+      margin: calc(20px + 20 * (100vw / 1920)) 4vw !important;
+    }
   }
 }
