@@ -1,4 +1,4 @@
-import { Header } from './header/header';
+import { Header } from './_header';
 import Footer from './footer';
 
 export const Layout = {
