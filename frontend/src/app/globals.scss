@@ -47,10 +47,19 @@ ul {
 a {
   color: white;
   text-decoration: none;
+
+  &:hover {
+    color: rgb(145, 145, 145);
+  }
 }
 
-a:hover {
-  color: rgb(145, 145, 145);
+button {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(145, 145, 145);
+  }
 }
 
 ::-webkit-scrollbar {

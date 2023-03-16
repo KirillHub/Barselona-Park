@@ -25,3 +25,5 @@ export * from './bed';
 export * from './ruble';
 export * from './more';
 export * from './categoryMenu';
+export * from './sun';
+export * from './snowflake'

@@ -1,15 +1,13 @@
 import Layout from '@/components/layout';
 import { Nunito } from 'next/font/google';
-import './reset.scss'
+import './reset.scss';
 import './globals.scss';
-
 
 const nunito = Nunito({
   weight: '400',
   style: 'normal',
   subsets: ['cyrillic'],
 });
-
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Layout.Header />
         {children}
+        <Layout.Footer />
       </body>
     </html>
   );

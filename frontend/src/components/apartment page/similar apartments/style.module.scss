@@ -1,0 +1,150 @@
+.similar {
+  position: relative;
+  margin: 0 0 10vw 0;
+
+  padding: 4vh 8vw;
+
+  width: 100%;
+
+  background-color: rgb(28, 28, 28);
+
+  .similarInfo {
+    p {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
+  .similarSlider {
+    position: relative;
+    margin: 1vh 0;
+
+    height: 386px;
+
+    .similarSliderImage {
+      border-radius: calc(5px + 5 * (100vw / 1920));
+      filter: brightness(70%);
+    }
+
+    .similarSliderBlock {
+      position: absolute;
+
+      padding: 1vw;
+
+      width: 100%;
+      height: 100%;
+
+      user-select: none;
+
+      &:hover .similarSliderBlockInfo {
+        bottom: 0;
+
+        background-color: rgba(0, 0, 0, 0.56);
+        transition: 350ms;
+      }
+
+      .similarSliderBlockPrice {
+        display: flex;
+
+        align-items: center;
+        margin-bottom: 1vh;
+
+        cursor: pointer;
+
+        p {
+          margin-left: 0.5vw;
+
+          white-space: nowrap;
+          font-weight: bold;
+        }
+
+        span {
+          margin-left: 1vw;
+          text-align: center;
+
+          border-radius: calc(5px + 5 * (100vw / 1920));
+
+          font-size: 14px;
+          background-color: rgba(21, 21, 21, 0.801);
+        }
+      }
+
+      .similarSliderBlockInfo {
+        position: absolute;
+
+        padding: 1vw;
+
+        width: 100%;
+        height: 60%;
+
+        bottom: -170px;
+        left: 0;
+
+        transition: 850ms;
+
+        .similarSliderBlockInfoName {
+          margin-bottom: 2vh;
+
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        .similarSliderBlockInfoText {
+          font-size: 17px;
+        }
+
+        .similarSliderBlockInfoLink {
+          margin-top: 3vh;
+
+          width: 50%;
+          height: 5vh;
+
+          line-height: 5vh;
+          text-align: center;
+
+          font-size: 17px;
+
+          border-radius: calc(5px + 5 * (100vw / 1920));
+
+          background-color: rgb(21, 21, 21);
+
+          transition: 0.2s;
+
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+  }
+
+  .similarSelectOption {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-around;
+
+    button {
+      width: 10%;
+      height: 6vh;
+
+      border-radius: calc(5px + 5 * (100vw / 1920));
+
+      background-color: rgb(21, 21, 21);
+
+      transition: 0.2s;
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}

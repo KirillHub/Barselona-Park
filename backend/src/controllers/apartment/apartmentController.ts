@@ -9,14 +9,34 @@ import { ApartmentsType } from '../../type';
 export const getSimilar = async (req: any, res: any) => {
   try {
     const apartment: ApartmentsType[] = await ApartmentSchema.find({
-      apartmentName: req.params.apartmentName,
+      apartmentName: +req.params.apartmentName,
     });
 
     const similar = findSimilarApartments(apartment[0], req.params.option);
 
     const similarApartments = await ApartmentSchema.find({ $and: [similar] });
 
-    res.json([...similarApartments].slice(0, 8));
+    const shuffle = (array: any) => {
+      const newArray = [...array];
+      const length = newArray.length;
+
+      for (let start = 0; start < length; start++) {
+        const randomPosition = Math.floor((newArray.length - start) * Math.random());
+        const randomItem = newArray.splice(randomPosition, 1);
+
+        newArray.push(...randomItem);
+      }
+
+      return newArray;
+    };
+
+    const filtredSimilar = [...similarApartments].filter(
+      (apartment) => apartment.apartmentName !== +req.params.apartmentName,
+    );
+
+    const shuffSimlar = shuffle(filtredSimilar);
+
+    res.json(shuffSimlar.slice(0, 8));
   } catch (err) {
     console.log(err);
 
@@ -35,8 +55,6 @@ export const getAllApartments = async (req: any, res: any) => {
     const service = categoryService(req.params.service);
 
     const mergedObj = Object.assign({}, ...service, category);
-
-    console.log(mergedObj);
 
     const apartments: any = await ApartmentSchema.find({
       $and: [mergedObj],

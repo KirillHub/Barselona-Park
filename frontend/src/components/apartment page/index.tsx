@@ -16,13 +16,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
 import { SimilarApartments } from './similar apartments';
 
 import { Options } from '../category page/category interaction/options';
 
 import { reservationDays } from '../helpers/functions/reservationDays';
 import { MyApartments } from '../helpers/types/type';
+import { readyIcons } from '../helpers/functions/readyIcons';
 
 export default function Apart() {
   const pathname = usePathname();
@@ -30,6 +30,8 @@ export default function Apart() {
   const apartmentId = pathname?.split('/')[1];
 
   const apartment = apartmentsData?.find((x) => x.apartmentName === +apartmentId!?.split('-')[1]);
+
+  const service = readyIcons(apartment!);
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
@@ -64,7 +66,7 @@ export default function Apart() {
 
       <div className={styles.apartmentSecondBlock}>
         <ul className={styles.apartmentDesctiption}>
-          {apartment.about.description.map((text, index) => (
+          {apartment?.about.description.map((text, index) => (
             <li key={index}>{text}</li>
           ))}
         </ul>
@@ -74,8 +76,16 @@ export default function Apart() {
         </div>
       </div>
 
-      <SimilarApartments apartmentId={apartment.apartmentName} />
+      <div className={styles.apartmentServices}>
+        {service.map((service) => (
+          <div key={service?.title}>
+            {service?.jsx}
+            <span>{service?.title}</span>
+          </div>
+        ))}
+      </div>
 
+      <SimilarApartments apartmentId={apartment.apartmentName} />
     </div>
   );
 }

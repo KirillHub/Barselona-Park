@@ -2,7 +2,7 @@
 
 export const Telegram = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 32 32">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 31 31">
       <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7225)"></circle>
       <path
         fill="#fff"

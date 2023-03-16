@@ -150,8 +150,10 @@
       left: 0;
 
       justify-content: space-between;
+      
       border: calc(2px + 1 * (100vw / 1920)) solid rgb(60, 60, 60);
       background-color: rgb(28, 28, 28);
+
       z-index: 2;
     }
   }

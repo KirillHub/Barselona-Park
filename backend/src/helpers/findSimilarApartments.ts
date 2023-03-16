@@ -5,7 +5,7 @@ export const findSimilarApartments = (apartment: ApartmentsType, option: string)
   let field = {};
 
   if (option === 'floor') {
-    field = { 'about.floor': { $gt: apartment?.about?.floor - 3, $lt: apartment?.about?.floor + 3 } };
+    field = { 'about.floor': { $gt: apartment?.about?.floor - 2, $lt: apartment?.about?.floor + 2 } };
   }
   if (option === 'services') {
     let service = [];
@@ -34,6 +34,9 @@ export const findSimilarApartments = (apartment: ApartmentsType, option: string)
   }
   if (option === 'price') {
     field = { summerPrice: { $gt: apartment.summerPrice - 2000, $lt: apartment.summerPrice + 2000 } };
+  }
+  if (option === 'rooms') {
+    field = { 'about.rooms': apartment.about.rooms };
   }
   return field;
 };
