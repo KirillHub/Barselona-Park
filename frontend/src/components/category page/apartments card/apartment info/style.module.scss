@@ -3,21 +3,14 @@
 
   span {
     position: absolute;
-
     padding: 0.2vw 0.6vw;
-
     bottom: -2.4vh;
     left: -2vw;
-
-    font-size: calc(8px + 5 * (100vw / 1920));
-
+    border: calc(2px + 1 * (100vw / 1920)) solid rgb(60 60 60);
     white-space: nowrap;
-
-    border: calc(2px + 1 * (100vw / 1920)) solid rgb(60, 60, 60);
-
-    color: rgb(255, 255, 255);
-    background-color: rgb(28, 28, 28);
-
+    font-size: calc(8px + 5 * (100vw / 1920));
+    color: rgb(255 255 255);
+    background-color: rgb(28 28 28);
     z-index: 2;
 
     @media (width < 605px) {
@@ -27,12 +20,9 @@
 
   .infoTitle {
     padding: calc(5px + 5 * (100vw / 1920)) 0;
-
     width: 100%;
-
+    font-weight: 700;
     font-size: calc(12px + 15 * (100vw / 1920));
-    font-weight: bold;
-
     cursor: pointer;
 
     @media (width < 605px) {
@@ -42,27 +32,11 @@
 
   .infoOptions {
     display: flex;
-
-    padding: calc(5px + 5 * (100vw / 1920)) 0;
-
-    justify-content: space-between;
-    border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40, 40, 40);
-
-    z-index: 0;
     flex-wrap: wrap;
-
-    @media (width < 805px) {
-      p {
-        font-size: calc(8px + 12 * (100vw / 1920)) !important;
-      }
-
-      @media (width < 605px) {
-
-        p {
-          font-size: calc(6px + 12 * (100vw / 605)) !important;
-        }
-      }
-    }
+    justify-content: space-between;
+    padding: calc(5px + 5 * (100vw / 1920)) 0;
+    border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
+    z-index: 0;
 
     .infoDescription {
       display: flex;
@@ -73,19 +47,27 @@
         font-size: calc(6px + 8 * (100vw / 1920));
       }
     }
+
+    @media (width < 805px) {
+      p {
+        font-size: calc(8px + 12 * (100vw / 1920)) !important;
+      }
+
+      @media (width < 605px) {
+        p {
+          font-size: calc(6px + 12 * (100vw / 605)) !important;
+        }
+      }
+    }
   }
 }
 
 .infoService {
-  position: relative;
   display: flex;
-
-  padding: calc(5px + 5 * (100vw / 1920)) 0;
-
+  position: relative;
   align-items: baseline;
-
-  border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40, 40, 40);
-
+  padding: calc(5px + 5 * (100vw / 1920)) 0;
+  border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
   user-select: none;
 
   svg:hover {
@@ -96,14 +78,11 @@
   .infoServiceAllIcons {
     display: flex;
     position: relative;
-
-    width: 70%;
-
     flex-flow: row wrap;
-
     justify-content: space-between;
-
+    width: 70%;
     user-select: none;
+
     div {
       position: relative;
     }
@@ -111,6 +90,29 @@
 
   .infoServiceAll {
     width: 30%;
+
+    p {
+      line-height: calc(16px + 12 * (100vw / 1920));
+      text-align: right;
+      font-weight: 600;
+      font-size: calc(8px + 8 * (100vw / 1920));
+      cursor: pointer;
+
+      &:hover {
+        color: #808080;
+      }
+    }
+
+    .infoServiceAllIcons {
+      position: absolute;
+      justify-content: space-between;
+      padding: 0.5vh;
+      width: 100%;
+      left: 0;
+      border: calc(2px + 1 * (100vw / 1920)) solid rgb(60 60 60);
+      background-color: rgb(28 28 28);
+      z-index: 2;
+    }
 
     @media (width < 805px) {
       p {
@@ -123,50 +125,33 @@
         }
       }
     }
-
-    p {
-      text-align: right;
-
-      font-weight: 600;
-
-      line-height: calc(16px + 12 * (100vw / 1920));
-
-      font-size: calc(8px + 8 * (100vw / 1920));
-
-      &:hover {
-        color: grey;
-      }
-
-      cursor: pointer;
-    }
-
-    .infoServiceAllIcons {
-      position: absolute;
-
-      padding: 0.5vh;
-
-      width: 100%;
-
-      left: 0;
-
-      justify-content: space-between;
-      
-      border: calc(2px + 1 * (100vw / 1920)) solid rgb(60, 60, 60);
-      background-color: rgb(28, 28, 28);
-
-      z-index: 2;
-    }
   }
 }
 
 .infoPriceButton {
   display: flex;
-
-  padding: 1vh 0;
-
   justify-content: space-between;
+  padding: 1vh 0;
+  border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
 
-  border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40, 40, 40);
+  .infoPriceButtonButn {
+    width: calc(35px + 175 * (100vw / 1920));
+    height: calc(20px + 20 * (100vw / 1920));
+    font-size: calc(5px + 8 * (100vw / 1920));
+  }
+
+  div {
+    display: flex;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  p {
+    text-align: center;
+    font-weight: 700;
+    font-size: calc(7px + 14 * (100vw / 1920));
+  }
 
   @media (width < 805px) {
     p {
@@ -175,7 +160,6 @@
 
     .infoPriceButtonButn {
       width: calc(70px + 175 * (100vw / 1920)) !important;
-
       font-size: calc(6px + 8 * (100vw / 1920)) !important;
     }
 
@@ -186,34 +170,10 @@
 
       .infoPriceButtonButn {
         width: calc(30px + 175 * (100vw / 605)) !important;
-
         height: calc(16px + 20 * (100vw / 605)) !important;
-
         font-size: calc(5px + 8 * (100vw / 605)) !important;
       }
     }
-  }
-
-  .infoPriceButtonButn {
-    width: calc(35px + 175 * (100vw / 1920));
-    height: calc(20px + 20 * (100vw / 1920));
-
-    font-size: calc(5px + 8 * (100vw / 1920));
-  }
-
-  div {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    cursor: pointer;
-  }
-
-  p {
-    text-align: center;
-
-    font-size: calc(7px + 14 * (100vw / 1920));
-    font-weight: bold;
   }
 }
 

@@ -38,7 +38,9 @@ export const reservationDays = (start: Date, end: Date, excluded?: Date[]) => {
 
   if (excluded?.length !== undefined) {
     return most.filter((x) =>
-      excluded.every((elem) => elem.toDateString() !== x.toDateString()) ? x : '',
+      excluded.every((elem) => elem.toDateString() !== x.toDateString())
+        ? x
+        : ""
     );
   }
 

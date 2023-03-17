@@ -1,8 +1,12 @@
-import styles from './style.module.scss'
+import styles from "./style.module.scss";
 
 export const Balcony = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path
         fill="#DBE9FD"
         d="M423 434H89c-9.2 0-16.7-7.4-16.7-16.6V50c0-27.5 22.5-50 50.1-50h267.2a50 50 0 0 1 50 50v367.4c0 9.2-7.4 16.7-16.6 16.7z"
@@ -39,8 +43,14 @@ export const Balcony = () => {
       />
       <path fill="#80D7D7" d="M239.3 66.8h33.4V267h-33.4z" />
       <path fill="#77BDBD" d="M256 66.8h16.7V267H256z" />
-      <path fill="#6E6057" d="M495.3 267.1H16.7a16.7 16.7 0 0 1 0-33.4h478.6a16.7 16.7 0 0 1 0 33.4z" />
-      <path fill="#615349" d="M495.3 233.7H256v33.4h239.3a16.7 16.7 0 0 0 0-33.4z" />
+      <path
+        fill="#6E6057"
+        d="M495.3 267.1H16.7a16.7 16.7 0 0 1 0-33.4h478.6a16.7 16.7 0 0 1 0 33.4z"
+      />
+      <path
+        fill="#615349"
+        d="M495.3 233.7H256v33.4h239.3a16.7 16.7 0 0 0 0-33.4z"
+      />
     </svg>
   );
 };

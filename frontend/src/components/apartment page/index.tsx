@@ -1,38 +1,38 @@
-'use client';
-import { useEffect, useState, useRef } from 'react';
-import DatePicker from 'react-datepicker';
-import { useForm } from 'react-hook-form';
-import ru from 'date-fns/locale/ru';
-import { subDays, addDays } from 'date-fns';
-import { usePathname } from 'next/navigation';
-import { apartmentsData } from '../../fake/apartmnetsData';
-import 'react-datepicker/dist/react-datepicker.css';
-import Image from 'next/image';
-import styles from './style.module.scss';
+"use client";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, A11y, Pagination } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "react-datepicker/dist/react-datepicker.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import { SimilarApartments } from './similar apartments';
+import { addDays, subDays } from "date-fns";
+import ru from "date-fns/locale/ru";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import DatePicker from "react-datepicker";
+import { useForm } from "react-hook-form";
+import { A11y, Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Options } from '../category page/category interaction/options';
-
-import { reservationDays } from '../helpers/functions/reservationDays';
-import { MyApartments } from '../helpers/types/type';
-import { readyIcons } from '../helpers/functions/readyIcons';
+import { SimilarApartments } from "./similar apartments";
+import styles from "./style.module.scss";
+import { apartmentsData } from "../../fake/apartmnetsData";
+import { Options } from "../category page/category interaction/options";
+import { readyIcons } from "../helpers/functions/readyIcons";
+import { reservationDays } from "../helpers/functions/reservationDays";
+import { MyApartments } from "../helpers/types/type";
 
 export default function Apart() {
   const pathname = usePathname();
 
-  const apartmentId = pathname?.split('/')[1];
+  const apartmentId = pathname?.split("/")[1];
 
-  const apartment = apartmentsData?.find((x) => x.apartmentName === +apartmentId!?.split('-')[1]);
+  const apartment = apartmentsData?.find(
+    (x) => x.apartmentName === +apartmentId!?.split("-")[1]
+  );
 
   const service = readyIcons(apartment!);
-
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
@@ -59,7 +59,7 @@ export default function Apart() {
               quality={100}
               alt={`test`}
               className={styles.apartmentSliderImage}
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: "contain" }}
             />
           </SwiperSlide>
         ))}
@@ -82,14 +82,17 @@ export default function Apart() {
         <div className={styles.apartmentServicesIcons}>
           {service.map((service) =>
             service.title.length > 0 ? (
-              <div className={styles.apartmentServicesIconsIcon} key={service?.title}>
+              <div
+                className={styles.apartmentServicesIconsIcon}
+                key={service?.title}
+              >
                 <span>{service?.jsx}</span>
                 <br />
                 <span>{service?.title}</span>
               </div>
             ) : (
-              ''
-            ),
+              ""
+            )
           )}
         </div>
       </div>

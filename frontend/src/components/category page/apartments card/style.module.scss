@@ -1,41 +1,25 @@
 .categoryPageRightBlockCard {
   position: relative;
-
-  margin: 0 0 calc(20px + 30 * (100vw / 1920)) 0;
-
   justify-content: space-between;
-
+  margin: 0 0 calc(20px + 30 * (100vw / 1920)) 0;
   border-radius: calc(5px + 5 * (100vw / 1920));
+  box-shadow: rgb(34 34 34) 0 0 0 6px;
+  background-color: rgb(28 28 28);
 
-  box-shadow: rgb(34, 34, 34) 0px 0px 0px 6px;
-
-  background-color: rgb(28, 28, 28);
+  .categoryPageRightBlockCardSlider {
+    position: relative;
+  }
 
   @media (width < 805px) {
     margin-right: auto;
     margin-left: auto;
-  }
-
-  .categoryPageRightBlockCardSlider {
-    position: relative;
   }
 }
 
 .slider {
   width: calc(60px + 420 * (100vw / 1920));
   height: calc(50px + 270 * (100vw / 1920));
-
   user-select: none;
-
-  @media (width < 805px) {
-    width: calc(100px + 225 * (100vw / 805));
-    height: calc(90px + 125 * (100vw / 805));
-
-    @media (width < 605px) {
-      width: calc(5px + 465 * (100vw / 605));
-      height: calc(35px + 265 * (100vw / 605));
-    }
-  }
 
   .sliderImage {
     position: relative;
@@ -45,13 +29,10 @@
     .sliderImageSpan {
       position: absolute;
       width: 100%;
-
-      text-align: center;
-
       line-height: calc(50px + 270 * (100vw / 1920));
-
+      text-align: center;
       font-size: calc(10px + 10 * (100vw / 1920));
-      color: rgba(255, 255, 255, 0.76);
+      color: rgb(255 255 255 / 76%);
 
       @media (width < 805px) {
         line-height: calc(90px + 125 * (100vw / 805));
@@ -65,6 +46,16 @@
 
   .swiper-button-prev::after,
   .swiper-button-next::after {
-    color: rgb(0, 0, 0);
+    color: rgb(0 0 0);
+  }
+
+  @media (width < 805px) {
+    width: calc(100px + 225 * (100vw / 805));
+    height: calc(90px + 125 * (100vw / 805));
+
+    @media (width < 605px) {
+      width: calc(5px + 465 * (100vw / 605));
+      height: calc(35px + 265 * (100vw / 605));
+    }
   }
 }

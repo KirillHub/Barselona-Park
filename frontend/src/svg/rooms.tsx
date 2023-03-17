@@ -1,9 +1,15 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 export const Rooms = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.newSvg} viewBox="0 -51 414 414">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.newSvg}
+      viewBox="0 -51 414 414"
+    >
       <defs>
-        <style>{'.a{fill:#fff}.b{fill:#211715}.e{fill:#88c5e9}.g{fill:#ffda71}'}</style>
+        <style>
+          {".a{fill:#fff}.b{fill:#211715}.e{fill:#88c5e9}.g{fill:#ffda71}"}
+        </style>
       </defs>
       <path d="M205 76 2 193l203 118 204-118L205 76Z" className="a" />
       <path
@@ -54,7 +60,10 @@ export const Rooms = () => {
         d="m366 143-2 10a4 4 0 0 1-2 3l-9 5-19 11a8 8 0 0 0-3 3l-1 7v9c0 3 4 3 4 0v-7c0-3-1-7 2-8l7-4 21-13a8 8 0 0 0 4-5 37 37 0 0 0 1-6l1-5a2 2 0 0 0-2-2 2 2 0 0 0-2 2Z"
         className="b"
       />
-      <path d="M237 220a2 2 0 0 0 1 0l50-29a2 2 0 0 0 1-1v17l-1 1-51 29-73-42v-18Z" className="a" />
+      <path
+        d="M237 220a2 2 0 0 0 1 0l50-29a2 2 0 0 0 1-1v17l-1 1-51 29-73-42v-18Z"
+        className="a"
+      />
       <path
         d="m163 196 24 15 39 22 10 6a2 2 0 0 0 2 0l18-10 26-16 7-4c2-1 0-4-2-3l-17 10-27 16-7 3h2l-26-14-38-23-9-5c-3-1-5 2-2 3Z"
         className="b"
@@ -76,10 +85,6 @@ export const Rooms = () => {
         d="m106 179 8 4 20 12 23 13 21 12 9 6a3 3 0 0 1 1 0l-1-1a3 3 0 0 0 0 1v52a2 2 0 0 0 0 1l1-1-8-5-14-8-37-21-22-13s0 1 0 0v-53l-1 1a2 2 0 0 0 3-1 2 2 0 0 0-1-3c-2-1-5 0-5 3v53c0 1 0 2 2 3l6 4 15 8 37 22 23 13c2 1 5 0 5-2v-54c0-3-3-4-6-5l-12-8-37-21-27-15-1-1c-2-1-4 2-2 4Z"
         className="b"
       />
-
-
-
-
     </svg>
   );
 };

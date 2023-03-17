@@ -1,11 +1,11 @@
-import useStore from '../../../../../store/useStore';
-import { More } from '../../../../../svg';
-import styles from '../style.module.scss';
+import useStore from "../../../../../store/useStore";
+import { More } from "../../../../../svg";
+import styles from "../style.module.scss";
 
 export const GuestsNights = () => {
   const updateGuests = useStore((state) => state.updateGuests);
   const guests = useStore((state) => state.guests);
-  const nigths = useStore((state) => state.nights)
+  const nigths = useStore((state) => state.nights);
 
   return (
     <>
@@ -17,13 +17,16 @@ export const GuestsNights = () => {
 
           <div>
             <div
-              className={styles.optionsIcon + ' ' + styles.IconWrap}
+              className={styles.optionsIcon + " " + styles.IconWrap}
               onClick={() => updateGuests(true)}
             >
               <More />
             </div>
 
-            <div className={styles.optionsIcon} onClick={() => updateGuests(false)}>
+            <div
+              className={styles.optionsIcon}
+              onClick={() => updateGuests(false)}
+            >
               <More />
             </div>
           </div>

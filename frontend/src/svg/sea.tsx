@@ -1,8 +1,15 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 export const Sea = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 340 340">
-      <path fill="#346b99" d="M59 100a163 163 0 0 1-44 36 10 10 0 0 0-5 8v32l2 9 30-21z" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 340 340"
+    >
+      <path
+        fill="#346b99"
+        d="M59 100a163 163 0 0 1-44 36 10 10 0 0 0-5 8v32l2 9 30-21z"
+      />
       <path
         fill="#eefaff"
         d="M10 176s19-13 36-51c0 0 24-65 91-79 0 0 30-9 66 0a88 88 0 0 1 46 29 65 65 0 0 1 12 20 4 4 0 0 1-6 5 25 25 0 0 0-22 0l-54 21 1 145-170 13z"

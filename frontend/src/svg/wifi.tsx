@@ -1,8 +1,12 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export const Wifi = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path
         fill="#656D78"
         d="M512 480c0 12-10 21-21 21H21c-11 0-21-9-21-21V373c0-11 10-21 21-21h470c11 0 21 10 21 21v107z"

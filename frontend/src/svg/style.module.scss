@@ -1,9 +1,7 @@
 .svg {
   width: calc(12px + 18 * (100vw / 1920));
   height: calc(12px + 18 * (100vw / 1920));
-
   vertical-align: middle;
-
   cursor: pointer;
   z-index: 1;
 
@@ -16,7 +14,6 @@
 .newSvg {
   width: calc(15px + 20 * (100vw / 1920));
   height: calc(15px + 20 * (100vw / 1920));
-
   z-index: 1;
 
   @media (width < 605px) {
@@ -27,9 +24,7 @@
 
 .categoryButton {
   border-radius: calc(5px + 5 * (100vw / 1920));
-
-  box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
-  background-color: rgb(28, 28, 28);
-
+  box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+  background-color: rgb(28 28 28);
   cursor: pointer;
 }

@@ -1,60 +1,38 @@
 .categoryPage {
   position: relative;
-  margin: 0vh 8vw;
-
-
-  @media (width < 1200px) {
-    margin: 0 4vw;
-
-    @media (width < 605px) {
-      margin: 0 2vw;
-    }
-  }
+  margin: 0 8vw;
 
   .categoryPageTitle {
     text-align: center !important;
-
     font-size: calc(15px + 15 * (100vw / 1920));
   }
 
   .categoryPageButton1 {
     position: absolute;
-
     margin: 0 auto;
-
     width: 20vw;
     height: 4vh;
-
     left: 0;
     right: 0;
-
     border-radius: calc(5px + 5 * (100vw / 1920));
-    box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
-
-    background-color: rgb(28, 28, 28);
-
+    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+    background-color: rgb(28 28 28);
     cursor: pointer;
   }
 
   .categoryPageBlocks {
     display: flex;
-
+    justify-content: space-between;
     width: 100%;
     height: 100%;
 
-    justify-content: space-between;
-
     .categoryPageRightBlock {
-      position: relative;
       display: flex;
-
+      position: relative;
+      flex-wrap: wrap;
+      justify-content: space-between;
       width: 70%;
       height: 100%;
-
-      justify-content: space-between;
-
-      flex-wrap: wrap;
-
       z-index: 0;
 
       @media (width < 805px) {
@@ -64,6 +42,14 @@
           width: 100%;
         }
       }
+    }
+  }
+
+  @media (width < 1200px) {
+    margin: 0 4vw;
+
+    @media (width < 605px) {
+      margin: 0 2vw;
     }
   }
 }

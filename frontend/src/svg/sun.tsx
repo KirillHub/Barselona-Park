@@ -1,8 +1,13 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export const Sun = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.newSvg} fill="none" viewBox="0 0 24 24">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.newSvg}
+      fill="none"
+      viewBox="0 0 24 24"
+    >
       <path
         fill="white"
         fillRule="evenodd"

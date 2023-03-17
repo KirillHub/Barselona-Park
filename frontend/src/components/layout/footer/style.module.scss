@@ -1,31 +1,26 @@
 .footer {
   padding: 4vh 8vw;
-
-  background-color: rgb(28, 28, 28);
+  background-color: rgb(28 28 28);
 
   .footerTop {
     display: flex;
-
+    justify-content: space-between;
     margin-bottom: 4vh;
     padding-bottom: 4vh;
-
-    border-bottom: 0.2vh solid white;
-    justify-content: space-between;
+    border-bottom: 0.2vh solid #fff;
 
     .footerTopColumn {
       width: 340px;
 
       h4 {
+        font-weight: 700;
         font-size: 22px;
-        font-weight: bold;
       }
 
       p {
         margin: 1vh 0;
-
         font-size: 16px;
-
-        color: rgba(252, 252, 252, 0.742);
+        color: rgb(252 252 252 / 74.2%);
       }
 
       a {
@@ -35,8 +30,7 @@
       .footerTopColumnImage {
         width: 250px;
         height: 6vh;
-
-        background-color: white;
+        background-color: #fff;
       }
 
       .footerTopColumnRead {
@@ -50,9 +44,9 @@
 
       .footerTopColumnSocial {
         margin-top: 9vh;
+
         .footerTopColumnSocialIcons {
           margin: 0 calc(5px + 5 * (100vw / 1920)) 0 0;
-
           width: calc(15px + 20 * (100vw / 1920));
           height: calc(15px + 20 * (100vw / 1920));
         }

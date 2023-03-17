@@ -1,9 +1,9 @@
-import { useRouter } from 'next/navigation';
-import { Options } from './options';
-import { Service } from './service';
-import { Price } from './price and button';
-import { MyApartments } from '../../../helpers/types/type';
-import styles from './style.module.scss';
+import { useRouter } from "next/navigation";
+import { Options } from "./options";
+import { Price } from "./price and button";
+import { Service } from "./service";
+import styles from "./style.module.scss";
+import { MyApartments } from "../../../helpers/types/type";
 
 interface MyProps {
   apartment: MyApartments;
@@ -11,7 +11,8 @@ interface MyProps {
 
 export const ApartmentInfo = ({ apartment }: MyProps) => {
   const router = useRouter();
-  const handleClick = () => router.push(`/Apartment/${apartment.apartmentName}`);
+  const handleClick = () =>
+    router.push(`/Apartment/${apartment.apartmentName}`);
 
   return (
     <div className={styles.info}>

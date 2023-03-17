@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { readyIcons } from '../../../../helpers/functions/readyIcons';
-import { MyApartments } from '../../../../helpers/types/type';
-import styles from '../style.module.scss';
+import { useState } from "react";
+
+import { readyIcons } from "../../../../helpers/functions/readyIcons";
+import { MyApartments } from "../../../../helpers/types/type";
+import styles from "../style.module.scss";
 
 interface MyProps {
   apartment: MyApartments;
@@ -35,7 +36,7 @@ export const Service = ({ apartment }: MyProps) => {
 
   let fixSpace = 1;
 
-  if ((apartment.about.balcony = 'С балконом')) {
+  if ((apartment.about.balcony = "С балконом")) {
     fixSpace += 1;
   }
   if (apartment.services.stove) {
@@ -49,10 +50,14 @@ export const Service = ({ apartment }: MyProps) => {
   }
 
   const showTitle = (iconIndex: number) => {
-    setTitles(titles.map((title, index) => (index === iconIndex ? true : title)));
+    setTitles(
+      titles.map((title, index) => (index === iconIndex ? true : title))
+    );
 
     const id = setTimeout(() => {
-      setTitles((prev) => prev.map((title, index) => (index === iconIndex ? false : title)));
+      setTitles((prev) =>
+        prev.map((title, index) => (index === iconIndex ? false : title))
+      );
     }, 1000);
   };
 
@@ -60,14 +65,18 @@ export const Service = ({ apartment }: MyProps) => {
     <div className={styles.infoService}>
       <div className={styles.infoServiceShownIcons}>
         {icons.map((icon, index) =>
-          index < 10 - fixSpace && icon.title !== '' ? (
+          index < 10 - fixSpace && icon.title !== "" ? (
             <div onClick={() => showTitle(index)} key={icon.title}>
               {icon.jsx}
-              <span className={`${titles[index] ? styles.visible : styles.hidden}`}>{icon.title}</span>
+              <span
+                className={`${titles[index] ? styles.visible : styles.hidden}`}
+              >
+                {icon.title}
+              </span>
             </div>
           ) : (
-            ''
-          ),
+            ""
+          )
         )}
       </div>
 
@@ -79,18 +88,26 @@ export const Service = ({ apartment }: MyProps) => {
         <p>Все услуги</p>
         <div
           className={
-            styles.infoServiceAllIcons + ' ' + `${showService ? styles.visible : styles.hidden}`
+            styles.infoServiceAllIcons +
+            " " +
+            `${showService ? styles.visible : styles.hidden}`
           }
         >
           {icons.map((icon, index) =>
-            index > 9 - fixSpace && icon.title !== '' ? (
+            index > 9 - fixSpace && icon.title !== "" ? (
               <div onClick={() => showTitle(index)} key={icon.title}>
                 {icon.jsx}
-                <span className={`${titles[index] ? styles.visible : styles.hidden}`}>{icon.title}</span>
+                <span
+                  className={`${
+                    titles[index] ? styles.visible : styles.hidden
+                  }`}
+                >
+                  {icon.title}
+                </span>
               </div>
             ) : (
-              ''
-            ),
+              ""
+            )
           )}
         </div>
       </div>

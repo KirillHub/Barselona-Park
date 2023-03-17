@@ -1,12 +1,25 @@
-
 export const Whatsapp = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 580">
-      <linearGradient id="a" x1="256" x2="256" y1="503.1" y2="8.9" gradientUnits="userSpaceOnUse">
+      <linearGradient
+        id="a"
+        x1="256"
+        x2="256"
+        y1="503.1"
+        y2="8.9"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop offset="0" stopColor="#20b038" />
         <stop offset="1" stopColor="#60d66a" />
       </linearGradient>
-      <linearGradient id="b" x1="256" x2="256" y1="512" y2="0" gradientUnits="userSpaceOnUse">
+      <linearGradient
+        id="b"
+        x1="256"
+        x2="256"
+        y1="512"
+        y2="0"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop offset="0" stopColor="#f9f9f9" />
         <stop offset="1" stopColor="#fff" />
       </linearGradient>

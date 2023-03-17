@@ -1,7 +1,11 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 export const Stove = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path
         fill="#434A54"
         d="M236.3 0h-128a10.7 10.7 0 1 0 0 21.3h128a10.7 10.7 0 0 0 0-21.3zm169 0h-128a10.7 10.7 0 1 0 0 21.3h128a10.7 10.7 0 0 0 0-21.3z"
@@ -11,7 +15,10 @@ export const Stove = () => {
         fill="#434A54"
         d="M96 501.3a10.7 10.7 0 1 1-21.3 0 10.7 10.7 0 0 1 21.3 0zm341.3 0a10.7 10.7 0 1 1-21.3 0 10.7 10.7 0 0 1 21.3 0z"
       />
-      <path fill="#656D78" d="M394.7 85.3a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0z" />
+      <path
+        fill="#656D78"
+        d="M394.7 85.3a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0z"
+      />
       <path fill="#5D9CEC" d="M67.5 151h377v265h-377z" />
       <path
         fill="#656D78"
@@ -30,7 +37,10 @@ export const Stove = () => {
         <path d="M298.7 426.7h-85.4a10.7 10.7 0 0 0 0 21.3h85.4a10.7 10.7 0 1 0 0-21.3z" />
       </g>
       <path fill="#FFF" d="M264 416h-82.7l64-256H328z" opacity=".1" />
-      <path fill="#434A54" d="M405.3 202.7H106.7a10.7 10.7 0 0 0 0 21.3h298.6a10.7 10.7 0 0 0 0-21.3z" />
+      <path
+        fill="#434A54"
+        d="M405.3 202.7H106.7a10.7 10.7 0 0 0 0 21.3h298.6a10.7 10.7 0 0 0 0-21.3z"
+      />
     </svg>
   );
 };

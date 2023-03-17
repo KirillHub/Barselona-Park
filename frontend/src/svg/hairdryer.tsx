@@ -1,8 +1,12 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export const Hairdryer = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path fill="#464655" d="M132 454v27a18 18 0 1 0 36 0v-27h-36z" />
       <path
         fill="#DC5A5A"
@@ -17,16 +21,28 @@ export const Hairdryer = () => {
         fill="#464655"
         d="M509 15a9 9 0 0 0-7-2c-66 10-93 46-94 48a9 9 0 0 0-2 5v97l2 6c1 1 28 37 94 47a9 9 0 0 0 10-9V22a9 9 0 0 0-3-7z"
       />
-      <path fill="#FF9696" d="M146 128H75a13 13 0 0 1 0-26h71a13 13 0 0 1 0 26z" />
-      <path fill="#707487" d="M150 322c-10 0-18-8-18-17v-18a18 18 0 1 1 36 0v18c0 9-8 17-18 17z" />
-      <path fill="#464655" d="M150 269c-10 0-18 8-18 18v9h36v-9c0-10-8-18-18-18z" />
+      <path
+        fill="#FF9696"
+        d="M146 128H75a13 13 0 0 1 0-26h71a13 13 0 0 1 0 26z"
+      />
+      <path
+        fill="#707487"
+        d="M150 322c-10 0-18-8-18-17v-18a18 18 0 1 1 36 0v18c0 9-8 17-18 17z"
+      />
+      <path
+        fill="#464655"
+        d="M150 269c-10 0-18 8-18 18v9h36v-9c0-10-8-18-18-18z"
+      />
       <path fill="#BE464B" d="m187 216 11-17h-96l11 17z" />
       <path
         fill="#DC5A5A"
         d="M410 137h-30l-143 23a310 310 0 0 1-49 3H53c-15 0-27-12-27-26v35c0 15 12 27 27 27h135a310 310 0 0 0 49-4l143-23h30c32 0 58-26 58-57a57 57 0 0 0-3-18c-7 23-29 40-55 40z"
       />
       <path fill="#707487" d="M410 57h-30v115h30a57 57 0 0 0 0-115z" />
-      <path fill="#5B5D6E" d="M467 107v-2l-2-8c-7 23-29 40-55 40h-30v35h30a57 57 0 0 0 57-65z" />
+      <path
+        fill="#5B5D6E"
+        d="M467 107v-2l-2-8c-7 23-29 40-55 40h-30v35h30a57 57 0 0 0 57-65z"
+      />
     </svg>
   );
 };

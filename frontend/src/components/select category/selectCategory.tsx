@@ -1,7 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { categories } from './categories';
-import styles from './style.module.scss';
+import Image from "next/image";
+import Link from "next/link";
+
+import { categories } from "./categories";
+import styles from "./style.module.scss";
 
 export default function SelectCategory() {
   return (
@@ -16,7 +17,10 @@ export default function SelectCategory() {
               sizes="calc(100px + 150 * (100vw / 1920))"
               src={category.src}
               alt={category.alt}
-              style={{ borderRadius: 'calc(8px + 8 * (100vw / 1920))', objectFit: 'contain' }}
+              style={{
+                borderRadius: "calc(8px + 8 * (100vw / 1920))",
+                objectFit: "contain",
+              }}
             />
           </div>
         </Link>

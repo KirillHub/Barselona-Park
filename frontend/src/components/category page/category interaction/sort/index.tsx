@@ -1,8 +1,9 @@
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import styles from '../style.module.scss';
-import useStore from '../../../../store/useStore';
-import { useState } from 'react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+import useStore from "../../../../store/useStore";
+import styles from "../style.module.scss";
 
 interface MyParams {
   category: string;
@@ -19,58 +20,58 @@ export const Sort = ({ resetSorts }: MyProps) => {
   const opitionsSortedLink = useStore((state) => state.opitionsSortedLink);
   const pathname = usePathname();
 
-  const ha = pathname?.split('/')[2];
-  const category = pathname?.split('/')[3];
-  const sort = pathname?.split('/')[4];
+  const ha = pathname?.split("/")[2];
+  const category = pathname?.split("/")[3];
+  const sort = pathname?.split("/")[4];
 
   const sortBy = [
     {
-      option: 'Sorted-by-summer-season',
-      name: 'По цене Летний сезон',
+      option: "Sorted-by-summer-season",
+      name: "По цене Летний сезон",
       ru: {
-        more: 'Дороже',
-        less: 'Дешевле',
+        more: "Дороже",
+        less: "Дешевле",
       },
     },
     {
-      option: 'Sorted-by-winter-season',
-      name: 'По цене Зимний сезон ',
+      option: "Sorted-by-winter-season",
+      name: "По цене Зимний сезон ",
       ru: {
-        more: 'Дороже',
-        less: 'Дешевле',
+        more: "Дороже",
+        less: "Дешевле",
       },
     },
     {
-      option: 'Sorted-by-square-meters',
-      name: 'По кв. м',
+      option: "Sorted-by-square-meters",
+      name: "По кв. м",
       ru: {
-        more: 'Больше',
-        less: 'Меньше',
+        more: "Больше",
+        less: "Меньше",
       },
     },
     {
-      option: 'Sorted-by-floor',
-      name: 'По этажу',
+      option: "Sorted-by-floor",
+      name: "По этажу",
 
       ru: {
-        more: 'Выше',
-        less: 'Ниже',
+        more: "Выше",
+        less: "Ниже",
       },
     },
     {
-      option: 'Sorted-by-number-of-rooms',
-      name: 'По количеству комнат',
+      option: "Sorted-by-number-of-rooms",
+      name: "По количеству комнат",
       ru: {
-        more: 'Больше',
-        less: 'Меньше',
+        more: "Больше",
+        less: "Меньше",
       },
     },
     {
-      option: 'Sorted-by-number-of-beds',
-      name: 'По количеству мест',
+      option: "Sorted-by-number-of-beds",
+      name: "По количеству мест",
       ru: {
-        more: 'Больше',
-        less: 'Меньше',
+        more: "Больше",
+        less: "Меньше",
       },
     },
   ];
@@ -85,7 +86,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
     setCheckSign(index);
   };
 
-  const checkLink = !category || category !== 'Without-sort';
+  const checkLink = !category || category !== "Without-sort";
 
   return (
     <div className={styles.sort}>
@@ -101,7 +102,9 @@ export const Sort = ({ resetSorts }: MyProps) => {
             <div
               className={`
                 ${styles.sortBoxInsideOption} ${
-                category?.split('+')[0] === option.option ? styles.sortBoxSelect : ''
+                category?.split("+")[0] === option.option
+                  ? styles.sortBoxSelect
+                  : ""
               }`}
               onClick={() => toggleDropdown(index)}
             >
@@ -113,9 +116,10 @@ export const Sort = ({ resetSorts }: MyProps) => {
                 <Link
                   href={`/Category/${ha}/${option.option}+more/${opitionsSortedLink}`}
                   className={
-                    category?.split('+')[1] === 'more' && category?.split('+')[0] === option.option
+                    category?.split("+")[1] === "more" &&
+                    category?.split("+")[0] === option.option
                       ? styles.sortBoxInsideDropDownSelect
-                      : ''
+                      : ""
                   }
                   onClick={() => onHandleClick(index)}
                 >
@@ -125,9 +129,10 @@ export const Sort = ({ resetSorts }: MyProps) => {
                 <Link
                   href={`/Category/${ha}/${option.option}+less/${opitionsSortedLink}`}
                   className={
-                    category?.split('+')[1] === 'less' && category?.split('+')[0] === option.option
+                    category?.split("+")[1] === "less" &&
+                    category?.split("+")[0] === option.option
                       ? styles.sortBoxInsideDropDownSelect
-                      : ''
+                      : ""
                   }
                   onClick={() => onHandleClick(index)}
                 >
@@ -140,7 +145,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
       </div>
 
       <div className={styles.sortDownBlock}>
-        <span onClick={() => (checkLink ? resetSorts('sort') : '')}>Cброс</span>
+        <span onClick={() => (checkLink ? resetSorts("sort") : "")}>Cброс</span>
       </div>
     </div>
   );

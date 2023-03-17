@@ -1,13 +1,14 @@
-'use client';
-import { useCallback, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { SliderImages } from './slider images';
-import { ApartmentInfo } from './apartment info';
-import { categoryMeta } from '../../helpers/meta/categoryMeta';
-import { apartmentsData } from '../../../fake/apartmnetsData';
-import { MyApartments } from '../../helpers/types/type';
-import styles from './style.module.scss';
-import useStore from '../../../store/useStore';
+"use client";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect } from "react";
+
+import { ApartmentInfo } from "./apartment info";
+import { SliderImages } from "./slider images";
+import styles from "./style.module.scss";
+import { apartmentsData } from "../../../fake/apartmnetsData";
+import useStore from "../../../store/useStore";
+import { categoryMeta } from "../../helpers/meta/categoryMeta";
+import { MyApartments } from "../../helpers/types/type";
 
 interface MyParams {
   sort: string;
@@ -27,9 +28,9 @@ export const ApartmentCard = ({ apartment, index }: MyProps) => {
 
   const pathname = usePathname();
 
-  const sort = pathname?.split('/')[2];
-  const options = pathname?.split('/')[3];
-  const service = pathname?.split('/')[4];
+  const sort = pathname?.split("/")[2];
+  const options = pathname?.split("/")[3];
+  const service = pathname?.split("/")[4];
 
   const filterBy = categoryMeta(sort)?.filterBy;
 
@@ -130,8 +131,8 @@ export const ApartmentCard = ({ apartment, index }: MyProps) => {
           options={{
             className: styles.sliderImage,
             sizes:
-              'calc(60px + 420 * (100vw / 1920)), (max-width: 805px) calc(100px + 225 * (100vw / 805)), (max-width: 605px) calc(5px + 465 * (100vw / 605))',
-            fit: 'contain',
+              "calc(60px + 420 * (100vw / 1920)), (max-width: 805px) calc(100px + 225 * (100vw / 805)), (max-width: 605px) calc(5px + 465 * (100vw / 605))",
+            fit: "contain",
             border: 5,
             lazy: 1,
             quality: 75,

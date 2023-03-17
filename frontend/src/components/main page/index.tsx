@@ -1,9 +1,7 @@
-'use client';
-import Image from 'next/image';
+"use client";
+import Image from "next/image";
 
-
-import SelectCategory from '../select category/selectCategory';
-import { Telegram, Whatsapp } from '../../svg';
+import { Telegram, Whatsapp } from "../../svg";
 import {
   Conditioner,
   Iron,
@@ -19,25 +17,26 @@ import {
   Elevator,
   Kettle,
   Towels,
-} from '../../svg';
-import './style.scss';
+} from "../../svg";
+import SelectCategory from "../select category/selectCategory";
+import "./style.scss";
 
 export const MainPicture = () => {
   const services = [
-    { name: 'Стиральная машина', svg: <WashingMachine /> },
-    { name: 'Холодильник', svg: <Refrigerator /> },
-    { name: 'Микроволновка', svg: <Microwave /> },
-    { name: 'Чайник', svg: <Kettle /> },
-    { name: 'Кондиционер', svg: <Conditioner /> },
-    { name: 'Телевизор', svg: <Tv /> },
-    { name: 'Полотенца', svg: <Towels /> },
-    { name: 'Утюг', svg: <Iron /> },
-    { name: 'Фен', svg: <Hairdryer /> },
-    { name: 'Wi-Fi', svg: <Wifi /> },
-    { name: 'Можно с детьми', svg: <Teddy /> },
-    { name: 'Парковка', svg: <Parking /> },
-    { name: 'Лифт', svg: <Elevator /> },
-    { name: 'Стиральная машина', svg: <WashingMachine /> },
+    { name: "Стиральная машина", svg: <WashingMachine /> },
+    { name: "Холодильник", svg: <Refrigerator /> },
+    { name: "Микроволновка", svg: <Microwave /> },
+    { name: "Чайник", svg: <Kettle /> },
+    { name: "Кондиционер", svg: <Conditioner /> },
+    { name: "Телевизор", svg: <Tv /> },
+    { name: "Полотенца", svg: <Towels /> },
+    { name: "Утюг", svg: <Iron /> },
+    { name: "Фен", svg: <Hairdryer /> },
+    { name: "Wi-Fi", svg: <Wifi /> },
+    { name: "Можно с детьми", svg: <Teddy /> },
+    { name: "Парковка", svg: <Parking /> },
+    { name: "Лифт", svg: <Elevator /> },
+    { name: "Стиральная машина", svg: <WashingMachine /> },
   ];
 
   return (
@@ -47,7 +46,10 @@ export const MainPicture = () => {
         name="description"
         content="Барселона парк - Апартаменты в центре Сочи, 3 минуты до моря. 8-988-130-62-17"
       />
-      <meta name="keywords" content="Барселона парк, Barselona park, апартаменты, апартаменты Сочи" />
+      <meta
+        name="keywords"
+        content="Барселона парк, Barselona park, апартаменты, апартаменты Сочи"
+      />
       <meta name="Document-state" content="Dynamic" />
       <meta name="Author" content="https://github.com/bi-zi" />
       <meta name="Copyright" content="bi_zi" />
@@ -58,7 +60,7 @@ export const MainPicture = () => {
             priority
             fill
             quality={75}
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: "cover" }}
             src="/assets/main page/1.webp"
             alt="Апартамент-1104"
           />
@@ -86,7 +88,9 @@ export const MainPicture = () => {
           <br />
           <span>Постоянная чистота и дружелюбное общение</span>
           <br />
-          <span>Cтремимся поддерживать высочайший уровень гостеприимства и доверия</span>
+          <span>
+            Cтремимся поддерживать высочайший уровень гостеприимства и доверия
+          </span>
         </div>
 
         <div className="main-page-container__blocks">
@@ -104,13 +108,16 @@ export const MainPicture = () => {
 
               <div className="main-page-container__blocks__location__info-about">
                 <h3>Barselona park</h3>
-                <p>Наша цель сделать ваш отдых максимально лёгким и комфортным</p>
+                <p>
+                  Наша цель сделать ваш отдых максимально лёгким и комфортным
+                </p>
                 <h3>Апартаменты у моря</h3>
                 <p>
-                  Апартаментный комплекс «Барселона Парк» располагается в историческом центре Сочи
-                  неподалеку от Зимнего театра и концертного зала «Фестивальный». Здесь доступны все
-                  привилегии курортного города, от прекрасной экологии до инфраструктуры, делающей
-                  проживание здесь очень комфортным.
+                  Апартаментный комплекс «Барселона Парк» располагается в
+                  историческом центре Сочи неподалеку от Зимнего театра и
+                  концертного зала «Фестивальный». Здесь доступны все привилегии
+                  курортного города, от прекрасной экологии до инфраструктуры,
+                  делающей проживание здесь очень комфортным.
                 </p>
               </div>
             </div>
@@ -125,7 +132,7 @@ export const MainPicture = () => {
                   sizes="300px"
                   fill
                   quality={100}
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                   src="/barselonaPark.jpg"
                   alt="barsa"
                 />

@@ -1,9 +1,10 @@
-'use client';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import Image from 'next/image';
-import styles from './style.module.scss';
-import { Telegram, Whatsapp } from '../../../svg';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+
+import styles from "./style.module.scss";
+import { Telegram, Whatsapp } from "../../../svg";
 
 export default function Footer() {
   return (
@@ -12,8 +13,8 @@ export default function Footer() {
         <div className={styles.footerTopColumn}>
           <div className={styles.footerTopColumnImage}></div>
           <p>
-            Мы, стремимся обеспечить нашим гостям незабываемый и комфортный отдых во время их пребывания
-            в наших апартаментах.
+            Мы, стремимся обеспечить нашим гостям незабываемый и комфортный
+            отдых во время их пребывания в наших апартаментах.
           </p>
           <Link href="/" className={styles.footerTopColumnRead}>
             Читать ещё ➜
@@ -62,10 +63,16 @@ export default function Footer() {
 
           <div className={styles.footerTopColumnSocial}>
             <p>Социальные сети</p>
-            <a className={styles.footerTopColumnSocialIcons} href="https://wa.me/+79881306217">
+            <a
+              className={styles.footerTopColumnSocialIcons}
+              href="https://wa.me/+79881306217"
+            >
               <Whatsapp />
             </a>
-            <a className={styles.footerTopColumnSocialIcons} href="https://t.me/+79881306217">
+            <a
+              className={styles.footerTopColumnSocialIcons}
+              href="https://t.me/+79881306217"
+            >
               <Telegram />
             </a>
           </div>

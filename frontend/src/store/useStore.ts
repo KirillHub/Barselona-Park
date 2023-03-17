@@ -1,5 +1,6 @@
-import { create } from 'zustand';
-import { createCategorySlice, CategoryStore } from './category/categorySllice';
+import { create } from "zustand";
+
+import { createCategorySlice, CategoryStore } from "./category/categorySllice";
 
 const useStore = create<CategoryStore>()((...a) => ({
   ...createCategorySlice(...a),

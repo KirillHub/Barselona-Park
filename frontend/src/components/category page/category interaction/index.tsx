@@ -1,16 +1,13 @@
-import { useCallback, useEffect, useState } from 'react';
-import useStore from '../../../store/useStore';
+import { useCallback, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/navigation';
-
-import { Sort } from './sort';
-import { Services } from './services';
-
-import styles from './style.module.scss';
-import { Options } from './options';
-
-import { CategoryMenu } from '../../../svg';
+import { Options } from "./options";
+import { Services } from "./services";
+import { Sort } from "./sort";
+import styles from "./style.module.scss";
+import useStore from "../../../store/useStore";
+import { CategoryMenu } from "../../../svg";
 
 interface MyParams {
   category: string;
@@ -20,33 +17,44 @@ interface MyParams {
 
 export const CategoryInteraction = () => {
   const setCheckBox = useStore((state) => state.setCheckBox);
-  const setOpitionsSortedLink = useStore((state) => state.setOpitionsSortedLink);
+  const setOpitionsSortedLink = useStore(
+    (state) => state.setOpitionsSortedLink
+  );
 
   const opitionsSortedLink = useStore((state) => state.opitionsSortedLink);
   const checkBox = useStore((state) => [...state.checkBox]);
 
   const pathname = usePathname();
 
-  const category = pathname?.split('/')[2];
-  const sort = pathname?.split('/')[3];
-  const service = pathname?.split('/')[4];
+  const category = pathname?.split("/")[2];
+  const sort = pathname?.split("/")[3];
+  const service = pathname?.split("/")[4];
 
   const router = useRouter();
 
   const [sideBar, setSideBar] = useState(false);
 
   const getOptionsLink = () => {
-    const optionLabels = ['sea-view', 'city-view', 'balcony', 'oven', 'dishwasher', 'coffee-machine'];
+    const optionLabels = [
+      "sea-view",
+      "city-view",
+      "balcony",
+      "oven",
+      "dishwasher",
+      "coffee-machine",
+    ];
 
-    const selectedOptions = optionLabels.filter((option, index) => checkBox[index]);
+    const selectedOptions = optionLabels.filter(
+      (option, index) => checkBox[index]
+    );
 
-    return selectedOptions.join('+');
+    return selectedOptions.join("+");
   };
 
   const checkOpitionsLink = () => {
     const savedLink = getOptionsLink();
-    const newSavedLink = savedLink || '';
-    setOpitionsSortedLink(newSavedLink ? `/${newSavedLink}` : '');
+    const newSavedLink = savedLink || "";
+    setOpitionsSortedLink(newSavedLink ? `/${newSavedLink}` : "");
 
     return savedLink;
   };
@@ -96,12 +104,12 @@ export const CategoryInteraction = () => {
 
   const changeRoute = () => {
     const opitionsLink = checkOpitionsLink();
-    const sorted = sort || '';
+    const sorted = sort || "";
 
-    let newRoute = '';
+    let newRoute = "";
 
     if (opitionsLink.length === 0) {
-      newRoute = sorted === 'Without-sort' ? '' : `/${sorted}`;
+      newRoute = sorted === "Without-sort" ? "" : `/${sorted}`;
     } else if (sorted.length === 0) {
       newRoute = `/Without-sort/${opitionsLink}`;
     } else {
@@ -112,21 +120,24 @@ export const CategoryInteraction = () => {
   };
 
   const resetSorts = (whatsReset: string) => {
-    const sorted = sort ?? '';
+    const sorted = sort ?? "";
 
-    if (whatsReset === 'availability') {
+    if (whatsReset === "availability") {
       setCheckBox([false, false, false, false, false, false]);
-      setOpitionsSortedLink('');
+      setOpitionsSortedLink("");
 
-      const newSortPath = sorted.length !== 0 && sorted !== 'Without-sort' ? `/${sorted}` : '';
+      const newSortPath =
+        sorted.length !== 0 && sorted !== "Without-sort" ? `/${sorted}` : "";
       router.push(`/Category/${category}${newSortPath}`);
     } else {
       const opitionsLink = checkOpitionsLink();
 
       const newSortPath =
-        sorted.length !== 0 && sorted !== 'Without-sort' && opitionsLink.length !== 0
+        sorted.length !== 0 &&
+        sorted !== "Without-sort" &&
+        opitionsLink.length !== 0
           ? `/Without-sort/${opitionsLink}`
-          : '';
+          : "";
 
       router.push(`/Category/${category}${newSortPath}`);
     }
@@ -135,14 +146,16 @@ export const CategoryInteraction = () => {
   const firstRender = useCallback(() => {
     if (service) {
       const newOpitionsLink = [
-        'sea-view',
-        'city-view',
-        'balcony',
-        'oven',
-        'dishwasher',
-        'coffee-machine',
+        "sea-view",
+        "city-view",
+        "balcony",
+        "oven",
+        "dishwasher",
+        "coffee-machine",
       ];
-      const updateOpitionsLink = newOpitionsLink.map((d) => service.includes(d));
+      const updateOpitionsLink = newOpitionsLink.map((d) =>
+        service.includes(d)
+      );
       setCheckBox(updateOpitionsLink);
     }
   }, [service, setCheckBox]);
@@ -160,9 +173,12 @@ export const CategoryInteraction = () => {
       <aside className={sideBar ? styles.active : styles.categoryContainer}>
         <Options />
 
-        <Services onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
+        <Services
+          onCheckBoxFirstChange={onCheckBoxFirstChange}
+          resetSorts={resetSorts}
+        />
 
-         <Sort resetSorts={resetSorts} />
+        <Sort resetSorts={resetSorts} />
       </aside>
     </>
   );

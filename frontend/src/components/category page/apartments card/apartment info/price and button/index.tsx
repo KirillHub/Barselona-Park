@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { MyApartments } from '../../../../helpers/types/type';
-import styles from '../style.module.scss';
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
+import { MyApartments } from "../../../../helpers/types/type";
+import styles from "../style.module.scss";
 
 interface MyProps {
   apartment: MyApartments;
@@ -15,10 +16,14 @@ export const Price = ({ apartment }: MyProps) => {
   const handleClick = (id: number) => router.push(`/Apartment-${id}`);
 
   const showTitle = (iconIndex: number) => {
-    setTitles(titles.map((title, index) => (index === iconIndex ? true : title)));
+    setTitles(
+      titles.map((title, index) => (index === iconIndex ? true : title))
+    );
 
     const id = setTimeout(() => {
-      setTitles((prev) => prev.map((title, index) => (index === iconIndex ? false : title)));
+      setTitles((prev) =>
+        prev.map((title, index) => (index === iconIndex ? false : title))
+      );
     }, 1000);
   };
 
@@ -40,7 +45,10 @@ export const Price = ({ apartment }: MyProps) => {
       </div>
 
       <div className={styles.infoPriceButtonButn}>
-        <button className="main-buttons-style" onClick={() => handleClick(apartment.apartmentName)}>
+        <button
+          className="main-buttons-style"
+          onClick={() => handleClick(apartment.apartmentName)}
+        >
           Подробности
         </button>
       </div>

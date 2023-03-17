@@ -1,8 +1,12 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export const Dishwasher = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path
         fill="#434A54"
         d="M85 501a11 11 0 1 1-21 0 11 11 0 0 1 21 0zm363 0a11 11 0 1 1-21 0 11 11 0 0 1 21 0z"
@@ -22,8 +26,14 @@ export const Dishwasher = () => {
         fill="#CCD1D9"
         d="M43 85v22h128c0 6 4 10 10 10h150c6 0 10-4 10-10h128V85H43zm256 160a107 107 0 1 1-214 0 107 107 0 0 1 214 0z"
       />
-      <path fill="#E6E9ED" d="M299 277a107 107 0 1 1-214 0 107 107 0 0 1 214 0z" />
-      <path fill="#F5F7FA" d="M299 309a107 107 0 1 1-214 0 107 107 0 0 1 214 0z" />
+      <path
+        fill="#E6E9ED"
+        d="M299 277a107 107 0 1 1-214 0 107 107 0 0 1 214 0z"
+      />
+      <path
+        fill="#F5F7FA"
+        d="M299 309a107 107 0 1 1-214 0 107 107 0 0 1 214 0z"
+      />
       <path fill="#E6E9ED" d="M245 309a53 53 0 1 1-106 0 53 53 0 0 1 106 0z" />
       <path fill="#BDC2C9" d="m320 149 11 107h85l11-107z" />
       <path fill="#CCD1D9" d="m320 203 11 106h85l11-106z" />

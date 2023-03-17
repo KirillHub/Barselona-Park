@@ -1,9 +1,16 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export const Conditioner = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
-      <path fill="#3BAFDA" d="M437.3 74.7h-384a10.7 10.7 0 0 0 0 21.3h384a10.7 10.7 0 1 0 0-21.3z" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
+      <path
+        fill="#3BAFDA"
+        d="M437.3 74.7h-384a10.7 10.7 0 0 0 0 21.3h384a10.7 10.7 0 1 0 0-21.3z"
+      />
       <path
         fill="#E6E9ED"
         d="M501.3 117.3H10.7c-6 0-10.7 4.8-10.7 10.7v160a42.7 42.7 0 0 0 42.7 42.7h426.6A42.7 42.7 0 0 0 512 288V128c0-5.9-4.8-10.7-10.7-10.7z"
@@ -24,7 +31,10 @@ export const Conditioner = () => {
         fill="#E6E9ED"
         d="M469.3 256a10.7 10.7 0 1 1-21.3 0 10.7 10.7 0 0 1 21.3 0zm-32 0a10.7 10.7 0 1 1-21.3 0 10.7 10.7 0 0 1 21.3 0z"
       />
-      <path fill="#3BAFDA" d="M320 245.3H192a10.7 10.7 0 0 0 0 21.4h128a10.7 10.7 0 1 0 0-21.4z" />
+      <path
+        fill="#3BAFDA"
+        d="M320 245.3H192a10.7 10.7 0 0 0 0 21.4h128a10.7 10.7 0 1 0 0-21.4z"
+      />
     </svg>
   );
 };

@@ -1,13 +1,20 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export const WashingMachine = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path
         fill="#E6E9ED"
         d="M458.7 501.3c0 6-4.8 10.7-10.7 10.7H64c-5.9 0-10.7-4.8-10.7-10.7V10.7C53.3 4.7 58.1 0 64 0h384c5.9 0 10.7 4.8 10.7 10.7v490.6z"
       />
-      <path fill="#434A54" d="M410 309.3a154 154 0 1 1-308 0 154 154 0 0 1 308 0z" />
+      <path
+        fill="#434A54"
+        d="M410 309.3a154 154 0 1 1-308 0 154 154 0 0 1 308 0z"
+      />
       <path
         fill="#5D9CEC"
         d="M410 309.3v-.3c-5.5-5.2-79.7-73.8-153.8.3-74.1 74.1-148.7 5.6-154.2.3a154 154 0 0 0 308-.3z"

@@ -1,12 +1,16 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 interface MyProps {
   color: boolean;
 }
 
-export const CategoryMenu = ({color}: MyProps) => {
+export const CategoryMenu = ({ color }: MyProps) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.categoryButton} viewBox="0 0 24 24">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.categoryButton}
+      viewBox="0 0 24 24"
+    >
       <g fill="none" fillRule="evenodd">
         <path d="M24 0v24H0V0h24zM12.6 23.3h-.2v.5h.2v-.5zm.3-.2l-.2.1v.5l.2.1v-.6zm-.8 0v.7h.2v-.5l-.2-.2z"></path>
         <path

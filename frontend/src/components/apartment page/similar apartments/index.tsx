@@ -1,29 +1,28 @@
-'use client';
-import { MyApartments } from '../../helpers/types/type';
-import { LegacyRef, useEffect, useRef, useState } from 'react';
-import styles from './style.module.scss';
-import useSWR from 'swr';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, A11y } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
+"use client";
+import axios from "axios";
+import Image from "next/image";
+import Link from "next/link";
+import { LegacyRef, useEffect, useRef, useState } from "react";
+import { A11y, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import useSWR from "swr";
 
-import { Sun, Snowflake } from '../../../svg';
+import styles from "./style.module.scss";
+import { Snowflake, Sun } from "../../../svg";
+import { MyApartments } from "../../helpers/types/type";
+import "swiper/css";
+import "swiper/css/navigation";
 
 interface MyProps {
   apartmentId: number;
 }
 
-import axios from 'axios';
-import Link from 'next/link';
-
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 const useSimilar = (apartmentId: number, option: string) => {
   const { data, error, isLoading } = useSWR<MyApartments[], any, any>(
-    `http://localhost:3500/GetSimilar/${apartmentId}/${option}`,
-    fetcher,
+    `https://barsa-back.onrender.com/GetSimilar/${apartmentId}/${option}`,
+    fetcher
   );
 
   return {
@@ -34,23 +33,46 @@ const useSimilar = (apartmentId: number, option: string) => {
 };
 
 export const SimilarApartments = ({ apartmentId }: MyProps) => {
-  const [option, setOptiopn] = useState('price');
-  const [priceTitles, setPriceTitles] = useState({ summer: false, winter: false, apartment: 10 });
+  const [option, setOptiopn] = useState("price");
+  const [priceTitles, setPriceTitles] = useState({
+    summer: false,
+    winter: false,
+    apartment: 10,
+  });
 
-  const { similarApartments, isLoading, isError } = useSimilar(apartmentId, option);
+  const { similarApartments, isLoading, isError } = useSimilar(
+    apartmentId,
+    option
+  );
 
   const showPriceTitle = (iconIndex: number, apartmentIndex: number) => {
     if (iconIndex === 0) {
-      setPriceTitles({ summer: true, winter: false, apartment: apartmentIndex });
+      setPriceTitles({
+        summer: true,
+        winter: false,
+        apartment: apartmentIndex,
+      });
     } else {
-      setPriceTitles({ summer: false, winter: true, apartment: apartmentIndex });
+      setPriceTitles({
+        summer: false,
+        winter: true,
+        apartment: apartmentIndex,
+      });
     }
 
     const id = setTimeout(() => {
       if (iconIndex === 0) {
-        setPriceTitles({ summer: false, winter: false, apartment: apartmentIndex });
+        setPriceTitles({
+          summer: false,
+          winter: false,
+          apartment: apartmentIndex,
+        });
       } else {
-        setPriceTitles({ summer: false, winter: false, apartment: apartmentIndex });
+        setPriceTitles({
+          summer: false,
+          winter: false,
+          apartment: apartmentIndex,
+        });
       }
     }, 3000);
   };
@@ -64,10 +86,10 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', resizeHandler);
+    window.addEventListener("resize", resizeHandler);
     resizeHandler();
     return () => {
-      window.removeEventListener('resize', resizeHandler);
+      window.removeEventListener("resize", resizeHandler);
     };
   }, []);
 
@@ -86,13 +108,13 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
         <p>Вам также могут понравиться</p>
         <span>
           Апартаменты похожие по
-          {option === 'price'
-            ? ' цене'
-            : option === 'services'
-            ? ' услугам'
-            : option === 'floor'
-            ? ' этажу'
-            : ' количеству комнат'}
+          {option === "price"
+            ? " цене"
+            : option === "services"
+            ? " услугам"
+            : option === "floor"
+            ? " этажу"
+            : " количеству комнат"}
         </span>
       </div>
 
@@ -113,11 +135,14 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
               quality={100}
               alt={`test`}
               className={styles.similarSliderImage}
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: "cover" }}
             />
 
             <div className={styles.similarSliderBlock}>
-              <div className={styles.similarSliderBlockPrice} onClick={() => showPriceTitle(0, index)}>
+              <div
+                className={styles.similarSliderBlockPrice}
+                onClick={() => showPriceTitle(0, index)}
+              >
                 <Sun />
                 <p>{apartment.summerPrice} ₽</p>
                 <span
@@ -130,7 +155,10 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
                   Летний сезон (с 1 июня по 1 октября)
                 </span>
               </div>
-              <div className={styles.similarSliderBlockPrice} onClick={() => showPriceTitle(1, index)}>
+              <div
+                className={styles.similarSliderBlockPrice}
+                onClick={() => showPriceTitle(1, index)}
+              >
                 <Snowflake />
                 <p> {apartment.winterPrice} ₽</p>
                 <span
@@ -145,11 +173,15 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
               </div>
 
               <div className={styles.similarSliderBlockInfo}>
-                <p className={styles.similarSliderBlockInfoName}>Апартамент {apartment.apartmentName}</p>
+                <p className={styles.similarSliderBlockInfoName}>
+                  Апартамент {apartment.apartmentName}
+                </p>
                 <span className={styles.similarSliderBlockInfoText}>
-                  Размер апартамента: {apartment?.about.squareMeters} m², Количество комнат: &nbsp;
-                  {apartment?.about.rooms}, Количество спальных мест: {apartment?.about.sleepingPlaces},
-                  {' ' + apartment?.about.view}, Этаж {apartment?.about.floor},{' '}
+                  Размер апартамента: {apartment?.about.squareMeters} m²,
+                  Количество комнат: &nbsp;
+                  {apartment?.about.rooms}, Количество спальных мест:{" "}
+                  {apartment?.about.sleepingPlaces},
+                  {" " + apartment?.about.view}, Этаж {apartment?.about.floor},{" "}
                   {apartment?.about.balcony}!
                 </span>
 
@@ -168,10 +200,12 @@ export const SimilarApartments = ({ apartmentId }: MyProps) => {
       </Swiper>
 
       <div className={styles.similarSelectOption}>
-        <button onClick={() => setOptiopn('price')}>Пожие по цене</button>
-        <button onClick={() => setOptiopn('services')}>Пожие по услугам</button>
-        <button onClick={() => setOptiopn('rooms')}>Пожие по количеству комнат</button>
-        <button onClick={() => setOptiopn('floor')}>Пожие по этажу</button>
+        <button onClick={() => setOptiopn("price")}>Пожие по цене</button>
+        <button onClick={() => setOptiopn("services")}>Пожие по услугам</button>
+        <button onClick={() => setOptiopn("rooms")}>
+          Пожие по количеству комнат
+        </button>
+        <button onClick={() => setOptiopn("floor")}>Пожие по этажу</button>
       </div>
     </div>
   );

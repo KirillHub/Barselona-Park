@@ -1,8 +1,12 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export const Microwave = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path
         fill="#434A54"
         d="M42.7 410.6a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0zm448 0a10.7 10.7 0 1 1-21.4 0 10.7 10.7 0 0 1 21.4 0z"
@@ -20,7 +24,10 @@ export const Microwave = () => {
         d="M416 240a10.7 10.7 0 1 0 0-21.3 10.7 10.7 0 0 0 0 21.3zm42.7 0a10.7 10.7 0 1 0 0-21.3 10.7 10.7 0 0 0 0 21.3zM416 282.7a10.6 10.6 0 1 0 0-21.4 10.7 10.7 0 0 0 0 21.4zm42.7-21.4a10.7 10.7 0 1 0 0 21.4 10.7 10.7 0 0 0 0-21.4zm-42.7 64a10.7 10.7 0 1 0 0-21.3 10.7 10.7 0 0 0 0 21.3zm42.7-21.3a10.7 10.7 0 1 0 0 21.3 10.7 10.7 0 0 0 0-21.3z"
       />
       <path fill="#5D9CEC" d="M53.3 144H320v213.3H53.3z" />
-      <path fill="#4A89DC" d="M42.7 133.3V368h288V133.3h-288zm266.6 213.4H64v-192h245.3v192z" />
+      <path
+        fill="#4A89DC"
+        d="M42.7 133.3V368h288V133.3h-288zm266.6 213.4H64v-192h245.3v192z"
+      />
       <path
         fill="#CCD1D9"
         d="M362.7 176c-6 0-10.7 4.8-10.7 10.7v128a10.7 10.7 0 1 0 21.3 0v-128c0-6-4.7-10.7-10.6-10.7z"

@@ -18,82 +18,85 @@ import {
   Sea,
   City,
   Towels,
-} from '../../../svg';
-import { MyApartments } from '../types/type';
+} from "../../../svg";
+import { MyApartments } from "../types/type";
 
 export const readyIcons = (apartment: MyApartments) => {
   return [
     {
-      jsx: apartment?.about.balcony === 'С балконом' ? <Balcony /> : '',
-      title: apartment?.about.balcony === 'С балконом' ? apartment?.about.balcony : '',
+      jsx: apartment?.about.balcony === "С балконом" ? <Balcony /> : "",
+      title:
+        apartment?.about.balcony === "С балконом"
+          ? apartment?.about.balcony
+          : "",
     },
     {
-      jsx: apartment?.about.view === 'Вид на море' ? <Sea /> : <City />,
+      jsx: apartment?.about.view === "Вид на море" ? <Sea /> : <City />,
       title: apartment?.about.view,
     },
     {
-      jsx: apartment?.services.stove ? <Stove /> : '',
-      title: apartment?.services.stove ? 'Духовка' : '',
+      jsx: apartment?.services.stove ? <Stove /> : "",
+      title: apartment?.services.stove ? "Духовка" : "",
     },
     {
-      jsx: apartment?.services.dishwasher ? <Dishwasher /> : '',
-      title: apartment?.services.dishwasher ? 'Посудомоечная машина' : '',
+      jsx: apartment?.services.dishwasher ? <Dishwasher /> : "",
+      title: apartment?.services.dishwasher ? "Посудомоечная машина" : "",
     },
     {
-      jsx: apartment?.services.coffeeMachine ? <CoffeeMachine /> : '',
-      title: apartment?.services.coffeeMachine ? 'Кофемашина' : '',
+      jsx: apartment?.services.coffeeMachine ? <CoffeeMachine /> : "",
+      title: apartment?.services.coffeeMachine ? "Кофемашина" : "",
     },
     {
       jsx: <WashingMachine />,
-      title: 'Стиральная машина',
+      title: "Стиральная машина",
     },
     {
       jsx: <Refrigerator />,
-      title: 'Холодильник',
+      title: "Холодильник",
     },
     {
       jsx: <Microwave />,
-      title: 'Микроволновка',
+      title: "Микроволновка",
     },
     {
       jsx: <Kettle />,
-      title: 'Чайник',
+      title: "Чайник",
     },
     {
       jsx: <Conditioner />,
-      title: 'Кондиционер',
+      title: "Кондиционер",
     },
     {
       jsx: <Tv />,
-      title: 'Телевизор',
+      title: "Телевизор",
     },
     {
       jsx: <Towels />,
-      title: 'Полотенца',
+      title: "Полотенца",
     },
     {
       jsx: <Iron />,
-      title: 'Утюг',
+      title: "Утюг",
     },
     {
       jsx: <Hairdryer />,
-      title: 'Фен',
+      title: "Фен",
     },
     {
       jsx: <Wifi />,
-      title: 'wi-fi',
+      title: "wi-fi",
     },
     {
       jsx: <Teddy />,
-      title: 'Можно с детьми',
+      title: "Можно с детьми",
     },
     {
       jsx: <Parking />,
-      title: 'Парковка платная',
+      title: "Парковка платная",
     },
     {
       jsx: <Elevator />,
-      title: 'Лифт',
+      title: "Лифт",
     },
   ];
 };

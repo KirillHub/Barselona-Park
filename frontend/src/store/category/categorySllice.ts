@@ -1,4 +1,4 @@
-import { StateCreator } from 'zustand';
+import { StateCreator } from "zustand";
 
 export interface CategoryStore {
   selectedPageId: string;
@@ -26,13 +26,13 @@ export interface CategoryStore {
 }
 
 export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
-  selectedPageId: 'Select-category',
+  selectedPageId: "Select-category",
 
   checkSign: [true, true, true, true, true, true],
 
   signIndex: 10,
 
-  opitionsSortedLink: '',
+  opitionsSortedLink: "",
 
   checkBox: [false, false, false, false, false, false],
 
@@ -42,7 +42,8 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
 
   apartmentsLength: 0,
 
-  setSelectedPageId: (pageId: string) => set(() => ({ selectedPageId: pageId })),
+  setSelectedPageId: (pageId: string) =>
+    set(() => ({ selectedPageId: pageId })),
 
   setCheckSign: (index: number) =>
     set((state) => {
@@ -55,7 +56,8 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
       };
     }),
 
-  setOpitionsSortedLink: (link: string) => set(() => ({ opitionsSortedLink: link })),
+  setOpitionsSortedLink: (link: string) =>
+    set(() => ({ opitionsSortedLink: link })),
 
   setCheckBox(box: boolean[]) {
     set((state) => ({ ...state.checkBox, checkBox: box }));
@@ -73,5 +75,6 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
 
   setNights: (length: number) => set(() => ({ nights: length })),
 
-  setApartmentsLength: (length: number) => set(() => ({ apartmentsLength: length })),
+  setApartmentsLength: (length: number) =>
+    set(() => ({ apartmentsLength: length })),
 });

@@ -1,5 +1,6 @@
-import Layout from '@/components/layout';
 import { Nunito } from 'next/font/google';
+
+import Layout from '@/components/layout';
 import './reset.scss';
 import './globals.scss';
 

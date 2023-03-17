@@ -1,51 +1,41 @@
 .categoryOpen {
   visibility: hidden;
+  color: #992525;
 
   @media (width < 605px) {
     position: fixed;
     visibility: visible;
-
     width: calc(20px + 20 * (100vw / 605));
     height: calc(20px + 20 * (100vw / 605));
-
     top: calc(40px + 75 * (100vw / 605));
     right: calc(10px + 12 * (100vw / 605));
-
     z-index: 10;
 
     &:active .categoryContainer {
       left: 0;
     }
   }
-
-  color: #992525;
 }
 
 .active,
 .categoryContainer {
   position: sticky;
-
   padding-right: 3vw;
-
   width: 33%;
   height: 100%;
-
   top: calc(10px + 80 * (100vw / 1920));
-
-  z-index: 1;
-
   user-select: none;
+  z-index: 1;
 
   @media (width < 805px) {
     width: 50%;
+
     @media (width < 605px) {
       position: fixed;
       width: 60%;
       height: auto;
-
       top: calc(70px + 98 * (100vw / 605));
       right: -370px;
-
       transition: 850ms;
     }
   }
@@ -65,15 +55,9 @@
   position: relative;
   margin: calc(10px + 20 * (100vw / 1920)) 0;
   padding: calc(5px + 15 * (100vw / 1920));
-
   border-radius: calc(5px + 5 * (100vw / 1920));
-  box-shadow: rgb(34 34 34) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
-
-  background-color: rgb(28, 28, 28);
-
-  @media (width < 605px) {
-    width: 100%;
-  }
+  box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+  background-color: rgb(28 28 28);
 
   .sortTitle {
     font-size: calc(12px + 12 * (100vw / 1920));
@@ -81,26 +65,15 @@
 
   .sortBox {
     display: flex;
-
-    padding-top: calc(5px + 5 * (100vw / 1920));
-
-    justify-content: space-between;
-
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: calc(5px + 5 * (100vw / 1920));
 
     .sortBoxInside {
       display: flex;
       position: relative;
-      width: 40%;
-
       margin-bottom: calc(5px + 5 * (100vw / 1920));
-
-      @media (width < 605px) {
-        width: 45%;
-        input {
-          width: calc(5px + 10 * (100vw / 605));
-        }
-      }
+      width: 40%;
 
       input {
         margin-right: calc(5px + 5 * (100vw / 1920));
@@ -108,42 +81,45 @@
 
       .sortBoxInsideOption {
         font-size: calc(6px + 8 * (100vw / 1920));
-
         cursor: pointer;
 
         &:hover {
-          color: rgb(80, 80, 80);
+          color: rgb(80 80 80);
         }
       }
 
       .sortBoxSelect {
-        color: rgb(110, 110, 110) !important;
+        color: rgb(110 110 110) !important;
       }
 
       .sortBoxInsideDropDown {
         position: absolute;
-
         border-radius: calc(5px + 5 * (100vw / 1920));
-        box-shadow: rgb(45, 45, 45) 0px 0px 0px calc(3px + 3 * (100vw / 1920));
-
-        background-color: rgb(28, 28, 28);
-
+        box-shadow: rgb(45 45 45) 0 0 0 calc(3px + 3 * (100vw / 1920));
+        background-color: rgb(28 28 28);
         z-index: 3;
 
         .sortBoxInsideDropDownSelect {
-          background-color: rgb(55, 55, 55) !important;
+          background-color: rgb(55 55 55) !important;
         }
 
         a {
           padding: 0.5vh 1vw;
           width: 100%;
-
           border-radius: calc(5px + 5 * (100vw / 1920));
 
           &:hover {
-            color: white;
-            background-color: rgb(80, 80, 80);
+            color: #fff;
+            background-color: rgb(80 80 80);
           }
+        }
+      }
+
+      @media (width < 605px) {
+        width: 45%;
+
+        input {
+          width: calc(5px + 10 * (100vw / 605));
         }
       }
     }
@@ -151,17 +127,19 @@
 
   .sortDownBlock {
     display: flex;
-
     justify-content: space-between;
 
     span {
       font-size: calc(8px + 12 * (100vw / 1920));
-
       cursor: pointer;
     }
 
     span:hover {
-      color: grey;
+      color: #808080;
     }
+  }
+
+  @media (width < 605px) {
+    width: 100%;
   }
 }

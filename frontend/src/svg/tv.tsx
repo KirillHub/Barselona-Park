@@ -1,9 +1,16 @@
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 export const Tv = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={styles.svg} viewBox="0 0 512 512">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.svg}
+      viewBox="0 0 512 512"
+    >
       <path fill="#434A54" d="M171 398h170v36H171z" />
-      <path fill="#656D78" d="M384 427H128a11 11 0 0 0 0 21h256a11 11 0 0 0 0-21z" />
+      <path
+        fill="#656D78"
+        d="M384 427H128a11 11 0 0 0 0 21h256a11 11 0 0 0 0-21z"
+      />
       <path
         fill="#5D9CEC"
         d="M21 395c-6 0-10-5-10-11V85c0-6 4-10 10-10h470c6 0 10 4 10 10v299c0 6-4 11-10 11H21z"

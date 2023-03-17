@@ -7,10 +7,10 @@
 
   .apartmentSlider {
     position: relative;
-    background-color: #000;
-    z-index: 0;
     margin: 0 8vw 2vh;
     height: calc(0px + 518 * (100vw / 1920));
+    background-color: #000;
+    z-index: 0;
 
     .apartmentSliderImage {
       border-radius: calc(15px + 15 * (100vw / 1920));
@@ -19,22 +19,22 @@
   }
 
   .apartmentSecondBlock {
-    position: relative;
     display: flex;
+    position: relative;
     justify-content: space-between;
     margin: calc(20px + 20 * (100vw / 1920)) 8vw;
 
     .apartmentDesctiption {
-      border-radius: calc(5px + 5 * (100vw / 1920));
       padding: calc(5px + 10 * (100vw / 1920));
       width: 68%;
-      box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+      border-radius: calc(5px + 5 * (100vw / 1920));
       font-size: calc(8px + 8 * (100vw / 1920));
+      box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
       background-color: rgb(28 28 28);
 
       li {
-        list-style: inside;
         margin-top: 0.5vw;
+        list-style: inside;
 
         &:first-child {
           margin: 0;
@@ -50,8 +50,8 @@
 
   .apartmentServices {
     margin: calc(20px + 20 * (100vw / 1920)) 8vw;
-    border-radius: calc(5px + 5 * (100vw / 1920));
     padding: 1vw 0;
+    border-radius: calc(5px + 5 * (100vw / 1920));
     box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
     background-color: rgb(28 28 28);
 

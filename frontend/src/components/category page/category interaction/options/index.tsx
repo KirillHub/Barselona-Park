@@ -1,27 +1,27 @@
-import React from 'react';
-import { usePathname } from 'next/navigation';
-import { SelectCategory } from './select category';
-import { CheckInCheckOut } from './search by date';
-import { GuestsNights } from './guests nights';
-import { BookingButton } from './booking button';
+import { usePathname } from "next/navigation";
+import React from "react";
 
-import styles from './style.module.scss';
+import { BookingButton } from "./booking button";
+import { GuestsNights } from "./guests nights";
+import { CheckInCheckOut } from "./search by date";
+import { SelectCategory } from "./select category";
+import styles from "./style.module.scss";
 
 export const Options = () => {
   const pathname = usePathname();
 
-  const first = pathname?.split('/')[1];
+  const first = pathname?.split("/")[1];
 
-  const checkCategory = first === 'Category';
+  const checkCategory = first === "Category";
 
   return (
     <div className={styles.options}>
-      {checkCategory ? <SelectCategory /> : ''}
+      {checkCategory ? <SelectCategory /> : ""}
       <div className={styles.optionsBottom}>
         <CheckInCheckOut />
         <GuestsNights />
       </div>
-      {!checkCategory ? <BookingButton /> : ''}
+      {!checkCategory ? <BookingButton /> : ""}
     </div>
   );
 };

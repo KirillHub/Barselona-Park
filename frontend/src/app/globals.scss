@@ -2,37 +2,33 @@ html,
 body {
   margin: 0;
   padding: 0;
-
   width: 100%;
-
   height: auto;
-
+  color: rgb(255 255 255);
+  background-image: url("/image.svg");
   background-size: 900px 900px;
-
-  color: white;
-  background-color: rgb(16, 16, 16);
-  background-image: url('/image.svg');
+  background-color: rgb(16 16 16);
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 h1 {
-  margin: 40px auto 30px auto;
+  margin: 40px auto 30px;
   font-size: calc(22px + 22 * (100vw / 1920));
 }
 
 h2 {
-  margin: 30px auto 20px auto;
-  font-size: calc(18px + 22 * (100vw / 1920));
+  margin: 30px auto 20px;
   text-align: center;
+  font-size: calc(18px + 22 * (100vw / 1920));
 }
 
 h3 {
-  margin: 20px auto 10px auto;
+  margin: 20px auto 10px;
   font-size: calc(12px + 20 * (100vw / 1920));
 }
 
@@ -45,20 +41,20 @@ ul {
 }
 
 a {
-  color: white;
   text-decoration: none;
+  color: rgb(255 255 255);
 
   &:hover {
-    color: rgb(145, 145, 145);
+    color: rgb(145 145 145);
   }
 }
 
 button {
-  color: white;
   text-decoration: none;
+  color: #fff;
 
   &:hover {
-    color: rgb(145, 145, 145);
+    color: rgb(145 145 145);
   }
 }
 
@@ -68,10 +64,10 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(87, 87, 87);
+  background-color: rgb(87 87 87);
 
   &:hover {
-    background-color: rgb(61, 61, 61);
+    background-color: rgb(61 61 61);
   }
 }
 
@@ -88,38 +84,34 @@ button {
 }
 
 .react-datepicker__navigation-icon::before {
-  border-color: rgb(255, 255, 255);
+  border-color: rgb(255 255 255);
 }
+
 .react-datepicker__triangle::after,
 .react-datepicker__triangle::before {
-  border-bottom-color: #00000000 !important;
+  border-bottom-color: #0000 !important;
 }
 
 .react-datepicker {
-  position: absolute;
   display: flex;
-
+  position: absolute;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
   border: 0 !important;
   border-radius: calc(5px + 5 * (100vw / 1920));
-
-  box-shadow: rgb(34 34 34) 0px 0px 0px 6px;
-
-  background-color: rgb(28, 28, 28) !important;
-
+  box-shadow: rgb(34 34 34) 0 0 0 6px;
+  background-color: rgb(28 28 28) !important;
   z-index: 2;
-
-  overflow-y: hidden !important;
-  overflow-x: scroll !important;
 
   &::-webkit-scrollbar {
     height: 10px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgb(87, 87, 87);
+    background-color: rgb(87 87 87);
 
     &:hover {
-      background-color: rgb(61, 61, 61);
+      background-color: rgb(61 61 61);
     }
   }
 
@@ -127,21 +119,19 @@ button {
     width: 100%;
     border-radius: calc(5px + 5 * (100vw / 1920));
     font-size: calc(6px + 8 * (100vw / 1920));
-
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(28 28 28);
 
     .react-datepicker__header {
-      border-bottom: 3px solid rgb(40, 40, 40);
-      border-top-right-radius: 1vh;
+      border-bottom: 3px solid rgb(40 40 40);
       border-top-left-radius: 1vh;
-
-      background-color: rgb(28, 28, 28);
+      border-top-right-radius: 1vh;
+      background-color: rgb(28 28 28);
 
       .react-datepicker__current-month {
         font-size: calc(10px + 18 * (100vw / 1920));
-        color: #ffffff;
+        color: #fff;
 
-        &:first-letter {
+        &::first-letter {
           text-transform: uppercase;
         }
       }
@@ -151,11 +141,9 @@ button {
           margin: calc(2px + 2 * (100vw / 1920));
           width: calc(20px + 15 * (100vw / 1920));
           height: calc(20px + 15 * (100vw / 1920));
-
           line-height: calc(20px + 15 * (100vw / 1920));
           font-size: calc(10px + 12 * (100vw / 1920));
-
-          color: #ffffff;
+          color: #fff;
         }
       }
     }
@@ -166,40 +154,37 @@ button {
           margin: calc(2px + 2 * (100vw / 1920));
           width: calc(20px + 15 * (100vw / 1920));
           height: calc(20px + 15 * (100vw / 1920));
-
-          font-size: calc(10px + 10 * (100vw / 1920));
-
           border-radius: calc(3px + 3 * (100vw / 1920));
-
           line-height: calc(20px + 15 * (100vw / 1920));
-          color: white;
+          font-size: calc(10px + 10 * (100vw / 1920));
+          color: #fff;
 
           &:hover {
-            background-color: grey;
+            background-color: #808080;
           }
         }
       }
     }
 
     .react-datepicker__day--outside-month {
-      height: 0px !important;
-      color: #ffffff00 !important;
+      height: 0 !important;
+      color: #fff0 !important;
     }
 
     .react-datepicker__day--disabled {
       color: #8d8d8d !important;
 
       &:hover {
-        background-color: rgb(28, 28, 28) !important;
+        background-color: rgb(28 28 28) !important;
       }
     }
 
     .react-datepicker__day--in-range {
-      background-color: rgb(64, 133, 41) !important;
+      background-color: rgb(64 133 41) !important;
     }
 
     .react-datepicker__day--excluded {
-      color: #ffffff !important;
+      color: #fff !important;
       background-color: #b10000 !important;
 
       &:hover {
@@ -208,7 +193,7 @@ button {
     }
 
     .react-datepicker__day--in-selecting-range {
-      background-color: rgb(4, 114, 187) !important;
+      background-color: rgb(4 114 187) !important;
     }
   }
 }
@@ -216,42 +201,40 @@ button {
 .main-buttons-style {
   display: inline-flex;
   position: relative;
-
-  width: 100%;
-  height: 100%;
-
-  box-sizing: border-box;
-
   align-items: center;
   justify-content: center;
-
+  width: 100%;
+  height: 100%;
   border-radius: calc(5px + 5 * (100vw / 1920));
-
+  box-sizing: border-box;
+  box-shadow:
+ rgb(187 187 187 / 40%) 0 0.2vh 0.4vh,
+ rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
+    rgb(0 0 0) 0 -0.4vh 0 inset;
+  background-color: rgb(40 40 40);
   transition: box-shadow 0.15s, transform 0.15s;
-  touch-action: manipulation;
   will-change: box-shadow, transform;
-
-  box-shadow: rgba(187, 187, 187, 0.4) 0 0.2vh 0.4vh, rgba(187, 187, 187, 0.3) 0 0.7vh 0.6vh -0.3vh,
-    rgb(0, 0, 0) 0 -0.4vh 0 inset;
-
-  background-color: rgb(40, 40, 40);
-
-  user-select: none;
   cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
 
   &:focus {
-    box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vh 0.8vh, rgba(187, 187, 187, 0.3) 0 0.7vh 0.6vh -0.3vh,
-      rgb(0, 0, 0) 0 -0.4vh 0 inset;
+    box-shadow:
+ rgb(187 187 187 / 40%) 0 0.4vh 0.8vh,
+ rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
+      rgb(0 0 0) 0 -0.4vh 0 inset;
   }
 
   &:hover {
-    box-shadow: rgba(187, 187, 187, 0.4) 0 0.4vh 0.8vh, rgba(187, 187, 187, 0.3) 0 0.7vh 0.6vh -0.3vh,
-      rgb(0, 0, 0) 0 -0.4vh 0 inset;
+    box-shadow:
+ rgb(187 187 187 / 40%) 0 0.4vh 0.8vh,
+ rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
+      rgb(0 0 0) 0 -0.4vh 0 inset;
     transform: translateY(-2px);
   }
 
   &:active {
-    box-shadow: rgb(0, 0, 0) 0 0.3vh 0.7vh inset;
+    box-shadow: rgb(0 0 0) 0 0.3vh 0.7vh inset;
     transform: translateY(0.2vh);
   }
 }
