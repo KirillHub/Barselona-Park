@@ -41,7 +41,7 @@ export const MainPicture = () => {
 
   return (
     <div className="main-page">
-      <title>Barselona Park</title>
+      <p>Barselona Park</p>
       <meta
         name="description"
         content="Барселона парк - Апартаменты в центре Сочи, 3 минуты до моря. 8-988-130-62-17"

@@ -1,5 +1,6 @@
-import useStore from "../../../../../store/useStore";
-import { More } from "../../../../../svg";
+import useStore from "../../../../../../store/useStore";
+import { More } from "../../../../../../svg";
+import secondStyles from '../../style.module.scss';
 import styles from "../style.module.scss";
 
 export const GuestsNights = () => {
@@ -10,21 +11,21 @@ export const GuestsNights = () => {
   return (
     <>
       <div className={styles.box}>
-        <p className={styles.boxTitle}>Люди</p>
+        <p className={styles.box__title}>Люди</p>
 
-        <div className={styles.boxDate}>
-          <span className={styles.boxDateNumber}>{guests}</span>
+        <div className={styles.box__content}>
+          <span className={styles.box__span}>{guests}</span>
 
           <div>
             <div
-              className={styles.optionsIcon + " " + styles.IconWrap}
+              className={secondStyles.options__icon + " " + secondStyles.options__icon_wrap}
               onClick={() => updateGuests(true)}
             >
               <More />
             </div>
 
             <div
-              className={styles.optionsIcon}
+              className={secondStyles.options__icon}
               onClick={() => updateGuests(false)}
             >
               <More />
@@ -34,9 +35,9 @@ export const GuestsNights = () => {
       </div>
 
       <div className={styles.box}>
-        <p className={styles.boxTitle}>Ночей</p>
-        <div className={styles.boxDate}>
-          <span className={styles.boxNights}>{nigths}</span>
+        <p className={styles.box__title}>Ночей</p>
+        <div className={styles.box__content}>
+          <span className={styles.box__span}>{nigths}</span>
         </div>
       </div>
     </>

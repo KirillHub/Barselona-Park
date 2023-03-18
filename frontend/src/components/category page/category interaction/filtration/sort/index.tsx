@@ -2,7 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import useStore from "../../../../store/useStore";
+import useStore from "../../../../../store/useStore";
 import styles from "../style.module.scss";
 
 interface MyParams {
@@ -88,37 +88,41 @@ export const Sort = ({ resetSorts }: MyProps) => {
 
   const checkLink = !category || category !== "Without-sort";
 
-  return (
-    <div className={styles.sort}>
-      <p className={styles.sortTitle}>Сортировка</p>
+  const checkOption = category?.split("+")[0];
 
-      <div className={styles.sortBox}>
+  const categoryMore = category?.split("+")[1] === "more";
+  const categoryLess = category?.split("+")[1] === "less";
+
+  return (
+    <div className={styles.filtration}>
+      <p className={styles.filtration__title}>Сортировка</p>
+
+      <div className={styles.filtration__content}>
         {sortBy.map((option, index) => (
           <div
-            className={styles.sortBoxInside}
+            className={styles.filtration__controls}
             key={option.option}
             onMouseLeave={() => toggleDropdown(openDropdownIndex)}
           >
-            <div
+            <span
               className={`
-                ${styles.sortBoxInsideOption} ${
-                category?.split("+")[0] === option.option
-                  ? styles.sortBoxSelect
+                ${styles.filtration__option} ${
+                checkOption === option.option
+                  ? styles.filtration__option_active
                   : ""
               }`}
               onClick={() => toggleDropdown(index)}
             >
               {option.name}
-            </div>
+            </span>
 
             {openDropdownIndex === index && (
-              <div className={styles.sortBoxInsideDropDown}>
+              <div className={styles.filtration__dropDown}>
                 <Link
                   href={`/Category/${ha}/${option.option}+more/${opitionsSortedLink}`}
                   className={
-                    category?.split("+")[1] === "more" &&
-                    category?.split("+")[0] === option.option
-                      ? styles.sortBoxInsideDropDownSelect
+                    categoryMore && checkOption === option.option
+                      ? styles.filtration__option_active
                       : ""
                   }
                   onClick={() => onHandleClick(index)}
@@ -129,9 +133,8 @@ export const Sort = ({ resetSorts }: MyProps) => {
                 <Link
                   href={`/Category/${ha}/${option.option}+less/${opitionsSortedLink}`}
                   className={
-                    category?.split("+")[1] === "less" &&
-                    category?.split("+")[0] === option.option
-                      ? styles.sortBoxInsideDropDownSelect
+                    categoryLess && checkOption === option.option
+                      ? styles.filtration__option_active
                       : ""
                   }
                   onClick={() => onHandleClick(index)}
@@ -144,9 +147,12 @@ export const Sort = ({ resetSorts }: MyProps) => {
         ))}
       </div>
 
-      <div className={styles.sortDownBlock}>
-        <span onClick={() => (checkLink ? resetSorts("sort") : "")}>Cброс</span>
-      </div>
+      <p
+        className={styles.filtration__reset}
+        onClick={() => (checkLink ? resetSorts("sort") : "")}
+      >
+        Cброс
+      </p>
     </div>
   );
 };

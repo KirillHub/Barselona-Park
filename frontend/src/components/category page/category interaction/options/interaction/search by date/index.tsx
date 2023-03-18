@@ -1,13 +1,13 @@
-import { subDays, addDays } from "date-fns";
+import { addDays, subDays } from "date-fns";
 import ru from "date-fns/locale/ru";
-import { useState, forwardRef, useEffect } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 
-import { More } from "../../../../../svg";
-import { reservationDays } from "../../../../helpers/functions/reservationDays";
 import "react-datepicker/dist/react-datepicker.css";
+import useStore from "../../../../../../store/useStore";
+import { More } from "../../../../../../svg";
+import { reservationDays } from "../../../../../helpers/functions/reservationDays";
 import styles from "../style.module.scss";
-import useStore from "../../../../../store/useStore";
 
 interface Custom {
   value: string;
@@ -38,14 +38,14 @@ export const CheckInCheckOut = () => {
   };
 
   const CustomInput = forwardRef<Ref, Custom>(({ value, onClick }, ref) => (
-    <div className={styles.boxDate} onClick={onClick} ref={ref}>
-      <span className={styles.boxDateNumber}>{value.split(" ")[0]}</span>
-      <span className={styles.boxDateTitle}>
+    <div className={styles.box__content} onClick={onClick} ref={ref}>
+      <span className={styles.box__span}>{value.split(" ")[0]}</span>
+      <div className={styles.box__date}>
         {value.split(" ")[1]}
-        <div className={styles.optionsIcon}>
+        <div className={styles.options__icon}>
           <More />
         </div>
-      </span>
+      </div>
     </div>
   ));
 
@@ -58,7 +58,7 @@ export const CheckInCheckOut = () => {
   return (
     <>
       <div className={styles.box}>
-        <p className={styles.boxTitle}>Заселение</p>
+        <p className={styles.box__title}>Заселение</p>
         <DatePicker
           selectsStart
           selected={startDate}
@@ -76,7 +76,7 @@ export const CheckInCheckOut = () => {
       </div>
 
       <div className={styles.box}>
-        <p className={styles.boxTitle}>Выселение</p>
+        <p className={styles.box__title}>Выселение</p>
         <DatePicker
           selectsEnd
           selected={endDate}

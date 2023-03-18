@@ -58,15 +58,16 @@ export default function Category() {
 
   //416
   return (
-    <div className={styles.categoryPage}>
-      <h1 className={styles.categoryPageTitle}>
+    <div className={styles.category}>
+
+      <h1 className={styles.category__title}>
         {meta?.name} - {user?.length}
       </h1>
 
-      <div className={styles.categoryPageBlocks}>
+      <div className={styles.category__content}>
         <CategoryInteraction />
 
-        <div className={styles.categoryPageRightBlock}>
+        <div className={styles.category__apartments}>
           {aparts?.map((apartment: MyApartments, index) => (
             <ApartmentCard
               apartment={apartment}
@@ -76,17 +77,17 @@ export default function Category() {
           ))}
         </div>
       </div>
-
-      {user!?.length >= quantity ? (
-        <button
-          className={styles.categoryPageButton1}
-          onClick={() => setQuantity((prev) => prev + 6)}
-        >
-          Еще
-        </button>
-      ) : (
-        ""
-      )}
     </div>
   );
 }
+
+// {user!?.length >= quantity ? (
+//         <button
+//           className={styles.categoryPageButton1}
+//           onClick={() => setQuantity((prev) => prev + 6)}
+//         >
+//           Еще
+//         </button>
+//       ) : (
+//         ""
+//       )}

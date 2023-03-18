@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation";
 
-import useStore from "../../../../store/useStore";
-import { meta } from "../../../helpers/meta/categoryMeta";
+import useStore from "../../../../../store/useStore";
+import { meta } from "../../../../helpers/meta/categoryMeta";
 import styles from "../style.module.scss";
 
 interface MyProps {
@@ -45,12 +45,12 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
   }
 
   return (
-    <div className={styles.sort}>
-      <p className={styles.sortTitle}>Услуги</p>
+    <div className={styles.filtration}>
+      <p className={styles.filtration__title}>Услуги</p>
 
-      <div className={styles.sortBox}>
+      <div className={styles.filtration__content}>
         {arr.map((option, index) => (
-          <span key={index} className={styles.sortBoxInside}>
+          <div key={index} className={styles.filtration__controls}>
             <input
               type="checkbox"
               onChange={() => onCheckBoxFirstChange(option.index)}
@@ -59,17 +59,20 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
 
             <span
               onClick={() => onCheckBoxFirstChange(option.index)}
-              className={styles.sortBoxInsideOption}
+              className={styles.filtration__option}
             >
               {option.box}
             </span>
-          </span>
+          </div>
         ))}
       </div>
 
-      <div className={styles.sortDownBlock}>
-        <span onClick={() => resetSorts("availability")}>Cброс</span>
-      </div>
+      <p
+        className={styles.filtration__reset}
+        onClick={() => resetSorts("availability")}
+      >
+        Cброс
+      </p>
     </div>
   );
 };

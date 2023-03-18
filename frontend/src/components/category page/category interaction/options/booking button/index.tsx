@@ -8,7 +8,7 @@ export const BookingButton = () => {
   const apartment = pathname?.split("/")[1];
 
   return (
-    <Link href={`${apartment}/Booking`} className={styles.bookingButton}>
+    <Link href={`${apartment}/Booking`} className={styles.booking__button}>
       Забронировать
     </Link>
   );

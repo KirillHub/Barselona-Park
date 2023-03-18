@@ -1,32 +1,30 @@
-.categoryPage {
+.category {
   position: relative;
   margin: 0 8vw;
 
-  .categoryPageTitle {
-    text-align: center !important;
+  .category__title {
+    text-align: center;
     font-size: calc(15px + 15 * (100vw / 1920));
   }
 
-  .categoryPageButton1 {
-    position: absolute;
-    margin: 0 auto;
-    width: 20vw;
-    height: 4vh;
-    left: 0;
-    right: 0;
-    border-radius: calc(5px + 5 * (100vw / 1920));
-    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
-    background-color: rgb(28 28 28);
-    cursor: pointer;
-  }
+  // .categoryPageButton1 {
+  //   position: absolute;
+  //   margin: 0 auto;
+  //   width: 20vw;
+  //   height: 4vh;
+  //   left: 0;
+  //   right: 0;
+  //   border-radius: calc(5px + 5 * (100vw / 1920));
+  //   box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+  //   background-color: rgb(28 28 28);
+  //   cursor: pointer;
+  // }
 
-  .categoryPageBlocks {
+  .category__content {
     display: flex;
-    justify-content: space-between;
     width: 100%;
-    height: 100%;
 
-    .categoryPageRightBlock {
+    .category__apartments {
       display: flex;
       position: relative;
       flex-wrap: wrap;

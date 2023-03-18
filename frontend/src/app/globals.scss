@@ -71,6 +71,14 @@ button {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 .visible-title {
   visibility: visible;
 }
@@ -208,8 +216,8 @@ button {
   border-radius: calc(5px + 5 * (100vw / 1920));
   box-sizing: border-box;
   box-shadow:
- rgb(187 187 187 / 40%) 0 0.2vh 0.4vh,
- rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
+    rgb(187 187 187 / 40%) 0 0.2vh 0.4vh,
+    rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
     rgb(0 0 0) 0 -0.4vh 0 inset;
   background-color: rgb(40 40 40);
   transition: box-shadow 0.15s, transform 0.15s;
@@ -220,15 +228,15 @@ button {
 
   &:focus {
     box-shadow:
- rgb(187 187 187 / 40%) 0 0.4vh 0.8vh,
- rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
+      rgb(187 187 187 / 40%) 0 0.4vh 0.8vh,
+      rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
       rgb(0 0 0) 0 -0.4vh 0 inset;
   }
 
   &:hover {
     box-shadow:
- rgb(187 187 187 / 40%) 0 0.4vh 0.8vh,
- rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
+      rgb(187 187 187 / 40%) 0 0.4vh 0.8vh,
+      rgb(187 187 187 / 30%) 0 0.7vh 0.6vh -0.3vh,
       rgb(0 0 0) 0 -0.4vh 0 inset;
     transform: translateY(-2px);
   }

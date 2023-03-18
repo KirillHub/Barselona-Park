@@ -1,10 +1,8 @@
 "use client";
-
 import "react-datepicker/dist/react-datepicker.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import { addDays, subDays } from "date-fns";
 import ru from "date-fns/locale/ru";
 import Image from "next/image";
@@ -14,7 +12,6 @@ import DatePicker from "react-datepicker";
 import { useForm } from "react-hook-form";
 import { A11y, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { SimilarApartments } from "./similar apartments";
 import styles from "./style.module.scss";
 import { apartmentsData } from "../../fake/apartmnetsData";

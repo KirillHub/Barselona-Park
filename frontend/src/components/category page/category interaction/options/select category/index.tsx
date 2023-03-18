@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import useStore from "../../../../../store/useStore";
 import { More } from "../../../../../svg";
-import { categoryMeta, meta } from "../../../../helpers/meta/categoryMeta";
+import { meta } from "../../../../helpers/meta/categoryMeta";
 import styles from "../style.module.scss";
 
 export const SelectCategory = () => {
@@ -18,29 +18,29 @@ export const SelectCategory = () => {
 
   return (
     <div
-      className={styles.swapCategory}
+      className={styles.change}
       onClick={() => setShowCategories((prev) => !prev)}
       onMouseLeave={() => setShowCategories(false)}
     >
-      <button className={styles.swapCategoryButton}>
+      <button className={styles.change__button}>
         Сменить категорию
-        <div className={styles.optionsIcon}>
+        <div className={styles.options__icon}>
           <More />
         </div>
       </button>
 
       <div
         className={
-          styles.swapCategoryContent +
+          styles.change__content +
           " " +
-          `${showCategories ? styles.visible : styles.hidden}`
+          `${showCategories ? "visible" : "hidden"}`
         }
       >
         {meta.map((x) => (
           <Link
             href={`/Category/${x.id}`}
             key={x.id}
-            className={category === x.id ? styles.selectedCategory : ""}
+            className={category === x.id ? styles.change__content_selected : ""}
             onClick={() =>
               setCheckBox([false, false, false, false, false, false])
             }
