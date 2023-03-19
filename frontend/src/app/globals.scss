@@ -58,6 +58,11 @@ button {
   }
 }
 
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: rgb(0 0 0);
+}
+
 ::-webkit-scrollbar {
   width: calc(5px + 5 * (100vw / 1920));
   height: calc(5px + 5 * (100vw / 1920));

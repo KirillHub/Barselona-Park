@@ -16,9 +16,9 @@ import { SimilarApartments } from "./similar apartments";
 import styles from "./style.module.scss";
 import { apartmentsData } from "../../fake/apartmnetsData";
 import { Options } from "../category page/category interaction/options";
-import { readyIcons } from "../helpers/functions/readyIcons";
-import { reservationDays } from "../helpers/functions/reservationDays";
-import { MyApartments } from "../helpers/types/type";
+import { readyIcons } from "../../helpers/functions/readyIcons";
+import { reservationDays } from "../../helpers/functions/reservationDays";
+import { MyApartments } from "../../helpers/types/type";
 
 export default function Apart() {
   const pathname = usePathname();
@@ -46,7 +46,7 @@ export default function Apart() {
         modules={[Navigation, A11y, Pagination]}
         className={styles.apartmentSlider}
       >
-        {apartment?.images?.map((image, index) => (
+        {apartment?.images?.map((image: any, index: number) => (
           <SwiperSlide key={image.id}>
             <Image
               src={image.image}
@@ -64,7 +64,7 @@ export default function Apart() {
 
       <div className={styles.apartmentSecondBlock}>
         <ul className={styles.apartmentDesctiption}>
-          {apartment?.about.description.map((text, index) => (
+          {apartment?.about.description.map((text: any, index: number) => (
             <li key={index}>{text}</li>
           ))}
         </ul>

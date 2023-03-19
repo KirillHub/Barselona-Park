@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { categories } from "./categories";
 import styles from "./style.module.scss";
 
@@ -9,8 +8,8 @@ export default function SelectCategory() {
     <div className={styles.selectCategory}>
       {categories.map((category) => (
         <Link href={category.link} key={category.name}>
-          <span className={styles.selectCategoryTitle}>{category.name}</span>
-          <div className={styles.selectCategoryImage}>
+          <span className={styles.selectCategory__title}>{category.name}</span>
+          <div className={styles.selectCategory__image}>
             <Image
               fill
               quality={75}

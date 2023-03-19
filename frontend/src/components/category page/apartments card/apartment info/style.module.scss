@@ -18,7 +18,7 @@
     }
   }
 
-  .infoTitle {
+  .info__title {
     padding: calc(5px + 5 * (100vw / 1920)) 0;
     width: 100%;
     font-weight: 700;
@@ -30,7 +30,7 @@
     }
   }
 
-  .infoOptions {
+  .options {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -38,7 +38,7 @@
     border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
     z-index: 0;
 
-    .infoDescription {
+    .options__description {
       display: flex;
       align-items: center;
 
@@ -50,19 +50,19 @@
 
     @media (width < 805px) {
       p {
-        font-size: calc(8px + 12 * (100vw / 1920)) !important;
+        font-size: calc(8px + 12 * (100vw / 1920));
       }
 
       @media (width < 605px) {
         p {
-          font-size: calc(6px + 12 * (100vw / 605)) !important;
+          font-size: calc(6px + 12 * (100vw / 605));
         }
       }
     }
   }
 }
 
-.infoService {
+.services {
   display: flex;
   position: relative;
   align-items: baseline;
@@ -74,8 +74,7 @@
     z-index: 2;
   }
 
-  .infoServiceShownIcons,
-  .infoServiceAllIcons {
+  .services__visibleIcons {
     display: flex;
     position: relative;
     flex-flow: row wrap;
@@ -88,7 +87,7 @@
     }
   }
 
-  .infoServiceAll {
+  .services__hiddenIcons {
     width: 30%;
 
     p {
@@ -103,7 +102,8 @@
       }
     }
 
-    .infoServiceAllIcons {
+    .services__allIcons {
+      display: flex;
       position: absolute;
       justify-content: space-between;
       padding: 0.5vh;
@@ -116,71 +116,69 @@
 
     @media (width < 805px) {
       p {
-        font-size: calc(10px + 12 * (100vw / 1920)) !important;
+        font-size: calc(10px + 12 * (100vw / 1920));
       }
 
       @media (width < 605px) {
         p {
-          font-size: calc(4px + 10 * (100vw / 605)) !important;
+          font-size: calc(4px + 10 * (100vw / 605));
         }
       }
     }
   }
 }
 
-.infoPriceButton {
-  display: flex;
-  justify-content: space-between;
+.priceButton {
   padding: 1vh 0;
   border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
 
-  .infoPriceButtonButn {
-    width: calc(35px + 175 * (100vw / 1920));
+  .priceButton__button {
+    width: 100%;
     height: calc(20px + 20 * (100vw / 1920));
-    font-size: calc(5px + 8 * (100vw / 1920));
+    font-size: calc(7px + 8 * (100vw / 1920));
   }
 
-  div {
+  .priceButton__content {
     display: flex;
-    position: relative;
-    align-items: center;
-    cursor: pointer;
+    justify-content: space-around;
+    margin-bottom: 1vh;
+
+    .priceButton__price {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      p {
+        position: relative;
+        margin-left: 0.5vw;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: calc(7px + 14 * (100vw / 1920));
+      }
+    }
   }
 
-  p {
-    text-align: center;
-    font-weight: 700;
-    font-size: calc(7px + 14 * (100vw / 1920));
-  }
+
+
 
   @media (width < 805px) {
     p {
-      font-size: calc(10px + 16 * (100vw / 1920)) !important;
+      font-size: calc(10px + 16 * (100vw / 1920));
     }
 
-    .infoPriceButtonButn {
-      width: calc(70px + 175 * (100vw / 1920)) !important;
-      font-size: calc(6px + 8 * (100vw / 1920)) !important;
+    .priceButton__button {
+      font-size: calc(6px + 8 * (100vw / 1920));
     }
 
     @media (width < 605px) {
       p {
-        font-size: calc(6px + 14 * (100vw / 605)) !important;
+        font-size: calc(6px + 14 * (100vw / 605));
       }
 
-      .infoPriceButtonButn {
-        width: calc(30px + 175 * (100vw / 605)) !important;
-        height: calc(16px + 20 * (100vw / 605)) !important;
-        font-size: calc(5px + 8 * (100vw / 605)) !important;
+      .priceButton__button {
+        height: calc(16px + 20 * (100vw / 605));
+        font-size: calc(5px + 8 * (100vw / 605));
       }
     }
   }
-}
-
-.visible {
-  visibility: visible;
-}
-
-.hidden {
-  visibility: hidden;
 }

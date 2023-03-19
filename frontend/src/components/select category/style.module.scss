@@ -13,7 +13,7 @@
     word-break: unset;
     text-align: center;
 
-    .selectCategoryTitle {
+    .selectCategory__title {
       position: absolute;
       margin: 0 auto;
       width: 96%;
@@ -25,15 +25,15 @@
       z-index: 1;
     }
 
-    .selectCategoryTitle:hover~.selectCategoryImage {
+    .selectCategory__title:hover~.selectCategory__image {
       filter: brightness(40%);
     }
 
-    .selectCategoryTitle:active~.selectCategoryImage {
+    .selectCategory__title:active~.selectCategory__image {
       filter: brightness(20%);
     }
 
-    .selectCategoryImage {
+    .selectCategory__image {
       position: relative;
       width: 100%;
       height: 100%;

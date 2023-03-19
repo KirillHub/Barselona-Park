@@ -26,7 +26,7 @@ const path = "http://localhost:3500" || "https://barsa-back.onrender.com";
 
 const useCategory = (category: string, sort: string, service: string) => {
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
-    `https://barsa-back.onrender.com/Category/${category}/${sort}/${service}`,
+    `http://localhost:3500/Category/${category}/${sort}/${service}`,
     fetcher
   );
 
@@ -38,13 +38,6 @@ const useCategory = (category: string, sort: string, service: string) => {
 };
 
 export default function Category() {
-  const setSelectedPageId = useStore((state) => state.setSelectedPageId);
-  const selectedPageId = useStore((state) => state.selectedPageId);
-
-  const apartmentsLenth = useStore((state) => state.apartmentsLength);
-
-  const [quantity, setQuantity] = useState(6);
-
   const pathname = usePathname();
   const category = pathname?.split("/")[2];
   const sort = pathname?.split("/")[3];
@@ -81,13 +74,3 @@ export default function Category() {
   );
 }
 
-// {user!?.length >= quantity ? (
-//         <button
-//           className={styles.categoryPageButton1}
-//           onClick={() => setQuantity((prev) => prev + 6)}
-//         >
-//           Еще
-//         </button>
-//       ) : (
-//         ""
-//       )}

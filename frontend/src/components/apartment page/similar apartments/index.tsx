@@ -21,7 +21,7 @@ const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
 const useSimilar = (apartmentId: number, option: string) => {
   const { data, error, isLoading } = useSWR<MyApartments[], any, any>(
-    `https://barsa-back.onrender.com/GetSimilar/${apartmentId}/${option}`,
+    `http://localhost:3500/GetSimilar/${apartmentId}/${option}`,
     fetcher
   );
 

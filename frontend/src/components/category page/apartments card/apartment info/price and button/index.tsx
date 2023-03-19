@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { MyApartments } from "../../../../helpers/types/type";
 import styles from "../style.module.scss";
+import { Sun, Snowflake } from "@/svg";
 
 interface MyProps {
   apartment: MyApartments;
@@ -28,23 +29,30 @@ export const Price = ({ apartment }: MyProps) => {
   };
 
   return (
-    <div className={styles.infoPriceButton}>
-      <div>
-        <div onClick={() => showTitle(0)}>
-          <p>{apartment.summerPrice} -</p> &nbsp;
-          <span className={`${titles[0] ? styles.visible : styles.hidden}`}>
-            Летний сезон (с 1 июня по 1 октября)
-          </span>
+    <div className={styles.priceButton}>
+      <div className={styles.priceButton__content}>
+        <div className={styles.priceButton__price} onClick={() => showTitle(0)}>
+          <Sun />
+          <p>
+            {apartment.summerPrice} ₽
+            <span className={`${titles[0] ? "visible" : "hidden"}`}>
+              Летний сезон (с 1 июня по 1 октября)
+            </span>
+          </p>
         </div>
-        <div onClick={() => showTitle(1)}>
-          <p>{apartment.winterPrice} ₽</p>
-          <span className={`${titles[1] ? styles.visible : styles.hidden}`}>
-            Зимний сезон (с 1 октября по 1 июня)
-          </span>
+
+        <div className={styles.priceButton__price} onClick={() => showTitle(1)}>
+          <Snowflake />
+          <p>
+            {apartment.winterPrice} ₽
+            <span className={`${titles[1] ? "visible" : "hidden"}`}>
+              Зимний сезон (с 1 октября по 1 июня)
+            </span>
+          </p>
         </div>
       </div>
 
-      <div className={styles.infoPriceButtonButn}>
+      <div className={styles.priceButton__button}>
         <button
           className="main-buttons-style"
           onClick={() => handleClick(apartment.apartmentName)}

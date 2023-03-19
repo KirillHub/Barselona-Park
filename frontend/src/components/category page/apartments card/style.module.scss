@@ -1,14 +1,10 @@
-.categoryPageRightBlockCard {
+.apartments {
   position: relative;
   justify-content: space-between;
   margin: 0 0 calc(20px + 30 * (100vw / 1920)) 0;
   border-radius: calc(5px + 5 * (100vw / 1920));
   box-shadow: rgb(34 34 34) 0 0 0 6px;
   background-color: rgb(28 28 28);
-
-  .categoryPageRightBlockCardSlider {
-    position: relative;
-  }
 
   @media (width < 805px) {
     margin-right: auto;
@@ -17,36 +13,30 @@
 }
 
 .slider {
+  position: relative;
   width: calc(60px + 420 * (100vw / 1920));
   height: calc(50px + 270 * (100vw / 1920));
   user-select: none;
 
-  .sliderImage {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    .sliderImageSpan {
-      position: absolute;
-      width: 100%;
-      line-height: calc(50px + 270 * (100vw / 1920));
-      text-align: center;
-      font-size: calc(10px + 10 * (100vw / 1920));
-      color: rgb(255 255 255 / 76%);
-
-      @media (width < 805px) {
-        line-height: calc(90px + 125 * (100vw / 805));
-
-        @media (width < 605px) {
-          line-height: calc(35px + 265 * (100vw / 605));
-        }
-      }
-    }
+  .slider__images {
+    border-top-left-radius: calc(5px + 5 * (100vw / 1920));
+    border-top-right-radius: calc(5px + 5 * (100vw / 1920));
+    object-fit: contain;
   }
 
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    color: rgb(0 0 0);
+  p {
+    line-height: calc(50px + 270 * (100vw / 1920));
+    text-align: center;
+    font-size: calc(10px + 12 * (100vw / 1920));
+
+    @media (width < 805px) {
+      line-height: calc(90px + 125 * (100vw / 805));
+
+      @media (width < 605px) {
+        line-height: calc(35px + 265 * (100vw / 605));
+      }
+    }
+
   }
 
   @media (width < 805px) {

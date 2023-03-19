@@ -16,7 +16,7 @@ export const ApartmentInfo = ({ apartment }: MyProps) => {
 
   return (
     <div className={styles.info}>
-      <p className={styles.infoTitle} onClick={handleClick}>
+      <p className={styles.info__title} onClick={handleClick}>
         Апартамент {apartment.apartmentName}
       </p>
 
@@ -29,4 +29,3 @@ export const ApartmentInfo = ({ apartment }: MyProps) => {
   );
 };
 
-// <Service apartment={apartment} />;

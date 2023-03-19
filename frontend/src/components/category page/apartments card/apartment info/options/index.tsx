@@ -8,18 +8,18 @@ interface MyProps {
 
 export const Options = ({ apartment }: MyProps) => {
   return (
-    <div className={styles.infoOptions}>
-      <div className={styles.infoDescription}>
+    <div className={styles.options}>
+      <div className={styles.options__description}>
         <Rooms />
         <p> Комнат - {apartment.about.rooms}</p>
       </div>
 
-      <div className={styles.infoDescription}>
+      <div className={styles.options__description}>
         <Blueprint />
         <p>{apartment.about.squareMeters} m²</p>
       </div>
 
-      <div className={styles.infoDescription}>
+      <div className={styles.options__description}>
         <Bed />
         <p>Мест - {apartment.about.sleepingPlaces}</p>
       </div>

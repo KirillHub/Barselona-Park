@@ -11,7 +11,6 @@ interface MyProps {
   apartment: MyApartments;
   apartmentIndex: number;
   options: {
-    className: string | any;
     sizes: string;
     fit: "contain" | "cover" | "fill" | "none" | "scale-down";
     lazy: number;
@@ -34,37 +33,26 @@ export const SliderImages = ({
       className={styles.slider}
     >
       {apartment.images.map((picture, index) => (
-        <span key={picture.id}>
-          <SwiperSlide key={picture.id}>
-            <div className={options?.className}>
-              <span className={styles.sliderImageSpan}>
-                {" "}
-                Фотография загружается...
-              </span>
-              <Image
-                src={picture.image}
-                fill
-                sizes={options?.sizes}
-                quality={options?.quality}
-                priority={
-                  apartmentIndex < 2
-                    ? index < options?.lazy
-                      ? true
-                      : false
-                    : false
-                }
-                alt={`Фотография Апартамента ${
-                  picture.id.split("-")[0]
-                }. Номер ${picture.id.split("-")[1]}`}
-                style={{
-                  objectFit: options?.fit,
-                  borderTopRightRadius: `calc(${options.border}px + ${options.border} * (100vw / 1920))`,
-                  borderTopLeftRadius: `calc(${options.border}px + ${options.border} * (100vw / 1920))`,
-                }}
-              />
-            </div>
-          </SwiperSlide>
-        </span>
+        <SwiperSlide key={picture.id} className={styles.slider__content}>
+          <Image
+            className={styles.slider__images}
+            src={picture.image}
+            fill
+            sizes={options?.sizes}
+            quality={options?.quality}
+            priority={
+              apartmentIndex < 5
+                ? index < options?.lazy
+                  ? true
+                  : false
+                : false
+            }
+            alt={`Фотография Апартамента ${picture.id.split("-")[0]}. Номер ${
+              picture.id.split("-")[1]
+            }`}
+          />
+          <p> Фотография загружается...</p>
+        </SwiperSlide>
       ))}
     </Swiper>
   );

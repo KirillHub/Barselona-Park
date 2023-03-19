@@ -1,7 +1,6 @@
 import { useState } from "react";
-
-import { readyIcons } from "../../../../helpers/functions/readyIcons";
-import { MyApartments } from "../../../../helpers/types/type";
+import { readyIcons } from "../../../../../helpers/functions/readyIcons";
+import { MyApartments } from "../../../../../helpers/types/type";
 import styles from "../style.module.scss";
 
 interface MyProps {
@@ -62,15 +61,13 @@ export const Service = ({ apartment }: MyProps) => {
   };
 
   return (
-    <div className={styles.infoService}>
-      <div className={styles.infoServiceShownIcons}>
+    <div className={styles.services}>
+      <div className={styles.services__visibleIcons}>
         {icons.map((icon, index) =>
           index < 10 - fixSpace && icon.title !== "" ? (
             <div onClick={() => showTitle(index)} key={icon.title}>
               {icon.jsx}
-              <span
-                className={`${titles[index] ? styles.visible : styles.hidden}`}
-              >
+              <span className={`${titles[index] ? "visible" : "hidden"}`}>
                 {icon.title}
               </span>
             </div>
@@ -81,27 +78,23 @@ export const Service = ({ apartment }: MyProps) => {
       </div>
 
       <div
-        className={styles.infoServiceAll}
+        className={styles.services__hiddenIcons}
         onClick={() => setShowService(true)}
         onMouseLeave={() => setShowService(false)}
       >
         <p>Все услуги</p>
         <div
           className={
-            styles.infoServiceAllIcons +
+            styles.services__allIcons +
             " " +
-            `${showService ? styles.visible : styles.hidden}`
+            `${showService ? "visible" : "hidden"}`
           }
         >
           {icons.map((icon, index) =>
             index > 9 - fixSpace && icon.title !== "" ? (
               <div onClick={() => showTitle(index)} key={icon.title}>
                 {icon.jsx}
-                <span
-                  className={`${
-                    titles[index] ? styles.visible : styles.hidden
-                  }`}
-                >
+                <span className={`${titles[index] ? "visible" : "hidden"}`}>
                   {icon.title}
                 </span>
               </div>
