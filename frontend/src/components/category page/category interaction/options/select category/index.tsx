@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import useStore from "../../../../../store/useStore";
 import { More } from "../../../../../svg";
-import { meta } from "../../../../helpers/meta/categoryMeta";
+import { meta } from "../../../../../helpers/meta/categoryMeta";
 import styles from "../style.module.scss";
 
 export const SelectCategory = () => {

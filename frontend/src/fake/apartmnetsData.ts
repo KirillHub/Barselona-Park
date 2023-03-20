@@ -1,4 +1,4 @@
-import { MyApartments } from "../components/helpers/types/type";
+import { MyApartments } from "../helpers/types/type";
 
 export const apartmentsData: MyApartments[] = [
   {

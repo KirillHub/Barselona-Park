@@ -4,7 +4,7 @@
 
   .category__title {
     text-align: center;
-    font-size: calc(15px + 15 * (100vw / 1920));
+    font-size: calc(20px + 15 * (100vw / 1920));
   }
 
   // .categoryPageButton1 {
@@ -22,6 +22,7 @@
 
   .category__content {
     display: flex;
+    justify-content: space-between;
     width: 100%;
 
     .category__apartments {
@@ -29,14 +30,16 @@
       position: relative;
       flex-wrap: wrap;
       justify-content: space-between;
-      width: 70%;
+      width: 67%;
       height: 100%;
       z-index: 0;
 
       @media (width < 805px) {
+        display: block;
         width: 50%;
 
         @media (width < 605px) {
+          display: flex;
           width: 100%;
         }
       }

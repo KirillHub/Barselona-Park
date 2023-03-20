@@ -1,9 +1,9 @@
-import { useRouter } from "next/navigation";
+import { MyApartments } from "../../../../helpers/types/type";
 import { Options } from "./options";
 import { Price } from "./price and button";
 import { Service } from "./service";
 import styles from "./style.module.scss";
-import { MyApartments } from "../../../helpers/types/type";
+import { useRouter } from "next/navigation";
 
 interface MyProps {
   apartment: MyApartments;

@@ -1,26 +1,32 @@
 "use client";
+
 import "react-datepicker/dist/react-datepicker.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { addDays, subDays } from "date-fns";
-import ru from "date-fns/locale/ru";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import DatePicker from "react-datepicker";
-import { useForm } from "react-hook-form";
+
 import { A11y, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { SimilarApartments } from "./similar apartments";
-import styles from "./style.module.scss";
-import { apartmentsData } from "../../fake/apartmnetsData";
+import { addDays, subDays } from "date-fns";
+import { useEffect, useRef, useState } from "react";
+
+import { ApartmentServices } from "./apartment services";
+import DatePicker from "react-datepicker";
+import Image from "next/image";
+import { MyApartments } from "../../helpers/types/type";
 import { Options } from "../category page/category interaction/options";
+import { SimilarApartments } from "./similar apartments";
+import { apartmentsData } from "../../fake/apartmnetsData";
 import { readyIcons } from "../../helpers/functions/readyIcons";
 import { reservationDays } from "../../helpers/functions/reservationDays";
-import { MyApartments } from "../../helpers/types/type";
+import ru from "date-fns/locale/ru";
+import styles from "./style.module.scss";
+import { useForm } from "react-hook-form";
+import { usePathname } from "next/navigation";
 
 export default function Apart() {
+  const [widthValue, setWidthValue] = useState<number>();
+
   const pathname = usePathname();
 
   const apartmentId = pathname?.split("/")[1];
@@ -29,7 +35,13 @@ export default function Apart() {
     (x) => x.apartmentName === +apartmentId!?.split("-")[1]
   );
 
-  const service = readyIcons(apartment!);
+  const services = readyIcons(apartment!);
+
+  const handleWidthChange = (value: number) => {
+    setWidthValue(value);
+  };
+
+  const displayedPictures = widthValue! >= 759 ? 2 : 1;
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (
@@ -37,14 +49,14 @@ export default function Apart() {
       <h1>Апартамент {apartment.apartmentName}</h1>
 
       <Swiper
-        slidesPerView={2}
+        slidesPerView={displayedPictures}
         spaceBetween={30}
         navigation
         pagination={{
           clickable: true,
         }}
         modules={[Navigation, A11y, Pagination]}
-        className={styles.apartmentSlider}
+        className={styles.apartment__slider}
       >
         {apartment?.images?.map((image: any, index: number) => (
           <SwiperSlide key={image.id}>
@@ -55,46 +67,30 @@ export default function Apart() {
               priority={index < 2 ? true : false}
               quality={100}
               alt={`test`}
-              className={styles.apartmentSliderImage}
-              style={{ objectFit: "contain" }}
+              className={styles.apartment__slider_images}
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <div className={styles.apartmentSecondBlock}>
-        <ul className={styles.apartmentDesctiption}>
+      <div className={styles.apartment__section}>
+        <ul className={styles.apartment__description}>
           {apartment?.about.description.map((text: any, index: number) => (
             <li key={index}>{text}</li>
           ))}
         </ul>
 
-        <div className={styles.apartmentBooking}>
+        <div className={styles.apartment__booking}>
           <Options />
         </div>
       </div>
 
-      <div className={styles.apartmentServices}>
-        <h3>Удобства и услгуи</h3>
-        <div className={styles.apartmentServicesIcons}>
-          {service.map((service) =>
-            service.title.length > 0 ? (
-              <div
-                className={styles.apartmentServicesIconsIcon}
-                key={service?.title}
-              >
-                <span>{service?.jsx}</span>
-                <br />
-                <span>{service?.title}</span>
-              </div>
-            ) : (
-              ""
-            )
-          )}
-        </div>
-      </div>
+      <ApartmentServices services={services} />
 
-      <SimilarApartments apartmentId={apartment.apartmentName} />
+      <SimilarApartments
+        onWidthChange={handleWidthChange}
+        apartmentId={apartment.apartmentName}
+      />
     </div>
   );
 }

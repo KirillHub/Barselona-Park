@@ -1,11 +1,12 @@
-import { usePathname, useRouter } from "next/navigation";
+import { CategoryMenu, More } from "@/svg";
 import { useCallback, useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
-import useStore from "../../../store/useStore";
+import { Options } from "./options";
 import { Services } from "./filtration/services";
 import { Sort } from "./filtration/sort";
-import { Options } from "./options";
 import styles from "./style.module.scss";
+import useStore from "../../../store/useStore";
 
 interface MyParams {
   category: string;
@@ -164,9 +165,9 @@ export const CategoryInteraction = () => {
 
   return (
     <>
-      {/* <div className={styles.categoryOpen} onClick={() => setSideBar(!sideBar)}>
-        <CategoryMenu color={sideBar} />
-      </div> */}
+      <div className={styles.categoryOpen} onClick={() => setSideBar(!sideBar)}>
+        <span>Меню</span> <div><More /></div>
+      </div>
 
       <aside className={sideBar ? styles.active : styles.sidebar}>
         <Options />

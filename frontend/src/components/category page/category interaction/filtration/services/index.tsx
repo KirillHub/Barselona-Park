@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation";
 
 import useStore from "../../../../../store/useStore";
-import { meta } from "../../../../helpers/meta/categoryMeta";
+import { meta } from "../../../../../helpers/meta/categoryMeta";
 import styles from "../style.module.scss";
 
 interface MyProps {

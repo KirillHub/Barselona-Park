@@ -1,10 +1,13 @@
 "use client";
-import Image from "next/image";
-import { Navigation, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { MyApartments } from "../../../helpers/types/type";
+
 import "swiper/css/navigation";
 import "swiper/css";
+
+import { A11y, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import Image from "next/image";
+import { MyApartments } from "../../../../helpers/types/type";
 import styles from "../style.module.scss";
 
 interface MyProps {

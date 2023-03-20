@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { readyIcons } from "../../../../../helpers/functions/readyIcons";
 import { MyApartments } from "../../../../../helpers/types/type";
+import { readyIcons } from "../../../../../helpers/functions/readyIcons";
 import styles from "../style.module.scss";
+import { useState } from "react";
 
 interface MyProps {
   apartment: MyApartments;
@@ -86,8 +86,7 @@ export const Service = ({ apartment }: MyProps) => {
         <div
           className={
             styles.services__allIcons +
-            " " +
-            `${showService ? "visible" : "hidden"}`
+            `${showService ? " visible" : " hidden"}`
           }
         >
           {icons.map((icon, index) =>

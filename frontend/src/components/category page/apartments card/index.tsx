@@ -1,8 +1,9 @@
 "use client";
+
 import { ApartmentInfo } from "./apartment info";
+import { MyApartments } from "../../../helpers/types/type";
 import { SliderImages } from "./slider images";
 import styles from "./style.module.scss";
-import { MyApartments } from "../../helpers/types/type";
 
 interface MyProps {
   apartment: MyApartments;

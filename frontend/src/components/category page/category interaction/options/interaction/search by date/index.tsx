@@ -6,7 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useStore from "../../../../../../store/useStore";
 import { More } from "../../../../../../svg";
-import { reservationDays } from "../../../../../helpers/functions/reservationDays";
+import { reservationDays } from "../../../../../../helpers/functions/reservationDays";
 import styles from "../style.module.scss";
 
 interface Custom {

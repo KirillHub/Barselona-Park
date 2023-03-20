@@ -3,34 +3,51 @@
 
   h1 {
     margin: 2vh 8vw 0;
+    font-size: calc(22px + 22 * (100vw / 1920));
   }
 
-  .apartmentSlider {
+  .apartment__slider {
     position: relative;
     margin: 0 8vw 2vh;
     height: calc(0px + 518 * (100vw / 1920));
-    background-color: #000;
+    user-select: none;
     z-index: 0;
 
-    .apartmentSliderImage {
+    .apartment__slider_images {
       border-radius: calc(15px + 15 * (100vw / 1920));
-      background-color: #f00;
+      object-fit: cover;
+    }
+
+    @media (width < 1000px) {
+      height: calc(0px + 570 * (100vw / 1920));
+
+      @media (width < 765px) {
+        height: calc(0px + 1170 * (100vw / 1920));
+      }
     }
   }
 
-  .apartmentSecondBlock {
+  .apartment__section {
     display: flex;
     position: relative;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: calc(20px + 20 * (100vw / 1920)) 8vw;
 
-    .apartmentDesctiption {
+    .apartment__description {
       padding: calc(5px + 10 * (100vw / 1920));
       width: 68%;
+      height: calc(200px + 200 * (100vw / 1920));
+      overflow: auto;
       border-radius: calc(5px + 5 * (100vw / 1920));
       font-size: calc(8px + 8 * (100vw / 1920));
       box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
       background-color: rgb(28 28 28);
+
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+      }
 
       li {
         margin-top: 0.5vw;
@@ -42,35 +59,55 @@
       }
     }
 
-    .apartmentBooking {
+    .apartment__booking {
       width: 28%;
       height: 100%;
     }
+
+    @media (width < 816px) {
+      .apartment__description {
+        width: 100%;
+      }
+
+      .apartment__booking {
+        margin: calc(20px + 20 * (100vw / 1920)) 0 0 0;
+        width: 100%;
+
+      }
+    }
   }
 
-  .apartmentServices {
+  .apartment__services {
     margin: calc(20px + 20 * (100vw / 1920)) 8vw;
-    padding: 1vw 0;
+    padding: calc(5px + 5 * (100vw / 1920));
     border-radius: calc(5px + 5 * (100vw / 1920));
     box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
     background-color: rgb(28 28 28);
 
     h3 {
-      margin: 0 1vw;
-      font-size: calc(12px + 12 * (100vw / 1920));
+      margin: 0 1vw calc(5px + 5 * (100vw / 1920));
+      font-size: calc(14px + 12 * (100vw / 1920));
     }
 
-    .apartmentServicesIcons {
+    .apartment__services_icons {
       display: flex;
       flex-flow: row wrap;
-      align-content: space-between;
       justify-content: space-between;
 
-      .apartmentServicesIconsIcon {
-        margin: calc(5px + 5 * (100vw / 1920));
-        width: calc(50px + 75 * (100vw / 1920));
-        height: calc(50px + 50 * (100vw / 1920));
+      .apartment__services_icon {
+        margin: calc(5px + 5 * (100vw / 1920)) 0 0 0;
+        width: calc(55px + 70 * (100vw / 1920));
+        height: calc(50px + 45 * (100vw / 1920));
+        line-height: calc(7px + 10 * (100vw / 1920));
+
+        // border: 1px solid #fff;
         text-align: center;
+
+        div {
+          margin: 0 auto 0.5vh;
+          width: calc(20px + 20 * (100vw / 1920));
+          height: calc(20px + 20 * (100vw / 1920));
+        }
 
         span {
           font-size: calc(8px + 8 * (100vw / 1920));
@@ -84,13 +121,13 @@
       margin: 2vh 4vw 0;
     }
 
-    .apartmentSlider {
-      margin: 0 4vw 2vh !important;
+    .apartment__slider {
+      margin: 0 4vw 2vh;
     }
 
-    .apartmentSecondBlock,
-    .apartmentServices {
-      margin: calc(20px + 20 * (100vw / 1920)) 4vw !important;
+    .apartment__section,
+    .apartment__services {
+      margin: calc(20px + 20 * (100vw / 1920)) 4vw;
     }
   }
 }

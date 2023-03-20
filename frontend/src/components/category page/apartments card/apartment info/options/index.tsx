@@ -1,5 +1,6 @@
-import { Rooms, Blueprint, Bed } from "../../../../../svg";
-import { MyApartments } from "../../../../helpers/types/type";
+import { Bed, Blueprint, Rooms } from "../../../../../svg";
+
+import { MyApartments } from "../../../../../helpers/types/type";
 import styles from "../style.module.scss";
 
 interface MyProps {

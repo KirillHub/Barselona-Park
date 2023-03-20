@@ -1,16 +1,17 @@
 "use client";
-import Head from "next/head";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import useSWR from "swr";
 
-import styles from "./style.module.scss";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+
 import { ApartmentCard } from "../../components/category page/apartments card";
 import { CategoryInteraction } from "../../components/category page/category interaction";
+import Head from "next/head";
+import { MyApartments } from "../../helpers/types/type";
 import { apartmentsData } from "../../fake/apartmnetsData";
+import { categoryMeta } from "../../helpers/meta/categoryMeta";
+import styles from "./style.module.scss";
+import useSWR from "swr";
 import useStore from "../../store/useStore";
-import { categoryMeta } from "../helpers/meta/categoryMeta";
-import { MyApartments } from "../helpers/types/type";
 
 export const dynamic = "force-static";
 
@@ -26,7 +27,7 @@ const path = "http://localhost:3500" || "https://barsa-back.onrender.com";
 
 const useCategory = (category: string, sort: string, service: string) => {
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
-    `http://localhost:3500/Category/${category}/${sort}/${service}`,
+    `https://barsa-back.onrender.com/Category/${category}/${sort}/${service}`,
     fetcher
   );
 

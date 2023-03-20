@@ -1,9 +1,9 @@
+import { Snowflake, Sun } from "@/svg";
+
+import { MyApartments } from "../../../../../helpers/types/type";
+import styles from "../style.module.scss";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
-import { MyApartments } from "../../../../helpers/types/type";
-import styles from "../style.module.scss";
-import { Sun, Snowflake } from "@/svg";
 
 interface MyProps {
   apartment: MyApartments;
@@ -33,22 +33,22 @@ export const Price = ({ apartment }: MyProps) => {
       <div className={styles.priceButton__content}>
         <div className={styles.priceButton__price} onClick={() => showTitle(0)}>
           <Sun />
-          <p>
+          <div>
             {apartment.summerPrice} ₽
             <span className={`${titles[0] ? "visible" : "hidden"}`}>
               Летний сезон (с 1 июня по 1 октября)
             </span>
-          </p>
+          </div>
         </div>
 
         <div className={styles.priceButton__price} onClick={() => showTitle(1)}>
           <Snowflake />
-          <p>
+          <div>
             {apartment.winterPrice} ₽
             <span className={`${titles[1] ? "visible" : "hidden"}`}>
               Зимний сезон (с 1 октября по 1 июня)
             </span>
-          </p>
+          </div>
         </div>
       </div>
 

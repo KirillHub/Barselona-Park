@@ -1,6 +1,5 @@
 .apartments {
   position: relative;
-  justify-content: space-between;
   margin: 0 0 calc(20px + 30 * (100vw / 1920)) 0;
   border-radius: calc(5px + 5 * (100vw / 1920));
   box-shadow: rgb(34 34 34) 0 0 0 6px;
@@ -9,6 +8,7 @@
   @media (width < 805px) {
     margin-right: auto;
     margin-left: auto;
+    
   }
 }
 
@@ -21,7 +21,7 @@
   .slider__images {
     border-top-left-radius: calc(5px + 5 * (100vw / 1920));
     border-top-right-radius: calc(5px + 5 * (100vw / 1920));
-    object-fit: contain;
+    object-fit: cover;
   }
 
   p {
