@@ -1,8 +1,7 @@
-import { usePathname } from "next/navigation";
-
-import useStore from "../../../../../store/useStore";
 import { meta } from "../../../../../helpers/meta/categoryMeta";
 import styles from "../style.module.scss";
+import { usePathname } from "next/navigation";
+import useStore from "../../../../../store/useStore";
 
 interface MyProps {
   onCheckBoxFirstChange: Function;
@@ -17,7 +16,7 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
     { box: "Вид на город", index: 1 },
     { box: "Балкон", index: 2 },
     { box: "Духовка", index: 3 },
-    { box: "Посудомоечная", index: 4 },
+    { box: "Посудомойка", index: 4 },
     { box: "Кофемашина", index: 5 },
   ];
 

@@ -1,9 +1,8 @@
 import Link from "next/link";
+import styles from "../style.module.scss";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
 import useStore from "../../../../../store/useStore";
-import styles from "../style.module.scss";
 
 interface MyParams {
   category: string;
@@ -151,7 +150,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
         className={styles.filtration__reset}
         onClick={() => (checkLink ? resetSorts("sort") : "")}
       >
-        Cброс
+        Сброс
       </p>
     </div>
   );

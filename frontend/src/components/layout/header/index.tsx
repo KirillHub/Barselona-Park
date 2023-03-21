@@ -1,8 +1,11 @@
 "use client";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+
 import "./style.scss";
+
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+
+import Link from "next/link";
 
 export const Header = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -11,27 +14,10 @@ export const Header = () => {
   const apartment = pathname?.split("/")[1].split("-")[0];
   const category = pathname?.split("/")[2];
 
-  const checkHeader =
-    category === "Select-category" || apartment === "Apartment";
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header
-      className={`header ${
-        scrollPosition >= 100 || checkHeader ? "headerBlack" : ""
-      }`}
+      className={`header`}
     >
       <nav className="header-container">
         <p className="header-p">

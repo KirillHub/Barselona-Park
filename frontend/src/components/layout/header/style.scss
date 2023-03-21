@@ -1,16 +1,8 @@
-.headerBlack {
-  background-color: rgb(28 28 28);
-}
-
-.header,
-.headerBlack {
-  position: sticky;
+.header {
   margin: 0 auto;
   width: 100%;
   height: 70px;
-  top: 0;
-  background-color: rgb(28 28 28);
-  z-index: 10;
+  background-color: rgb(21 21 21);
 
 
   .header-container {
@@ -18,6 +10,7 @@
     justify-content: space-between;
     margin: 0 8vw;
     height: 100%;
+
 
 
 

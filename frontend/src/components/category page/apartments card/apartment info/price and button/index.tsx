@@ -11,21 +11,22 @@ interface MyProps {
 
 export const Price = ({ apartment }: MyProps) => {
   const [titles, setTitles] = useState([false, false]);
+  const [reset, setReset] = useState<NodeJS.Timeout>();
 
   const router = useRouter();
 
   const handleClick = (id: number) => router.push(`/Apartment-${id}`);
 
   const showTitle = (iconIndex: number) => {
+    clearTimeout(reset);
     setTitles(
-      titles.map((title, index) => (index === iconIndex ? true : title))
+      titles.map((title, index) => (index === iconIndex ? true : false))
     );
 
     const id = setTimeout(() => {
-      setTitles((prev) =>
-        prev.map((title, index) => (index === iconIndex ? false : title))
-      );
-    }, 1000);
+      setTitles([false, false]);
+    }, 2000);
+    setReset(id);
   };
 
   return (

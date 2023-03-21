@@ -8,7 +8,7 @@
   @media (width < 805px) {
     margin-right: auto;
     margin-left: auto;
-    
+
   }
 }
 
@@ -40,8 +40,8 @@
   }
 
   @media (width < 805px) {
-    width: calc(100px + 225 * (100vw / 805));
-    height: calc(90px + 125 * (100vw / 805));
+    width: calc(50px + 300 * (100vw / 805));
+    height: calc(115px + 125 * (100vw / 805));
 
     @media (width < 605px) {
       width: calc(5px + 465 * (100vw / 605));

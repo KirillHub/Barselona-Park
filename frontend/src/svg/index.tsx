@@ -27,3 +27,4 @@ export * from "./more";
 export * from "./categoryMenu";
 export * from "./sun";
 export * from "./snowflake";
+export * from "./xmark";

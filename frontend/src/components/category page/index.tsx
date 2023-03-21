@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import { ApartmentCard } from "../../components/category page/apartments card";
@@ -50,9 +50,11 @@ export default function Category() {
 
   const aparts = user?.data;
 
+
+  ///840 776 630 576 700 540 598 592 256
   //416
   return (
-    <div className={styles.category}>
+    <div className={styles.category} >
 
       <h1 className={styles.category__title}>
         {meta?.name} - {user?.length}

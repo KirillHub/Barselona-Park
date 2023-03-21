@@ -11,6 +11,7 @@ export const Service = ({ apartment }: MyProps) => {
   const icons = readyIcons(apartment);
 
   const [showService, setShowService] = useState(false);
+  const [reset, setReset] = useState<NodeJS.Timeout>();
   const [titles, setTitles] = useState([
     false,
     false,
@@ -49,15 +50,17 @@ export const Service = ({ apartment }: MyProps) => {
   }
 
   const showTitle = (iconIndex: number) => {
+    clearTimeout(reset);
     setTitles(
-      titles.map((title, index) => (index === iconIndex ? true : title))
+      titles.map((title, index) => (index === iconIndex ? true : false))
     );
 
     const id = setTimeout(() => {
       setTitles((prev) =>
-        prev.map((title, index) => (index === iconIndex ? false : title))
+        prev.map((title, index) => (index === iconIndex ? false : false))
       );
-    }, 1000);
+    }, 2000);
+    setReset(id);
   };
 
   return (

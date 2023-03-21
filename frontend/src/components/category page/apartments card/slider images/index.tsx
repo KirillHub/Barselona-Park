@@ -2,6 +2,7 @@
 
 import "swiper/css/navigation";
 import "swiper/css";
+import './style.scss'
 
 import { A11y, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -1,13 +1,15 @@
-import { addDays, subDays } from "date-fns";
-import ru from "date-fns/locale/ru";
-import { forwardRef, useEffect, useState } from "react";
-import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
-import useStore from "../../../../../../store/useStore";
+
+import { addDays, subDays } from "date-fns";
+import { forwardRef, useEffect, useState } from "react";
+
+import DatePicker from "react-datepicker";
 import { More } from "../../../../../../svg";
 import { reservationDays } from "../../../../../../helpers/functions/reservationDays";
+import ru from "date-fns/locale/ru";
+import secondStyles from '../../style.module.scss'
 import styles from "../style.module.scss";
+import useStore from "../../../../../../store/useStore";
 
 interface Custom {
   value: string;
@@ -42,7 +44,7 @@ export const CheckInCheckOut = () => {
       <span className={styles.box__span}>{value.split(" ")[0]}</span>
       <div className={styles.box__date}>
         {value.split(" ")[1]}
-        <div className={styles.options__icon}>
+        <div className={secondStyles.options__icon}>
           <More />
         </div>
       </div>

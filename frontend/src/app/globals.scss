@@ -58,6 +58,10 @@ button {
   }
 }
 
+.sideBar__open {
+  overflow: hidden;
+}
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
   color: rgb(0 0 0);

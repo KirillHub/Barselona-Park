@@ -17,13 +17,14 @@ export const ApartmentCard = ({ apartment, index }: MyProps) => {
         apartment={apartment}
         apartmentIndex={index}
         options={{
-      
-          sizes:
-            "calc(60px + 420 * (100vw / 1920)), (max-width: 805px) calc(100px + 225 * (100vw / 805)), (max-width: 605px) calc(5px + 465 * (100vw / 605))",
+          sizes: `
+             (max-width: 805px) calc(50px + 300 * (100vw / 805)) ,
+              (max-width: 605px) calc(5px + 465 * (100vw / 605)),
+               calc(60px + 420 * (100vw / 1920)) `,
           fit: "contain",
           border: 5,
           lazy: 1,
-          quality: 75,
+          quality: 100,
         }}
       />
 

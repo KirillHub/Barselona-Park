@@ -4,11 +4,11 @@
   span {
     position: absolute;
     padding: 0.2vw 0.6vw;
-    bottom: -2.4vh;
-    left: -2vw;
+    bottom: -2.7vh;
+    left: -3vw;
     border: calc(2px + 1 * (100vw / 1920)) solid rgb(60 60 60);
     white-space: nowrap;
-    font-size: calc(8px + 5 * (100vw / 1920));
+    font-size: calc(10px + 6 * (100vw / 1920));
     color: rgb(255 255 255);
     background-color: rgb(28 28 28);
     z-index: 2;
@@ -46,19 +46,14 @@
         margin-left: 0.5vw;
         font-size: calc(6px + 8 * (100vw / 1920));
       }
-    }
 
-    @media (width < 805px) {
-      p {
-        font-size: calc(8px + 12 * (100vw / 1920));
-      }
-
-      @media (width < 605px) {
+      @media (width < 805px) {
         p {
-          font-size: calc(6px + 12 * (100vw / 605));
+          font-size: calc(10px + 12 * (100vw / 1920));
         }
       }
     }
+
   }
 }
 
@@ -83,13 +78,10 @@
     user-select: none;
 
     div {
-      width: calc(12px + 18 * (100vw / 1920));
-      height: calc(12px + 18 * (100vw / 1920));
-
-
+      position: relative;
+      width: calc(16px + 18 * (100vw / 1920));
+      height: calc(16px + 18 * (100vw / 1920));
     }
-
-
   }
 
   .services__hiddenIcons {
@@ -146,7 +138,7 @@
   border-top: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
 
   .priceButton__button {
-    margin: 0 auto;
+    margin: 1vh auto;
     width: 96%;
     height: calc(20px + 20 * (100vw / 1920));
     font-size: calc(7px + 8 * (100vw / 1920));
@@ -155,12 +147,15 @@
   .priceButton__content {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 1vh;
+    padding-bottom: 1vh;
+    border-bottom: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
 
     .priceButton__price {
       display: flex;
       align-items: center;
       cursor: pointer;
+      user-select: none;
+
 
       div {
         position: relative;
@@ -169,35 +164,32 @@
         font-size: calc(7px + 14 * (100vw / 1920));
 
         span {
-          left: calc(-70px + -50 * (100vw / 1920));
+          width: calc(100px + 50 * (100vw / 1920));
+          bottom: -4vw;
+          left: -5vw;
+          white-space: pre-wrap;
+          text-align: center;
+          font-size: calc(8px + 8 * (100vw / 1920));
         }
       }
-
-
-    }
-  }
-
-
-
-
-  @media (width < 805px) {
-    p {
-      font-size: calc(10px + 16 * (100vw / 1920));
-    }
-
-    .priceButton__button {
-      font-size: calc(6px + 8 * (100vw / 1920));
     }
 
     @media (width < 605px) {
-      p {
-        font-size: calc(6px + 14 * (100vw / 605));
-      }
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      width: 55%;
+      border-bottom: 0;
+    }
+  }
 
-      .priceButton__button {
-        height: calc(16px + 20 * (100vw / 605));
-        font-size: calc(5px + 8 * (100vw / 605));
-      }
+  @media (width < 605px) {
+    display: flex;
+    justify-content: space-between;
+
+    .priceButton__button {
+      margin: 0;
+      width: 40%;
     }
   }
 }

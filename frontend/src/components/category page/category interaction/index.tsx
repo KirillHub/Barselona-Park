@@ -1,5 +1,5 @@
-import { CategoryMenu, More } from "@/svg";
-import { useCallback, useEffect, useState } from "react";
+import { CategoryMenu, More, Xmark } from "@/svg";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import { Options } from "./options";
@@ -163,13 +163,53 @@ export const CategoryInteraction = () => {
     firstRender();
   }, [firstRender]);
 
+  useEffect(() => {
+    if (sideBar) {
+      document.body.classList.add("sideBar__open");
+    } else {
+      document.body.classList.remove("sideBar__open");
+    }
+  }, [sideBar]);
+
+  const [size, setSize] = useState<any>({});
+  const ref = useRef<HTMLDivElement>();
+
+  const resizeHandler = () => {
+    const { clientHeight, clientWidth }: any = ref.current || {};
+    setSize({ clientHeight, clientWidth });
+
+    setSize(clientHeight);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    resizeHandler();
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
+
+  // console.log(size, window.innerHeight, window.innerHeight - size);
+
   return (
     <>
-      <div className={styles.categoryOpen} onClick={() => setSideBar(!sideBar)}>
-        <span>Меню</span> <div><More /></div>
+      <div className={styles.sidebar__button} onClick={() => setSideBar(true)}>
+        <span>Меню</span>{" "}
+        <div>
+          <More />
+        </div>
       </div>
 
       <aside className={sideBar ? styles.active : styles.sidebar}>
+        <div className={styles.sideBar__close_flex}>
+          <div
+            className={styles.sideBar__close_icon}
+            onClick={() => setSideBar(false)}
+          >
+            <Xmark />
+          </div>
+        </div>
+
         <Options />
 
         <Services

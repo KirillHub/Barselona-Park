@@ -1,19 +1,9 @@
 .options {
-  padding: calc(5px + 15 * (100vw / 1920));
+  padding: calc(5px + 10 * (100vw / 1920));
+  height: auto;
   border-radius: calc(5px + 5 * (100vw / 1920));
   box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
   background-color: rgb(28 28 28);
-
-  .options__icon {
-    margin: 0 auto;
-    width: calc(15px + 15 * (100vw / 1920));
-    height: calc(15px + 15 * (100vw / 1920));
-    cursor: pointer;
-  }
-
-  .options__icon_wrap {
-    transform: rotate(180deg);
-  }
 
   @media (width < 605px) {
     width: 100%;
@@ -21,29 +11,47 @@
   }
 }
 
+.options__icon {
+  margin: 0 auto;
+  width: calc(20px + 15 * (100vw / 1920));
+  height: calc(20px + 15 * (100vw / 1920));
+  cursor: pointer;
+}
+
+.options__icon_wrap {
+  transform: rotate(180deg);
+}
+
 .change {
   position: relative;
   width: 100%;
-  height: 8vh;
+  height: calc(40px + 40 * (100vw / 1920));
   z-index: 3;
-
-
 
   .change__button {
     width: 100%;
     height: 100%;
     border-radius: calc(5px + 5 * (100vw / 1920));
-    font-size: calc(6px + 16 * (100vw / 1920));
+    font-size: calc(10px + 12 * (100vw / 1920));
     color: #fff;
     background-color: rgb(21 21 21);
+    transition: .2s;
     cursor: pointer;
     z-index: 3;
+
+    &:hover {
+      background-color: rgb(44 44 44);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   .change__content {
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: calc(240px + 380 * (100vw / 1920));
     overflow-y: scroll;
     border-radius: calc(5px + 5 * (100vw / 1920));
     box-shadow: rgb(34 34 34) 0 0 0 6px;
@@ -55,7 +63,8 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgb(21 21 21);
+      border-radius: 10px;
+      background-color: rgb(11 11 11);
 
       &:hover {
         background-color: rgb(61 61 61);
@@ -71,16 +80,30 @@
       flex-wrap: wrap;
       padding: calc(5px + 5 * (100vw / 1920));
       text-decoration: none;
-      font-size: calc(8px + 7 * (100vw / 1920));
+      font-size: calc(10px + 8 * (100vw / 1920));
       color: #fff;
       list-style: none;
       cursor: pointer;
+      user-select: none;
 
       &:hover {
-        background-color: #3d3d3d;
+        background-color: rgb(61 61 61);
+      }
+
+      &:active {
+        background-color: rgb(44 44 44);
       }
     }
   }
+
+  @media (width < 605px) {
+    height: calc(60px + 50 * (100vw / 1920));
+
+    .change__button {
+      font-size: calc(12px + 14 * (100vw / 1920));
+    }
+  }
+
 }
 
 .booking__button {

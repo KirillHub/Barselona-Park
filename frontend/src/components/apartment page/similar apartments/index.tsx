@@ -41,6 +41,7 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
     similarOptions
   );
 
+
   const resizeHandler = () => {
     const { clientHeight, clientWidth }: any = ref.current || {};
     setSize({ clientHeight, clientWidth });
