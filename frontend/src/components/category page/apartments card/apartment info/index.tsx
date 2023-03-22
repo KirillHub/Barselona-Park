@@ -12,7 +12,7 @@ interface MyProps {
 export const ApartmentInfo = ({ apartment }: MyProps) => {
   const router = useRouter();
   const handleClick = () =>
-    router.push(`/Apartment/${apartment.apartmentName}`);
+    router.push(`/Apartment-${apartment.apartmentName}`);
 
   return (
     <div className={styles.info}>
@@ -22,7 +22,7 @@ export const ApartmentInfo = ({ apartment }: MyProps) => {
 
       <Options apartment={apartment} />
 
-      <Service apartment={apartment} />
+      {/* <Service apartment={apartment} /> */}
 
       <Price apartment={apartment} />
     </div>

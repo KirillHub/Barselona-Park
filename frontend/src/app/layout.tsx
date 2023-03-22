@@ -1,8 +1,8 @@
-import { Nunito } from 'next/font/google';
-
-import Layout from '@/components/layout';
 import './reset.scss';
 import './globals.scss';
+
+import Layout from '@/components/layout';
+import { Nunito } from 'next/font/google';
 
 const nunito = Nunito({
   weight: '400',
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Layout.Header />
         {children}
-        {/* <Layout.Footer /> */}
+        <Layout.Footer />
       </body>
     </html>
   );

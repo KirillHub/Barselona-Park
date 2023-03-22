@@ -1,9 +1,10 @@
 import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
-import mongoose from 'mongoose';
 
 import { ApartmentController } from '#/controllers/index';
+import { BookingController } from '#/controllers/index'
+import cors from 'cors';
+import express from 'express';
+import mongoose from 'mongoose';
 
 mongoose
   .connect(`mongodb+srv://${process.env.MONGO}@barselonadb.tad5xvw.mongodb.net/barselonaPark`)
@@ -17,9 +18,10 @@ app.use(express.json({ limit: '1mb' }), cors());
 
 app.get(`/GetSimilar/:apartmentName/:option`, ApartmentController.getSimilar);
 
-app.get('/Category/:category/:sort/:service', ApartmentController.getAllApartments);
+app.get('/Category/:category/:sort/:service/:quantity', ApartmentController.getAllApartments);
 app.post('/AddNewApartment', ApartmentController.addApartments);
 
+app.post('/Booking/addBookingApartment', BookingController.addBookingApartment)
 
 
 

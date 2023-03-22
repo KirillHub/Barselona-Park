@@ -2,7 +2,7 @@
 
 import "swiper/css/navigation";
 import "swiper/css";
-import './style.scss'
+import "./style.scss";
 
 import { A11y, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { MyApartments } from "../../../../helpers/types/type";
 import styles from "../style.module.scss";
+import { useRouter } from "next/navigation";
 
 interface MyProps {
   apartment: MyApartments;
@@ -28,6 +29,10 @@ export const SliderImages = ({
   apartmentIndex,
   options,
 }: MyProps) => {
+  const router = useRouter();
+  const handleClick = () =>
+    router.push(`/Apartment-${apartment.apartmentName}`);
+
   return (
     <Swiper
       modules={[Navigation, A11y]}
@@ -54,6 +59,7 @@ export const SliderImages = ({
             alt={`Фотография Апартамента ${picture.id.split("-")[0]}. Номер ${
               picture.id.split("-")[1]
             }`}
+            onClick={handleClick}
           />
           <p> Фотография загружается...</p>
         </SwiperSlide>

@@ -3,18 +3,25 @@ import useStore from "@/store/useStore";
 
 export const SimilarOptions = () => {
   const setSimilarOptions = useStore((state) => state.setSimilarOptions);
+  const similarOptions = useStore((state) => state.similarOptions);
+
+
+  const optionsHandler = (option: string) => {
+    if (similarOptions !== option) {
+      setSimilarOptions(option);
+    }
+  };
 
   return (
     <div className={styles.similar__options}>
-      <button onClick={() => setSimilarOptions("price")}>Пожие по цене</button>
-      <button onClick={() => setSimilarOptions("services")}>
+      <button onClick={() => optionsHandler("price")}>Пожие по цене</button>
+      <button onClick={() => optionsHandler("services")}>
         Пожие по услугам
       </button>
-      <button onClick={() => setSimilarOptions("rooms")}>
-        Пожие по количеству комнат
+      <button onClick={() => optionsHandler("rooms")}>
+        Пожие по числу комнат
       </button>
-      <button onClick={() => setSimilarOptions("floor")}>Пожие по этажу</button>
+      <button onClick={() => optionsHandler("floor")}>Пожие по этажу</button>
     </div>
   );
 };
- 

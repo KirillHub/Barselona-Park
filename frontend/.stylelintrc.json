@@ -6,7 +6,8 @@
   ],
   "ignoreFiles": [
     "**/*",
-    "!**/*.scss"
+    "!**/*.scss",
+    "/node_modules"
   ],
   "plugins": ["stylelint-scss"],
   "rules": {

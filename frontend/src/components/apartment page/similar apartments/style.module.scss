@@ -1,7 +1,7 @@
 .similar {
   position: relative;
-  margin: calc(20px + 20 * (100vw / 1920)) 0;
-  padding: calc(20px + 20 * (100vw / 1920)) 8vw;
+  margin: calc(15px + 15 * (100vw / 1920)) 0;
+  padding: calc(20px + 20 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920));
   width: 100%;
   background-color: rgb(28 28 28);
 

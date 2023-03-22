@@ -1,6 +1,6 @@
 .apartments {
   position: relative;
-  margin: 0 0 calc(20px + 30 * (100vw / 1920)) 0;
+  margin: 0 0 calc(20px + 15 * (100vw / 1920)) 0;
   border-radius: calc(5px + 5 * (100vw / 1920));
   box-shadow: rgb(34 34 34) 0 0 0 6px;
   background-color: rgb(28 28 28);
@@ -22,6 +22,11 @@
     border-top-left-radius: calc(5px + 5 * (100vw / 1920));
     border-top-right-radius: calc(5px + 5 * (100vw / 1920));
     object-fit: cover;
+    cursor: pointer;
+
+    &:active {
+      filter: brightness(60%);
+    }
   }
 
   p {

@@ -53,14 +53,14 @@ export const Price = ({ apartment }: MyProps) => {
         </div>
       </div>
 
-      <div className={styles.priceButton__button}>
+      {/* <div className={styles.priceButton__button}>
         <button
           className="main-buttons-style"
           onClick={() => handleClick(apartment.apartmentName)}
         >
           Подробности
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -2,13 +2,13 @@
   position: relative;
 
   h1 {
-    margin: 2vh 8vw 0;
+    margin: calc(15px + 15 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920)) 0 calc(0px + 80 * (100vw / 1920));
     font-size: calc(22px + 22 * (100vw / 1920));
   }
 
   .apartment__slider {
     position: relative;
-    margin: 0 8vw 2vh;
+    margin: 0 calc(0px + 80 * (100vw / 1920));
     height: calc(0px + 518 * (100vw / 1920));
     user-select: none;
     z-index: 0;
@@ -32,15 +32,16 @@
     position: relative;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: calc(20px + 20 * (100vw / 1920)) 8vw;
+    margin: calc(15px + 15 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920));
 
     .apartment__description {
-      padding: calc(5px + 10 * (100vw / 1920));
+      padding: calc(4px + 4 * (100vw / 1920)) calc(5px + 10 * (100vw / 1920));
       width: 68%;
-      height: calc(200px + 200 * (100vw / 1920));
+      height: calc(300px + 200 * (100vw / 1920));
       overflow: auto;
       border-radius: calc(5px + 5 * (100vw / 1920));
-      font-size: calc(8px + 8 * (100vw / 1920));
+      font-weight: 700;
+      font-size: calc(14px + 10 * (100vw / 1920));
       box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
       background-color: rgb(28 28 28);
 
@@ -49,14 +50,19 @@
         border-radius: 10px;
       }
 
+
       li {
         margin-top: 0.5vw;
+        font-weight: 200;
+        font-size: calc(10px + 10 * (100vw / 1920));
         list-style: inside;
 
         &:first-child {
-          margin: 0;
+          margin-top: 1vh;
         }
       }
+
+
     }
 
     .apartment__booking {
@@ -64,13 +70,14 @@
       height: 100%;
     }
 
+
     @media (width < 816px) {
       .apartment__description {
         width: 100%;
       }
 
       .apartment__booking {
-        margin: calc(20px + 20 * (100vw / 1920)) 0 0 0;
+        margin: calc(15px + 15 * (100vw / 1920)) 0 0 0;
         width: 100%;
 
       }
@@ -78,7 +85,7 @@
   }
 
   .apartment__services {
-    margin: calc(20px + 20 * (100vw / 1920)) 8vw;
+    margin: calc(15px + 15 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920));
     padding: calc(5px + 5 * (100vw / 1920));
     border-radius: calc(5px + 5 * (100vw / 1920));
     box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
@@ -123,11 +130,6 @@
 
     .apartment__slider {
       margin: 0 4vw 2vh;
-    }
-
-    .apartment__section,
-    .apartment__services {
-      margin: calc(20px + 20 * (100vw / 1920)) 4vw;
     }
   }
 }

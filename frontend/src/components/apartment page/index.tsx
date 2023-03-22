@@ -17,12 +17,18 @@ import { MyApartments } from "../../helpers/types/type";
 import { Options } from "../category page/category interaction/options";
 import { SimilarApartments } from "./similar apartments";
 import { apartmentsData } from "../../fake/apartmnetsData";
+import axios from "axios";
 import { readyIcons } from "../../helpers/functions/readyIcons";
 import { reservationDays } from "../../helpers/functions/reservationDays";
 import ru from "date-fns/locale/ru";
 import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
+import useSWR from "swr";
+import useStore from "@/store/useStore";
+
+const fetcher = (url: string, data: any) =>
+  axios.post(url, data).then((res) => res.data);
 
 export default function Apart() {
   const [widthValue, setWidthValue] = useState<number>();
@@ -34,6 +40,27 @@ export default function Apart() {
   const apartment = apartmentsData?.find(
     (x) => x.apartmentName === +apartmentId!?.split("-")[1]
   );
+
+  const { data, error } = useSWR(
+    "https://barsa-back.onrender.com/Booking/addBookingApartment",
+    fetcher
+  );
+
+  const handleClick = async () => {
+    const payload = {
+      apartmentName: apartment?.apartmentName,
+      sortIndex: apartment?.sortIndex,
+    };
+
+    try {
+      const response = await axios.post("/api/my-endpoint", payload);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  console.log(data, error);
 
   const services = readyIcons(apartment!);
 
@@ -75,6 +102,7 @@ export default function Apart() {
 
       <div className={styles.apartment__section}>
         <ul className={styles.apartment__description}>
+          Описание
           {apartment?.about.description.map((text: any, index: number) => (
             <li key={index}>{text}</li>
           ))}

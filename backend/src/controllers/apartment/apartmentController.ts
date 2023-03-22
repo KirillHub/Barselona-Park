@@ -1,9 +1,10 @@
-import ApartmentSchema from '#/models/apartment';
-import { categoryPars } from '#/helpers/categoryParse';
-import { categorySort } from '#/helpers/categorySort';
-import { categoryService } from '#/helpers/categoryService';
-import { findSimilarApartments } from '#/helpers/findSimilarApartments';
-import { ApartmentsType } from '../../type';
+import ApartmentSchema from "#/models/apartment";
+import { ApartmentsType } from "../../type";
+import { categoryPars } from "#/helpers/categoryParse";
+import { categoryService } from "#/helpers/categoryService";
+import { categorySort } from "#/helpers/categorySort";
+import { findSimilarApartments } from "#/helpers/findSimilarApartments";
+
 // import mongoose from 'mongoose';
 
 export const getSimilar = async (req: any, res: any) => {
@@ -21,7 +22,9 @@ export const getSimilar = async (req: any, res: any) => {
       const length = newArray.length;
 
       for (let start = 0; start < length; start++) {
-        const randomPosition = Math.floor((newArray.length - start) * Math.random());
+        const randomPosition = Math.floor(
+          (newArray.length - start) * Math.random()
+        );
         const randomItem = newArray.splice(randomPosition, 1);
 
         newArray.push(...randomItem);
@@ -31,7 +34,7 @@ export const getSimilar = async (req: any, res: any) => {
     };
 
     const filtredSimilar = [...similarApartments].filter(
-      (apartment) => apartment.apartmentName !== +req.params.apartmentName,
+      (apartment) => apartment.apartmentName !== +req.params.apartmentName
     );
 
     const shuffSimlar = shuffle(filtredSimilar);
@@ -41,7 +44,7 @@ export const getSimilar = async (req: any, res: any) => {
     console.log(err);
 
     res.status(500).json({
-      message: 'Не удалось получить все апартаменты',
+      message: "Не удалось получить все апартаменты",
     });
   }
 };
@@ -60,20 +63,23 @@ export const getAllApartments = async (req: any, res: any) => {
       $and: [mergedObj],
     });
 
-    const cutApartments = [...apartments].sort((a, b) => b.sortIndex - a.sortIndex);
-
-    const sort = req.params.sort !== 'undefined' ? req.params.sort : 'Without-sort';
+    const cutApartments = [...apartments]
+      .slice(0, req.params.quantity)
+      .sort((a, b) => b.sortIndex - a.sortIndex);
+    const sort =
+      req.params.sort !== "undefined" ? req.params.sort : "Without-sort";
 
     const sortedApartments = categorySort([...cutApartments], sort);
 
-    const readyData = sort === 'Without-sort' ? cutApartments : sortedApartments;
+    const readyData =
+      sort === "Without-sort" ? cutApartments : sortedApartments;
 
     res.json({ data: readyData, length: apartments.length });
   } catch (err) {
     console.log(err);
 
     res.status(500).json({
-      message: 'Не удалось получить все апартаменты',
+      message: "Не удалось получить все апартаменты",
     });
   }
 };
@@ -102,7 +108,7 @@ export const addApartments = async (req: any, res: any) => {
     console.log(err);
 
     res.status(500).json({
-      message: 'Не удалось добавить апартаменты',
+      message: "Не удалось добавить апартаменты",
     });
   }
 };

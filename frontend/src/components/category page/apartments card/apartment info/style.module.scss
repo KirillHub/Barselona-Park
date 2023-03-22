@@ -1,5 +1,5 @@
 .info {
-  padding: 0 1vw;
+  padding: 0 calc(5px + 5 * (100vw / 1920));
 
   span {
     position: absolute;
@@ -20,10 +20,17 @@
 
   .info__title {
     padding: calc(5px + 5 * (100vw / 1920)) 0;
-    width: 100%;
     font-weight: 700;
     font-size: calc(12px + 15 * (100vw / 1920));
     cursor: pointer;
+
+    &:hover {
+      color:#808080;
+    }
+
+    &:active {
+      color:#3b3b3b;
+    }
 
     @media (width < 605px) {
       font-size: calc(8px + 15 * (100vw / 605));
@@ -147,8 +154,9 @@
   .priceButton__content {
     display: flex;
     justify-content: space-around;
-    padding-bottom: 1vh;
-    border-bottom: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
+
+    // padding-bottom: 1vh;
+    // border-bottom: calc(2px + 1 * (100vw / 1920)) solid rgb(40 40 40);
 
     .priceButton__price {
       display: flex;
@@ -161,7 +169,7 @@
         position: relative;
         margin-left: 0.5vw;
         font-weight: 700;
-        font-size: calc(7px + 14 * (100vw / 1920));
+        font-size: calc(10px + 14 * (100vw / 1920));
 
         span {
           width: calc(100px + 50 * (100vw / 1920));
@@ -174,22 +182,22 @@
       }
     }
 
-    @media (width < 605px) {
-      display: flex;
-      justify-content: space-between;
-      padding: 0;
-      width: 55%;
-      border-bottom: 0;
-    }
+    // @media (width < 605px) {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   padding: 0;
+    //   width: 55%;
+    //   border-bottom: 0;
+    // }
   }
 
-  @media (width < 605px) {
-    display: flex;
-    justify-content: space-between;
+  // @media (width < 605px) {
+  //   display: flex;
+  //   justify-content: space-between;
 
-    .priceButton__button {
-      margin: 0;
-      width: 40%;
-    }
-  }
+  //   .priceButton__button {
+  //     margin: 0;
+  //     width: 40%;
+  //   }
+  // }
 }

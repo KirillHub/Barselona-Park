@@ -20,7 +20,11 @@ const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 const useSimilar = (apartmentId: number, option: string) => {
   const { data, error, isLoading } = useSWR<MyApartments[], any, any>(
     `https://barsa-back.onrender.com/GetSimilar/${apartmentId}/${option}`,
-    fetcher
+    fetcher,
+    {
+      revalidateOnReconnect: false,
+      revalidateOnFocus: false,
+    }
   );
 
   return {
@@ -34,6 +38,7 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
   const similarOptions = useStore((state) => state.similarOptions);
 
   const [size, setSize] = useState<any>({});
+
   const ref = useRef<HTMLDivElement>();
 
   const { similarApartments, isLoading, isError } = useSimilar(
@@ -41,11 +46,9 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
     similarOptions
   );
 
-
   const resizeHandler = () => {
     const { clientHeight, clientWidth }: any = ref.current || {};
     setSize({ clientHeight, clientWidth });
-
     onWidthChange(clientWidth);
   };
 
@@ -78,7 +81,7 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
             ? " услугам"
             : similarOptions === "floor"
             ? " этажу"
-            : " количеству комнат"}
+            : " числу комнат"}
         </span>
       </div>
 

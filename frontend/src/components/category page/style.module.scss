@@ -7,18 +7,41 @@
     font-size: calc(20px + 15 * (100vw / 1920));
   }
 
-  // .categoryPageButton1 {
-  //   position: absolute;
-  //   margin: 0 auto;
-  //   width: 20vw;
-  //   height: 4vh;
-  //   left: 0;
-  //   right: 0;
-  //   border-radius: calc(5px + 5 * (100vw / 1920));
-  //   box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
-  //   background-color: rgb(28 28 28);
-  //   cursor: pointer;
-  // }
+  .category__load_more {
+    margin-left: auto;
+    width: 68%;
+    right: 0;
+    text-align: center;
+
+    .category__button {
+      margin: calc(10px + 10 * (100vw / 1920)) auto 0 auto;
+      width: calc(100px + 150 * (100vw / 1920));
+      height: calc(30px + 20 * (100vw / 1920));
+      border-radius: calc(5px + 5 * (100vw / 1920));
+      font-size: calc(10px + 10 * (100vw / 1920));
+      box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
+      color: #fff;
+      background-color: rgb(28 28 28);
+      transition: .3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(48 48 48);
+      }
+
+      &:active {
+        transform: scale(.9);
+      }
+    }
+
+    @media (width < 805px) {
+      width: 50%;
+
+      @media (width < 605px) {
+        width: 100%;
+      }
+    }
+  }
 
   .category__content {
     display: flex;
@@ -37,6 +60,7 @@
       @media (width < 805px) {
         display: block;
         width: 50%;
+
 
         @media (width < 605px) {
           display: flex;
