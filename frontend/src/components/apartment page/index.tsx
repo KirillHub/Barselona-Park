@@ -1,17 +1,14 @@
 "use client";
 
-import "react-datepicker/dist/react-datepicker.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { A11y, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { addDays, subDays } from "date-fns";
 import { useEffect, useRef, useState } from "react";
 
 import { ApartmentServices } from "./apartment services";
-import DatePicker from "react-datepicker";
 import Image from "next/image";
 import { MyApartments } from "../../helpers/types/type";
 import { Options } from "../category page/category interaction/options";
@@ -19,16 +16,11 @@ import { SimilarApartments } from "./similar apartments";
 import { apartmentsData } from "../../fake/apartmnetsData";
 import axios from "axios";
 import { readyIcons } from "../../helpers/functions/readyIcons";
-import { reservationDays } from "../../helpers/functions/reservationDays";
-import ru from "date-fns/locale/ru";
 import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 import useStore from "@/store/useStore";
-
-const fetcher = (url: string, data: any) =>
-  axios.post(url, data).then((res) => res.data);
 
 export default function Apart() {
   const [widthValue, setWidthValue] = useState<number>();
@@ -41,26 +33,22 @@ export default function Apart() {
     (x) => x.apartmentName === +apartmentId!?.split("-")[1]
   );
 
-  const { data, error } = useSWR(
-    "https://barsa-back.onrender.com/Booking/addBookingApartment",
-    fetcher
-  );
-
   const handleClick = async () => {
-    const payload = {
+    const newData = {
       apartmentName: apartment?.apartmentName,
       sortIndex: apartment?.sortIndex,
     };
-
-    try {
-      const response = await axios.post("/api/my-endpoint", payload);
+    
+    await axios.post(
+      "http://localhost:3500/Booking/addBookingApartment",
+      newData
+    ).then(response => {
       console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+    })
+    .catch(error => {
+      console.error(error.response.data.message); // добавленный код
+    });;
   };
-
-  console.log(data, error);
 
   const services = readyIcons(apartment!);
 
@@ -69,6 +57,10 @@ export default function Apart() {
   };
 
   const displayedPictures = widthValue! >= 759 ? 2 : 1;
+
+  useEffect(() => {
+    // handleClick();
+  }, [apartment?.apartmentName]);
 
   if (apartment === undefined) return <div>Загрузка</div>;
   return (

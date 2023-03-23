@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: auto;
   color: rgb(255 255 255);
   background-image: url("/image.svg");
   background-size: 900px 900px;
@@ -101,8 +100,11 @@ button {
 }
 
 .react-datepicker__navigation-icon::before {
+  right: 0;
   border-color: rgb(255 255 255);
 }
+
+
 
 .react-datepicker__triangle::after,
 .react-datepicker__triangle::before {
@@ -112,11 +114,9 @@ button {
 .react-datepicker {
   display: flex;
   position: absolute;
-  overflow-x: scroll !important;
-  overflow-y: hidden !important;
   border: 0 !important;
   border-radius: calc(5px + 5 * (100vw / 1920));
-  box-shadow: rgb(34 34 34) 0 0 0 6px;
+  box-shadow: rgb(255 254 254) 0 0 2px;
   background-color: rgb(28 28 28) !important;
   z-index: 2;
 
@@ -185,6 +185,7 @@ button {
 
     .react-datepicker__day--outside-month {
       height: 0 !important;
+      font-size: 0 !important;
       color: #fff0 !important;
     }
 

@@ -16,12 +16,14 @@ const app = express();
 app.use(express.json({ limit: '1mb' }), cors());
 
 
+app.post('/Booking/addBookingApartment', BookingController.addBookingApartment)
+
+
 app.get(`/GetSimilar/:apartmentName/:option`, ApartmentController.getSimilar);
 
 app.get('/Category/:category/:sort/:service/:quantity', ApartmentController.getAllApartments);
 app.post('/AddNewApartment', ApartmentController.addApartments);
 
-app.post('/Booking/addBookingApartment', BookingController.addBookingApartment)
 
 
 

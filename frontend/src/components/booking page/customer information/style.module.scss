@@ -1,0 +1,49 @@
+.customer {
+  position: relative;
+  margin: 2vh 0;
+  width: auto;
+
+  .customer__datePicker {
+    margin-bottom: 2vh;
+  }
+
+  .customer__form {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: calc(5px + 5 * (100vw / 1920));
+    box-shadow: rgb(255 254 254) 0 0 2px;
+    background-color: rgb(32 32 32);
+
+
+
+
+    input,
+    select,
+    button {
+      flex: 1 1 calc(20% - 10px);
+      margin: 5px;
+      padding: calc(5px + 5 * (100vw / 1920));
+      border-radius: calc(5px + 5 * (100vw / 1920));
+      color: #fff;
+      background-color: rgb(21 21 21);
+
+      &::placeholder {
+        color: #fff;
+      }
+
+      &:focus {
+        box-shadow: rgb(255 254 254) 0 0 4px;
+      }
+    }
+
+    button {
+      &:hover {
+        background-color: rgb(54 54 54);
+      }
+    }
+
+    // .customer__form_submit {
+    //   width: 300px;
+    // }
+  }
+}

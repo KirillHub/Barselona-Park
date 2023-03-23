@@ -5,12 +5,12 @@ export const addBookingApartment = async (req: any, res: any) => {
     const booking = new BookingSchema({
       apartmentName: req.body.apartmentName,
 
-      sortIndex: req.body.sort,
+      sortIndex: req.body.sortIndex,
 
       reservations: [],
     });
     
-console.log(1)
+
     
     const createBookingApartment = await booking.save();
 
@@ -18,8 +18,9 @@ console.log(1)
   } catch (err) {
     console.log(err);
 
+    
     res.status(500).json({
-      message: "Не удалось добавить апартаменты",
+      message: err,
     });
   }
 };
