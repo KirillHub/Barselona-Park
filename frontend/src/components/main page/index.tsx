@@ -66,7 +66,7 @@ export const MainPicture = () => {
           />
         </div>
 
-        <div className="main-page-container-service">
+        {/* <div className="main-page-container-service">
           <h3>Услуги</h3>
           <div className="main-page-container-service__icons">
             {services.map((icon, i) => (
@@ -76,7 +76,7 @@ export const MainPicture = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         <SelectCategory />
 
