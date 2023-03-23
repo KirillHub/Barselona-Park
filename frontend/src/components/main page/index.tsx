@@ -1,25 +1,27 @@
 "use client";
-import Image from "next/image";
 
-import { Telegram, Whatsapp } from "../../svg";
-import {
-  Conditioner,
-  Iron,
-  Refrigerator,
-  Microwave,
-  Tv,
-  Wifi,
-  WashingMachine,
-  Hairdryer,
-  Teddy,
-  Balcony,
-  Parking,
-  Elevator,
-  Kettle,
-  Towels,
-} from "../../svg";
-import SelectCategory from "../select category/selectCategory";
 import "./style.scss";
+
+import {
+  Balcony,
+  Conditioner,
+  Elevator,
+  Hairdryer,
+  Iron,
+  Kettle,
+  Microwave,
+  Parking,
+  Refrigerator,
+  Teddy,
+  Towels,
+  Tv,
+  WashingMachine,
+  Wifi,
+} from "../../svg";
+import { Telegram, Whatsapp } from "../../svg";
+
+import Image from "next/image";
+import SelectCategory from "../select category/selectCategory";
 
 export const MainPicture = () => {
   const services = [
@@ -39,7 +41,7 @@ export const MainPicture = () => {
     { name: "Стиральная машина", svg: <WashingMachine /> },
   ];
 
-console.log('111');
+  console.log("111");
 
   return (
     <div className="main-page">
@@ -68,7 +70,7 @@ console.log('111');
           />
         </div>
 
-        {/* <div className="main-page-container-service">
+        <div className="main-page-container-service">
           <h3>Услуги</h3>
           <div className="main-page-container-service__icons">
             {services.map((icon, i) => (
@@ -78,8 +80,7 @@ console.log('111');
               </div>
             ))}
           </div>
-        </div> */}
-
+        </div>
 
         <SelectCategory />
 
