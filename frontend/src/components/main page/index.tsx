@@ -39,6 +39,8 @@ export const MainPicture = () => {
     { name: "Стиральная машина", svg: <WashingMachine /> },
   ];
 
+console.log('111');
+
   return (
     <div className="main-page">
       <p>Barselona Park</p>
@@ -77,6 +79,7 @@ export const MainPicture = () => {
             ))}
           </div>
         </div> */}
+
 
         <SelectCategory />
 
