@@ -1,4 +1,4 @@
-import { MyApartments } from "../../../../../helpers/types/type";
+import { MyApartments } from "../../../../../types/type";
 import { readyIcons } from "../../../../../helpers/functions/readyIcons";
 import styles from "../style.module.scss";
 import { useState } from "react";
@@ -51,14 +51,10 @@ export const Service = ({ apartment }: MyProps) => {
 
   const showTitle = (iconIndex: number) => {
     clearTimeout(reset);
-    setTitles(
-      titles.map((title, index) => (index === iconIndex ? true : false))
-    );
+    setTitles(titles.map((title, index) => (index === iconIndex ? true : false)));
 
     const id = setTimeout(() => {
-      setTitles((prev) =>
-        prev.map((title, index) => (index === iconIndex ? false : false))
-      );
+      setTitles(prev => prev.map((title, index) => (index === iconIndex ? false : false)));
     }, 2000);
     setReset(id);
   };
@@ -70,9 +66,7 @@ export const Service = ({ apartment }: MyProps) => {
           index < 10 - fixSpace && icon.title !== "" ? (
             <div onClick={() => showTitle(index)} key={icon.title}>
               {icon.jsx}
-              <span className={`${titles[index] ? "visible" : "hidden"}`}>
-                {icon.title}
-              </span>
+              <span className={`${titles[index] ? "visible" : "hidden"}`}>{icon.title}</span>
             </div>
           ) : (
             ""
@@ -86,19 +80,12 @@ export const Service = ({ apartment }: MyProps) => {
         onMouseLeave={() => setShowService(false)}
       >
         <p>Все услуги</p>
-        <div
-          className={
-            styles.services__allIcons +
-            `${showService ? " visible" : " hidden"}`
-          }
-        >
+        <div className={styles.services__allIcons + `${showService ? " visible" : " hidden"}`}>
           {icons.map((icon, index) =>
             index > 9 - fixSpace && icon.title !== "" ? (
               <div onClick={() => showTitle(index)} key={icon.title}>
                 {icon.jsx}
-                <span className={`${titles[index] ? "visible" : "hidden"}`}>
-                  {icon.title}
-                </span>
+                <span className={`${titles[index] ? "visible" : "hidden"}`}>{icon.title}</span>
               </div>
             ) : (
               ""

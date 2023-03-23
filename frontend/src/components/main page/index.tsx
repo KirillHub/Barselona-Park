@@ -2,46 +2,14 @@
 
 import "./style.scss";
 
-import {
-  Balcony,
-  Conditioner,
-  Elevator,
-  Hairdryer,
-  Iron,
-  Kettle,
-  Microwave,
-  Parking,
-  Refrigerator,
-  Teddy,
-  Towels,
-  Tv,
-  WashingMachine,
-  Wifi,
-} from "../../svg";
 import { Telegram, Whatsapp } from "../../svg";
 
 import Image from "next/image";
 import SelectCategory from "../select category/selectCategory";
+import { serviceIcons } from "@/share/serviceIcons";
 
 export const MainPicture = () => {
-  const services = [
-    { name: "Стиральная машина", svg: <WashingMachine /> },
-    { name: "Холодильник", svg: <Refrigerator /> },
-    { name: "Микроволновка", svg: <Microwave /> },
-    { name: "Чайник", svg: <Kettle /> },
-    { name: "Кондиционер", svg: <Conditioner /> },
-    { name: "Телевизор", svg: <Tv /> },
-    { name: "Полотенца", svg: <Towels /> },
-    { name: "Утюг", svg: <Iron /> },
-    { name: "Фен", svg: <Hairdryer /> },
-    { name: "Wi-Fi", svg: <Wifi /> },
-    { name: "Можно с детьми", svg: <Teddy /> },
-    { name: "Парковка", svg: <Parking /> },
-    { name: "Лифт", svg: <Elevator /> },
-    { name: "Стиральная машина", svg: <WashingMachine /> },
-  ];
-
-  console.log("111");
+	const services = serviceIcons();
 
   return (
     <div className="main-page">
@@ -75,8 +43,8 @@ export const MainPicture = () => {
           <div className="main-page-container-service__icons">
             {services.map((icon, i) => (
               <div className="main-page-container-service__icons-icon" key={i}>
-                <div>{icon.svg}</div>
-                {icon.name}
+                <div>{icon.jsx}</div>
+                {icon.title}
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import { Snowflake, Sun } from "@/svg";
 
-import { MyApartments } from "../../../../../helpers/types/type";
+import { MyApartments } from "../../../../../types/type";
 import styles from "../style.module.scss";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -19,9 +19,7 @@ export const Price = ({ apartment }: MyProps) => {
 
   const showTitle = (iconIndex: number) => {
     clearTimeout(reset);
-    setTitles(
-      titles.map((title, index) => (index === iconIndex ? true : false))
-    );
+    setTitles(titles.map((title, index) => (index === iconIndex ? true : false)));
 
     const id = setTimeout(() => {
       setTitles([false, false]);

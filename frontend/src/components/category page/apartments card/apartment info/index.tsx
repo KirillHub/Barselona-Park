@@ -1,4 +1,4 @@
-import { MyApartments } from "../../../../helpers/types/type";
+import { MyApartments } from "../../../../types/type";
 import { Options } from "./options";
 import { Price } from "./price and button";
 import { Service } from "./service";
@@ -11,8 +11,7 @@ interface MyProps {
 
 export const ApartmentInfo = ({ apartment }: MyProps) => {
   const router = useRouter();
-  const handleClick = () =>
-    router.push(`/Apartment-${apartment.apartmentName}`);
+  const handleClick = () => router.push(`/Apartment-${apartment.apartmentName}`);
 
   return (
     <div className={styles.info}>
@@ -28,4 +27,3 @@ export const ApartmentInfo = ({ apartment }: MyProps) => {
     </div>
   );
 };
-
