@@ -41,7 +41,14 @@ export const BackgroundImageSlider = ({
 
   return (
     <>
-      <Image priority fill quality={75} style={{ objectFit: "cover" }} src={path} alt={`${name}`} />
+      <Image
+        priority
+        fill
+        quality={75}
+        style={{ objectFit: "cover", opacity: 0.45 }}
+        src={path}
+        alt={`${name}`}
+      />
     </>
   );
 };

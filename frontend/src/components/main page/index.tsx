@@ -1,7 +1,5 @@
 "use client";
 
-import "./style.scss";
-
 import { Telegram, Whatsapp } from "../../svg";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -11,6 +9,7 @@ import { serviceIcons } from "@/share/serviceIcons";
 import { useEffect, useState } from "react";
 import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
 import { SearhPanel } from "./search panel";
+import styles from "./style.module.scss";
 
 export const MainPicture = () => {
   const services = serviceIcons();
@@ -25,10 +24,9 @@ export const MainPicture = () => {
   const { fhotoCount, fileName, fileExtension, slideSwitchingSpeed } = bgConfig;
 
   return (
-    <div className='main-page'>
-      {/* <SearhPanel /> */}
-      <div className='main-page-container'>
-        <div className='main-page-container__picture'>
+    <div className={styles.main_page}>
+      <div className={styles.main_page__container}>
+        <div className={styles.main_page__picture}>
           <BackgroundImageSlider
             fhotoCount={fhotoCount}
             fileName={fileName}
@@ -37,7 +35,11 @@ export const MainPicture = () => {
           />
         </div>
 
-        <div className='main-page-container-service'>
+        <div className={styles.main_page__search_panel}>
+          <SearhPanel />
+        </div>
+
+        {/* <div className='main-page-container-service'>
           <h3>Услуги</h3>
           <div className='main-page-container-service__icons'>
             {services.map((icon, i) => (
@@ -47,11 +49,11 @@ export const MainPicture = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <SelectCategory />
+        {/* <SelectCategory /> */}
 
-        <div className='main-page-container-cleaning'>
+        {/* <div className='main-page-container-cleaning'>
           <h3>Повышенный комфорт и безопасность</h3>
 
           <br />
@@ -60,9 +62,9 @@ export const MainPicture = () => {
           <span>Постоянная чистота и дружелюбное общение</span>
           <br />
           <span>Cтремимся поддерживать высочайший уровень гостеприимства и доверия</span>
-        </div>
+        </div> */}
 
-        <div className='main-page-container__blocks'>
+        {/* <div className='main-page-container__blocks'>
           <h2>Расположение</h2>
 
           <div className='main-page-container__blocks__location__info'>
@@ -131,7 +133,7 @@ export const MainPicture = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
