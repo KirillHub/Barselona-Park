@@ -2,7 +2,7 @@
 
 import { LegacyRef, useEffect, useRef, useState } from "react";
 
-import { MyApartments } from "../../../helpers/types/type";
+import { MyApartments } from "../../../types/type";
 import { SimilarOptions } from "./components/options";
 import { SimilarSlider } from "./components/similar slider";
 import axios from "axios";
@@ -15,7 +15,7 @@ interface MyProps {
   onWidthChange: (value: number) => void;
 }
 
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+const fetcher = (url: string) => axios.get(url).then(res => res.data);
 
 const useSimilar = (apartmentId: number, option: string) => {
   const { data, error, isLoading } = useSWR<MyApartments[], any, any>(
@@ -35,16 +35,13 @@ const useSimilar = (apartmentId: number, option: string) => {
 };
 
 export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
-  const similarOptions = useStore((state) => state.similarOptions);
+  const similarOptions = useStore(state => state.similarOptions);
 
   const [size, setSize] = useState<any>({});
 
   const ref = useRef<HTMLDivElement>();
 
-  const { similarApartments, isLoading, isError } = useSimilar(
-    apartmentId,
-    similarOptions
-  );
+  const { similarApartments, isLoading, isError } = useSimilar(apartmentId, similarOptions);
 
   const resizeHandler = () => {
     const { clientHeight, clientWidth }: any = ref.current || {};
@@ -85,10 +82,7 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
         </span>
       </div>
 
-      <SimilarSlider
-        apartments={similarApartments!}
-        apartsInSlider={apartmentsInSimilar}
-      />
+      <SimilarSlider apartments={similarApartments!} apartsInSlider={apartmentsInSimilar} />
 
       <SimilarOptions />
     </div>

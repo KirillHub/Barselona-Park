@@ -1,7 +1,7 @@
 "use client";
 
 import { ApartmentInfo } from "./apartment info";
-import { MyApartments } from "../../../helpers/types/type";
+import { MyApartments } from "../../../types/type";
 import { SliderImages } from "./slider images";
 import styles from "./style.module.scss";
 

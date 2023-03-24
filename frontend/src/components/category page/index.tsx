@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { ApartmentCard } from "../../components/category page/apartments card";
 import { CategoryInteraction } from "../../components/category page/category interaction";
 import Head from "next/head";
-import { MyApartments } from "../../helpers/types/type";
+import { MyApartments } from "../../types/type";
 import { apartmentsData } from "../../fake/apartmnetsData";
 import { categoryMeta } from "../../helpers/meta/categoryMeta";
 import styles from "./style.module.scss";
@@ -20,17 +20,11 @@ interface Myfetch {
   length: number;
 }
 
-const fetcher = (url: string) =>
-  fetch(url, { cache: "force-cache" }).then((res) => res.json());
+const fetcher = (url: string) => fetch(url, { cache: "force-cache" }).then(res => res.json());
 
 const path = "http://localhost:3500" || "https://barsa-back.onrender.com";
 
-const useCategory = (
-  category: string,
-  sort: string,
-  service: string,
-  quantity: number
-) => {
+const useCategory = (category: string, sort: string, service: string, quantity: number) => {
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
     `http://localhost:3500/Category/${category}/${sort}/${service}/${quantity}`,
     fetcher
@@ -53,15 +47,9 @@ export default function Category() {
 
   const meta = categoryMeta(category);
 
-  const { user, isLoading, isError } = useCategory(
-    category!,
-    sort!,
-    service!,
-    quantity
-  );
+  const { user, isLoading, isError } = useCategory(category!, sort!, service!, quantity);
 
   const aparts = user?.data;
-
 
   ///840 776 630 576 700 540 598 592 256
   //416
@@ -76,18 +64,16 @@ export default function Category() {
 
         <div className={styles.category__apartments}>
           {aparts?.map((apartment: MyApartments, index) => (
-            <ApartmentCard
-              apartment={apartment}
-              index={index}
-              key={apartment.apartmentName}
-            />
+            <ApartmentCard apartment={apartment} index={index} key={apartment.apartmentName} />
           ))}
         </div>
       </div>
 
       {user!?.length >= quantity ? (
         <div className={styles.category__load_more}>
-          <button className={styles.category__button} onClick={() => setQuantity((prev) => prev + 6)}>Показать еще</button>
+          <button className={styles.category__button} onClick={() => setQuantity(prev => prev + 6)}>
+            Показать еще
+          </button>
         </div>
       ) : (
         ""

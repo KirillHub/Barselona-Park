@@ -55,3 +55,8 @@ interface Meta {
   description: string;
   keywords: string;
 }
+
+export type Service = {
+  title: string;
+  jsx: JSX.Element;
+};

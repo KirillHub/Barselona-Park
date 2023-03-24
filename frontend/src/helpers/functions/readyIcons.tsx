@@ -20,16 +20,13 @@ import {
   Wifi,
 } from "../../svg";
 
-import { MyApartments } from "../types/type";
+import { MyApartments, Service } from "../../types/type";
 
-export const readyIcons = (apartment: MyApartments) => {
+export const readyIcons = (apartment: MyApartments, services: Service[]) => {
   return [
     {
       jsx: apartment?.about.balcony === "С балконом" ? <Balcony /> : "",
-      title:
-        apartment?.about.balcony === "С балконом"
-          ? apartment?.about.balcony
-          : "",
+      title: apartment?.about.balcony === "С балконом" ? apartment?.about.balcony : "",
     },
     {
       jsx: apartment?.about.view === "Вид на море" ? <Sea /> : <City />,
@@ -47,7 +44,12 @@ export const readyIcons = (apartment: MyApartments) => {
       jsx: apartment?.services.dishwasher ? <Dishwasher /> : "",
       title: apartment?.services.dishwasher ? "Посудомойка" : "",
     },
-    {
+    ...services,
+  ];
+};
+
+/*
+ {
       jsx: <WashingMachine />,
       title: "Стиральная машина",
     },
@@ -100,5 +102,4 @@ export const readyIcons = (apartment: MyApartments) => {
       jsx: <Elevator />,
       title: "Лифт",
     },
-  ];
-};
+*/

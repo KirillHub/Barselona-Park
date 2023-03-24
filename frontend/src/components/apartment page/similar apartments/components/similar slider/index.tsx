@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { MyApartments } from "@/helpers/types/type";
+import { MyApartments } from "@/types/type";
 import styles from "./style.module.scss";
 
 interface MyProps {
@@ -74,7 +74,7 @@ export const SimilarSlider = ({ apartments, apartsInSlider }: MyProps) => {
           <Image
             src={apartment.images[0].image}
             fill
-            sizes="790px"
+            sizes='790px'
             priority={index < 4 ? true : false}
             quality={100}
             alt={`test`}
@@ -83,33 +83,23 @@ export const SimilarSlider = ({ apartments, apartsInSlider }: MyProps) => {
           />
 
           <div className={styles.similar__info}>
-            <div
-              className={styles.similar__info_price}
-              onClick={() => showPriceTitle(0, index)}
-            >
+            <div className={styles.similar__info_price} onClick={() => showPriceTitle(0, index)}>
               <Sun />
               <p>{apartment.summerPrice} ₽</p>
               <span
                 className={`${
-                  priceTitles.apartment === index && priceTitles.summer
-                    ? "visible"
-                    : "hidden"
+                  priceTitles.apartment === index && priceTitles.summer ? "visible" : "hidden"
                 }`}
               >
                 Летний сезон (с 1 июня по 1 октября)
               </span>
             </div>
-            <div
-              className={styles.similar__info_price}
-              onClick={() => showPriceTitle(1, index)}
-            >
+            <div className={styles.similar__info_price} onClick={() => showPriceTitle(1, index)}>
               <Snowflake />
               <p> {apartment.winterPrice} ₽</p>
               <span
                 className={`${
-                  priceTitles.apartment === index && priceTitles.winter
-                    ? "visible"
-                    : "hidden"
+                  priceTitles.apartment === index && priceTitles.winter ? "visible" : "hidden"
                 }`}
               >
                 Зимний сезон (с 1 октября по 1 июня)
@@ -121,11 +111,10 @@ export const SimilarSlider = ({ apartments, apartsInSlider }: MyProps) => {
                 Апартамент {apartment.apartmentName}
               </p>
               <span className={styles.similar__aside_description}>
-                Размер апартамента: {apartment?.about.squareMeters} m²,
-                Количество комнат: &nbsp;
+                Размер апартамента: {apartment?.about.squareMeters} m², Количество комнат: &nbsp;
                 {apartment?.about.rooms}, Количество спальных мест:{" "}
-                {apartment?.about.sleepingPlaces},{" " + apartment?.about.view},
-                Этаж {apartment?.about.floor}, {apartment?.about.balcony}!
+                {apartment?.about.sleepingPlaces},{" " + apartment?.about.view}, Этаж{" "}
+                {apartment?.about.floor}, {apartment?.about.balcony}!
               </span>
 
               <br />
