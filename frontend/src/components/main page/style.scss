@@ -4,16 +4,16 @@
   height: 100vh;
   top: 0;
 
-  b
+  //   z-index: 0;
 
   .main-page-container__picture {
-    position: absolute;
-    width: 100%;
+    position: relative;
+    margin-top: -110px;
+    width: 100vw;
     height: 100vh;
-
-   //  margin-top: -110px;
-	top: 0;
     filter: brightness(50%);
+
+    //  z-index: 1;
   }
 
   .main-page-container__barselona-park {

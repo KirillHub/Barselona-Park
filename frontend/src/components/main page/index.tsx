@@ -3,38 +3,37 @@
 import "./style.scss";
 
 import { Telegram, Whatsapp } from "../../svg";
-
+import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 import SelectCategory from "../select category/selectCategory";
 import { serviceIcons } from "@/share/serviceIcons";
+import { useEffect, useState } from "react";
+import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
+import { SearhPanel } from "./search panel";
 
 export const MainPicture = () => {
   const services = serviceIcons();
 
+  // в дальнейшем можно такого рода конфиги выносить в отдельные файлы
+  const bgConfig = {
+    fhotoCount: 7,
+    fileName: "main page",
+    fileExtension: "webp",
+    slideSwitchingSpeed: 15000,
+  };
+  const { fhotoCount, fileName, fileExtension, slideSwitchingSpeed } = bgConfig;
+
   return (
     <div className='main-page'>
-      <p>Barselona Park</p>
-      <meta
-        name='description'
-        content='Барселона парк - Апартаменты в центре Сочи, 3 минуты до моря. 8-988-130-62-17'
-      />
-      <meta
-        name='keywords'
-        content='Барселона парк, Barselona park, апартаменты, апартаменты Сочи'
-      />
-      <meta name='Document-state' content='Dynamic' />
-      <meta name='Author' content='https://github.com/bi-zi' />
-      <meta name='Copyright' content='bi_zi' />
-
+      {/* <SearhPanel /> */}
       <div className='main-page-container'>
         <div className='main-page-container__picture'>
-          <Image
-            priority
-            fill
-            quality={75}
-            style={{ objectFit: "cover" }}
-            src='/assets/main page/1.webp'
-            alt='Апартамент-1104'
+          <BackgroundImageSlider
+            fhotoCount={fhotoCount}
+            fileName={fileName}
+            fileExtension={fileExtension}
+            slideSwitchingSpeed={slideSwitchingSpeed}
           />
         </div>
 
