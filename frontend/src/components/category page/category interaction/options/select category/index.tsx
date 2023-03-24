@@ -10,8 +10,8 @@ import styles from "../style.module.scss";
 export const SelectCategory = () => {
   const [showCategories, setShowCategories] = useState(false);
 
-  const selectedPageId = useStore((state) => state.selectedPageId);
-  const setCheckBox = useStore((state) => state.setCheckBox);
+  const selectedPageId = useStore(state => state.selectedPageId);
+  const setCheckBox = useStore(state => state.setCheckBox);
 
   const pathname = usePathname();
   const category = pathname?.split("/")[2];
@@ -19,7 +19,7 @@ export const SelectCategory = () => {
   return (
     <div
       className={styles.change}
-      onClick={() => setShowCategories((prev) => !prev)}
+      onClick={() => setShowCategories(prev => !prev)}
       onMouseLeave={() => setShowCategories(false)}
     >
       <button className={styles.change__button}>
@@ -29,21 +29,13 @@ export const SelectCategory = () => {
         </div>
       </button>
 
-      <div
-        className={
-          styles.change__content +
-          " " +
-          `${showCategories ? "visible" : "hidden"}`
-        }
-      >
-        {meta.map((x) => (
+      <div className={styles.change__content + " " + `${showCategories ? "visible" : "hidden"}`}>
+        {meta.map(x => (
           <Link
             href={`/Category/${x.id}`}
             key={x.id}
             className={category === x.id ? styles.change__content_selected : ""}
-            onClick={() =>
-              setCheckBox([false, false, false, false, false, false])
-            }
+            onClick={() => setCheckBox([false, false, false, false, false, false])}
           >
             {x.name}
           </Link>

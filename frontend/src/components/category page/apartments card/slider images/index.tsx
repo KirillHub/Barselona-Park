@@ -8,7 +8,7 @@ import { A11y, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
-import { MyApartments } from "../../../../helpers/types/type";
+import { MyApartments } from "../../../../types/type";
 import styles from "../style.module.scss";
 import { useRouter } from "next/navigation";
 
@@ -24,14 +24,9 @@ interface MyProps {
   };
 }
 
-export const SliderImages = ({
-  apartment,
-  apartmentIndex,
-  options,
-}: MyProps) => {
+export const SliderImages = ({ apartment, apartmentIndex, options }: MyProps) => {
   const router = useRouter();
-  const handleClick = () =>
-    router.push(`/Apartment-${apartment.apartmentName}`);
+  const handleClick = () => router.push(`/Apartment-${apartment.apartmentName}`);
 
   return (
     <Swiper
@@ -49,13 +44,7 @@ export const SliderImages = ({
             fill
             sizes={options?.sizes}
             quality={options?.quality}
-            priority={
-              apartmentIndex < 5
-                ? index < options?.lazy
-                  ? true
-                  : false
-                : false
-            }
+            priority={apartmentIndex < 5 ? (index < options?.lazy ? true : false) : false}
             alt={`Фотография Апартамента ${picture.id.split("-")[0]}. Номер ${
               picture.id.split("-")[1]
             }`}

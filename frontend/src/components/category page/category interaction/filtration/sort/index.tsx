@@ -14,9 +14,9 @@ interface MyProps {
 }
 
 export const Sort = ({ resetSorts }: MyProps) => {
-  const setCheckSign = useStore((state) => state.setCheckSign);
-  const checkSign = useStore((state) => state.checkSign);
-  const opitionsSortedLink = useStore((state) => state.opitionsSortedLink);
+  const setCheckSign = useStore(state => state.setCheckSign);
+  const checkSign = useStore(state => state.checkSign);
+  const opitionsSortedLink = useStore(state => state.opitionsSortedLink);
   const pathname = usePathname();
 
   const ha = pathname?.split("/")[2];
@@ -106,9 +106,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
             <span
               className={`
                 ${styles.filtration__option} ${
-                checkOption === option.option
-                  ? styles.filtration__option_active
-                  : ""
+                checkOption === option.option ? styles.filtration__option_active : ""
               }`}
               onClick={() => toggleDropdown(index)}
             >
@@ -146,10 +144,7 @@ export const Sort = ({ resetSorts }: MyProps) => {
         ))}
       </div>
 
-      <p
-        className={styles.filtration__reset}
-        onClick={() => (checkLink ? resetSorts("sort") : "")}
-      >
+      <p className={styles.filtration__reset} onClick={() => (checkLink ? resetSorts("sort") : "")}>
         Сброс
       </p>
     </div>

@@ -10,12 +10,13 @@ import { useEffect, useRef, useState } from "react";
 
 import { ApartmentServices } from "./apartment services";
 import Image from "next/image";
-import { MyApartments } from "../../helpers/types/type";
+import { MyApartments } from "../../types/type";
 import { Options } from "../category page/category interaction/options";
 import { SimilarApartments } from "./similar apartments";
 import { apartmentsData } from "../../fake/apartmnetsData";
 import axios from "axios";
 import { readyIcons } from "../../helpers/functions/readyIcons";
+import { serviceIcons } from "@/share/serviceIcons";
 import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
@@ -24,33 +25,30 @@ import useStore from "@/store/useStore";
 
 export default function Apart() {
   const [widthValue, setWidthValue] = useState<number>();
-
   const pathname = usePathname();
 
   const apartmentId = pathname?.split("/")[1];
-
-  const apartment = apartmentsData?.find(
-    (x) => x.apartmentName === +apartmentId!?.split("-")[1]
-  );
+  const apartment = apartmentsData?.find(x => x.apartmentName + "" === apartmentId?.split("-")[1]);
+  const service = serviceIcons();
 
   const handleClick = async () => {
     const newData = {
       apartmentName: apartment?.apartmentName,
       sortIndex: apartment?.sortIndex,
     };
-    
-    await axios.post(
-      "http://localhost:3500/Booking/addBookingApartment",
-      newData
-    ).then(response => {
-      console.log(response.data);
-    })
-    .catch(error => {
-      console.error(error.response.data.message); // добавленный код
-    });;
+
+    await axios
+      .post("https://barsa-back.onrender.com/Booking/addBookingApartment", newData)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error.response.data.message); // добавленный код
+      });
   };
 
-  const services = readyIcons(apartment!);
+
+  const services = readyIcons(apartment!, service);
 
   const handleWidthChange = (value: number) => {
     setWidthValue(value);
@@ -82,7 +80,7 @@ export default function Apart() {
             <Image
               src={image.image}
               fill
-              sizes="790px"
+              sizes='790px'
               priority={index < 2 ? true : false}
               quality={100}
               alt={`test`}
@@ -105,12 +103,9 @@ export default function Apart() {
         </div>
       </div>
 
-      <ApartmentServices services={services} />
+      <ApartmentServices services={services!} /> 
 
-      <SimilarApartments
-        onWidthChange={handleWidthChange}
-        apartmentId={apartment.apartmentName}
-      />
+      <SimilarApartments onWidthChange={handleWidthChange} apartmentId={apartment.apartmentName} />
     </div>
   );
 }

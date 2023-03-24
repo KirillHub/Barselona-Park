@@ -1,12 +1,12 @@
 import useStore from "../../../../../../store/useStore";
 import { More } from "../../../../../../svg";
-import secondStyles from '../../style.module.scss';
+import secondStyles from "../../style.module.scss";
 import styles from "../style.module.scss";
 
 export const GuestsNights = () => {
-  const updateGuests = useStore((state) => state.updateGuests);
-  const guests = useStore((state) => state.guests);
-  const nigths = useStore((state) => state.nights);
+  const updateGuests = useStore(state => state.updateGuests);
+  const guests = useStore(state => state.guests);
+  const nigths = useStore(state => state.nights);
 
   return (
     <>
@@ -24,10 +24,7 @@ export const GuestsNights = () => {
               <More />
             </div>
 
-            <div
-              className={secondStyles.options__icon}
-              onClick={() => updateGuests(false)}
-            >
+            <div className={secondStyles.options__icon} onClick={() => updateGuests(false)}>
               <More />
             </div>
           </div>

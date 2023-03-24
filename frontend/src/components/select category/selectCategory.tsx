@@ -6,14 +6,14 @@ import styles from "./style.module.scss";
 export default function SelectCategory() {
   return (
     <div className={styles.selectCategory}>
-      {categories.map((category) => (
+      {categories.map(category => (
         <Link href={category.link} key={category.name}>
           <span className={styles.selectCategory__title}>{category.name}</span>
           <div className={styles.selectCategory__image}>
             <Image
               fill
               quality={75}
-              sizes="calc(100px + 150 * (100vw / 1920))"
+              sizes='calc(100px + 150 * (100vw / 1920))'
               src={category.src}
               alt={category.alt}
               style={{

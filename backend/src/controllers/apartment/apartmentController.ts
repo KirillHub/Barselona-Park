@@ -19,11 +19,11 @@ export const getSimilar = async (req: any, res: any) => {
 
     const shuffle = (array: any) => {
       const newArray = [...array];
-      const length = newArray.length;
+      const length = newArray!?.length;
 
       for (let start = 0; start < length; start++) {
         const randomPosition = Math.floor(
-          (newArray.length - start) * Math.random()
+          (newArray!?.length - start) * Math.random()
         );
         const randomItem = newArray.splice(randomPosition, 1);
 
@@ -74,7 +74,7 @@ export const getAllApartments = async (req: any, res: any) => {
     const readyData =
       sort === "Without-sort" ? cutApartments : sortedApartments;
 
-    res.json({ data: readyData, length: apartments.length });
+    res.json({ data: readyData, length: apartments!?.length });
   } catch (err) {
     console.log(err);
 

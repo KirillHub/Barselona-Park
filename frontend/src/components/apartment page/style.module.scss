@@ -45,11 +45,9 @@
       box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 3 * (100vw / 1920));
       background-color: rgb(28 28 28);
 
-
       &::-webkit-scrollbar-thumb {
         border-radius: 10px;
       }
-
 
       li {
         margin-top: 0.5vw;
@@ -61,15 +59,12 @@
           margin-top: 1vh;
         }
       }
-
-
     }
 
     .apartment__booking {
       width: 28%;
       height: 100%;
     }
-
 
     @media (width < 816px) {
       .apartment__description {
@@ -79,7 +74,6 @@
       .apartment__booking {
         margin: calc(15px + 15 * (100vw / 1920)) 0 0 0;
         width: 100%;
-
       }
     }
   }

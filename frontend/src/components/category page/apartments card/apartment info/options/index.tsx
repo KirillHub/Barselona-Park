@@ -1,6 +1,6 @@
 import { Bed, Blueprint, Rooms } from "../../../../../svg";
 
-import { MyApartments } from "../../../../../helpers/types/type";
+import { MyApartments } from "../../../../../types/type";
 import styles from "../style.module.scss";
 
 interface MyProps {

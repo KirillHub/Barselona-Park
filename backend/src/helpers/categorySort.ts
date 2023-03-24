@@ -37,7 +37,7 @@ export const categorySort = (apartments: any, link: string) => {
   const sortOption = selectedSort.find((x) => x.id === first);
 
   const sorter = (field: string) => {
-    if (selectedSort.length === 2) {
+    if (selectedSort!?.length === 2) {
       if (second === 'more') {
         return (a: any, b: any) => (a[field] > b[field] ? -1 : 1);
       } else {

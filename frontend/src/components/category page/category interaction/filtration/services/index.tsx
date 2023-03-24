@@ -9,7 +9,7 @@ interface MyProps {
 }
 
 export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
-  const checkBox = useStore((state) => state.checkBox);
+  const checkBox = useStore(state => state.checkBox);
 
   const sortBy = [
     { box: "Вид на море", index: 0 },
@@ -23,20 +23,17 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
   const pathname = usePathname();
   const category = pathname?.split("/")[2];
 
-  const filteredArray = meta.find((x) => x.id === category);
+  const filteredArray = meta.find(x => x.id === category);
 
   let arr = [...sortBy];
 
-  if (
-    filteredArray?.link === "Вид на море" ||
-    filteredArray?.link === "Вид на город"
-  ) {
+  if (filteredArray?.link === "Вид на море" || filteredArray?.link === "Вид на город") {
     sortBy.splice(0, 2);
 
     arr = [...sortBy];
-  } else if (sortBy.find((x) => x.box === filteredArray?.link)) {
+  } else if (sortBy.find(x => x.box === filteredArray?.link)) {
     sortBy.splice(
-      sortBy.findIndex((x) => x.box === filteredArray?.link),
+      sortBy.findIndex(x => x.box === filteredArray?.link),
       1
     );
 
@@ -51,7 +48,7 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
         {arr.map((option, index) => (
           <div key={index} className={styles.filtration__controls}>
             <input
-              type="checkbox"
+              type='checkbox'
               onChange={() => onCheckBoxFirstChange(option.index)}
               checked={checkBox[option.index]}
             />
@@ -66,10 +63,7 @@ export const Services = ({ onCheckBoxFirstChange, resetSorts }: MyProps) => {
         ))}
       </div>
 
-      <p
-        className={styles.filtration__reset}
-        onClick={() => resetSorts("availability")}
-      >
+      <p className={styles.filtration__reset} onClick={() => resetSorts("availability")}>
         Cброс
       </p>
     </div>
