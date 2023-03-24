@@ -2,8 +2,7 @@
   position: relative;
 
   h1 {
-    margin: calc(15px + 15 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920)) 0
-      calc(0px + 80 * (100vw / 1920));
+    margin: calc(15px + 15 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920)) 0 calc(0px + 80 * (100vw / 1920));
     font-size: calc(22px + 22 * (100vw / 1920));
   }
 
