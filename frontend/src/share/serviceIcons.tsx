@@ -1,5 +1,4 @@
 import {
-  Balcony,
   Conditioner,
   Elevator,
   Hairdryer,
@@ -32,21 +31,3 @@ export const serviceIcons = () => [
   { title: "Стиральная машина", jsx: <WashingMachine /> },
 ];
 
-/*
-export const services = [
-  { name: "Стиральная машина", svg: <WashingMachine /> },
-  { name: "Холодильник", svg: <Refrigerator /> },
-  { name: "Микроволновка", svg: <Microwave /> },
-  { name: "Чайник", svg: <Kettle /> },
-  { name: "Кондиционер", svg: <Conditioner /> },
-  { name: "Телевизор", svg: <Tv /> },
-  { name: "Полотенца", svg: <Towels /> },
-  { name: "Утюг", svg: <Iron /> },
-  { name: "Фен", svg: <Hairdryer /> },
-  { name: "Wi-Fi", svg: <Wifi /> },
-  { name: "Можно с детьми", svg: <Teddy /> },
-  { name: "Парковка", svg: <Parking /> },
-  { name: "Лифт", svg: <Elevator /> },
-  { name: "Стиральная машина", svg: <WashingMachine /> },
-];
-*/

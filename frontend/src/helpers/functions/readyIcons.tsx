@@ -2,24 +2,10 @@ import {
   Balcony,
   City,
   CoffeeMachine,
-  Conditioner,
   Dishwasher,
-  Elevator,
-  Hairdryer,
-  Iron,
-  Kettle,
-  Microwave,
-  Parking,
-  Refrigerator,
   Sea,
   Stove,
-  Teddy,
-  Towels,
-  Tv,
-  WashingMachine,
-  Wifi,
 } from "../../svg";
-
 import { MyApartments, Service } from "../../types/type";
 
 export const readyIcons = (apartment: MyApartments, services: Service[]) => {
@@ -47,59 +33,3 @@ export const readyIcons = (apartment: MyApartments, services: Service[]) => {
     ...services,
   ];
 };
-
-/*
- {
-      jsx: <WashingMachine />,
-      title: "Стиральная машина",
-    },
-    {
-      jsx: <Teddy />,
-      title: "Можно с детьми",
-    },
-    {
-      jsx: <Parking />,
-      title: "Парковка платная",
-    },
-    {
-      jsx: <Microwave />,
-      title: "СВЧ-печь",
-    },
-    {
-      jsx: <Refrigerator />,
-      title: "Холодильник",
-    },
-
-    {
-      jsx: <Kettle />,
-      title: "Чайник",
-    },
-    {
-      jsx: <Conditioner />,
-      title: "Кондиционер",
-    },
-    {
-      jsx: <Tv />,
-      title: "Телевизор",
-    },
-    {
-      jsx: <Towels />,
-      title: "Полотенца",
-    },
-    {
-      jsx: <Iron />,
-      title: "Утюг",
-    },
-    {
-      jsx: <Hairdryer />,
-      title: "Фен",
-    },
-    {
-      jsx: <Wifi />,
-      title: "wi-fi",
-    },
-    {
-      jsx: <Elevator />,
-      title: "Лифт",
-    },
-*/

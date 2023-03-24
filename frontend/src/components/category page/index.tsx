@@ -26,7 +26,7 @@ const path = "http://localhost:3500" || "https://barsa-back.onrender.com";
 
 const useCategory = (category: string, sort: string, service: string, quantity: number) => {
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
-    `http://localhost:3500/Category/${category}/${sort}/${service}/${quantity}`,
+    `https://barsa-back.onrender.com/Category/${category}/${sort}/${service}/${quantity}`,
     fetcher
   );
 
@@ -49,14 +49,14 @@ export default function Category() {
 
   const { user, isLoading, isError } = useCategory(category!, sort!, service!, quantity);
 
-  const aparts = user?.data;
+  const aparts = user!?.data;
 
   ///840 776 630 576 700 540 598 592 256
   //416
   return (
     <div className={styles.category}>
       <h1 className={styles.category__title}>
-        {meta?.name} - {user?.length}
+        {meta?.name} - {user!?.length}
       </h1>
 
       <div className={styles.category__content}>

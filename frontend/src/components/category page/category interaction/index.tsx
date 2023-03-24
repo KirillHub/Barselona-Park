@@ -15,13 +15,11 @@ interface MyParams {
 }
 
 export const CategoryInteraction = () => {
-  const setCheckBox = useStore((state) => state.setCheckBox);
-  const setOpitionsSortedLink = useStore(
-    (state) => state.setOpitionsSortedLink
-  );
+  const setCheckBox = useStore(state => state.setCheckBox);
+  const setOpitionsSortedLink = useStore(state => state.setOpitionsSortedLink);
 
-  const opitionsSortedLink = useStore((state) => state.opitionsSortedLink);
-  const checkBox = useStore((state) => [...state.checkBox]);
+  const opitionsSortedLink = useStore(state => state.opitionsSortedLink);
+  const checkBox = useStore(state => [...state.checkBox]);
 
   const pathname = usePathname();
 
@@ -43,9 +41,7 @@ export const CategoryInteraction = () => {
       "coffee-machine",
     ];
 
-    const selectedOptions = optionLabels.filter(
-      (option, index) => checkBox[index]
-    );
+    const selectedOptions = optionLabels.filter((option, index) => checkBox[index]);
 
     return selectedOptions.join("+");
   };
@@ -107,9 +103,9 @@ export const CategoryInteraction = () => {
 
     let newRoute = "";
 
-    if (opitionsLink.length === 0) {
+    if (opitionsLink!?.length === 0) {
       newRoute = sorted === "Without-sort" ? "" : `/${sorted}`;
-    } else if (sorted.length === 0) {
+    } else if (sorted!?.length === 0) {
       newRoute = `/Without-sort/${opitionsLink}`;
     } else {
       newRoute = `/${sorted}/${opitionsLink}`;
@@ -125,16 +121,13 @@ export const CategoryInteraction = () => {
       setCheckBox([false, false, false, false, false, false]);
       setOpitionsSortedLink("");
 
-      const newSortPath =
-        sorted.length !== 0 && sorted !== "Without-sort" ? `/${sorted}` : "";
+      const newSortPath = sorted!?.length !== 0 && sorted !== "Without-sort" ? `/${sorted}` : "";
       router.push(`/Category/${category}${newSortPath}`);
     } else {
       const opitionsLink = checkOpitionsLink();
 
       const newSortPath =
-        sorted.length !== 0 &&
-        sorted !== "Without-sort" &&
-        opitionsLink.length !== 0
+        sorted!?.length !== 0 && sorted !== "Without-sort" && opitionsLink!?.length !== 0
           ? `/Without-sort/${opitionsLink}`
           : "";
 
@@ -152,9 +145,7 @@ export const CategoryInteraction = () => {
         "dishwasher",
         "coffee-machine",
       ];
-      const updateOpitionsLink = newOpitionsLink.map((d) =>
-        service.includes(d)
-      );
+      const updateOpitionsLink = newOpitionsLink.map(d => service.includes(d));
       setCheckBox(updateOpitionsLink);
     }
   }, [service, setCheckBox]);
@@ -202,20 +193,14 @@ export const CategoryInteraction = () => {
 
       <aside className={sideBar ? styles.active : styles.sidebar}>
         <div className={styles.sideBar__close_flex}>
-          <div
-            className={styles.sideBar__close_icon}
-            onClick={() => setSideBar(false)}
-          >
+          <div className={styles.sideBar__close_icon} onClick={() => setSideBar(false)}>
             <Xmark />
           </div>
         </div>
 
         <Options />
 
-        <Services
-          onCheckBoxFirstChange={onCheckBoxFirstChange}
-          resetSorts={resetSorts}
-        />
+        <Services onCheckBoxFirstChange={onCheckBoxFirstChange} resetSorts={resetSorts} />
 
         <Sort resetSorts={resetSorts} />
       </aside>

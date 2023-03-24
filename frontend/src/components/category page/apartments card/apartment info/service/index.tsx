@@ -1,5 +1,6 @@
 import { MyApartments } from "../../../../../types/type";
 import { readyIcons } from "../../../../../helpers/functions/readyIcons";
+import { serviceIcons } from "@/share/serviceIcons";
 import styles from "../style.module.scss";
 import { useState } from "react";
 
@@ -8,7 +9,8 @@ interface MyProps {
 }
 
 export const Service = ({ apartment }: MyProps) => {
-  const icons = readyIcons(apartment);
+  const service = serviceIcons();
+  const icons = readyIcons(apartment, service);
 
   const [showService, setShowService] = useState(false);
   const [reset, setReset] = useState<NodeJS.Timeout>();

@@ -19,7 +19,7 @@ const fetcher = (url: string) => axios.get(url).then(res => res.data);
 
 const useSimilar = (apartmentId: number, option: string) => {
   const { data, error, isLoading } = useSWR<MyApartments[], any, any>(
-    `http://localhost:3500/GetSimilar/${apartmentId}/${option}`,
+    `https://barsa-back.onrender.com/GetSimilar/${apartmentId}/${option}`,
     fetcher,
     {
       revalidateOnReconnect: false,
@@ -49,13 +49,13 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
     onWidthChange(clientWidth);
   };
 
-  useEffect(() => {
-    window.addEventListener("resize", resizeHandler);
-    resizeHandler();
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", resizeHandler);
+  //   resizeHandler();
+  //   return () => {
+  //     window.removeEventListener("resize", resizeHandler);
+  //   };
+  // }, []);
 
   const apartmentsInSimilar =
     size.clientWidth >= 1410

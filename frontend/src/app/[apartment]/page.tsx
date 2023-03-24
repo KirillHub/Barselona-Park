@@ -1,4 +1,4 @@
-import Apart from '../../components/apartment page';
+import Apart from "../../components/apartment page";
 
 // interface Arara {
 //   data: Apartment[]

@@ -1,7 +1,5 @@
-import Category from '../../../components/category page';
-
+import Category from "../../../components/category page";
 
 export default async function CategoryPage() {
-
-  return <Category  />;
+  return <Category />;
 }

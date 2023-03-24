@@ -31,20 +31,15 @@ export const CustomerInformation = () => {
   };
 
   const StartCustomDate = forwardRef(({ value, onClick }: any, ref) => (
-    <input
-      type="text"
-      value={value.length > 0 ? `C ${value}` : "Выберите дату заезда"}
-      readOnly
-    />
+    <input type='text' value={value!?.length > 0 ? `C ${value}` : "Выберите дату заезда"} readOnly />
   ));
 
   const EndCustomDate = forwardRef(({ value, onClick }: any, ref) => (
-    <input
-      type="text"
-      value={value.length > 0 ? `По ${value}` : "Выберите дату выезда"}
-      readOnly
-    />
+    <input type='text' value={value!?.length > 0 ? `По ${value}` : "Выберите дату выезда"} readOnly />
   ));
+
+  StartCustomDate.displayName = "StartCustomDate";
+  EndCustomDate.displayName = "EndCustomDate";
 
   const excludedDates = [
     "Mar 28 2023",
@@ -56,7 +51,7 @@ export const CustomerInformation = () => {
     "Apr 13 2023",
     "Apr 14 2023",
     "Apr 15 2023",
-  ].map((x) => new Date(x));
+  ].map(x => new Date(x));
 
   return (
     <div className={styles.customer}>
@@ -79,13 +74,13 @@ export const CustomerInformation = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.customer__form}>
         <input
-          type="text"
-          placeholder="ФИО"
+          type='text'
+          placeholder='ФИО'
           {...register("Full name", { required: true, min: 2, maxLength: 90 })}
         />
         <input
-          type="text"
-          placeholder="Email"
+          type='text'
+          placeholder='Email'
           {...register("Email", {
             required: true,
             min: 2,
@@ -93,8 +88,8 @@ export const CustomerInformation = () => {
           })}
         />
         <input
-          type="tel"
-          placeholder="Номер телефона"
+          type='tel'
+          placeholder='Номер телефона'
           {...register("Mobile number", {
             required: true,
             min: 2,
@@ -103,33 +98,33 @@ export const CustomerInformation = () => {
         />
 
         <select {...register("Adults")}>
-          <option value="Взрослых" selected disabled>
+          <option value='Взрослых' selected disabled>
             Взрослых
           </option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
+          <option value='5'>5</option>
+          <option value='6'>6</option>
+          <option value='7'>7</option>
+          <option value='8'>8</option>
         </select>
         <select {...register("Children")}>
-          <option value="Взрослых" selected disabled>
+          <option value='Взрослых' selected disabled>
             Детей
           </option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
         </select>
 
         <input
-          type="text"
-          placeholder="Комментарий"
+          type='text'
+          placeholder='Комментарий'
           {...register("Comment", { min: 0, max: 320 })}
         />
 
@@ -137,18 +132,20 @@ export const CustomerInformation = () => {
           selected={startDate}
           onChange={(date: Date) => setStartDate(date)}
           locale={ru}
-          dateFormat="d MMMM, yyyy"
+          dateFormat='d MMMM, yyyy'
           customInput={<StartCustomDate />}
         />
         <DatePicker
           selected={endDate}
           onChange={(date: Date) => setStartDate(date)}
           locale={ru}
-          dateFormat="d MMMM, yyyy"
+          dateFormat='d MMMM, yyyy'
           customInput={<EndCustomDate />}
         />
 
-        <button className={styles.customer__form_submit} type="submit">Забронировать</button>
+        <button className={styles.customer__form_submit} type='submit'>
+          Забронировать
+        </button>
       </form>
     </div>
   );

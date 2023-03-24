@@ -16,19 +16,19 @@ import { SimilarApartments } from "./similar apartments";
 import { apartmentsData } from "../../fake/apartmnetsData";
 import axios from "axios";
 import { readyIcons } from "../../helpers/functions/readyIcons";
+import { serviceIcons } from "@/share/serviceIcons";
 import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 import useStore from "@/store/useStore";
-import { serviceIcons } from "@/share/serviceIcons";
 
 export default function Apart() {
   const [widthValue, setWidthValue] = useState<number>();
   const pathname = usePathname();
 
   const apartmentId = pathname?.split("/")[1];
-  const apartment = apartmentsData?.find(x => x.apartmentName === +apartmentId!?.split("-")[1]);
+  const apartment = apartmentsData?.find(x => x.apartmentName + "" === apartmentId?.split("-")[1]);
   const service = serviceIcons();
 
   const handleClick = async () => {
@@ -38,7 +38,7 @@ export default function Apart() {
     };
 
     await axios
-      .post("http://localhost:3500/Booking/addBookingApartment", newData)
+      .post("https://barsa-back.onrender.com/Booking/addBookingApartment", newData)
       .then(response => {
         console.log(response.data);
       })
@@ -47,9 +47,8 @@ export default function Apart() {
       });
   };
 
-  if (!apartment) throw new Error(`${apartment} - undefined`);
 
-  const services = readyIcons(apartment, service);
+  const services = readyIcons(apartment!, service);
 
   const handleWidthChange = (value: number) => {
     setWidthValue(value);
@@ -104,7 +103,7 @@ export default function Apart() {
         </div>
       </div>
 
-      <ApartmentServices services={services} />
+      <ApartmentServices services={services!} /> 
 
       <SimilarApartments onWidthChange={handleWidthChange} apartmentId={apartment.apartmentName} />
     </div>

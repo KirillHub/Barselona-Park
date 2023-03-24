@@ -13,16 +13,11 @@ export const ApartmentServices = ({ services }: MyProps) => {
     <div className={styles.apartment__services}>
       <h3>Удобства и услуги</h3>
       <div className={styles.apartment__services_icons}>
-        {services.map((service) =>
-          service.title.length > 0 ? (
-            <div
-              className={styles.apartment__services_icon}
-              key={service?.title}
-            >
+        {services!?.map(service =>
+          service!?.title!?.length > 0 ? (
+            <div className={styles.apartment__services_icon} key={service?.title}>
               <div>{service?.jsx}</div>
-              <span >
-                {service?.title}
-              </span>
+              <span>{service?.title}</span>
             </div>
           ) : (
             ""

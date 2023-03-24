@@ -29,11 +29,10 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
   nights: 1,
   apartmentsLength: 0,
 
-  setSelectedPageId: (pageId: string) =>
-    set(() => ({ selectedPageId: pageId })),
+  setSelectedPageId: (pageId: string) => set(() => ({ selectedPageId: pageId })),
 
   setCheckSign: (index: number) =>
-    set((state) => {
+    set(state => {
       const sign = [...state.checkSign];
       sign.splice(index, 1, !sign[index]);
 
@@ -43,15 +42,14 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
       };
     }),
 
-  setOpitionsSortedLink: (link: string) =>
-    set(() => ({ opitionsSortedLink: link })),
+  setOpitionsSortedLink: (link: string) => set(() => ({ opitionsSortedLink: link })),
 
   setCheckBox(box: boolean[]) {
-    set((state) => ({ ...state.checkBox, checkBox: box }));
+    set(state => ({ ...state.checkBox, checkBox: box }));
   },
 
   updateGuests: (increment: boolean) =>
-    set((state) => ({
+    set(state => ({
       guests:
         increment && state.guests < 8
           ? state.guests + 1
@@ -62,6 +60,5 @@ export const createCategorySlice: StateCreator<CategoryStore> = (set, get) => ({
 
   setNights: (length: number) => set(() => ({ nights: length })),
 
-  setApartmentsLength: (length: number) =>
-    set(() => ({ apartmentsLength: length })),
+  setApartmentsLength: (length: number) => set(() => ({ apartmentsLength: length })),
 });

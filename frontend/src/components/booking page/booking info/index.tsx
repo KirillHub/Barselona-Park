@@ -3,7 +3,6 @@ import styles from "./style.module.scss";
 export const BookingInfo = () => {
   return (
     <div className={styles.booking__details}>
-     
       <div className={styles.bookingInfo__details}>
         <h2>Детали бронирования</h2>
 
@@ -36,9 +35,8 @@ export const BookingInfo = () => {
             <span>Сумма -</span> 220000 руб
           </p>
           <p>
-            <span>Ваш комментарий -</span> ыфваоыфдвлаофыжд алофыжвдаол жфыдвлао
-            жфдывоа ждфывоа ждлфыоважд фыожадыфо жадлфыов аждлфывоа ждыфвоа
-            ыждфва олыфвжда офжыда оывфждо
+            <span>Ваш комментарий -</span> ыфваоыфдвлаофыжд алофыжвдаол жфыдвлао жфдывоа ждфывоа
+            ждлфыоважд фыожадыфо жадлфыов аждлфывоа ждыфвоа ыждфва олыфвжда офжыда оывфждо
           </p>
 
           <ul>

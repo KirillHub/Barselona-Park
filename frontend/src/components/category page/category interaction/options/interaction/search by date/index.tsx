@@ -7,7 +7,7 @@ import DatePicker from "react-datepicker";
 import { More } from "../../../../../../svg";
 import { reservationDays } from "../../../../../../helpers/functions/reservationDays";
 import ru from "date-fns/locale/ru";
-import secondStyles from '../../style.module.scss'
+import secondStyles from "../../style.module.scss";
 import styles from "../style.module.scss";
 import useStore from "../../../../../../store/useStore";
 
@@ -18,7 +18,7 @@ interface Custom {
 export type Ref = HTMLDivElement;
 
 export const CheckInCheckOut = () => {
-  const setNights = useStore((state) => state.setNights);
+  const setNights = useStore(state => state.setNights);
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -29,10 +29,10 @@ export const CheckInCheckOut = () => {
 
   const dateLength = (start: Date, end: Date) => {
     const dates = reservationDays(start, end);
-    setNights(dates.length);
+    setNights(dates!?.length);
   };
 
-  const excludedDates = ["", ""].map((x) => new Date(x));
+  const excludedDates = ["", ""].map(x => new Date(x));
 
   const [isOpen, setIsOpen] = useState(false);
   const handleChange = () => {
@@ -68,7 +68,7 @@ export const CheckInCheckOut = () => {
           endDate={endDate}
           locale={ru}
           calendarStartDay={1}
-          dateFormat="d MMM"
+          dateFormat='d MMM'
           excludeDates={excludedDates}
           minDate={subDays(new Date(), 0)}
           maxDate={addDays(new Date(), 365)}
@@ -86,7 +86,7 @@ export const CheckInCheckOut = () => {
           endDate={endDate}
           locale={ru}
           calendarStartDay={1}
-          dateFormat="d MMM"
+          dateFormat='d MMM'
           excludeDates={excludedDates}
           minDate={startDate}
           maxDate={addDays(new Date(), 365)}
