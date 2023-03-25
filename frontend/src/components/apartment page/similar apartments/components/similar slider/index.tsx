@@ -84,7 +84,9 @@ export const SimilarSlider = ({ apartments, apartsInSlider }: MyProps) => {
 
           <div className={styles.similar__info}>
             <div className={styles.similar__info_price} onClick={() => showPriceTitle(0, index)}>
-              <Sun />
+              <div>
+                <Sun />
+              </div>
               <p>{apartment.summerPrice} ₽</p>
               <span
                 className={`${
@@ -95,7 +97,9 @@ export const SimilarSlider = ({ apartments, apartsInSlider }: MyProps) => {
               </span>
             </div>
             <div className={styles.similar__info_price} onClick={() => showPriceTitle(1, index)}>
-              <Snowflake />
+              <div>
+                <Snowflake />
+              </div>
               <p> {apartment.winterPrice} ₽</p>
               <span
                 className={`${

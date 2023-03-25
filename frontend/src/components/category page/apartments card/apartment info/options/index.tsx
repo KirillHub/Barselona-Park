@@ -11,17 +11,23 @@ export const Options = ({ apartment }: MyProps) => {
   return (
     <div className={styles.options}>
       <div className={styles.options__description}>
-        <Rooms />
+        <div>
+          <Rooms />
+        </div>
         <p> Комнат - {apartment.about.rooms}</p>
       </div>
 
       <div className={styles.options__description}>
-        <Blueprint />
+        <div>
+          <Blueprint />
+        </div>
         <p>{apartment.about.squareMeters} m²</p>
       </div>
 
       <div className={styles.options__description}>
-        <Bed />
+        <div>
+          <Bed />
+        </div>
         <p>Мест - {apartment.about.sleepingPlaces}</p>
       </div>
     </div>

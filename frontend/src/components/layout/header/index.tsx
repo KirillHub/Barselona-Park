@@ -2,30 +2,21 @@
 
 import "./style.scss";
 
-import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import Link from "next/link";
 
 export const Header = () => {
-  const [isScrolling, setIsScrolling] = useState(false);
 
   const pathname = usePathname();
   const apartment = pathname?.split("/")[1].split("-")[0];
   const category = pathname?.split("/")[2];
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolling(window.pageYOffset > 0);
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header
       className='header'
-      style={{ backgroundColor: isScrolling ? "rgba(211, 211, 211, 0.4)" : "transparent" }}
     >
       <nav className='header-container'>
         <p className='header-p'>
@@ -39,7 +30,7 @@ export const Header = () => {
           <li>
             <Link href={`/Category/Select-category`}>Категории</Link>
           </li>
-          {/* <li>
+          <li>
             <Link href="/">Отзывы</Link>
           </li>
           <li>
@@ -47,7 +38,7 @@ export const Header = () => {
           </li>
           <li>
             <Link href="/">Контакты</Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
     </header>
