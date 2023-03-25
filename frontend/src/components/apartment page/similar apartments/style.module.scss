@@ -1,48 +1,48 @@
 .similar {
-  position: relative;
-  margin: calc(15px + 15 * (100vw / 1920)) 0;
-  padding: calc(20px + 20 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920));
-  width: 100%;
-  background-color: rgb(28 28 28);
+	position: relative;
+	margin: calc(15px + 15 * (100vw / 1920)) 0;
+	padding: calc(20px + 20 * (100vw / 1920)) calc(0px + 80 * (100vw / 1920));
+	width: 100%;
+	background-color: rgb(28 28 28);
 
-  .similar__title {
-    p {
-      font-weight: 700;
-      font-size: calc(14px + 12 * (100vw / 1920));
-    }
+	.similar__title {
+		p {
+			font-weight: 700;
+			font-size: calc(14px + 12 * (100vw / 1920));
+		}
 
-    span {
-      font-size: calc(12px + 8 * (100vw / 1920));
-    }
-  }
+		span {
+			font-size: calc(12px + 8 * (100vw / 1920));
+		}
+	}
 
-  .similar__options {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+	.similar__options {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
 
-    button {
-      padding: calc(5px + 5 * (100vw / 1920));
-      width: calc(40px + 130 * (100vw / 1920));
-      height: calc(50px + 20 * (100vw / 1920));
-      border-radius: calc(5px + 5 * (100vw / 1920));
-      font-size: calc(8px + 8 * (100vw / 1920));
-      background-color: rgb(16 16 16);
-      transition: 0.2s;
+		button {
+			padding: calc(5px + 5 * (100vw / 1920));
+			width: calc(40px + 130 * (100vw / 1920));
+			height: calc(50px + 20 * (100vw / 1920));
+			border-radius: calc(5px + 5 * (100vw / 1920));
+			font-size: calc(8px + 8 * (100vw / 1920));
+			background-color: rgb(16 16 16);
+			transition: 0.2s;
 
-      &:active {
-        transform: scale(0.9);
-      }
+			&:active {
+				transform: scale(0.9);
+			}
 
 
-    }
+		}
 
-    @media (width < 1415px) {
-      justify-content: space-between;
-    }
-  }
+		@media (width < 1415px) {
+			justify-content: space-between;
+		}
+	}
 
-  @media (width < 815px) {
-    padding: calc(10px + 10 * (100vw / 1920)) 4vw;
-  }
+	@media (width < 815px) {
+		padding: calc(10px + 10 * (100vw / 1920)) 4vw;
+	}
 }

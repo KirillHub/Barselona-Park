@@ -28,6 +28,5 @@ export const serviceIcons = () => [
   { title: "Можно с детьми", jsx: <Teddy /> },
   { title: "Парковка", jsx: <Parking /> },
   { title: "Лифт", jsx: <Elevator /> },
-  { title: "Стиральная машина", jsx: <WashingMachine /> },
 ];
 

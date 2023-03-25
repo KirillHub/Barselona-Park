@@ -38,7 +38,7 @@ export default function Apart() {
     };
 
     await axios
-      .post("https://barsa-back.onrender.com/Booking/addBookingApartment", newData)
+      .post("http://localhost:3500/Booking/addBookingApartment", newData)
       .then(response => {
         console.log(response.data);
       })

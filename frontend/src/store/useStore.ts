@@ -1,13 +1,15 @@
+import { ApartmentStore, createApartmentSlice } from "./apartment/apartmentSlice";
+import { BookingStore, createBookingSlice } from "./booking/bookingSlice";
+import { CategoryStore, createCategorySlice } from "./category/categorySllice";
+
 import { create } from "zustand";
 
-import { createCategorySlice, CategoryStore } from "./category/categorySllice";
-import { createApartmentSlice, ApartmentStore } from "./apartment/apartmentSlice";
+type CombinedStore = CategoryStore & ApartmentStore & BookingStore;
 
-type CombinedStore = CategoryStore & ApartmentStore;
-
-const useStore = create<CombinedStore>()((...a) => ({
-  ...createCategorySlice(...a),
-  ...createApartmentSlice(...a),
+const useStore = create<CombinedStore>()((...data) => ({
+  ...createCategorySlice(...data),
+  ...createApartmentSlice(...data),
+  ...createBookingSlice(...data),
 }));
 
 export default useStore;
