@@ -2,20 +2,22 @@
 
 import "./style.scss";
 
-import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import Link from "next/link";
 
 export const Header = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   const pathname = usePathname();
   const apartment = pathname?.split("/")[1].split("-")[0];
   const category = pathname?.split("/")[2];
 
+
+
   return (
-    <header className={`header`}>
+    <header
+      className='header'
+    >
       <nav className='header-container'>
         <p className='header-p'>
           <Link href=''>Барселона парк</Link>
@@ -28,7 +30,7 @@ export const Header = () => {
           <li>
             <Link href={`/Category/Select-category`}>Категории</Link>
           </li>
-          {/* <li>
+          <li>
             <Link href="/">Отзывы</Link>
           </li>
           <li>
@@ -36,7 +38,7 @@ export const Header = () => {
           </li>
           <li>
             <Link href="/">Контакты</Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
     </header>

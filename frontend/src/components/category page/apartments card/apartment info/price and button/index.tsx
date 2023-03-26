@@ -31,23 +31,27 @@ export const Price = ({ apartment }: MyProps) => {
     <div className={styles.priceButton}>
       <div className={styles.priceButton__content}>
         <div className={styles.priceButton__price} onClick={() => showTitle(0)}>
+					<div>
           <Sun />
-          <div>
+					</div>
+          <p>
             {apartment.summerPrice} ₽
             <span className={`${titles[0] ? "visible" : "hidden"}`}>
               Летний сезон (с 1 июня по 1 октября)
             </span>
-          </div>
+          </p>
         </div>
 
         <div className={styles.priceButton__price} onClick={() => showTitle(1)}>
+					<div>
           <Snowflake />
-          <div>
+					</div>
+          <p>
             {apartment.winterPrice} ₽
             <span className={`${titles[1] ? "visible" : "hidden"}`}>
               Зимний сезон (с 1 октября по 1 июня)
             </span>
-          </div>
+          </p>
         </div>
       </div>
 

@@ -2,17 +2,31 @@
 
 import "./style.scss";
 import "react-datepicker/dist/react-datepicker.css";
+import "moment/locale/ru";
 
 import { addDays, subDays } from "date-fns";
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 import DatePicker from "react-datepicker";
+import { MyApartments } from "@/types/type";
+import { calculateSum } from "@/helpers/functions/calculateSum";
+import moment from "moment";
 import { reservationDays } from "../../../helpers/functions/reservationDays";
 import ru from "date-fns/locale/ru";
+import { start } from "repl";
 import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
+import useStore from "@/store/useStore";
 
-export const CustomerInformation = () => {
+interface MyProps {
+  apartment: MyApartments;
+}
+
+export const CustomerInformation = ({ apartment }: MyProps) => {
+  const setBookingPrice = useStore(state => state.setBookingPrice);
+  const setBookingDates = useStore(state => state.setBookingDates);
+  const setBookingStartEnd = useStore(state => state.setBookingStartEnd);
+
   const {
     register,
     handleSubmit,
@@ -31,11 +45,19 @@ export const CustomerInformation = () => {
   };
 
   const StartCustomDate = forwardRef(({ value, onClick }: any, ref) => (
-    <input type='text' value={value!?.length > 0 ? `C ${value}` : "Выберите дату заезда"} readOnly />
+    <input
+      type='text'
+      value={value!?.length > 0 ? `C ${value}` : "Выберите дату заезда"}
+      readOnly
+    />
   ));
 
   const EndCustomDate = forwardRef(({ value, onClick }: any, ref) => (
-    <input type='text' value={value!?.length > 0 ? `По ${value}` : "Выберите дату выезда"} readOnly />
+    <input
+      type='text'
+      value={value!?.length > 0 ? `По ${value}` : "Выберите дату выезда"}
+      readOnly
+    />
   ));
 
   StartCustomDate.displayName = "StartCustomDate";
@@ -52,6 +74,27 @@ export const CustomerInformation = () => {
     "Apr 14 2023",
     "Apr 15 2023",
   ].map(x => new Date(x));
+
+  // const formattedDate = moment(startDate).locale("ru").format("DD MMMM YYYY");
+
+  useEffect(() => {
+    if (endDate !== null) {
+      const days = reservationDays(startDate, endDate, excludedDates);
+      const sum = calculateSum(days, {
+        summerPrice: apartment.summerPrice,
+        winterPrice: apartment.winterPrice,
+      });
+
+      const formattedDays = days.map(date => moment(date).locale("ru").format("D MMMM YYYY"));
+
+      setBookingPrice(sum);
+      setBookingDates(formattedDays);
+      setBookingStartEnd({
+        start: moment(startDate).locale("ru").format("D MMMM YYYY"),
+        end: moment(endDate).locale("ru").format("D MMMM YYYY"),
+      });
+    }
+  }, [endDate]);
 
   return (
     <div className={styles.customer}>
@@ -98,7 +141,7 @@ export const CustomerInformation = () => {
         />
 
         <select {...register("Adults")}>
-          <option value='Взрослых' selected disabled>
+          <option defaultValue='Взрослых' disabled>
             Взрослых
           </option>
           <option value='0'>0</option>
@@ -112,7 +155,7 @@ export const CustomerInformation = () => {
           <option value='8'>8</option>
         </select>
         <select {...register("Children")}>
-          <option value='Взрослых' selected disabled>
+          <option defaultValue='Взрослых' disabled>
             Детей
           </option>
           <option value='0'>0</option>

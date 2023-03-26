@@ -5,14 +5,15 @@ import {
   Dishwasher,
   Sea,
   Stove,
+  Windows,
 } from "../../svg";
 import { MyApartments, Service } from "../../types/type";
 
 export const readyIcons = (apartment: MyApartments, services: Service[]) => {
   return [
     {
-      jsx: apartment?.about.balcony === "С балконом" ? <Balcony /> : "",
-      title: apartment?.about.balcony === "С балконом" ? apartment?.about.balcony : "",
+      jsx: apartment?.about.balcony === "С балконом" ? <Balcony /> : <Windows />,
+      title: apartment?.about.balcony === "С балконом" ? apartment?.about.balcony : "Без балкона",
     },
     {
       jsx: apartment?.about.view === "Вид на море" ? <Sea /> : <City />,

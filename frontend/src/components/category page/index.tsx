@@ -26,7 +26,7 @@ const path = "http://localhost:3500" || "https://barsa-back.onrender.com";
 
 const useCategory = (category: string, sort: string, service: string, quantity: number) => {
   const { data, error, isLoading } = useSWR<Myfetch, any, any>(
-    `https://barsa-back.onrender.com/Category/${category}/${sort}/${service}/${quantity}`,
+    `http://localhost:3500/Category/${category}/${sort}/${service}/${quantity}`,
     fetcher
   );
 

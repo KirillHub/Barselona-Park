@@ -1,6 +1,10 @@
 import styles from "./style.module.scss";
+import useStore from "@/store/useStore";
 
 export const BookingInfo = () => {
+  const bookingPrice = useStore(state => state.bookingPrice);
+  const bookingDates = useStore(state => state.bookingDates);
+  const startEndDates = useStore(state => state.startEndDates);
   return (
     <div className={styles.booking__details}>
       <div className={styles.bookingInfo__details}>
@@ -23,16 +27,16 @@ export const BookingInfo = () => {
             <span>Детей -</span> 0
           </p>
           <p>
-            <span>Количество ночей -</span> 12
+            <span>Количество ночей -</span> {bookingDates.length}
           </p>
           <p>
-            <span>Дата заезда -</span> 29 марта 2023
+            <span>Дата заезда -</span> {startEndDates.start}
           </p>
           <p>
-            <span>Дата выезда -</span> 29 марта 2023
+            <span>Дата выезда -</span> {startEndDates.end}
           </p>
           <p>
-            <span>Сумма -</span> 220000 руб
+            <span>Сумма -</span> {bookingPrice} руб
           </p>
           <p>
             <span>Ваш комментарий -</span> ыфваоыфдвлаофыжд алофыжвдаол жфыдвлао жфдывоа ждфывоа
@@ -41,23 +45,9 @@ export const BookingInfo = () => {
 
           <ul>
             <span>Все выбранные даты</span>
-            <li>29 Марта 2023</li>
-            <li>30 Марта 2023</li>
-            <li>31 Марта 2023</li>
-            <li>1 Апреля 2023</li>
-            <li>2 Апреля 2023</li>
-            <li>3 Апреля 2023</li>
-            <li>4 Апреля 2023</li>
-            <li>5 Апреля 2023</li>
-            <li>6 Апреля 2023</li>
-            <li>7 Апреля 2023</li>
-            <li>8 Апреля 2023</li>
-            <li>9 Апреля 2023</li>
-            <li>10 Апреля 2023</li>
-            <li>11 Апреля 2023</li>
-            <li>12 Апреля 2023</li>
-            <li>13 Апреля 2023</li>
-            <li>14 Апреля 2023</li>
+            {bookingDates.map(date => (
+              <li key={date}>{date}</li>
+            ))}
           </ul>
         </div>
       </div>

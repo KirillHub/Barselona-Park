@@ -28,3 +28,5 @@ export * from "./categoryMenu";
 export * from "./sun";
 export * from "./snowflake";
 export * from "./xmark";
+export * from "./stairs"
+export * from './windows'

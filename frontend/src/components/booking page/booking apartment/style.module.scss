@@ -1,9 +1,121 @@
 .booking__apartment {
-  margin-right: 2vh;
-  padding: calc(5px + 5 * (100vw / 1920));
-  width: 70%;
-  height: 100%;
-  border-radius: calc(5px + 5 * (100vw / 1920));
-  box-shadow: rgb(255 254 254) 0 0 2px;
-  background-color: rgb(32 32 32);
+	margin-right: 2vh;
+	padding: calc(5px + 5 * (100vw / 1920));
+	width: 70%;
+	height: 100%;
+	border-radius: calc(5px + 5 * (100vw / 1920));
+	box-shadow: rgb(255 254 254) 0 0 2px;
+	background-color: rgb(32 32 32);
+
+	h3 {
+		margin-top: 0;
+		font-weight: 700;
+	}
+
+	.booking__content {
+		display: flex;
+		width: 100%;
+	}
+
+	.booking__mainImage {
+		position: relative;
+		flex-grow: 0;
+		flex-basis: 37%;
+		height: 300px;
+
+		.booking__mainImage_img {
+			border-radius: calc(5px + 5 * (100vw / 1920));
+
+		}
+	}
+
+	.booking__info {
+		position: relative;
+		flex-grow: 0;
+		flex-basis: 63%;
+		padding-left: calc(5px + 5 * (100vw / 1920));
+	}
+
+	.booking__price {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 2vh;
+		padding-bottom: 2vh;
+		border-bottom: 1px solid #fff;
+
+		p {
+			text-align: center;
+
+			span {
+				display: block;
+			}
+
+			:first-child {
+				font-weight: 700;
+				font-size: calc(12px + 12 * (100vw / 1920));
+			}
+
+			:last-child {
+				font-size: calc(6px + 6 * (100vw / 1920));
+			}
+		}
+	}
+
+	.booking__description {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2vh;
+
+
+		.options__icons {
+			display: flex;
+			align-items: center;
+			margin-right: 1vw;
+
+			div {
+				width: calc(20px + 20 * (100vw / 1920));
+				height: calc(20px + 20 * (100vw / 1920));
+			}
+
+			p {
+				margin-left: 0.5vw;
+				font-size: calc(6px + 8 * (100vw / 1920));
+			}
+
+			@media (width < 805px) {
+				p {
+					font-size: calc(10px + 12 * (100vw / 1920));
+				}
+			}
+		}
+	}
+
+
+	.booking__services {
+		display: flex;
+		position: relative;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		span {
+			position: absolute;
+			padding: 0.2vw 0.6vw;
+			bottom: -2vw;
+			left: -2vw;
+			border: calc(2px + 1 * (100vw / 1920)) solid rgb(60 60 60);
+			white-space: nowrap;
+			font-size: calc(10px + 6 * (100vw / 1920));
+			color: rgb(255 255 255);
+			background-color: rgb(28 28 28);
+			z-index: 2;
+		}
+
+
+		.booking__services_icon {
+			position: relative;
+			margin: 1vw;
+			width: calc(15px + 15 * (100vw / 1920));
+			height: calc(15px + 15 * (100vw / 1920));
+		}
+	}
 }

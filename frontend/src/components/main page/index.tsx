@@ -1,44 +1,45 @@
 "use client";
 
-import "./style.scss";
-
 import { Telegram, Whatsapp } from "../../svg";
-
+import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 import SelectCategory from "../select category/selectCategory";
 import { serviceIcons } from "@/share/serviceIcons";
+import { useEffect, useState } from "react";
+import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
+import { SearhPanel } from "./search panel";
+import styles from "./style.module.scss";
 
 export const MainPicture = () => {
   const services = serviceIcons();
 
-  return (
-    <div className='main-page'>
-      <p>Barselona Park</p>
-      <meta
-        name='description'
-        content='Барселона парк - Апартаменты в центре Сочи, 3 минуты до моря. 8-988-130-62-17'
-      />
-      <meta
-        name='keywords'
-        content='Барселона парк, Barselona park, апартаменты, апартаменты Сочи'
-      />
-      <meta name='Document-state' content='Dynamic' />
-      <meta name='Author' content='https://github.com/bi-zi' />
-      <meta name='Copyright' content='bi_zi' />
+  // в дальнейшем можно такого рода конфиги выносить в отдельные файлы
+  const bgConfig = {
+    fhotoCount: 7,
+    fileName: "main page",
+    fileExtension: "webp",
+    slideSwitchingSpeed: 15000,
+  };
+  const { fhotoCount, fileName, fileExtension, slideSwitchingSpeed } = bgConfig;
 
-      <div className='main-page-container'>
-        <div className='main-page-container__picture'>
-          <Image
-            priority
-            fill
-            quality={75}
-            style={{ objectFit: "cover" }}
-            src='/assets/main page/1.webp'
-            alt='Апартамент-1104'
+  return (
+    <div className={styles.main_page}>
+      <div className={styles.main_page__container}>
+        <div className={styles.main_page__picture}>
+          <BackgroundImageSlider
+            fhotoCount={fhotoCount}
+            fileName={fileName}
+            fileExtension={fileExtension}
+            slideSwitchingSpeed={slideSwitchingSpeed}
           />
         </div>
 
-        <div className='main-page-container-service'>
+        <div className={styles.main_page__search_panel}>
+          <SearhPanel />
+        </div>
+
+        {/* <div className='main-page-container-service'>
           <h3>Услуги</h3>
           <div className='main-page-container-service__icons'>
             {services.map((icon, i) => (
@@ -48,11 +49,11 @@ export const MainPicture = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <SelectCategory />
+        {/* <SelectCategory /> */}
 
-        <div className='main-page-container-cleaning'>
+        {/* <div className='main-page-container-cleaning'>
           <h3>Повышенный комфорт и безопасность</h3>
 
           <br />
@@ -61,9 +62,9 @@ export const MainPicture = () => {
           <span>Постоянная чистота и дружелюбное общение</span>
           <br />
           <span>Cтремимся поддерживать высочайший уровень гостеприимства и доверия</span>
-        </div>
+        </div> */}
 
-        <div className='main-page-container__blocks'>
+        {/* <div className='main-page-container__blocks'>
           <h2>Расположение</h2>
 
           <div className='main-page-container__blocks__location__info'>
@@ -132,7 +133,7 @@ export const MainPicture = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
