@@ -14,8 +14,6 @@ import {
   Wifi,
 } from "../svg";
 
-console.log('test № 1000');
-
 export const serviceIcons = () => [
   { title: "Стиральная машина", jsx: <WashingMachine /> },
   { title: "Холодильник", jsx: <Refrigerator /> },
@@ -31,4 +29,3 @@ export const serviceIcons = () => [
   { title: "Парковка", jsx: <Parking /> },
   { title: "Лифт", jsx: <Elevator /> },
 ];
-

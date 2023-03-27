@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
 import { SearhPanel } from "./search panel";
 import styles from "./style.module.scss";
+import Location from "./location";
 
 export const MainPicture = () => {
   const services = serviceIcons();
@@ -25,7 +26,7 @@ export const MainPicture = () => {
 
   return (
     <div className={styles.main_page}>
-      <div className={styles.main_page__container}>
+      <div className={styles.main_page__container_main}>
         <div className={styles.main_page__picture}>
           <BackgroundImageSlider
             fhotoCount={fhotoCount}
@@ -38,8 +39,18 @@ export const MainPicture = () => {
         <div className={styles.main_page__search_panel}>
           <SearhPanel />
         </div>
+      </div>
 
-        {/* <div className='main-page-container-service'>
+      <div className={styles.main_page__location}>
+        <Location />
+      </div>
+    </div>
+  );
+};
+export default MainPicture;
+
+{
+  /* <div className='main-page-container-service'>
           <h3>Услуги</h3>
           <div className='main-page-container-service__icons'>
             {services.map((icon, i) => (
@@ -49,11 +60,15 @@ export const MainPicture = () => {
               </div>
             ))}
           </div>
-        </div> */}
+        </div> */
+}
 
-        {/* <SelectCategory /> */}
+{
+  /* <SelectCategory /> */
+}
 
-        {/* <div className='main-page-container-cleaning'>
+{
+  /* <div className='main-page-container-cleaning'>
           <h3>Повышенный комфорт и безопасность</h3>
 
           <br />
@@ -62,9 +77,11 @@ export const MainPicture = () => {
           <span>Постоянная чистота и дружелюбное общение</span>
           <br />
           <span>Cтремимся поддерживать высочайший уровень гостеприимства и доверия</span>
-        </div> */}
+        </div> */
+}
 
-        {/* <div className='main-page-container__blocks'>
+{
+  /* <div className='main-page-container__blocks'>
           <h2>Расположение</h2>
 
           <div className='main-page-container__blocks__location__info'>
@@ -133,9 +150,5 @@ export const MainPicture = () => {
               </div>
             </div>
           </div>
-        </div> */}
-      </div>
-    </div>
-  );
-};
-export default MainPicture;
+        </div> */
+}

@@ -1,5 +1,7 @@
 import { StateCreator } from "zustand";
 
+// frfkledpgjesogjoesjg
+
 export interface BookingStore {
   bookingPrice: number;
   bookingDates: string[];
