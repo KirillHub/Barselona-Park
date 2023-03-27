@@ -5,6 +5,16 @@ export const BookingInfo = () => {
   const bookingPrice = useStore(state => state.bookingPrice);
   const bookingDates = useStore(state => state.bookingDates);
   const startEndDates = useStore(state => state.startEndDates);
+  const bookingFullName = useStore(state => state.bookingFullName);
+  const bookingEmail = useStore(state => state.bookingEmail);
+  const bookingNumber = useStore(state => state.bookingNumber);
+  const bookingAdults = useStore(state => state.bookingAdults);
+  const bookingChildren = useStore(state => state.bookingChildren);
+  const bookingComment = useStore(state => state.bookingComment);
+
+	
+
+
   return (
     <div className={styles.booking__details}>
       <div className={styles.bookingInfo__details}>
@@ -12,19 +22,19 @@ export const BookingInfo = () => {
 
         <div className={styles.booking__details_info}>
           <p>
-            <span>ФИО -</span> Алексей Алексей Алексей
+            <span>ФИО -</span> {bookingFullName}
           </p>
           <p>
-            <span>Email -</span> thebizi15@gmail.com
+            <span>Email -</span> {bookingEmail}
           </p>
           <p>
-            <span>Номер телефона -</span> 8 (888) 888-88-88
+            <span>Номер телефона -</span> {bookingNumber}
           </p>
           <p>
-            <span>Взрослых -</span> 2
+            <span>Взрослых -</span> {bookingAdults}
           </p>
           <p>
-            <span>Детей -</span> 0
+            <span>Детей -</span> {bookingChildren}
           </p>
           <p>
             <span>Количество ночей -</span> {bookingDates.length}
@@ -39,15 +49,16 @@ export const BookingInfo = () => {
             <span>Сумма -</span> {bookingPrice} руб
           </p>
           <p>
-            <span>Ваш комментарий -</span> ыфваоыфдвлаофыжд алофыжвдаол жфыдвлао жфдывоа ждфывоа
-            ждлфыоважд фыожадыфо жадлфыов аждлфывоа ждыфвоа ыждфва олыфвжда офжыда оывфждо
+            <span>Ваш комментарий -</span> {bookingComment}
           </p>
 
           <ul>
-            <span>Все выбранные даты</span>
-            {bookingDates.map(date => (
-              <li key={date}>{date}</li>
-            ))}
+            <p>Все выбранные даты</p>
+            {bookingDates.length > 0 ? (
+              bookingDates.map(date => <li key={date}>{date}</li>)
+            ) : (
+              <li>Нет выбранных дат</li>
+            )}
           </ul>
         </div>
       </div>

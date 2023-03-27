@@ -5,15 +5,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import "moment/locale/ru";
 
 import { addDays, subDays } from "date-fns";
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 
 import DatePicker from "react-datepicker";
+import { ErrorMessage } from "@hookform/error-message";
+import InputMask from "react-input-mask";
 import { MyApartments } from "@/types/type";
 import { calculateSum } from "@/helpers/functions/calculateSum";
 import moment from "moment";
 import { reservationDays } from "../../../helpers/functions/reservationDays";
 import ru from "date-fns/locale/ru";
-import { start } from "repl";
 import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import useStore from "@/store/useStore";
@@ -26,6 +27,12 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
   const setBookingPrice = useStore(state => state.setBookingPrice);
   const setBookingDates = useStore(state => state.setBookingDates);
   const setBookingStartEnd = useStore(state => state.setBookingStartEnd);
+  const setBookingFullName = useStore(state => state.setBookingFullName);
+  const setBookingEmail = useStore(state => state.setBookingEmail);
+  const setBookingNumber = useStore(state => state.setBookingNumber);
+  const setBookingAdults = useStore(state => state.setBookingAdults);
+  const setBookingChildren = useStore(state => state.setBookingChildren);
+  const setBookingComment = useStore(state => state.setBookingComment);
 
   const {
     register,
@@ -33,7 +40,7 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data: any) => console.log(data);
-  console.log(errors);
+  // console.log(errors);
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
@@ -75,8 +82,6 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
     "Apr 15 2023",
   ].map(x => new Date(x));
 
-  // const formattedDate = moment(startDate).locale("ru").format("DD MMMM YYYY");
-
   useEffect(() => {
     if (endDate !== null) {
       const days = reservationDays(startDate, endDate, excludedDates);
@@ -90,8 +95,8 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
       setBookingPrice(sum);
       setBookingDates(formattedDays);
       setBookingStartEnd({
-        start: moment(startDate).locale("ru").format("D MMMM YYYY"),
-        end: moment(endDate).locale("ru").format("D MMMM YYYY"),
+        start: moment(startDate).locale("ru").format("DD MMMM YYYY"),
+        end: moment(endDate).locale("ru").format("DD MMMM YYYY"),
       });
     }
   }, [endDate]);
@@ -119,28 +124,41 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
         <input
           type='text'
           placeholder='ФИО'
-          {...register("Full name", { required: true, min: 2, maxLength: 90 })}
+          {...register("fullName", {
+            required: "ФИО не заполнено",
+            minLength: { value: 2, message: "Минимум 2 символа" },
+          })}
+          onChange={e => setBookingFullName(e.target.value)}
         />
+        <ErrorMessage errors={errors} name='fullName' />
         <input
           type='text'
           placeholder='Email'
           {...register("Email", {
             required: true,
-            min: 2,
-            pattern: /^\S+@\S+$/i,
+            minLength: { value: 5, message: "Минимум 5 символов" },
+            pattern: { value: /^\S+@\S+$/i, message: "Пример ivanov@mail.ru" },
           })}
+          onChange={e => setBookingEmail(e.target.value)}
         />
-        <input
+        <ErrorMessage errors={errors} name='Email' />
+
+        <InputMask
+          id='phone'
           type='tel'
-          placeholder='Номер телефона'
-          {...register("Mobile number", {
-            required: true,
-            min: 2,
-            maxLength: 12,
+          mask='+7 (999) 999-99-99'
+          {...register("mobileNumber", {
+            required: "Введите номер телефона",
+            minLength: { value: 8, message: "Минимум 8 символов" },
+            maxLength: { value: 18, message: "Максимум 18 символов" },
           })}
+          placeholder='+7 (___) ___-__-__'
+          onChange={(e) => setBookingNumber(e.target.value)}
         />
 
-        <select {...register("Adults")}>
+        <ErrorMessage errors={errors} name='mobileNumber' />
+
+        <select {...register("Adults")} onChange={e => setBookingAdults(e.target.value)}>
           <option defaultValue='Взрослых' disabled>
             Взрослых
           </option>
@@ -154,7 +172,7 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
           <option value='7'>7</option>
           <option value='8'>8</option>
         </select>
-        <select {...register("Children")}>
+        <select {...register("Children")} onChange={e => setBookingChildren(e.target.value)}>
           <option defaultValue='Взрослых' disabled>
             Детей
           </option>
@@ -164,19 +182,19 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
           <option value='3'>3</option>
           <option value='4'>4</option>
         </select>
-
         <input
           type='text'
           placeholder='Комментарий'
           {...register("Comment", { min: 0, max: 320 })}
+          onChange={e => setBookingComment(e.target.value)}
         />
-
         <DatePicker
           selected={startDate}
           onChange={(date: Date) => setStartDate(date)}
           locale={ru}
           dateFormat='d MMMM, yyyy'
           customInput={<StartCustomDate />}
+					
         />
         <DatePicker
           selected={endDate}
@@ -185,7 +203,6 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
           dateFormat='d MMMM, yyyy'
           customInput={<EndCustomDate />}
         />
-
         <button className={styles.customer__form_submit} type='submit'>
           Забронировать
         </button>
