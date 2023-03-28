@@ -29,4 +29,3 @@ export const serviceIcons = () => [
   { title: "Парковка", jsx: <Parking /> },
   { title: "Лифт", jsx: <Elevator /> },
 ];
-

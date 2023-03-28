@@ -1,0 +1,9 @@
+.location {
+  display: flex;
+  justify-content: space-between;
+
+  .location__text_body {
+    flex: 0 1 33%;
+    text-align: center;
+  }
+}

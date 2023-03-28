@@ -1,5 +1,5 @@
 .main_page {
-  .main_page__container {
+  .main_page__container_main {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -9,15 +9,21 @@
   .main_page__picture {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 105vh;
     top: -10%;
     left: 0;
     filter: brightness(50%);
+    pointer-events: none;
   }
 
   .main_page__search_panel {
     position: relative;
     z-index: 1;
+  }
+
+  .main_page__location {
+    margin: 0 auto;
+    width: 80%;
   }
 
   /*

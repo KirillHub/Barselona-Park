@@ -2,55 +2,54 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
 
-  .box {
-    margin-top: calc(7px + 7 * (100vw / 1920));
-    padding: calc(5px + 5 * (100vw / 1920)) calc(3px + 2 * (100vw / 1920));
-    width: 45%;
-    height: calc(50px + 55 * (100vw / 1920));
-    border-radius: calc(5px + 5 * (100vw / 1920));
-    background-color: rgb(21 21 21);
-    user-select: none;
+.box {
+  margin-top: calc(7px + 7 * (100vw / 1920));
+  padding: calc(5px + 5 * (100vw / 1920)) calc(3px + 2 * (100vw / 1920));
+  width: 45%;
+  height: calc(50px + 55 * (100vw / 1920));
+  border-radius: calc(5px + 5 * (100vw / 1920));
+  background-color: rgb(21 21 21);
+  user-select: none;
 
-    .box__title {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: calc(8px + 8 * (100vw / 1920));
+  .box__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(8px + 8 * (100vw / 1920));
+  }
+
+  .box__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(166 140 117);
+
+    .box__span {
+      font-size: calc(24px + 26 * (100vw / 1920));
     }
 
-    .box__content {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      color: rgb(166 140 117);
-
-      .box__span {
-        font-size: calc(24px + 26 * (100vw / 1920));
-      }
-
-      .box__date {
-        font-size: calc(10px + 12 * (100vw / 1920));
-      }
-
-      @media (width < 605px) {
-        .box__span {
-          font-size: calc(26px + 26 * (100vw / 1920));
-        }
-
-        .box__date {
-          font-size: calc(12px + 12 * (100vw / 1920));
-        }
-      }
+    .box__date {
+      font-size: calc(10px + 12 * (100vw / 1920));
     }
 
     @media (width < 605px) {
-      margin-top: calc(10px + 10 * (100vw / 1920));
-      height: calc(65px + 60 * (100vw / 1920));
-
-      .box__title {
-        font-size: calc(10px + 8 * (100vw / 1920));
+      .box__span {
+        font-size: calc(26px + 26 * (100vw / 1920));
       }
 
+      .box__date {
+        font-size: calc(12px + 12 * (100vw / 1920));
+      }
+    }
+  }
+
+  @media (width < 605px) {
+    margin-top: calc(10px + 10 * (100vw / 1920));
+    height: calc(65px + 60 * (100vw / 1920));
+
+    .box__title {
+      font-size: calc(10px + 8 * (100vw / 1920));
     }
   }
 }
