@@ -17,7 +17,8 @@ app.use(express.json({ limit: '1mb' }), cors());
 
 
 app.post('/Booking/addBookingApartment', BookingController.addBookingApartment)
-
+app.patch('/Booking/BookApartment/:apartmentName', BookingController.patchBooking)
+app.get('/Booking/GetExcludedDates/:apartmentName', BookingController.getExcludedDates)
 
 app.get(`/GetSimilar/:apartmentName/:option`, ApartmentController.getSimilar);
 

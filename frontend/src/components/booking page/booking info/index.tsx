@@ -13,8 +13,6 @@ export const BookingInfo = () => {
   const bookingComment = useStore(state => state.bookingComment);
 
 	
-
-
   return (
     <div className={styles.booking__details}>
       <div className={styles.bookingInfo__details}>

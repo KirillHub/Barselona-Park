@@ -1,6 +1,11 @@
 "use client";
 
+import "swiper/css";
+import "swiper/css/navigation";
+
+import { A11y, Navigation } from "swiper";
 import { Bed, Blueprint, Rooms, Stairs } from "@/svg";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
 import { MyApartments } from "@/types/type";
@@ -51,21 +56,32 @@ export const BookingApartment = ({ apartment }: MyProps) => {
     setReset(id);
   };
 
-
   return (
     <div className={styles.booking__apartment}>
       <h3>Апартамент {apartment.apartmentName}</h3>
 
       <div className={styles.booking__content}>
-        <div className={styles.booking__mainImage}>
-          <Image
-            fill
-            priority
-            src={apartment.images[0].image}
-            alt='1'
-            className={styles.booking__mainImage_img}
-          />
-        </div>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={0}
+          navigation
+          modules={[Navigation, A11y]}
+          className={styles.booking__mainImage}
+        >
+          {apartment?.images?.map((image: any, index: number) => (
+            <SwiperSlide key={image.id}>
+              <Image
+                src={image.image}
+                fill
+                sizes='790px'
+                priority={index < 1 ? true : false}
+                quality={100}
+                alt={`test`}
+                className={styles.booking__mainImage_img}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         <div className={styles.booking__info}>
           <div className={styles.booking__price}>

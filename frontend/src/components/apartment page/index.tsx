@@ -57,7 +57,7 @@ export default function Apart() {
   const displayedPictures = widthValue! >= 759 ? 2 : 1;
 
   useEffect(() => {
-    // handleClick();
+    handleClick();
   }, [apartment?.apartmentName]);
 
   if (apartment === undefined) return <div>Загрузка</div>;
