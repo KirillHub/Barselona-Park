@@ -4,8 +4,8 @@ const nextConfig = {
     appDir: true,
   },
   env: {
-	MAP_KEY: 'AIzaSyDeYEbcQyjNLtFq0auowXVqTR_KQ21paBM'
-  }
-}
+    MAP_KEY: "AIzaSyDeYEbcQyjNLtFq0auowXVqTR_KQ21paBM",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

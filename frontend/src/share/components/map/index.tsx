@@ -25,6 +25,8 @@ const Map = () => {
     zoom: 14,
   };
 
+  console.log(process.env.MAP_KEY);
+
   return (
     <div style={{ height: "40vh", width: "60%" }}>
       <GoogleMapReact
