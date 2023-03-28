@@ -22,7 +22,8 @@ export interface BookingStore {
 
   setBookingComment: (comment: string) => void;
 }
-//ЗДАРОВА Я ТУТ ПРИТАИЛСЯ
+
+
 export const createBookingSlice: StateCreator<BookingStore> = (set, get) => ({
   bookingPrice: 0,
   bookingDates: [],

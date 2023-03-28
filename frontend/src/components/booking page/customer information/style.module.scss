@@ -7,6 +7,22 @@
 		margin-bottom: 2vh;
 	}
 
+	.customer__error {
+		position: fixed;
+		margin: 4vh 8vw;
+		padding: calc(5px + 5 * (100vw / 1920));
+		top: 100px;
+		right: 0;
+		border-radius: calc(5px + 5 * (100vw / 1920));
+		font-size: 20px;
+		box-shadow: rgb(255 254 254) 0 0 2px;
+		color: rgb(255 255 255);
+		background-color: rgb(32 32 32);
+		animation: gradient linear 1s infinite alternate;
+		z-index: 10;
+	}
+
+
 	.customer__form {
 		display: flex;
 		flex-wrap: wrap;
@@ -14,6 +30,7 @@
 		border-radius: calc(5px + 5 * (100vw / 1920));
 		box-shadow: rgb(255 254 254) 0 0 2px;
 		background-color: rgb(32 32 32);
+
 
 
 		input,
@@ -45,5 +62,15 @@
 		// .customer__form_submit {
 		//   width: 300px;
 		// }
+	}
+
+	@keyframes gradient {
+		0% {
+			color: #f00; /* Начальная позиция фона */
+		}
+
+		100% {
+			color: rgb(255 255 255); /* Конечная позиция фона */
+		}
 	}
 }

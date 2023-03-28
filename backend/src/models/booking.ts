@@ -35,7 +35,7 @@ const BookingSchema = new mongoose.Schema(
       dates: {
         type: Array,
         of: String,
-      },
+			},
 
       numberOfPeople: {
         type: Number,

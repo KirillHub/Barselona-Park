@@ -11,7 +11,7 @@ export const reservationDays = (start: Date, end: Date, excluded?: Date[]) => {
 
     const diffInTime = date2.getTime() - date1.getTime();
 
-    const diffInDays = Math.round(diffInTime / oneDay);
+    const diffInDays = Math.ceil(diffInTime / oneDay);
 
     return diffInDays;
   };

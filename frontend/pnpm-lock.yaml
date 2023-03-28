@@ -6,6 +6,7 @@ specifiers:
   '@types/react': 18.0.28
   '@types/react-datepicker': ^4.10.0
   '@types/react-dom': 18.0.11
+  '@types/react-google-recaptcha': ^2.1.5
   '@types/react-input-mask': ^3.0.2
   '@types/react-slick': ^0.23.10
   '@typescript-eslint/eslint-plugin': ^5.54.1
@@ -28,6 +29,7 @@ specifiers:
   react: 18.2.0
   react-datepicker: ^4.10.0
   react-dom: 18.2.0
+  react-google-recaptcha: ^2.1.0
   react-hook-form: ^7.43.5
   react-input-mask: ^2.0.4
   sass: ^1.58.3
@@ -53,6 +55,7 @@ dependencies:
   react: 18.2.0
   react-datepicker: 4.10.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
+  react-google-recaptcha: 2.1.0_react@18.2.0
   react-hook-form: 7.43.8_react@18.2.0
   react-input-mask: 2.0.4_biqbaboplfbrettd7655fr4n2y
   sass: 1.60.0
@@ -66,6 +69,7 @@ devDependencies:
   '@types/react': 18.0.28
   '@types/react-datepicker': 4.10.0_biqbaboplfbrettd7655fr4n2y
   '@types/react-dom': 18.0.11
+  '@types/react-google-recaptcha': 2.1.5
   '@types/react-input-mask': 3.0.2
   '@types/react-slick': 0.23.10
   '@typescript-eslint/eslint-plugin': 5.56.0_uuwxlgfazk5of63roshnvkjqdq
@@ -413,6 +417,12 @@ packages:
 
   /@types/react-dom/18.0.11:
     resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
+    dependencies:
+      '@types/react': 18.0.28
+    dev: true
+
+  /@types/react-google-recaptcha/2.1.5:
+    resolution: {integrity: sha512-iWTjmVttlNgp0teyh7eBXqNOQzVq2RWNiFROWjraOptRnb1OcHJehQnji0sjqIRAk9K0z8stjyhU+OLpPb0N6w==}
     dependencies:
       '@types/react': 18.0.28
     dev: true
@@ -1998,6 +2008,12 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /hoist-non-react-statics/3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
+    dev: false
+
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: true
@@ -3021,6 +3037,16 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
 
+  /react-async-script/1.2.0_react@18.2.0:
+    resolution: {integrity: sha512-bCpkbm9JiAuMGhkqoAiC0lLkb40DJ0HOEJIku+9JDjxX3Rcs+ztEOG13wbrOskt3n2DTrjshhaQ/iay+SnGg5Q==}
+    peerDependencies:
+      react: '>=16.4.1'
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
+
   /react-datepicker/4.10.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-6IfBCZyWj54ZZGLmEZJ9c4Yph0s9MVfEGDC2evOvf9AmVz+RRcfP2Czqad88Ff9wREbcbqa4dk7IFYeXF1d3Ag==}
     peerDependencies:
@@ -3048,6 +3074,16 @@ packages:
 
   /react-fast-compare/3.2.1:
     resolution: {integrity: sha512-xTYf9zFim2pEif/Fw16dBiXpe0hoy5PxcD8+OwBnTtNLfIm3g6WxhKNurY+6OmdH1u6Ta/W/Vl6vjbYP1MFnDg==}
+
+  /react-google-recaptcha/2.1.0_react@18.2.0:
+    resolution: {integrity: sha512-K9jr7e0CWFigi8KxC3WPvNqZZ47df2RrMAta6KmRoE4RUi7Ys6NmNjytpXpg4HI/svmQJLKR+PncEPaNJ98DqQ==}
+    peerDependencies:
+      react: '>=16.4.1'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-async-script: 1.2.0_react@18.2.0
+    dev: false
 
   /react-hook-form/7.43.8_react@18.2.0:
     resolution: {integrity: sha512-BQm+Ge5KjTk1EchDBRhdP8Pkb7MArO2jFF+UWYr3rtvh6197khi22uloLqlWeuY02ItlCzPunPsFt1/q9wQKnw==}
