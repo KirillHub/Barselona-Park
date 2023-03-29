@@ -1,5 +1,7 @@
 import { Kettle } from "@/svg";
 import GoogleMapReact from "google-map-react";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { useState } from "react";
 import styles from "./style.module.scss";
 
 const LocationSVG = ({ text }: any) => <div style={{ color: "red" }}>{text}</div>;

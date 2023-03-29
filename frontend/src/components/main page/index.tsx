@@ -15,9 +15,15 @@ import Service from "../../share/components/service icons";
 import ServiceIcons from "../../share/components/service icons";
 import BookingPage from "../booking page";
 import ApartamentsSlider from "@/share/components/apartaments slider";
+import DiscoverLocation from "./discover location";
+import { useSpring, config } from "react-spring";
+import { useInView } from "react-intersection-observer";
+import Reviews from "../reviews page";
 
 export const MainPicture = () => {
   const services = serviceIcons();
+
+
 
   // в дальнейшем можно такого рода конфиги выносить в отдельные файлы
   const bgConfig = {
@@ -45,20 +51,26 @@ export const MainPicture = () => {
         </div>
       </div>
 
-      <div className={styles.main_page__location}>
-        <Location />
+      <div className={styles.main_page__select_category}>
+        <SelectCategory />
       </div>
 
       <div className={styles.main_page__service_icons}>
         <ServiceIcons />
       </div>
 
-      <div className={styles.main_page__select_category}>
-        <SelectCategory />
-      </div>
-
       <div>
         <ApartamentsSlider />
+      </div>
+
+		<Reviews/>
+
+      <div className={styles.main_page__discover_location}>
+        <DiscoverLocation fhotoCount={4} fileName={fileName} fileExtension={fileExtension} />
+      </div>
+
+      <div className={styles.main_page__location}>
+        <Location />
       </div>
     </div>
   );

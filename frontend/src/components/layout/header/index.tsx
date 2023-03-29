@@ -31,13 +31,13 @@ export const Header = () => {
             <Link href={`/Category/Select-category`}>Категории</Link>
           </li>
           <li>
-            <Link href="/">Отзывы</Link>
+            <Link href="/Reviews">Отзывы</Link>
           </li>
           <li>
-            <Link href="/">Новости</Link>
+            <Link href="/News">Новости</Link>
           </li>
           <li>
-            <Link href="/">Контакты</Link>
+            <Link href="/Contacts">Контакты</Link>
           </li>
         </ul>
       </nav>

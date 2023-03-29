@@ -1,0 +1,61 @@
+	to anim blocks (not working)
+	
+	const [isIntersecting, setIsIntersecting] = useState(false);
+	const [isScrollingDown, setIsScrollingDown] = useState(true);
+	const [distanceBetweenBlocks, setDistanceBetweenBlocks] = useState(40);
+ 
+	const { ref, inView } = useInView({
+	  threshold: 0.5,
+	  rootMargin: '-50px',
+	});
+ 
+	const distanceSpring = useSpring<any>({
+	  to: {
+		 distance: isIntersecting ? 0 : distanceBetweenBlocks,
+	  },
+	  from: {
+		 distance: distanceBetweenBlocks,
+	  },
+	  config: config.gentle,
+	});
+ 
+	useEffect(() => {
+	  setIsIntersecting(inView);
+	}, [inView]);
+ 
+	useEffect(() => {
+		const handleScroll = () => {
+		  const currentPosition = window.pageYOffset;
+		  setIsScrollingDown(currentPosition > lastScrollPosition);
+		  lastScrollPosition = currentPosition;
+		};
+	 
+		let lastScrollPosition = 0;
+	 
+		window.addEventListener('scroll', handleScroll);
+	 
+		return () => {
+		  window.removeEventListener('scroll', handleScroll);
+		};
+	 }, []);
+ 
+	return (
+	  <div ref={ref} className="parent">
+		 <Block
+			style={{
+			  marginRight: `${distanceSpring.distance}vw`,
+			  transform: `translateX(${isScrollingDown ? '' : '-'}${
+				 distanceSpring.distance / 2
+			  }vw)`,
+			}}
+		 />
+		 <Block
+			style={{
+			  marginLeft: `${distanceSpring.distance}vw`,
+			  transform: `translateX(${isScrollingDown ? '-' : ''}${
+				 distanceSpring.distance / 2
+			  }vw)`,
+			}}
+		 />
+	  </div>
+	);

@@ -3,9 +3,13 @@
   justify-content: space-between;
 
   .location__text_body {
+	 display: flex;
     flex: 0 1 33%;
+	 flex-direction: column;
+	 justify-content: space-between;
     text-align: center;
     color: rgb(166 140 117);
+
   }
 
   h2 {
