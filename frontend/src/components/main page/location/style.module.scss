@@ -5,5 +5,24 @@
   .location__text_body {
     flex: 0 1 33%;
     text-align: center;
+    color: rgb(166 140 117);
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  .location__social {
+    margin-top: calc(20px + 20 * (100vw / 1920));
+
+    p {
+      margin-bottom: calc(5px + 5 * (100vw / 1920));
+    }
+
+    .location__social_icon {
+      margin: 0 calc(5px + 5 * (100vw / 1920)) 0 0;
+      width: calc(15px + 20 * (100vw / 1920));
+      height: calc(15px + 20 * (100vw / 1920));
+    }
   }
 }
