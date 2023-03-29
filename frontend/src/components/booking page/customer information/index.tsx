@@ -60,6 +60,8 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
   const setBookingChildren = useStore(state => state.setBookingChildren);
   const setBookingComment = useStore(state => state.setBookingComment);
 
+  const bookingNumber = useStore(state => state.bookingNumber);
+
   const { excludedDates, isLoading, isError, mutate } = useSimilar(apartment.apartmentName);
 
   function getFirstAvailableDay() {
@@ -76,24 +78,26 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
 
     return null;
   }
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const [checkErrors, setCheckErrors] = useState(errors);
 
   const handleCaptchaVerify = () => {
     setIsCaptchaVerified(true);
   };
 
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
   const onSubmit = async (data: any) => {
-    if (endDate !== null && isCaptchaVerified && startDate !== null) {
+    if (endDate !== null && startDate !== null) {
       const days = reservationDays(startDate, endDate, excludedDates);
       const sum = calculateSum(days, {
         summerPrice: apartment.summerPrice,
@@ -121,12 +125,19 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
       currentDate.setDate(currentDay + 1);
       setStartDate(currentDate);
       setEndDate(null);
-      handleClick(booking);
-      await mutate();
-    }
-  };
 
-  console.log(startDate);
+
+      handleClick(booking);
+      reset();
+      setBookingNumber("+7 (___) ___-__-__");
+
+      await mutate();
+    } else if (isCaptchaVerified === false) {
+      setCheckErrors(Object.assign(errors, { captcha: 0 }));
+    }
+
+    setIsCaptchaVerified(false);
+  };
 
   const handleClick = async (booking: any) => {
     await axios
@@ -150,6 +161,7 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
       type='text'
       value={value!?.length > 0 ? `C ${value}` : "Выберите дату заезда"}
       readOnly
+      style={{ height: "100%" }}
     />
   ));
 
@@ -158,6 +170,7 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
       type='text'
       value={value!?.length > 0 ? `По ${value}` : "Выберите дату выезда"}
       readOnly
+      style={{ height: "100%" }}
     />
   ));
 
@@ -185,10 +198,17 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
 
   useEffect(() => {
     if (isLoading === false) {
-      console.log(2);
       setStartDate(getFirstAvailableDay());
     }
   }, [isLoading]);
+
+  useEffect(() => {
+    if (Object.keys(checkErrors).length === 0) {
+      setCheckErrors(errors);
+    } else {
+      setCheckErrors(prev => Object.assign(prev, errors));
+    }
+  }, [errors]);
 
   return (
     <div className={styles.customer}>
@@ -214,95 +234,97 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.customer__form}>
-        <input
-          type='text'
-          placeholder='ФИО'
-          value='Мельникова Ксения Витальевна'
-          {...register("fullName", {
-            required: "ФИО не заполнено",
-            minLength: { value: 2, message: "Минимум 2 символа" },
-          })}
-          onChange={e => setBookingFullName(e.target.value)}
-        />
+        <div className={styles.customer__form_content}>
+          <input
+            type='text'
+            placeholder='ФИО'
+            value='Михаил Сердюков Анатольевич'
+            {...register("fullName", {
+              required: "ФИО не заполнено",
+              minLength: { value: 2, message: "Минимум 2 символа" },
+            })}
+            onChange={e => setBookingFullName(e.target.value)}
+          />
 
-        <input
-          type='text'
-          placeholder='Email'
-          value='thebizi15@gmail.com'
-          {...register("email", {
-            required: "Email не заполнен",
-            minLength: { value: 5, message: "Минимум 5 символов" },
-            pattern: { value: /^\S+@\S+$/i, message: "Вот пример почты ivanov@mail.ru" },
-          })}
-          onChange={e => setBookingEmail(e.target.value)}
-        />
+          <input
+            type='text'
+            placeholder='Email'
+            value='thebizi15@gmail.com'
+            {...register("email", {
+              required: "Email не заполнен",
+              minLength: { value: 5, message: "Минимум 5 символов" },
+              pattern: { value: /^\S+@\S+$/i, message: "Вот пример почты ivanov@mail.ru" },
+            })}
+            onChange={e => setBookingEmail(e.target.value)}
+          />
 
-        <InputMask
-          id='phone'
-          type='tel'
-          value='+7 (922) 132-11-22'
-          mask='+7 (999) 999-99-99'
-          {...register("phoneNumber", {
-            required: "Введите номер телефона",
-            minLength: { value: 8, message: "Минимум 8 символов" },
-            maxLength: { value: 18, message: "Максимум 18 символов" },
-          })}
-          placeholder='+7 (___) ___-__-__'
-          onChange={e => setBookingNumber(e.target.value)}
-        />
+          <InputMask
+            id='phone'
+            type='tel'
+            mask='+7 (999) 999-99-99'
+            value='+7 (999) 999-99-99'
+            {...register("phoneNumber", {
+              required: "Введите номер телефона",
+              minLength: { value: 8, message: "Минимум 8 символов" },
+              maxLength: { value: 18, message: "Максимум 18 символов" },
+            })}
+            placeholder='+7 (___) ___-__-__'
+            onChange={e => setBookingNumber(e.target.value)}
+          />
 
-        <select {...register("adults")} onChange={e => setBookingAdults(e.target.value)}>
-          <option defaultValue='Взрослых' disabled>
-            Взрослых
-          </option>
-          <option value='0'>0</option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-          <option value='5'>5</option>
-          <option value='6'>6</option>
-          <option value='7'>7</option>
-          <option value='8'>8</option>
-        </select>
+          <select {...register("adults")} onChange={e => setBookingAdults(e.target.value)}>
+            <option defaultValue='Взрослых' disabled>
+              Взрослых
+            </option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+            <option value='7'>7</option>
+            <option value='8'>8</option>
+          </select>
 
-        <select {...register("children")} onChange={e => setBookingChildren(e.target.value)}>
-          <option defaultValue='Взрослых' disabled>
-            Детей
-          </option>
-          <option value='0'>0</option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-        </select>
+          <select {...register("children")} onChange={e => setBookingChildren(e.target.value)}>
+            <option defaultValue='Взрослых' disabled>
+              Детей
+            </option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+          </select>
 
-        <input
-          type='text'
-          placeholder='Комментарий'
-          maxLength={300}
-          value='разработке стандартных подходов. Принимая во внимание показатели успешности, повышение уровня гражданского сознания, в своём классическом представлении, допускает внедрение соответствующих условий активизации. А также сделанные на базе интернет-аналитики выводы объединены в целые кластеры себе'
-          {...register("comment")}
-          onChange={e => setBookingComment(e.target.value)}
-        />
+          <input
+            type='text'
+            placeholder='Комментарий'
+            maxLength={300}
+						value="Комментарий оставил тут"
+            {...register("comment")}
+            onChange={e => setBookingComment(e.target.value)}
+          />
 
-        <DatePicker
-          selected={startDate}
-          onChange={(date: Date) => setStartDate(date)}
-          locale={ru}
-          dateFormat='d MMMM, yyyy'
-          customInput={<StartCustomDate />}
-        />
+          <DatePicker
+            selected={startDate}
+            onChange={(date: Date) => setStartDate(date)}
+            locale={ru}
+            dateFormat='d MMMM, yyyy'
+            customInput={<StartCustomDate />}
+          />
 
-        <DatePicker
-          selected={endDate}
-          onChange={(date: Date) => setStartDate(date)}
-          locale={ru}
-          dateFormat='d MMMM, yyyy'
-          customInput={<EndCustomDate />}
-        />
+          <DatePicker
+            selected={endDate}
+            onChange={(date: Date) => setStartDate(date)}
+            locale={ru}
+            dateFormat='d MMMM, yyyy'
+            customInput={<EndCustomDate />}
+          />
+        </div>
 
-        {Object.keys(errors).length > 0 ? (
+        {Object.keys(Object.assign(checkErrors)).length > 0 ? (
           <div className={styles.customer__error}>
             <ErrorMessage
               errors={errors}
@@ -319,15 +341,19 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
               name='mobileNumber'
               as={<p className={styles.customer__error_text} />}
             />
+            {isCaptchaVerified ? "" : "Пройдите капчу"}
           </div>
         ) : (
           ""
         )}
 
-        <Captcha onVerify={handleCaptchaVerify} />
-        <button className={styles.customer__form_submit} type='submit'>
-          Забронировать
-        </button>
+        <div className={styles.customer__form_submit}>
+          <div>
+            <Captcha onVerify={handleCaptchaVerify} />
+          </div>
+
+          <button type='submit'>Забронировать</button>
+        </div>
       </form>
     </div>
   );

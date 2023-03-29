@@ -1,29 +1,28 @@
+import { useEffect, useRef, useState } from "react";
+
 import ReCAPTCHA from "react-google-recaptcha";
-import { useState } from "react";
 
 type CaptchaProps = {
   onVerify: () => void;
-}
+};
 
-const Captcha = ({onVerify}: CaptchaProps) => {
+const Captcha = ({ onVerify }: CaptchaProps) => {
   const [isVerified, setIsVerified] = useState(false);
 
-	const handleVerify = () => {
+	// console.log(isVerified)
+
+  const handleVerify = () => {
     onVerify();
   };
 
-
   return (
-    <div>
-      <ReCAPTCHA
-        sitekey='6Lcb-TYlAAAAAPZXgFRgVcuah4PPPIfwsFiwl3G_'
-        onChange={handleVerify}
-        theme='dark'
-				
-        hl='ru'
-      />
-      {isVerified && <p>Капча пройдена</p>}
-    </div>
+    <ReCAPTCHA
+      sitekey='6Lcb-TYlAAAAAPZXgFRgVcuah4PPPIfwsFiwl3G_'
+      onChange={handleVerify}
+      theme='dark'
+      hl='ru'
+      style={{ transform: "scale(0.9)" }}
+    />
   );
 };
 

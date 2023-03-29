@@ -12,8 +12,9 @@
 		margin: 4vh 8vw;
 		padding: calc(5px + 5 * (100vw / 1920));
 		top: 100px;
-		right: 0;
+		right: 20px;
 		border-radius: calc(5px + 5 * (100vw / 1920));
+		font-weight: 700;
 		font-size: 20px;
 		box-shadow: rgb(255 254 254) 0 0 2px;
 		color: rgb(255 255 255);
@@ -24,13 +25,15 @@
 
 
 	.customer__form {
-		display: flex;
-		flex-wrap: wrap;
 		padding: calc(5px + 5 * (100vw / 1920));
 		border-radius: calc(5px + 5 * (100vw / 1920));
 		box-shadow: rgb(255 254 254) 0 0 2px;
 		background-color: rgb(32 32 32);
 
+		.customer__form_content {
+			display: flex;
+			flex-wrap: wrap;
+		}
 
 
 		input,
@@ -39,6 +42,7 @@
 			flex: 1 1 calc(20% - 10px);
 			margin: 5px;
 			padding: calc(5px + 5 * (100vw / 1920));
+			height: auto;
 			border-radius: calc(5px + 5 * (100vw / 1920));
 			font-size: calc(8px + 8 * (100vw / 1920));
 			color: #fff;
@@ -59,18 +63,27 @@
 			}
 		}
 
-		// .customer__form_submit {
-		//   width: 300px;
-		// }
+		.customer__form_submit {
+			display: flex;
+
+			div {
+				width: 300px;
+				height: 75px;
+			}
+		}
 	}
 
 	@keyframes gradient {
 		0% {
-			color: #f00; /* Начальная позиция фона */
+			color: #f00;
+
+			/* Начальная позиция фона */
 		}
 
 		100% {
-			color: rgb(255 255 255); /* Конечная позиция фона */
+			color: rgb(255 255 255);
+
+			/* Конечная позиция фона */
 		}
 	}
 }
