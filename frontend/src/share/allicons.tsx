@@ -18,4 +18,4 @@ export const AllIcons = () => {
   const icons = optionalIcons.concat(allServiceIcons);
 
   return icons;
-};
+}
