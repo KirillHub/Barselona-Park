@@ -1,5 +1,6 @@
 import { Kettle } from "@/svg";
 import GoogleMapReact from "google-map-react";
+import styles from "./style.module.scss";
 
 const LocationSVG = ({ text }: any) => <div style={{ color: "red" }}>{text}</div>;
 
@@ -22,13 +23,11 @@ const Map = () => {
       lat: 43.575632,
       lng: 39.730034,
     },
-    zoom: 14,
+    zoom: 15,
   };
 
-  console.log(process.env.MAP_KEY);
-
   return (
-    <div style={{ height: "40vh", width: "60%" }}>
+    <div className={styles.location}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: String(process.env.MAP_KEY) }}
         defaultCenter={defaultMapProps.center}

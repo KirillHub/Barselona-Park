@@ -4,29 +4,51 @@
     width: 100%;
     height: 100vh;
     top: 0;
-  }
 
-  .main_page__picture {
-    position: absolute;
-    width: 100%;
-    height: 105vh;
-    top: -10%;
-    left: 0;
-    filter: brightness(50%);
-    pointer-events: none;
-  }
+    .main_page__picture {
+      position: absolute;
+      width: 100%;
+      height: 105vh;
+      top: -10%;
+      left: 0;
+      filter: brightness(50%);
+      pointer-events: none;
+    }
 
-  .main_page__search_panel {
-    position: relative;
-    z-index: 1;
+    .main_page__search_panel {
+      position: relative;
+      z-index: 1;
+    }
   }
 
   .main_page__location {
-    margin: 0 auto;
-    width: 80%;
+    margin: calc(15px + 0.78125vw) calc(0px + 4.1666666667vw);
+    padding: calc(18px + 0.2604166667vw);
+    border-radius: calc(5px + 0.2604166667vw);
+    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 0.15625vw);
+    background-color: rgb(28 28 28);
   }
 
-  /*
+  .main_page__service_icons {
+    padding: 4% 0 1.5%;
+  }
+
+  .main_page__test_basket {
+    margin: calc(15px + 0.78125vw) calc(0px + 4.1666666667vw);
+    padding: calc(5px + 0.2604166667vw);
+    height: 20vh;
+    border-radius: calc(5px + 0.2604166667vw);
+    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 0.15625vw);
+    background-color: rgb(28 28 28);
+  }
+
+  .main_page__select_category {
+  }
+
+  
+}
+
+/*
   .main-page__barselona-park {
     position: relative;
     margin: 0;
@@ -60,47 +82,7 @@
     }
   }
 
-  .main-page-container-service {
-    padding: 0 8vw;
-    width: 100%;
-    height: 250px;
-    text-align: center;
-    background-color: #024e8f;
-
-    .main-page-container-service__icons {
-      display: flex;
-      flex-flow: row wrap;
-      align-content: space-between;
-      justify-content: space-between;
-
-      .main-page-container-service__icons-icon {
-        margin: 1vh 0;
-        width: calc(80px + 80 * (100vw / 1920));
-        text-align: center;
-        background-color: #028f2c;
-
-        div {
-          margin: 0 auto;
-          width: calc(20px + 20 * (100vw / 1920));
-          height: calc(20px + 20 * (100vw / 1920));
-
-          :hover {
-            // transform: scale(2);
-            z-index: 2;
-          }
-        }
-      }
-
-      .main-page-container-service__icons-icon:nth-child(3n) {
-        background: #c0c0c0;
-        page-break-after: always;
-      }
-    }
-
-    @media (width < 800px) {
-      padding: 0 4vw;
-    }
-  }
+  
 
   .main-page-container__blocks {
     position: relative;
@@ -215,4 +197,3 @@
     }
   }
 */
-}

@@ -4,13 +4,17 @@ import { Telegram, Whatsapp } from "../../svg";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import SelectCategory from "../select category/selectCategory";
+import SelectCategory from "../../share/components/select category/selectCategory";
 import { serviceIcons } from "@/share/serviceIcons";
 import { useEffect, useState } from "react";
-import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
+import { BackgroundImageSlider } from "@/share/components/backgroundImageSlider";
 import { SearhPanel } from "./search panel";
 import styles from "./style.module.scss";
 import Location from "./location";
+import Service from "../../share/components/service icons";
+import ServiceIcons from "../../share/components/service icons";
+import BookingPage from "../booking page";
+import ApartamentsSlider from "@/share/components/apartaments slider";
 
 export const MainPicture = () => {
   const services = serviceIcons();
@@ -44,28 +48,23 @@ export const MainPicture = () => {
       <div className={styles.main_page__location}>
         <Location />
       </div>
+
+      <div className={styles.main_page__service_icons}>
+        <ServiceIcons />
+      </div>
+
+      <div className={styles.main_page__select_category}>
+        <SelectCategory />
+      </div>
+
+      <div>
+        <ApartamentsSlider />
+      </div>
     </div>
   );
 };
+
 export default MainPicture;
-
-{
-  /* <div className='main-page-container-service'>
-          <h3>Услуги</h3>
-          <div className='main-page-container-service__icons'>
-            {services.map((icon, i) => (
-              <div className='main-page-container-service__icons-icon' key={i}>
-                <div>{icon.jsx}</div>
-                {icon.title}
-              </div>
-            ))}
-          </div>
-        </div> */
-}
-
-{
-  /* <SelectCategory /> */
-}
 
 {
   /* <div className='main-page-container-cleaning'>
