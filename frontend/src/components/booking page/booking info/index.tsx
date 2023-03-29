@@ -12,54 +12,57 @@ export const BookingInfo = () => {
   const bookingChildren = useStore(state => state.bookingChildren);
   const bookingComment = useStore(state => state.bookingComment);
 
-	
   return (
-    <div className={styles.booking__details}>
-      <div className={styles.bookingInfo__details}>
-        <h2>Детали бронирования</h2>
+    <>
+      <div className={styles.booking__details}>
+        <div className={styles.bookingInfo__details}>
+          <h2>Детали бронирования</h2>
 
-        <div className={styles.booking__details_info}>
-          <p>
-            <span>ФИО -</span> {bookingFullName}
-          </p>
-          <p>
-            <span>Email -</span> {bookingEmail}
-          </p>
-          <p>
-            <span>Номер телефона -</span> {bookingNumber}
-          </p>
-          <p>
-            <span>Взрослых -</span> {bookingAdults}
-          </p>
-          <p>
-            <span>Детей -</span> {bookingChildren}
-          </p>
-          <p>
-            <span>Количество ночей -</span> {bookingDates.length}
-          </p>
-          <p>
-            <span>Дата заезда -</span> {startEndDates.start}
-          </p>
-          <p>
-            <span>Дата выезда -</span> {startEndDates.end}
-          </p>
-          <p>
-            <span>Сумма -</span> {bookingPrice} руб
-          </p>
-          <p>
-            <span>Ваш комментарий -</span> {bookingComment}
-          </p>
+          <div className={styles.booking__details_info}>
+            <p>
+              <span>ФИО -</span> {bookingFullName}
+            </p>
+            <p>
+              <span>Email -</span> {bookingEmail}
+            </p>
+            <p>
+              <span>Номер телефона -</span> {bookingNumber}
+            </p>
+            <p>
+              <span>Взрослых -</span> {bookingAdults}
+            </p>
+            <p>
+              <span>Детей -</span> {bookingChildren}
+            </p>
+            <p>
+              <span>Количество ночей -</span> {bookingDates.length}
+            </p>
+            <p>
+              <span>Дата заезда -</span> {startEndDates.start}
+            </p>
+            <p>
+              <span>Дата выезда -</span> {startEndDates.end}
+            </p>
+            <p>
+              <span>Сумма -</span> {bookingPrice} руб
+            </p>
+            <p>
+              <span>Ваш комментарий -</span> {bookingComment}
+            </p>
 
-          <ul>
-            <p>Все выбранные даты</p>
-            {bookingDates.length > 0 ? (
-              bookingDates.map(date => <li key={date}>{date}</li>)
-            ) : (
-              <li>Нет выбранных дат</li>
-            )}
-          </ul>
+            <ul>
+              <p>Все выбранные даты</p>
+              {bookingDates.length > 0 ? (
+                bookingDates.map(date => <li key={date}>{date}</li>)
+              ) : (
+                <li>Нет выбранных дат</li>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+
+      
+    </>
   );
 };

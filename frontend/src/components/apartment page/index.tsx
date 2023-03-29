@@ -31,6 +31,8 @@ export default function Apart() {
   const apartment = apartmentsData?.find(x => x.apartmentName + "" === apartmentId?.split("-")[1]);
   const service = serviceIcons();
 
+  const services = readyIcons(apartment!, service);
+
   const handleClick = async () => {
     const newData = {
       apartmentName: apartment?.apartmentName,
@@ -46,9 +48,6 @@ export default function Apart() {
         console.error(error.response.data.message); // добавленный код
       });
   };
-
-
-  const services = readyIcons(apartment!, service);
 
   const handleWidthChange = (value: number) => {
     setWidthValue(value);
@@ -103,7 +102,7 @@ export default function Apart() {
         </div>
       </div>
 
-      <ApartmentServices services={services!} /> 
+      <ApartmentServices services={services!} />
 
       <SimilarApartments onWidthChange={handleWidthChange} apartmentId={apartment.apartmentName} />
     </div>
