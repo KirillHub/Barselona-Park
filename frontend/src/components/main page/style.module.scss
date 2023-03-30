@@ -21,31 +21,30 @@
     }
   }
 
-  .main_page__location {
-    margin: calc(15px + 0.78125vw) calc(0px + 4.1666666667vw);
-    padding: calc(18px + 0.2604166667vw);
-    border-radius: calc(5px + 0.2604166667vw);
-    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 0.15625vw);
-    background-color: rgb(28 28 28);
-  }
-
   .main_page__service_icons {
-    padding: 4% 0 1.5%;
+   padding: calc(25px + (100vw / 1920)) 0;
   }
 
-  .main_page__test_basket {
-    margin: calc(15px + 0.78125vw) calc(0px + 4.1666666667vw);
-    padding: calc(5px + 0.2604166667vw);
-    height: 20vh;
-    border-radius: calc(5px + 0.2604166667vw);
-    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 0.15625vw);
-    background-color: rgb(28 28 28);
+  .main_page__discover_location {
+    margin: calc(65px + (100vw / 1920)) calc(0px + 4.1666666667vw);
+    padding: calc(15px + (100vw / 1920)) 0;
+
+    // calc(15px + 15 * (100vw / 1920));
+    //  border-radius: calc(5px + 0.2604166667vw);
+    //  box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 0.15625vw);
+    //  background-color: rgb(28 28 28);
   }
 
   .main_page__select_category {
   }
 
-  
+  .main_page__location {
+    margin: calc(95px + (100vw / 1920)) calc(0px + 4.1666666667vw);
+    padding: calc(18px + 0.2604166667vw);
+    border-radius: calc(5px + 0.2604166667vw);
+    box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 0.15625vw);
+    background-color: rgb(28 28 28);
+  }
 }
 
 /*

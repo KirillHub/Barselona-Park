@@ -10,15 +10,26 @@ import Image from "next/image";
 import Link from "next/link";
 import Location from "./location";
 import { SearhPanel } from "./search panel";
-import SelectCategory from "../select category";
+import SelectCategory from "../../share/components/select category";
 import Service from "../../share/components/service icons";
 import ServiceIcons from "../../share/components/service icons";
+<<<<<<< HEAD
 import { serviceIcons } from "@/share/serviceIcons";
 import styles from "./style.module.scss";
 import { useRouter } from "next/router";
+=======
+import BookingPage from "../booking page";
+import ApartamentsSlider from "@/share/components/apartaments slider";
+import DiscoverLocation from "./discover location";
+import { useSpring, config } from "react-spring";
+import { useInView } from "react-intersection-observer";
+import Reviews from "../reviews page";
+>>>>>>> f2a78685bf1fb5f143f5cbadcdd18316eeade408
 
 export const MainPicture = () => {
   const services = serviceIcons();
+
+
 
   // в дальнейшем можно такого рода конфиги выносить в отдельные файлы
   const bgConfig = {
@@ -46,20 +57,26 @@ export const MainPicture = () => {
         </div>
       </div>
 
-      <div className={styles.main_page__location}>
-        <Location />
+      <div className={styles.main_page__select_category}>
+        <SelectCategory />
       </div>
 
       <div className={styles.main_page__service_icons}>
         <ServiceIcons />
       </div>
 
-      <div className={styles.main_page__select_category}>
-        <SelectCategory />
-      </div>
-
       <div>
         <ApartamentsSlider />
+      </div>
+
+		<Reviews/>
+
+      <div className={styles.main_page__discover_location}>
+        <DiscoverLocation fhotoCount={4} fileName={fileName} fileExtension={fileExtension} />
+      </div>
+
+      <div className={styles.main_page__location}>
+        <Location />
       </div>
     </div>
   );

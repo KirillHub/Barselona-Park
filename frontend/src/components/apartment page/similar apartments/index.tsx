@@ -45,7 +45,6 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
   const { similarApartments, isLoading, isError } = useSimilar(apartmentId, similarOptions);
 
   const pathname = usePathname();
-  console.log(pathname);
 
   const resizeHandler = () => {
     const { clientHeight, clientWidth }: any = ref.current || {};
