@@ -5,7 +5,7 @@ import { config, useSpring } from "react-spring";
 import { useEffect, useState } from "react";
 
 import ApartamentsSlider from "@/share/components/apartaments slider";
-import { BackgroundImageSlider } from "../../share/components/BackgroundImageSlider";
+import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
 import BookingPage from "../booking page";
 import DiscoverLocation from "./discover location";
 import Image from "next/image";
@@ -13,13 +13,11 @@ import Link from "next/link";
 import Location from "./location";
 import Reviews from "../reviews page";
 import { SearhPanel } from "./search panel";
-import SelectCategory from "../../share/components/select category";
+import SelectCategory from "../../share/components/select category/selectCategory";
 import Service from "../../share/components/service icons";
 import ServiceIcons from "../../share/components/service icons";
 import { serviceIcons } from "@/share/serviceIcons";
 import styles from "./style.module.scss";
-import { useInView } from "react-intersection-observer";
-import { useRouter } from "next/router";
 
 export const MainPicture = () => {
   const services = serviceIcons();
@@ -60,16 +58,6 @@ export const MainPicture = () => {
 
       <div>
         <ApartamentsSlider />
-      </div>
-
-      <Reviews />
-
-      <div className={styles.main_page__discover_location}>
-        <DiscoverLocation fhotoCount={4} fileName={fileName} fileExtension={fileExtension} />
-      </div>
-
-      <div className={styles.main_page__location}>
-        <Location />
       </div>
     </div>
   );
