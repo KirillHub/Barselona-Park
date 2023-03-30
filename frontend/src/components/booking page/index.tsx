@@ -20,6 +20,7 @@ export default function BookingPage() {
       <div className={styles.booking__content}>
         <BookingApartment apartment={apartment!}  />
         <BookingInfo />
+				
       </div>
     </div>
   );

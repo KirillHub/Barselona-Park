@@ -1,41 +1,49 @@
 .booking__details {
-  width: 30%;
-  border-radius: calc(5px + 5 * (100vw / 1920));
-  box-shadow: rgb(255 254 254) 0 0 2px;
-  background-color: rgb(32 32 32);
+	width: 30%;
+	border-radius: calc(5px + 5 * (100vw / 1920));
+	box-shadow: rgb(255 254 254) 0 0 2px;
+	background-color: rgb(32 32 32);
 
-  h2 {
-    margin: 0;
-    padding: calc(5px + 5 * (100vw / 1920));
-    border-bottom: 1px solid #fff;
-  }
+	h2 {
+		margin: 0;
+		padding: calc(5px + 5 * (100vw / 1920));
+		border-bottom: 1px solid #fff;
+	}
 
-  .booking__details_info {
-    padding: calc(5px + 5 * (100vw / 1920));
+	.booking__details_info {
+		padding: calc(5px + 5 * (100vw / 1920));
 
-    p,
-    ul {
-      margin: 1vh;
-      padding: calc(5px + 5 * (100vw / 1920));
-      border-radius: calc(5px + 5 * (100vw / 1920));
-      background-color: rgb(21 21 21);
+		p,
+		ul {
+			margin: 1vh;
+			padding: calc(5px + 5 * (100vw / 1920));
+			border-radius: calc(5px + 5 * (100vw / 1920));
+			background-color: rgb(21 21 21);
 
-      span {
-        font-weight: 700;
-      }
-    }
+			span {
+				font-weight: 700;
+			}
+		}
 
-    ul {
-      column-count: 2;
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			max-height: 300px;
+			overflow-y: auto;
+			white-space: normal;
 
-      span {
-        font-weight: 700;
-      }
+			p {
+				margin: 0 0 .5vh;
+				padding: 0;
+				width: 100%;
+				font-weight: 700;
+			}
 
-      li {
-        margin-left: 1vw;
-        list-style-type: circle;
-      }
-    }
-  }
+			li {
+				margin-left: 1vw;
+				width: 45%;
+				list-style-type: circle;
+			}
+		}
+	}
 }

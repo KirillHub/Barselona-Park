@@ -64,7 +64,7 @@
 	.booking__description {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 2vh;
+		margin-bottom: 2vh;	padding-bottom: 2vh;border-bottom: 1px solid #fff;
 
 
 		.options__icons {
@@ -95,7 +95,7 @@
 		display: flex;
 		position: relative;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: space-around;
 
 		span {
 			position: absolute;

@@ -1,0 +1,82 @@
+.discover_location {
+  display: flex;
+  padding: calc(8px + 0.2604166667vw);
+
+  //   justify-content: space-between;
+  width: 100%;
+
+  .discover_location__fhoto_block {
+    display: grid;
+    flex: 0 0 57%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-right: calc(15px + 15 * (100vw / 1920));
+    width: 100vw;
+    height: auto;
+    gap: 15px;
+
+    .discover_location__grid_container {
+      position: relative;
+
+      .discover_location__fhoto {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .discover_location__info_block {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      margin: 0 0 30px;
+      text-align: left;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 7px;
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 1em;
+    }
+
+    span {
+      color: rgb(166 140 117);
+    }
+
+    .discover_location__descr_block {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+
+      // padding: 20px;
+
+      .discover_location__descr {
+        flex: 0 0 50%;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .btn_custom {
+    margin-top: 1.45em;
+    padding: 3% 5%;
+    width: 45%;
+    text-align: center;
+    background-color: rgb(68 55 55);
+  }
+
+  @media (width < 992px) {
+    flex-direction: column;
+
+    .discover_location__fhoto_block {
+      flex: 1 1 auto;
+      margin-bottom: calc(45px + 0.78125vw);
+      width: 100%;
+      height: 45vh;
+    }
+  }
+}

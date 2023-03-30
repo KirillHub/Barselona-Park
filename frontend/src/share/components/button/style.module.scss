@@ -1,0 +1,21 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(5px + 5 * (100vw / 1920)) calc(12px + 12 * (100vw / 1920));
+  place-items: center;
+  border-radius: calc(5px + 5 * (100vw / 1920));
+  text-transform: uppercase;
+  font-size: 0.85em;
+  background-color: rgb(21 21 21);
+  cursor: pointer;
+}
+
+.btn:hover {
+  text-decoration: underline;
+  background-color: rgb(75 71 71 / 32.6%);
+}
+
+.btn:active {
+  background-color: rgb(96 61 61 / 55.1%);
+}

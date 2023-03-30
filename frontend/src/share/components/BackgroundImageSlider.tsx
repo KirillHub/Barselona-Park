@@ -1,3 +1,4 @@
+import { BackgroundImageSliderInter } from "@/types/imageSlider";
 import { getImagesAndPaths } from "@/utils/getImagesAndPaths";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -7,19 +8,12 @@ type Img = {
   path: string;
 };
 
-type BackgroundImageSliderProps = {
-  fhotoCount: number;
-  fileName: string;
-  fileExtension: string;
-  slideSwitchingSpeed: number;
-};
-
 export const BackgroundImageSlider = ({
   fhotoCount,
   fileName,
   fileExtension,
   slideSwitchingSpeed,
-}: BackgroundImageSliderProps) => {
+}: BackgroundImageSliderInter) => {
   const images = getImagesAndPaths(fhotoCount, fileName, fileExtension);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -45,7 +39,7 @@ export const BackgroundImageSlider = ({
         priority
         fill
         quality={75}
-        style={{ objectFit: "cover", opacity: 0.45 }}
+        style={{ objectFit: "cover",  filter: "brightness(60%)"}}
         src={path}
         alt={`${name}`}
       />

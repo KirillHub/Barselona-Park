@@ -4,15 +4,26 @@ import { Telegram, Whatsapp } from "../../svg";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import SelectCategory from "../select category/selectCategory";
+import SelectCategory from "../../share/components/select category/selectCategory";
 import { serviceIcons } from "@/share/serviceIcons";
 import { useEffect, useState } from "react";
-import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
+import { BackgroundImageSlider } from "@/share/components/backgroundImageSlider";
 import { SearhPanel } from "./search panel";
 import styles from "./style.module.scss";
+import Location from "./location";
+import Service from "../../share/components/service icons";
+import ServiceIcons from "../../share/components/service icons";
+import BookingPage from "../booking page";
+import ApartamentsSlider from "@/share/components/apartaments slider";
+import DiscoverLocation from "./discover location";
+import { useSpring, config } from "react-spring";
+import { useInView } from "react-intersection-observer";
+import Reviews from "../reviews page";
 
 export const MainPicture = () => {
   const services = serviceIcons();
+
+
 
   // в дальнейшем можно такого рода конфиги выносить в отдельные файлы
   const bgConfig = {
@@ -25,7 +36,7 @@ export const MainPicture = () => {
 
   return (
     <div className={styles.main_page}>
-      <div className={styles.main_page__container}>
+      <div className={styles.main_page__container_main}>
         <div className={styles.main_page__picture}>
           <BackgroundImageSlider
             fhotoCount={fhotoCount}
@@ -38,22 +49,37 @@ export const MainPicture = () => {
         <div className={styles.main_page__search_panel}>
           <SearhPanel />
         </div>
+      </div>
 
-        {/* <div className='main-page-container-service'>
-          <h3>Услуги</h3>
-          <div className='main-page-container-service__icons'>
-            {services.map((icon, i) => (
-              <div className='main-page-container-service__icons-icon' key={i}>
-                <div>{icon.jsx}</div>
-                {icon.title}
-              </div>
-            ))}
-          </div>
-        </div> */}
+      <div className={styles.main_page__select_category}>
+        <SelectCategory />
+      </div>
 
-        {/* <SelectCategory /> */}
+      <div className={styles.main_page__service_icons}>
+        <ServiceIcons />
+      </div>
 
-        {/* <div className='main-page-container-cleaning'>
+      <div>
+        <ApartamentsSlider />
+      </div>
+
+		<Reviews/>
+
+      <div className={styles.main_page__discover_location}>
+        <DiscoverLocation fhotoCount={4} fileName={fileName} fileExtension={fileExtension} />
+      </div>
+
+      <div className={styles.main_page__location}>
+        <Location />
+      </div>
+    </div>
+  );
+};
+
+export default MainPicture;
+
+{
+  /* <div className='main-page-container-cleaning'>
           <h3>Повышенный комфорт и безопасность</h3>
 
           <br />
@@ -62,9 +88,11 @@ export const MainPicture = () => {
           <span>Постоянная чистота и дружелюбное общение</span>
           <br />
           <span>Cтремимся поддерживать высочайший уровень гостеприимства и доверия</span>
-        </div> */}
+        </div> */
+}
 
-        {/* <div className='main-page-container__blocks'>
+{
+  /* <div className='main-page-container__blocks'>
           <h2>Расположение</h2>
 
           <div className='main-page-container__blocks__location__info'>
@@ -133,9 +161,5 @@ export const MainPicture = () => {
               </div>
             </div>
           </div>
-        </div> */}
-      </div>
-    </div>
-  );
-};
-export default MainPicture;
+        </div> */
+}

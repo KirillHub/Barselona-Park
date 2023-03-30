@@ -31,6 +31,8 @@ export default function Apart() {
   const apartment = apartmentsData?.find(x => x.apartmentName + "" === apartmentId?.split("-")[1]);
   const service = serviceIcons();
 
+  const services = readyIcons(apartment!, service);
+
   const handleClick = async () => {
     const newData = {
       apartmentName: apartment?.apartmentName,
@@ -47,9 +49,6 @@ export default function Apart() {
       });
   };
 
-
-  const services = readyIcons(apartment!, service);
-
   const handleWidthChange = (value: number) => {
     setWidthValue(value);
   };
@@ -57,7 +56,7 @@ export default function Apart() {
   const displayedPictures = widthValue! >= 759 ? 2 : 1;
 
   useEffect(() => {
-    // handleClick();
+    handleClick();
   }, [apartment?.apartmentName]);
 
   if (apartment === undefined) return <div>Загрузка</div>;
@@ -103,7 +102,7 @@ export default function Apart() {
         </div>
       </div>
 
-      <ApartmentServices services={services!} /> 
+      <ApartmentServices services={services!} />
 
       <SimilarApartments onWidthChange={handleWidthChange} apartmentId={apartment.apartmentName} />
     </div>

@@ -5,6 +5,7 @@ import { LegacyRef, useEffect, useRef, useState } from "react";
 import { MyApartments } from "../../../types/type";
 import { SimilarOptions } from "./components/options";
 import { SimilarSlider } from "./components/similar slider";
+import { usePathname } from "next/navigation";
 import axios from "axios";
 import styles from "./style.module.scss";
 import useSWR from "swr";
@@ -43,6 +44,8 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
 
   const { similarApartments, isLoading, isError } = useSimilar(apartmentId, similarOptions);
 
+  const pathname = usePathname();
+
   const resizeHandler = () => {
     const { clientHeight, clientWidth }: any = ref.current || {};
     setSize({ clientHeight, clientWidth });
@@ -68,23 +71,27 @@ export const SimilarApartments = ({ apartmentId, onWidthChange }: MyProps) => {
 
   return (
     <div className={styles.similar} ref={ref as LegacyRef<HTMLDivElement>}>
-      <div className={styles.similar__title}>
-        <p>Вам также могут понравиться</p>
-        <span>
-          Апартаменты похожие по
-          {similarOptions === "price"
-            ? " цене"
-            : similarOptions === "services"
-            ? " услугам"
-            : similarOptions === "floor"
-            ? " этажу"
-            : " числу комнат"}
-        </span>
-      </div>
+      {pathname!?.length > 1 ? (
+        <div className={styles.similar__title}>
+          <p>Вам также могут понравиться</p>
+          <span>
+            Апартаменты похожие по
+            {similarOptions === "price"
+              ? " цене"
+              : similarOptions === "services"
+              ? " услугам"
+              : similarOptions === "floor"
+              ? " этажу"
+              : " числу комнат"}
+          </span>
+        </div>
+      ) : (
+        ""
+      )}
 
       <SimilarSlider apartments={similarApartments!} apartsInSlider={apartmentsInSimilar} />
 
-      <SimilarOptions />
+      {pathname!?.length > 1 ? <SimilarOptions /> : ""}
     </div>
   );
 };

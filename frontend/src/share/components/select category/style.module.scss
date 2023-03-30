@@ -1,7 +1,12 @@
 .selectCategory {
+  display: flex;
   position: relative;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
   margin: 3vh 8vw;
-  height: calc(100vh - 140px);
+
+  //   height: calc(100vh - 140px);
   text-align: center;
 
   a {
@@ -25,11 +30,11 @@
       z-index: 1;
     }
 
-    .selectCategory__title:hover~.selectCategory__image {
+    .selectCategory__title:hover ~ .selectCategory__image {
       filter: brightness(40%);
     }
 
-    .selectCategory__title:active~.selectCategory__image {
+    .selectCategory__title:active ~ .selectCategory__image {
       filter: brightness(20%);
     }
 
