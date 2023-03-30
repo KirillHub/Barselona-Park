@@ -20,6 +20,8 @@ app.post('/Booking/addBookingApartment', BookingController.addBookingApartment)
 app.patch('/Booking/BookApartment/:apartmentName', BookingController.patchBooking)
 app.get('/Booking/GetExcludedDates/:apartmentName', BookingController.getExcludedDates)
 
+app.get('/Booking/Confirm/:apartmentName/:reservationId', BookingController.confirmBooking);
+
 app.get(`/GetSimilar/:apartmentName/:option`, ApartmentController.getSimilar);
 
 app.get('/Category/:category/:sort/:service/:quantity', ApartmentController.getAllApartments);

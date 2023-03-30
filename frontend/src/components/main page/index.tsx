@@ -1,20 +1,21 @@
 "use client";
 
 import { Telegram, Whatsapp } from "../../svg";
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
+import ApartamentsSlider from "@/share/components/apartaments slider";
+import { BackgroundImageSlider } from "../../share/components/BackgroundImageSlider";
+import BookingPage from "../booking page";
 import Image from "next/image";
 import Link from "next/link";
-import SelectCategory from "../../share/components/select category/selectCategory";
-import { serviceIcons } from "@/share/serviceIcons";
-import { useEffect, useState } from "react";
-import { BackgroundImageSlider } from "@/share/components/backgroundImageSlider";
-import { SearhPanel } from "./search panel";
-import styles from "./style.module.scss";
 import Location from "./location";
+import { SearhPanel } from "./search panel";
+import SelectCategory from "../select category";
 import Service from "../../share/components/service icons";
 import ServiceIcons from "../../share/components/service icons";
-import BookingPage from "../booking page";
-import ApartamentsSlider from "@/share/components/apartaments slider";
+import { serviceIcons } from "@/share/serviceIcons";
+import styles from "./style.module.scss";
+import { useRouter } from "next/router";
 
 export const MainPicture = () => {
   const services = serviceIcons();

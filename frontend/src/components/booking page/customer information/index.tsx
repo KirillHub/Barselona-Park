@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "moment/locale/ru";
 
 import { addDays, subDays } from "date-fns";
+import axios, { AxiosError } from "axios";
 import { forwardRef, useEffect, useRef, useState } from "react";
 import useSWR, { useSWRConfig } from "swr";
 
@@ -13,7 +14,6 @@ import DatePicker from "react-datepicker";
 import { ErrorMessage } from "@hookform/error-message";
 import InputMask from "react-input-mask";
 import { MyApartments } from "@/types/type";
-import axios from "axios";
 import { calculateSum } from "@/helpers/functions/calculateSum";
 import moment from "moment";
 import { reservationDays } from "../../../helpers/functions/reservationDays";
@@ -95,7 +95,6 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
     setIsCaptchaVerified(true);
   };
 
-
   const onSubmit = async (data: any) => {
     if (endDate !== null && startDate !== null) {
       const days = reservationDays(startDate, endDate, excludedDates);
@@ -126,7 +125,6 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
       setStartDate(currentDate);
       setEndDate(null);
 
-
       handleClick(booking);
       reset();
       setBookingNumber("+7 (___) ___-__-__");
@@ -140,14 +138,19 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
   };
 
   const handleClick = async (booking: any) => {
-    await axios
-      .patch(`http://localhost:3500/Booking/BookApartment/${apartment.apartmentName}`, booking)
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error(error.response.data.message);
-      });
+    try {
+      const response = await axios.patch(
+        `http://localhost:3500/Booking/BookApartment/${apartment.apartmentName}`,
+        booking
+      );
+      console.log(response.data);
+    } catch (error) {
+			if (error && typeof error === 'object' && 'message' in error) {
+				console.error(error.message);
+			} else {
+				console.error(error);
+			}
+    }
   };
 
   const onChange = (dates: any) => {
@@ -302,7 +305,7 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
             type='text'
             placeholder='Комментарий'
             maxLength={300}
-						value="Комментарий оставил тут"
+            value='Комментарий оставил тут'
             {...register("comment")}
             onChange={e => setBookingComment(e.target.value)}
           />

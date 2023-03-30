@@ -23,6 +23,11 @@ const ApartmentSchema = new mongoose.Schema(
       unique: true,
     },
 
+		reservations: [{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Reservation',
+		}],
+
     about: {
       type: Object,
       viev: {

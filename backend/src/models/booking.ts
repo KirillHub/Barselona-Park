@@ -1,5 +1,74 @@
 import mongoose from "mongoose";
 
+const ReservationSchema = new mongoose.Schema({
+  fullName: {
+		type: String,
+		required: true,
+	},
+
+	phoneNumber: {
+		type: String,
+		required: true,
+	},
+
+	email: {
+		type: String,
+		required: true,
+	},
+
+	dates: {
+		type: Array,
+		of: String,
+	},
+
+	numberOfPeople: {
+		type: Number,
+		required: true,
+	},
+
+	numberOfChildren: {
+		type: Number,
+		required: true,
+	},
+
+	bookingPrice: {
+		type: Number,
+		required: true,
+	},
+
+	comment: {
+		type: String,
+		required: true,
+	},
+
+	checkInDay: {
+		type: String,
+		require: true,
+	},
+
+	checkOutDay: {
+		type: String,
+		require: true,
+	},
+
+	canceled: {
+		type: Boolean,
+		required: true,
+	},
+
+	confirmed: {
+		type: Boolean,
+		required: true,
+		default: false,
+	},
+
+	token: {
+		type: String,
+		required: true,
+	},
+});
+
+
 const BookingSchema = new mongoose.Schema(
   {
     apartmentName: {
@@ -13,66 +82,8 @@ const BookingSchema = new mongoose.Schema(
       unique: true,
     },
 
-    reservations: {
-      type: Array,
-      of: Object,
-
-      fullName: {
-        type: String,
-        required: true,
-      },
-
-      phoneNumber: {
-        type: String,
-        required: true,
-      },
-
-      email: {
-        type: String,
-        required: true,
-      },
-
-      dates: {
-        type: Array,
-        of: String,
-			},
-
-      numberOfPeople: {
-        type: Number,
-        required: true,
-      },
-
-      numberOfChildren: {
-        type: Number,
-        required: true,
-      },
-
-      bookingPrice: {
-        type: Number,
-        required: true,
-      },
-
-      comment: {
-        type: String,
-        required: true,
-      },
-
-      checkInDay: {
-        type: String,
-        require: true,
-      },
-
-      checkOutDay: {
-        type: String,
-        require: true,
-      },
-
-      canceled: {
-        type: Boolean,
-        required: true,
-      },
-
-      timestamps: true,
+		reservations: {
+      type: [ReservationSchema],
     },
   },
   {

@@ -2,7 +2,8 @@ import nodemailer from "nodemailer";
 
 export const sendReservationInfo = (
   reservationInfo: any,
-  apartmentName: any
+  apartmentName: any,
+	token: any
 ) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.mail.ru",
@@ -17,7 +18,8 @@ export const sendReservationInfo = (
   const halfOfDatesLength = reservationInfo.dates.length / 2;
 
   const apartmentLink = `https://barselona-park.vercel.app/Apartment-${apartmentName}`;
-
+	
+	
   const date = new Date();
 
   // Создание сообщения
@@ -29,6 +31,8 @@ export const sendReservationInfo = (
 		<div style='padding: 10px; max-width: 100%; color: #000;'>
 		<img style="max-width: 80%;" src="https://i.postimg.cc/6p4BXfbN/Barselona-Park-Logo3-1.png" alt="1"/>
         <h2 style='font-size:20px;font-weight:700;margin-top:0'>Бронирование апартамента ${apartmentName}</h2>
+				<a href="http://localhost:3500/Booking/Confirm/${apartmentName}/${token}">Подтвердить бронирование</a>
+				
         <p style='margin-bottom:10px;padding:0; width:100%'>
           Вы произвели бронирование в ${[date.getHours(), date.getMinutes()]
             .map((x) => (x < 10 ? "0" + x : x))
