@@ -1,7 +1,9 @@
 import BookingSchema from "#/models/booking";
 import cron from "node-cron";
 import crypto from "crypto";
-import { sendReservationInfo } from "#/helpers/createEmailMessage";
+import { sendBookedMessages } from "#/email/booked/booked";
+import { sendCanceledMessages } from "#/email/canceled/canceled";
+import { sendConfirmationMessages } from "#/email/confirmation/confirmation";
 
 export const addBookingApartment = async (req: any, res: any) => {
   try {
@@ -23,32 +25,9 @@ export const addBookingApartment = async (req: any, res: any) => {
 
 const cancelUnconfirmedBookings = async () => {
   try {
-    const unconfirmedBookings = await BookingSchema.aggregate([
-      {
-        $addFields: {
-          reservations: {
-            $filter: {
-              input: "$reservations",
-              as: "reservation",
-              cond: {
-                $and: [
-                  { $eq: ["$$reservation.confirmed", false] },
-                  {
-                    $lt: [
-                      "$$reservation.createdAt",
-                      new Date(Date.now() - 24 * 60 * 60 * 1000),
-                    ],
-                  },
-                ],
-              },
-            },
-          },
-        },
-      },
-      { $match: { reservations: { $ne: [] } } },
-    ]);
+    const allBookings = await BookingSchema.find({});
 
-    unconfirmedBookings.forEach(async (apartment) => {
+    allBookings.forEach(async (apartment) => {
       const updatedReservations = apartment.reservations.map(
         (reservation: any) => {
           if (
@@ -71,48 +50,125 @@ const cancelUnconfirmedBookings = async () => {
     console.error(err);
   }
 };
-
 // Запустите задачу каждый час
 cron.schedule("0 * * * *", cancelUnconfirmedBookings);
 
 export const confirmBooking = async (req: any, res: any) => {
   try {
-    const { apartmentName, token } = req.params;
-    const apartment = await BookingSchema.findOne({ apartmentName });
+    const booking = await BookingSchema.findOne({
+      reservations: {
+        $elemMatch: {
+          token: req.params.token,
+          createdAt: {
+            $gte: new Date(Date.now() - 24 * 60 * 60 * 1000),
+          },
+        },
+      },
+    });
 
-    if (!apartment) {
-      res.status(404).json({ message: "Апартаменты не найдены" });
-      return;
+    if (!booking) {
+      return res
+        .status(404)
+        .send(
+          "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Бронирование не найдено</h1>"
+        );
     }
 
-    const reservationIndex = apartment.reservations.findIndex(
-      (reservation) => reservation.token === token
+    const reservationIndex = booking.reservations.findIndex(
+      (reservation) => reservation.token === req.params.token
     );
-    const reservation = apartment.reservations[reservationIndex];
 
-    if (reservationIndex === -1) {
-      res.status(404).json({ message: "Бронирование не найдено" });
-      return;
+    const reservation = booking.reservations[reservationIndex];
+
+    if (reservation.confirmed) {
+      return res
+        .status(400)
+        .send(
+          "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Вы уже подтвердили свое бронирование</h1>"
+        );
     }
 
-    if (reservation.canceled) {
-      res.status(400).json({ message: "Бронирование уже отменено" });
-      return;
+    if (new Date(reservation.createdAt) >= new Date(Date.now() - 30 * 1000)) {
+      return res
+        .status(400)
+        .send(
+          "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Пожалуйста, подождите немного перед подтверждением бронирования</h1>"
+        );
     }
 
-    apartment.reservations[reservationIndex].confirmed = true;
-    await apartment.save();
+    reservation.confirmed = true;
+    await booking.save();
 
-    res.json({ message: "Бронирование успешно подтверждено" });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ message: err });
+    sendConfirmationMessages(reservation, booking.apartmentName);
+
+    res.send(
+      "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Бронирование подтверждено</h1>"
+    );
+  } catch (error) {
+    res.status(500).json({ message: "Ошибка сервера", error });
   }
 };
+
+export const cancelBooking = async (req: any, res: any) => {
+  try {
+    const booking = await BookingSchema.findOne({
+      reservations: {
+        $elemMatch: {
+          token: req.params.token,
+          createdAt: {
+            $gte: new Date(Date.now() - 24 * 60 * 60 * 1000),
+          },
+        },
+      },
+    });
+
+    if (!booking) {
+      return res
+        .status(404)
+        .send(
+          "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Бронирование не найдено</h1>"
+        );
+    }
+
+    const reservationIndex = booking.reservations.findIndex(
+      (reservation) => reservation.token === req.params.token
+    );
+
+    const reservation = booking.reservations[reservationIndex];
+
+    if (reservation.canceled) {
+      return res
+        .status(400)
+        .send(
+          "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Бронирование уже отменено</h1>"
+        );
+    }
+
+    if (new Date(reservation.createdAt) >= new Date(Date.now() - 30 * 1000)) {
+      return res
+        .status(400)
+        .send(
+          "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Пожалуйста, подождите немного перед отменой бронирования</h1>"
+        );
+    }
+
+    reservation.canceled = true;
+    await booking.save();
+
+    sendCanceledMessages(reservation, booking.apartmentName);
+
+    res.send(
+      "<h1 style='text-align: center; font-size: calc(20px + 20 * (100vw / 1920))'>Бронирование отменено</h1>"
+    );
+  } catch (error) {
+    res.status(500).json({ message: "Ошибка сервера", error });
+  }
+};
+
 export const patchBooking = async (req: any, res: any) => {
   try {
     const token = crypto.randomBytes(32).toString("hex");
-    const reservation = { ...req.body, token };
+    const data = { ...req.body, token };
 
     const apartment = await BookingSchema.updateOne(
       {
@@ -120,12 +176,30 @@ export const patchBooking = async (req: any, res: any) => {
       },
       {
         $push: {
-          reservations: reservation,
+          reservations: data,
         },
       }
     );
 
-    sendReservationInfo(reservation, req.params.apartmentName, token);
+    const booking = await BookingSchema.findOne({
+      reservations: {
+        $elemMatch: {
+          token: token,
+        },
+      },
+    });
+
+    if (!booking) {
+      return res.status(404).json({ message: "Бронирование не найдено" });
+    }
+
+    const reservationIndex = booking.reservations.findIndex(
+      (reservation) => reservation.token === token
+    );
+
+    const reservation = booking.reservations[reservationIndex];
+
+    sendBookedMessages(reservation, req.params.apartmentName, token);
 
     res.json({ message: "Бронирование успешно создано" });
   } catch (err) {

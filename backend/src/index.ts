@@ -16,11 +16,14 @@ const app = express();
 app.use(express.json({ limit: '1mb' }), cors());
 
 
+app.get('/Booking/GetExcludedDates/:apartmentName', BookingController.getExcludedDates)
 app.post('/Booking/addBookingApartment', BookingController.addBookingApartment)
 app.patch('/Booking/BookApartment/:apartmentName', BookingController.patchBooking)
-app.get('/Booking/GetExcludedDates/:apartmentName', BookingController.getExcludedDates)
 
-app.get('/Booking/Confirm/:apartmentName/:reservationId', BookingController.confirmBooking);
+
+app.get('/Booking/Cancel/:apartmentName/:token', BookingController.cancelBooking);
+app.get('/Booking/Confirm/:apartmentName/:token', BookingController.confirmBooking);
+
 
 app.get(`/GetSimilar/:apartmentName/:option`, ApartmentController.getSimilar);
 

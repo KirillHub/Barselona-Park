@@ -241,7 +241,6 @@ export const CustomerInformation = ({ apartment }: MyProps) => {
           <input
             type='text'
             placeholder='ФИО'
-            value='Михаил Сердюков Анатольевич'
             {...register("fullName", {
               required: "ФИО не заполнено",
               minLength: { value: 2, message: "Минимум 2 символа" },
