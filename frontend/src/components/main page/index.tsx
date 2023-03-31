@@ -1,18 +1,31 @@
 "use client";
 
 import { Telegram, Whatsapp } from "../../svg";
-import { useRouter } from "next/router";
+import { config, useSpring } from "react-spring";
+import { useEffect, useState } from "react";
+
+import ApartamentsSlider from "@/share/components/apartaments slider";
+import { BackgroundImageSlider } from "@/share/components/BackgroundImageSlider";
+import BookingPage from "../booking page";
+import DiscoverLocation from "./discover location";
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< HEAD
 import SelectCategory from "../../share/components/select category/selectCategory";
 import { serviceIcons } from "@/share/serviceIcons";
 import { useEffect, useState } from "react";
 import { BackgroundImageSlider } from "../../share/components/backgroundImageSlider";
 import SearhPanel from "./search panel";
 import styles from "./style.module.scss";
+=======
+>>>>>>> refs/remotes/upstream/dev-branch
 import Location from "./location";
+import Reviews from "../reviews page";
+import { SearhPanel } from "./search panel";
+import SelectCategory from "../../share/components/select category/selectCategory";
 import Service from "../../share/components/service icons";
 import ServiceIcons from "../../share/components/service icons";
+<<<<<<< HEAD
 import BookingPage from "../booking page";
 import ApartamentsSlider from "@/share/components/apartaments slider";
 import DiscoverLocation from "./discover location";
@@ -20,6 +33,10 @@ import { useSpring, config } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import Reviews from "../reviews page";
 import { Block } from "../test-anim/block";
+=======
+import { serviceIcons } from "@/share/serviceIcons";
+import styles from "./style.module.scss";
+>>>>>>> refs/remotes/upstream/dev-branch
 
 export const MainPicture = () => {
   const services = serviceIcons();
@@ -61,6 +78,7 @@ export const MainPicture = () => {
       <div>
         <ApartamentsSlider />
       </div>
+<<<<<<< HEAD
 
       <Block />
 
@@ -71,6 +89,8 @@ export const MainPicture = () => {
       <div className={styles.main_page__location}>
         <Location />
       </div>
+=======
+>>>>>>> refs/remotes/upstream/dev-branch
     </div>
   );
 };
