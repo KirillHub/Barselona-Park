@@ -11,6 +11,7 @@ import { animated } from "react-spring";
 export default function SelectCategory() {
   const { ref, inView } = useInView({
     threshold: 0.5, // порог видимости
+	 triggerOnce: true
   });
 
   const animationProps = useSpring({

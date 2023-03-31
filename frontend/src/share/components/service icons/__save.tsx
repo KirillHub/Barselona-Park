@@ -1,13 +1,6 @@
-import { AllIcons } from "@/share/allicons";
-import styles from "./style.module.scss";
-
-import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
-
 const ServiceIcons = () => {
 	const icons = AllIcons();
-	const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
+	const [ref, inView] = useInView({ threshold: 0.5 });
  
 	const variants = {
 	  hidden: { x: -400 },
@@ -44,5 +37,3 @@ const ServiceIcons = () => {
 	  </motion.div>
 	);
  };
-
-export default ServiceIcons;

@@ -3,46 +3,80 @@
 import styles from "./style.module.scss";
 import { useSpring, config, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
-import { Block } from "../test-anim/block";
+import { useState, useEffect } from "react";
 
 const Reviews = () => {
-  const [isScrollingDown, setIsScrollingDown] = useState(false);
-  const [blocksPosition, setBlocksPosition] = useState(40);
+  const [ref1, inView1] = useInView({ threshold: 0.5 });
+  const [ref2, inView2] = useInView({ threshold: 0.5 });
+  const [position, setPosition] = useState(0);
+
+  const springProps1 = useSpring({
+    to: {
+      transform: `translateX(${position}px)`,
+    },
+    config: {
+      tension: 300,
+      friction: 20,
+      mass: 2,
+    },
+  });
+
+  const springProps2 = useSpring({
+    to: {
+      transform: `translateX(${-position}px)`,
+    },
+    config: {
+      tension: 300,
+      friction: 20,
+      mass: 2,
+    },
+  });
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentPosition = window.pageYOffset;
-      setIsScrollingDown(currentPosition > lastScrollPosition);
-      lastScrollPosition = currentPosition;
-      setBlocksPosition(prevPosition => (isScrollingDown ? prevPosition - 1 : prevPosition + 1));
-    };
+    if (inView1 && inView2) {
+      const handleScroll = (e: any) => {
+        //   if (position <= 300) { }  //?
+        const deltaY = e.deltaY;
+        const newPosition = position + (deltaY < 0 ? -100 : 100);
+        setPosition(newPosition);
+      };
 
-    let lastScrollPosition = 0;
+      console.log(position);
 
-    window.addEventListener("scroll", handleScroll);
+      document.addEventListener("wheel", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isScrollingDown]);
+      return () => {
+        document.removeEventListener("wheel", handleScroll);
+      };
+    }
+  }, [position, inView1, inView2]);
+
+  useEffect(() => {
+    if (inView1 && inView2) {
+      setPosition(0);
+    }
+  }, [inView1, inView2]);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div
+      <animated.div
+        ref={ref1}
         style={{
-          width: "200px",
+          width: "600px",
           height: "200px",
           background: "red",
-          marginRight: `${blocksPosition}vw`,
+          marginRight: "25vw",
+          ...springProps1,
         }}
       />
-      <div
+      <animated.div
+        ref={ref2}
         style={{
-          width: "200px",
+          width: "600px",
           height: "200px",
           background: "blue",
-          marginLeft: `${blocksPosition}vw`,
+          marginLeft: "25vw",
+          ...springProps2,
         }}
       />
     </div>
@@ -50,27 +84,3 @@ const Reviews = () => {
 };
 
 export default Reviews;
-
-/*
-	анимация с прокруткой
-
-  const { ref, inView } = useInView({
-    threshold: 0.5, // порог видимости
-  });
-
-  const animationProps = useSpring({
-    to: {
-      transform: inView ? "rotate(1turn)" : "rotate(0turn)",
-    },
-    config: config.slow, // тип анимации
-  });
-
-  return (
-    <div ref={ref} className={styles.reviews}>
-      <Square animationProps={animationProps} />
-      <Square animationProps={animationProps} />
-      <Square animationProps={animationProps} />
-      <Square animationProps={animationProps} />
-    </div>
-  );
-*/

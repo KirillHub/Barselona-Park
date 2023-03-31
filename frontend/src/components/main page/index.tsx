@@ -7,8 +7,8 @@ import Link from "next/link";
 import SelectCategory from "../../share/components/select category/selectCategory";
 import { serviceIcons } from "@/share/serviceIcons";
 import { useEffect, useState } from "react";
-import { BackgroundImageSlider } from "@/share/components/backgroundImageSlider";
-import { SearhPanel } from "./search panel";
+import { BackgroundImageSlider } from "../../share/components/backgroundImageSlider";
+import SearhPanel from "./search panel";
 import styles from "./style.module.scss";
 import Location from "./location";
 import Service from "../../share/components/service icons";
@@ -19,11 +19,10 @@ import DiscoverLocation from "./discover location";
 import { useSpring, config } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import Reviews from "../reviews page";
+import { Block } from "../test-anim/block";
 
 export const MainPicture = () => {
   const services = serviceIcons();
-
-
 
   // в дальнейшем можно такого рода конфиги выносить в отдельные файлы
   const bgConfig = {
@@ -63,7 +62,7 @@ export const MainPicture = () => {
         <ApartamentsSlider />
       </div>
 
-		<Reviews/>
+      <Block />
 
       <div className={styles.main_page__discover_location}>
         <DiscoverLocation fhotoCount={4} fileName={fileName} fileExtension={fileExtension} />

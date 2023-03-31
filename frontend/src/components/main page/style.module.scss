@@ -22,12 +22,13 @@
   }
 
   .main_page__service_icons {
-   padding: calc(25px + (100vw / 1920)) 0;
+    padding: calc(25px + (100vw / 1920)) 0;
   }
 
   .main_page__discover_location {
-    margin: calc(65px + (100vw / 1920)) calc(0px + 4.1666666667vw);
-    padding: calc(15px + (100vw / 1920)) 0;
+    margin: calc(3em + (100vw / 1920)) calc(0em + 1.1666666667vw);
+
+    //   padding: calc(15px + (100vw / 1920)) 0;
 
     // calc(15px + 15 * (100vw / 1920));
     //  border-radius: calc(5px + 0.2604166667vw);
