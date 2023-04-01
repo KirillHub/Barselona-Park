@@ -4,17 +4,20 @@
 
   //   justify-content: space-between;
   width: 100%;
-  height: auto;
 
-  //   height: 35vh;
+  //   height: auto;
+
+  //  height: 35vh;
 
   .discover_location__fhoto_block {
     display: grid;
-    flex: 0 0 57%;
+    position: relative;
+    flex: 1 1 auto;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    margin-right: calc(15px + 15 * (100vw / 1920));
-    width: 100vw;
+    margin-right: 5vw;
+
+    //  width: 100vw;
     height: auto;
     gap: 15px;
 
@@ -29,9 +32,11 @@
 
   .discover_location__info_block {
     display: flex;
-    flex: 1 1 auto;
+    position: relative;
+    flex: 0 0 33%;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 5vw;
 
     h2 {
       margin: 0 0 30px;
@@ -72,14 +77,50 @@
     background-color: rgb(68 55 55);
   }
 
-  @media (width < 992px) {
+  @media (width < 1200px) {
     flex-direction: column;
 
     .discover_location__fhoto_block {
-      flex: 1 1 auto;
-      margin-bottom: calc(45px + 0.78125vw);
-      width: 100%;
+      margin: 0 auto;
+      margin-bottom: calc(0px + 4.1666666667vw);
+
+      // margin-right: 0;
+
+      // margin: calc(15px + 0.78125vw) calc(0px + 4.1666666667vw);
+      width: 95%;
       height: 45vh;
     }
+
+    .discover_location__info_block {
+      margin: 0 auto;
+      width: 95%;
+    }
+  }
+
+  //   @media (width < 992px) {
+  //   }
+
+  @media (width < 768px) {
+    .discover_location__fhoto_block {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+	 .discover_location__info_block {
+		flex: 0 0 auto;
+		padding: 0 calc(8px + 0.2604166667vw);
+
+      // margin: 0 auto;
+      // width: 95%;
+    }
+  }
+
+  @media (width < 600px) {
+    .discover_location__fhoto_block {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+
+	
   }
 }

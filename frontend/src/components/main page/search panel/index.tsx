@@ -51,9 +51,7 @@ const SearchPanel = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 2, delay: 1.5 }}
             >
-              <Button onClick={handleClick}>
-                Найти
-              </Button>
+              <Button onClick={handleClick}>Найти</Button>
             </motion.div>
           </div>
         </div>

@@ -1,4 +1,8 @@
 .location {
   width: 60%;
   height: 40vh;
+
+  @media (width < 600px) {
+	width: 100%;
+  }
 }

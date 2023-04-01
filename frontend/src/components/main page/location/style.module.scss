@@ -3,13 +3,12 @@
   justify-content: space-between;
 
   .location__text_body {
-	 display: flex;
+    display: flex;
     flex: 0 1 33%;
-	 flex-direction: column;
-	 justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     color: rgb(166 140 117);
-
   }
 
   h2 {
@@ -27,6 +26,13 @@
       margin: 0 calc(5px + 5 * (100vw / 1920)) 0 0;
       width: calc(15px + 20 * (100vw / 1920));
       height: calc(15px + 20 * (100vw / 1920));
+    }
+  }
+
+  @media (width < 600px) {
+    .location__text_body {
+      display: none;
+      color: red;
     }
   }
 }

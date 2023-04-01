@@ -1,7 +1,7 @@
 import { useSpring, config, animated } from "react-spring";
 import useMedia from "use-media";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Button from "@/share/components/button";
 import { ImageSliderInter } from "@/types/imageSlider";
 import { getImagesAndPaths } from "@/utils/getImagesAndPaths";
@@ -10,8 +10,11 @@ import styles from "./style.module.scss";
 
 const DiscoverLocation = ({ fhotoCount, fileName, fileExtension }: ImageSliderInter) => {
   const images = getImagesAndPaths(fhotoCount, fileName, fileExtension);
+  const sortedImages = useRef<{ name: number; path: string }[]>([]); //
 
-  const isWide = useMedia({ minWidth: 1000 }); // постоянно проверяет измения ширины экрана
+  const isWide = useMedia({ minWidth: 1200 });
+  const isTablet = useMedia({ maxWidth: 768 });
+  const isSmall = useMedia({ maxWidth: 600 });
 
   const [ref1, inView1] = useInView({ threshold: 0.2 });
   const [ref2, inView2] = useInView({ threshold: 0.2 });
@@ -19,7 +22,7 @@ const DiscoverLocation = ({ fhotoCount, fileName, fileExtension }: ImageSliderIn
 
   const springProps1 = useSpring({
     to: {
-      transform: `translateX(${position}px)`,
+      transform: `translateX(${isWide ? position : 0}px)`,
     },
     config: {
       tension: 300,
@@ -30,7 +33,7 @@ const DiscoverLocation = ({ fhotoCount, fileName, fileExtension }: ImageSliderIn
 
   const springProps2 = useSpring({
     to: {
-      transform: `translateX(${-position}px)`,
+      transform: `translateX(${isWide ? -position : 0}px)`,
     },
     config: {
       tension: 300,
@@ -46,15 +49,14 @@ const DiscoverLocation = ({ fhotoCount, fileName, fileExtension }: ImageSliderIn
   useEffect(() => {
     if (inView1 && inView2) {
       const handleScroll = (e: any) => {
-        if (position <= 60 && e.deltaY > 0) {
-          // && e.deltaY > 0
+        if (position <= 50 && e.deltaY > 0) {
           const deltaY = e.deltaY;
-          const newPosition = position + (deltaY < 0 ? -10 : 10);
+          const newPosition = position + (deltaY < 0 ? -13 : 13);
           setPosition(newPosition);
         }
-      };
 
-      console.log(position);
+        if (e.deltaY < 0 && position <= 10) setPosition(15);
+      };
 
       document.addEventListener("wheel", handleScroll);
 
@@ -70,18 +72,22 @@ const DiscoverLocation = ({ fhotoCount, fileName, fileExtension }: ImageSliderIn
     }
   }, [inView1, inView2]);
 
+  useEffect(() => {
+    let koef = 0;
+    isTablet ? (koef = 2) : koef;
+    isSmall ? (koef = 3) : koef;
+
+    sortedImages.current = [...images].sort(() => Math.random() - 0.5).splice(koef);
+  }, [isTablet, isSmall, images]);
+
   return (
     <div className={styles.discover_location}>
       <animated.div
         ref={ref1}
         className={styles.discover_location__fhoto_block}
-        style={{
-          position: "relative",
-          marginRight: "6vw",
-          ...springProps1,
-        }}
+        style={{ ...springProps1 }}
       >
-        {images.map((image, _) => (
+        {sortedImages.current.map((image, _) => (
           <div key={image.name} className={styles.discover_location__grid_container}>
             <Image
               key={image.name}
@@ -97,11 +103,7 @@ const DiscoverLocation = ({ fhotoCount, fileName, fileExtension }: ImageSliderIn
       <animated.div
         ref={ref2}
         className={styles.discover_location__info_block}
-        style={{
-          position: "relative",
-          marginLeft: "6vw",
-          ...springProps2,
-        }}
+        style={{ ...springProps2 }}
       >
         <h2>Откройте для себя Новую локацию</h2>
         <div className={styles.discover_location__descr_block}>
@@ -112,12 +114,12 @@ const DiscoverLocation = ({ fhotoCount, fileName, fileExtension }: ImageSliderIn
             velit assumenda qui!
           </div>
 
-          {/* <div className={styles.discover_location__descr}>
+          <div className={styles.discover_location__descr}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse omnis repellendus, animi
             exercitationem quas ratione inventore dolorem quibusdam vitae nobis aperiam eligendi
             magni odio quos error aspernatur velit assumenda qui! magni odio quos error aspernatur
             velit assumenda qui!
-          </div> */}
+          </div>
         </div>
         <Button onClick={() => handleClick()} className={styles.btn_custom}>
           узнать больше

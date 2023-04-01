@@ -46,6 +46,12 @@
     box-shadow: rgb(34 34 34) 0 0 0 calc(3px + 0.15625vw);
     background-color: rgb(28 28 28);
   }
+
+  @media (width < 600px) {
+    .main_page__location {
+      margin: calc(55px + (100vw / 1920)) calc(0px + 4.1666666667vw);
+    }
+  }
 }
 
 /*

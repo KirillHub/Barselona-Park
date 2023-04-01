@@ -35,9 +35,22 @@
         .search_panel__inputs_title {
           padding: 0 3%;
         }
-		  
+      }
+      @media (width < 768px) {
+        flex-direction: column;
+        align-items: center;
+
+        .search_panel__inputs_wrapper {
+          margin: 0 auto;
+          padding-right: 5vw;
+          width: 100%;
+          height: 7vh;
+        }
       }
     }
+  }
+  @media (width < 768px) {
+	padding: 21vh 3% 3%;
   }
 }
 
